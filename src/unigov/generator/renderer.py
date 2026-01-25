@@ -2,9 +2,96 @@ from __future__ import annotations
 
 from pathlib import Path
 import yaml
+import re
 from typing import Any, Optional
 
 _templates_cache: Optional[dict] = None
+
+UN_OFFICIAL_COUNTRY_NAMES = {
+    "ARGENTINA": "Argentina",
+    "AUSTRALIA": "Australia",
+    "AZERBAIJAN": "Azerbaijan",
+    "BELARUS": "Belarus",
+    "BELARUS ": "Belarus",
+    "BOLIVARIAN REPUBLIC OF": "Bolivarian Republic of",
+    "CAMBODIA": "Cambodia",
+    "CANADA": "Canada",
+    "CHINA": "China",
+    "CROATIA": "Croatia",
+    "CUBA": "Cuba",
+    "DENMARK": "Denmark",
+    "EGYPT": "Egypt",
+    "EL SALVADOR": "El Salvador",
+    "EUROPEAN UNION": "European Union",
+    "FRANCE": "France",
+    "HUNGARY": "Hungary",
+    "INDONESIA": "Indonesia",
+    "INTERNATIONAL COMMITTEE OF THE RED CROSS": "International Committee of the Red Cross",
+    "INTERNATIONAL FEDERATION OF RED CROSS AND RED CRESCENT SOCIETIES": "International Federation of Red Cross and Red Crescent Societies",
+    "IRAN": "Iran",
+    "ISLAMIC REPUBLIC OF": "Islamic Republic of",
+    "IRAQ": "Iraq",
+    "ISRAEL": "Israel",
+    "KAZAKHSTAN": "Kazakhstan",
+    "KINGDOM OF THE": "Kingdom of the",
+    "MALDIVES": "Maldives",
+    "MEXICO": "Mexico",
+    "MOROCCO": "Morocco",
+    "NETHERLANDS": "Netherlands",
+    "NEW ZEALAND": "New Zealand",
+    "NICARAGUA": "Nicaragua",
+    "NORWAY": "Norway",
+    "PAKISTAN": "Pakistan",
+    "PARAGUAY": "Paraguay",
+    "POLAND": "Poland",
+    "QATAR": "Qatar",
+    "RUSSIAN FEDERATION": "Russian Federation",
+    "SERBIA": "Serbia",
+    "SLOVAKIA": "Slovakia",
+    "SPAIN": "Spain",
+    "SWITZERLAND": "Switzerland",
+    "SWITZERLAND ": "Switzerland",
+    "THAILAND": "Thailand",
+    "TIMOR-LESTE": "Timor-Leste",
+    "TÜRKİYE": "Türkiye",
+    "TURKIYE": "Türkiye",
+    "UKRAINE": "Ukraine",
+    "UNITED ARAB EMIRATES": "United Arab Emirates",
+    "UNITED KINGDOM": "United Kingdom",
+    "UNITED KINGDOM ": "United Kingdom",
+    "UNITED STATES": "United States",
+    "UNITED STATES ": "United States",
+    "VENEZUELA": "Venezuela",
+    "VENEZUELA (BOLIVARIAN REPUBLIC OF)": "Venezuela (Bolivarian Republic of)",
+}
+
+
+def normalize_country_name(name: str) -> str:
+    name = name.strip()
+
+    parenthesized = ""
+    if "(" in name and name.endswith(")"):
+        paren_start = name.rfind("(")
+        parenthesized = name[paren_start:]
+        name = name[:paren_start].strip()
+
+    name_upper = name.upper()
+    if name_upper in UN_OFFICIAL_COUNTRY_NAMES:
+        name = UN_OFFICIAL_COUNTRY_NAMES[name_upper]
+
+    if parenthesized:
+        normalized_paren = parenthesized
+        for upper_name, official in UN_OFFICIAL_COUNTRY_NAMES.items():
+            if upper_name in parenthesized.upper():
+                normalized_paren = re.sub(
+                    re.escape(upper_name),
+                    official,
+                    normalized_paren,
+                    flags=re.IGNORECASE,
+                )
+        name = f"{name} {normalized_paren}"
+
+    return name
 
 
 def get_templates_path() -> Path:
@@ -91,8 +178,21 @@ def render_step_speakers(step: dict, speakers_config: dict) -> list[dict]:
     if isinstance(raw_speakers, list):
         for sp in raw_speakers:
             name = get_field(sp, name_field)
-            speakers.append({"name": name})
+            if name and not name.startswith("------"):
+                name = normalize_country_name(name)
+                speakers.append({"name": name})
     return speakers
+
+
+def to_title_case(text: str) -> str:
+    small_words = {"a", "an", "the", "of", "and", "or", "in", "on", "at", "to", "for", "by", "with", "of"}
+    result = []
+    for i, word in enumerate(text.split()):
+        if word.lower() in small_words and i > 0:
+            result.append(word.lower())
+        else:
+            result.append(word.capitalize())
+    return " ".join(result)
 
 
 def render_step(step: dict, templates: dict) -> dict:
@@ -117,6 +217,10 @@ def render_step(step: dict, templates: dict) -> dict:
         text = render_step_text(step, template, fields)
         speakers = render_step_speakers(step, speakers_config) if speakers_config else []
 
+        text = text.strip()
+        if not text:
+            text = step.get("PS_title", "").strip()
+
         return {
             "type_label": step_type,
             "text": text,
@@ -124,7 +228,7 @@ def render_step(step: dict, templates: dict) -> dict:
             "seqNo": step.get("seqNo"),
         }
 
-    fallback = step.get("PS_title", "") or step_type
+    fallback = step.get("PS_title", "").strip() or step_type
     return {
         "type_label": step_type,
         "text": fallback,

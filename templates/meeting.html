@@ -82,16 +82,17 @@
   <div class="card-body" style="line-height: 1.8;">
     {% for segment in meeting.MT_segment | default([]) %}
       {% set segment_id = loop.index0 + 1 %}
+      {% set segment_steps = steps_by_segment[segment_id] | selectattr("text") | list %}
+      {% if segment_steps or segment.MTS_segmentTitle or segment.MTS_segmentInfo %}
       <p><strong>{{ segment.MTS_segmentTitle or segment.MTS_segmentInfo or 'Agenda Item' }}</strong></p>
-      {% if steps_by_segment[segment_id] %}
-        {% for step in steps_by_segment[segment_id] %}
-          <p>
-            {{ step.text | safe }}
-            {% if step.speakers %}
-              {% for speaker in step.speakers %}{{ speaker.name }}{% if not loop.last %}, {% endif %}{% endfor %}.
-            {% endif %}
-          </p>
-        {% endfor %}
+      {% for step in segment_steps %}
+        <p>
+          {{ step.text | safe }}
+          {% if step.speakers %}
+            {% for speaker in step.speakers %}{{ speaker.name }}{% if not loop.last %}, {% endif %}{% endfor %}.
+          {% endif %}
+        </p>
+      {% endfor %}
       {% endif %}
     {% endfor %}
   </div>

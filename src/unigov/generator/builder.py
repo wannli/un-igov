@@ -58,7 +58,7 @@ def slugify(text: str) -> str:
 def meeting_url(meeting: dict) -> str:
     date = meeting.get("MT_dateTimeScheduleStart", "")[:10]
     name = slugify(meeting.get("MT_name", ""))
-    return f"{date}-{name}/index.html"
+    return f"meetings/{date}-{name}/index.html"
 
 
 def build_environment(template_root: Path) -> Environment:
@@ -146,7 +146,7 @@ def build_meeting_detail(ctx: BuildContext, base_path: str, session: str, meetin
         last_build_timestamp=int(datetime.now().timestamp()),
     )
 
-    output_dir = ctx.config.site.output_dir / base_path / meeting_id_str
+    output_dir = ctx.config.site.output_dir / base_path / "meetings" / meeting_id_str
     ensure_dir(output_dir)
     (output_dir / "index.html").write_text(output, encoding="utf-8")
 
