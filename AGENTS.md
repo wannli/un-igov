@@ -85,6 +85,16 @@ cd output && python3 -m http.server 8000
 - Config: `config.yaml`
 - Session data: `data/ga/plenary/{session}/`
 
+## Branch Management
+
+- **Always create/move to an `opencode-XX` branch before committing** - This is critical for managing multiple opencode windows that may be open simultaneously.
+- Before starting any work, check the current branch and create a new opencode branch if needed:
+  ```bash
+  git branch | grep 'opencode'  # Check existing opencode branches
+  git checkout -b opencode-XX   # Create new branch if needed
+  ```
+- After committing, push the branch to origin: `git push -u origin opencode-XX`
+
 ## Collaboration Flow
 
 - **Commit meaningful changes**: After any significant update (design changes, template updates, new features), commit immediately with a clear message. Don't batch multiple unrelated changes.
