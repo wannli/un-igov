@@ -53,6 +53,7 @@
     <div class="space-y-4" id="upcoming-meetings">
       {% for meeting in upcoming_meetings %}
         <article class="border border-gray-200 rounded-lg overflow-hidden hover:border-gray-300 transition-colors hover-lift" data-type="{{ meeting.MT_type | lower if meeting.MT_type else '' }}">
+          <a href="{{ meeting | meeting_url }}" class="block">
           <div class="bg-gray-50 px-4 py-3 border-b border-gray-200">
             <div class="flex items-start justify-between gap-4">
               <div class="flex-1 min-w-0">
@@ -97,6 +98,7 @@
               </div>
             </div>
           {% endif %}
+          </a>
         </article>
       {% endfor %}
     </div>
@@ -107,6 +109,7 @@
     <div class="space-y-3" id="past-meetings">
       {% for meeting in past_meetings %}
         <article class="border border-gray-200 rounded-lg overflow-hidden p-4 hover:border-gray-300 transition-colors" data-type="{{ meeting.MT_type | lower if meeting.MT_type else '' }}">
+          <a href="{{ meeting | meeting_url }}" class="block">
           <div class="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between">
             <div class="flex-1 min-w-0">
               <h3 class="font-medium text-gray-900">{{ meeting.MT_name or "Meeting" }}</h3>
@@ -134,6 +137,7 @@
               <span>{{ meeting.MT_dateTimeScheduleStart[11:16] }} - {{ meeting.MT_dateTimeScheduleEnd[11:16] }}</span>
             </div>
           </div>
+          </a>
         </article>
       {% endfor %}
     </div>

@@ -44,12 +44,29 @@ def datetime_format(value: str, format: str = "%B %d, %Y") -> str:
         return value
 
 
+def slugify(text: str) -> str:
+    import re
+    if not text:
+        return "meeting"
+    text = text.lower()
+    text = re.sub(r"[^a-z0-9]+", "-", text)
+    text = text.strip("-")
+    return text[:60]
+
+
+def meeting_url(meeting: dict) -> str:
+    date = meeting.get("MT_dateTimeScheduleStart", "")[:10]
+    name = slugify(meeting.get("MT_name", ""))
+    return f"{date}-{name}/"
+
+
 def build_environment(template_root: Path) -> Environment:
     env = Environment(
         loader=FileSystemLoader(str(template_root)),
         autoescape=select_autoescape(["html"]),
     )
     env.filters["datetime_format"] = datetime_format
+    env.filters["meeting_url"] = meeting_url
     return env
 
 
@@ -86,16 +103,42 @@ def build_index(ctx: BuildContext, session_number: str) -> None:
     (output_dir / "index.html").write_text(output, encoding="utf-8")
 
 
+def meeting_id(meeting: dict) -> str:
+    date = meeting.get("MT_dateTimeScheduleStart", "")[:10]
+    name = slugify(meeting.get("MT_name", ""))
+    return f"{date}-{name}"
+
+
+def build_meeting_detail(ctx: BuildContext, session_number: str, meeting_id_str: str, meeting: dict) -> None:
+    template = ctx.templates.get_template("meeting.html")
+
+    output = template.render(
+        site=ctx.config.site,
+        session=session_number,
+        meeting=meeting,
+        meeting_id=meeting_id_str,
+    )
+
+    output_dir = ctx.config.site.output_dir / "ga" / "plenary" / session_number / "meetings" / meeting_id_str
+    ensure_dir(output_dir)
+    (output_dir / "index.html").write_text(output, encoding="utf-8")
+
+
 def build_meetings(ctx: BuildContext, session_number: str) -> None:
     template = ctx.templates.get_template("meetings.html")
     data_dir = ctx.config.site.data_dir / "ga" / "plenary" / session_number
     meetings = load_json(data_dir / "meetings.json") or []
     current_date = datetime.now().strftime("%Y-%m-%d")
+
     output = template.render(site=ctx.config.site, session=session_number, meetings=meetings, current_date=current_date)
 
     output_dir = ctx.config.site.output_dir / "ga" / "plenary" / session_number / "meetings"
     ensure_dir(output_dir)
     (output_dir / "index.html").write_text(output, encoding="utf-8")
+
+    for meeting in meetings:
+        mid = meeting_id(meeting)
+        build_meeting_detail(ctx, session_number, mid, meeting)
 
 
 def build_agenda(ctx: BuildContext, session_number: str) -> None:
