@@ -79,17 +79,22 @@
           </div>
           {% if meeting.MT_segment %}
             <div class="border-t border-gray-200 px-4 py-3">
-              <ul class="space-y-1 text-sm text-gray-700">
-                {% for segment in meeting.MT_segment[:5] %}
-                  <li class="flex items-start gap-2">
-                    <span class="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-un-blue"></span>
-                    <span>{{ segment.MTS_segmentTitle }}</span>
-                  </li>
+              <div class="space-y-3">
+                {% for segment in meeting.MT_segment %}
+                  <div class="border-l-2 border-un-blue pl-3">
+                    {% if segment.MTS_agenda %}
+                      {% for agenda in segment.MTS_agenda %}
+                        <div class="mb-1">
+                          <span class="text-[11px] font-semibold uppercase tracking-wide text-muted">Item {{ agenda.item }}</span>
+                        </div>
+                      {% endfor %}
+                    {% endif %}
+                    {% if segment.MTS_segmentTitle %}
+                      <h3 class="text-sm font-medium text-gray-900">{{ segment.MTS_segmentTitle }}</h3>
+                    {% endif %}
+                  </div>
                 {% endfor %}
-                {% if meeting.MT_segment | length > 5 %}
-                  <li class="text-sm text-muted">+ {{ meeting.MT_segment | length - 5 }} more items</li>
-                {% endif %}
-              </ul>
+              </div>
             </div>
           {% endif %}
         </article>
@@ -103,12 +108,26 @@
       {% for meeting in past_meetings %}
         <article class="border border-gray-200 rounded-lg overflow-hidden p-4 hover:border-gray-300 transition-colors" data-type="{{ meeting.MT_type | lower if meeting.MT_type else '' }}">
           <div class="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between">
-            <div>
+            <div class="flex-1 min-w-0">
               <h3 class="font-medium text-gray-900">{{ meeting.MT_name or "Meeting" }}</h3>
               <p class="mt-1 text-sm text-muted">
                 {% if meeting.MT_type %}{{ meeting.MT_type }}{% endif %}
                 {% if meeting.MT_session %}· {{ meeting.MT_session }}{% endif %}
               </p>
+              {% if meeting.MT_segment %}
+                <div class="mt-2 space-y-1">
+                  {% for segment in meeting.MT_segment[:3] %}
+                    {% if segment.MTS_agenda %}
+                      {% for agenda in segment.MTS_agenda %}
+                        <p class="text-xs text-muted">Item {{ agenda.item }}: {{ agenda.title[:50] }}{% if agenda.title and agenda.title|length > 50 %}...{% endif %}</p>
+                      {% endfor %}
+                    {% endif %}
+                  {% endfor %}
+                  {% if meeting.MT_segment|length > 3 %}
+                    <p class="text-xs text-muted">+ {{ meeting.MT_segment|length - 3 }} more items</p>
+                  {% endif %}
+                </div>
+              {% endif %}
             </div>
             <div class="flex flex-col items-end gap-1 text-sm text-gray-600 whitespace-nowrap flex-shrink-0">
               <span>{{ meeting.MT_dateTimeScheduleStart | datetime_format("%A, %d %B %Y") }}</span>

@@ -1,24 +1,46 @@
 {% extends "base.html" %}
 {% set page_title = "Agenda" %}
 {% block content %}
-<section class="page-hero">
-  <div class="mx-auto w-full max-w-6xl px-6 py-10">
-    <p class="eyebrow">General Assembly · Session {{ session }}</p>
-    <h1 class="page-title">Agenda Items</h1>
-  </div>
-</section>
+<div class="mb-4">
+  <nav class="flex items-center gap-2 text-sm text-muted">
+    <a href="{{ site.base_url }}index.html" class="hover:text-un-blue transition-colors">igov</a>
+    <span>/</span>
+    <span class="text-gray-700">GA</span>
+    <span>/</span>
+    <a href="{{ site.base_url }}ga/plenary/{{ session }}/agenda/index.html" class="text-gray-700 hover:text-un-blue transition-colors">Plenary</a>
+    <span>/</span>
+    <span class="text-gray-700">{{ session }}</span>
+    <span>/</span>
+    <span class="text-gray-900 font-medium">Agenda</span>
+  </nav>
+</div>
 
-<section class="mx-auto w-full max-w-6xl px-6 py-10">
-  <div class="grid gap-6 md:grid-cols-2">
-    {% for item in agenda %}
-      <article class="content-card">
-        <p class="text-xs uppercase tracking-widest text-slate-500">Item {{ item.AG_Item }}</p>
-        <h2 class="mt-2 text-lg font-semibold text-slate-900">{{ item.AG_Title }}</h2>
-        <p class="mt-1 text-sm text-slate-600">{{ item.AG_Body }}</p>
-      </article>
-    {% else %}
-      <p class="text-slate-500">No agenda data available yet.</p>
-    {% endfor %}
-  </div>
-</section>
+<div class="mb-6">
+  <h1 class="text-3xl font-bold text-gray-900 tracking-tight">Agenda Items</h1>
+</div>
+
+<div class="space-y-4">
+  {% for item in agenda %}
+    <article class="border border-gray-200 rounded-lg p-4 hover:border-gray-300 transition-colors hover-lift bg-white">
+      <div class="flex flex-col gap-2 md:flex-row md:items-start md:justify-between">
+        <div class="flex-1 min-w-0">
+          <div class="flex items-center gap-3 mb-2">
+            <span class="text-[11px] font-semibold uppercase tracking-wide text-muted">Item {{ item.AG_Item }}</span>
+            {% if item.AG_Body %}
+              <span class="px-2 py-0.5 rounded text-xs font-medium bg-gray-100 text-gray-700">{{ item.AG_Body }}</span>
+            {% endif %}
+          </div>
+          <h2 class="text-lg font-medium text-gray-900">{{ item.AG_Title }}</h2>
+          {% if item.AG_Heading %}
+            <p class="mt-1 text-sm text-muted">{{ item.AG_Heading }}</p>
+          {% endif %}
+        </div>
+      </div>
+    </article>
+  {% else %}
+    <div class="border border-gray-200 rounded-lg bg-gray-50 p-12 text-center">
+      <p class="text-muted">No agenda data available yet.</p>
+    </div>
+  {% endfor %}
+</div>
 {% endblock %}
