@@ -5,6 +5,11 @@ on:
     branches: [main]
     paths:
       - 'data/**'
+      - 'src/**'
+      - 'templates/**'
+      - 'static/**'
+      - 'config.yaml'
+      - 'pyproject.toml'
   repository_dispatch:
     types: [data-updated]
   workflow_dispatch:
