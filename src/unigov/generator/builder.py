@@ -257,6 +257,38 @@ def build_proposals_page(ctx: BuildContext, base_path: str, session: str, templa
 
 def build_ga_plenary(ctx: BuildContext, session_number: str) -> None:
     base_path = f"ga/plenary/{session_number}"
+    template = ctx.templates.get_template("ga_plenary.html")
+    data_dir = ctx.config.site.data_dir / "ga" / "plenary" / session_number
+    meetings = load_json(data_dir / "meetings.json") or []
+    documents = load_json(data_dir / "documents.json") or []
+    agenda = load_json(data_dir / "agenda.json") or []
+    decisions = load_json(data_dir / "decisions.json") or []
+    proposals = load_json(data_dir / "proposals.json") or {"result": []}
+
+    def count_documents(items: list[dict[str, Any]]) -> int:
+        total = 0
+        for item in items:
+            docs = item.get("documents") or []
+            total += len(docs)
+        return total
+
+    output = template.render(
+        site=ctx.config.site,
+        session=session_number,
+        stats={
+            "meetings": len(meetings),
+            "agenda": len(agenda),
+            "documents": count_documents(documents),
+            "decisions": len(decisions),
+            "proposals": len(proposals.get("result", [])),
+        },
+        last_build_timestamp=int(datetime.now().timestamp()),
+    )
+
+    output_dir = ctx.config.site.output_dir / base_path
+    ensure_dir(output_dir)
+    (output_dir / "index.html").write_text(output, encoding="utf-8")
+
     build_meetings_page(ctx, base_path, session_number)
     build_agenda_page(ctx, base_path, session_number)
     build_documents_page(ctx, base_path, session_number)

@@ -1,0 +1,127 @@
+{% extends "base.html" %}
+{% set page_title = "Plenary — " ~ session ~ "th Session" %}
+{% set body = "GA" %}
+{% block content %}
+<div class="sdg-banner">
+  <div class="sdg-color sdg-1"></div>
+  <div class="sdg-color sdg-2"></div>
+  <div class="sdg-color sdg-3"></div>
+  <div class="sdg-color sdg-4"></div>
+  <div class="sdg-color sdg-5"></div>
+  <div class="sdg-color sdg-6"></div>
+  <div class="sdg-color sdg-7"></div>
+  <div class="sdg-color sdg-8"></div>
+  <div class="sdg-color sdg-9"></div>
+  <div class="sdg-color sdg-10"></div>
+  <div class="sdg-color sdg-11"></div>
+  <div class="sdg-color sdg-12"></div>
+  <div class="sdg-color sdg-13"></div>
+  <div class="sdg-color sdg-14"></div>
+  <div class="sdg-color sdg-15"></div>
+  <div class="sdg-color sdg-16"></div>
+  <div class="sdg-color sdg-17"></div>
+</div>
+
+<div class="breadcrumbs">
+  <a href="{{ site.base_url }}index.html">Home</a>
+  <span>/</span>
+  <a href="{{ site.base_url }}ga/plenary/80/index.html">General Assembly</a>
+  <span>/</span>
+  <span>Plenary</span>
+</div>
+
+<div class="page-header">
+  <h1>Plenary — {{ session }}th Session</h1>
+  <p class="lead">Official meetings, documents, and decisions of the General Assembly Plenary</p>
+</div>
+
+<div class="stats-grid">
+  <a href="meetings/index.html" class="stat-card">
+    <span class="stat-label">Meetings</span>
+    <span class="stat-number">{{ stats.meetings }}</span>
+  </a>
+  <a href="agenda/index.html" class="stat-card">
+    <span class="stat-label">Agenda Items</span>
+    <span class="stat-number">{{ stats.agenda }}</span>
+  </a>
+  <a href="documents/index.html" class="stat-card">
+    <span class="stat-label">Documents</span>
+    <span class="stat-number">{{ stats.documents }}</span>
+  </a>
+  <a href="decisions/index.html" class="stat-card">
+    <span class="stat-label">Decisions</span>
+    <span class="stat-number">{{ stats.decisions }}</span>
+  </a>
+  <a href="proposals/index.html" class="stat-card">
+    <span class="stat-label">Proposals</span>
+    <span class="stat-number">{{ stats.proposals }}</span>
+  </a>
+</div>
+
+<div class="section-header mt-4">
+  <h2>Quick Navigation</h2>
+</div>
+
+<div class="card-list">
+  <div class="card-list-item">
+    <div class="card-list-main">
+      <h3><a href="meetings/index.html">Meeting Records</a></h3>
+      <div class="card-list-meta">
+        <span class="badge badge-outline">{{ stats.meetings }} meetings</span>
+        <span>Official records and verbatims</span>
+      </div>
+    </div>
+    <div class="card-list-date">
+      <span>Browse all</span>
+    </div>
+  </div>
+  <div class="card-list-item">
+    <div class="card-list-main">
+      <h3><a href="agenda/index.html">Agenda Items</a></h3>
+      <div class="card-list-meta">
+        <span class="badge badge-outline">{{ stats.agenda }} items</span>
+        <span>Complete list of agenda items</span>
+      </div>
+    </div>
+    <div class="card-list-date">
+      <span>Browse all</span>
+    </div>
+  </div>
+  <div class="card-list-item">
+    <div class="card-list-main">
+      <h3><a href="documents/index.html">Documents</a></h3>
+      <div class="card-list-meta">
+        <span class="badge badge-outline">{{ stats.documents }} documents</span>
+        <span>Resolutions, reports, and papers</span>
+      </div>
+    </div>
+    <div class="card-list-date">
+      <span>Browse all</span>
+    </div>
+  </div>
+  <div class="card-list-item">
+    <div class="card-list-main">
+      <h3><a href="decisions/index.html">Decisions</a></h3>
+      <div class="card-list-meta">
+        <span class="badge badge-outline">{{ stats.decisions }} decisions</span>
+        <span>Adopted by the General Assembly</span>
+      </div>
+    </div>
+    <div class="card-list-date">
+      <span>Browse all</span>
+    </div>
+  </div>
+  <div class="card-list-item">
+    <div class="card-list-main">
+      <h3><a href="proposals/index.html">Proposals</a></h3>
+      <div class="card-list-meta">
+        <span class="badge badge-outline">{{ stats.proposals }} proposals</span>
+        <span>Draft resolutions and amendments</span>
+      </div>
+    </div>
+    <div class="card-list-date">
+      <span>Browse all</span>
+    </div>
+  </div>
+</div>
+{% endblock %}

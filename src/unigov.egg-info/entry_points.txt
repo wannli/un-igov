@@ -1,0 +1,2 @@
+[console_scripts]
+unigov = unigov.cli:cli
