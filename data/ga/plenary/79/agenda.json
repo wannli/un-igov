@@ -1,0 +1,3305 @@
+[
+  {
+    "AG_Title": "Opening of the session by the President of the General Assembly",
+    "AG_Allocation": "GA Plenary",
+    "AG_SessionNo": "79",
+    "AG_Item": "1",
+    "AG_Heading": "",
+    "AG_Body": "GA",
+    "_id": "66df3184a876b0ebfad0067f"
+  },
+  {
+    "AG_Title": "Minute of silent prayer or meditation",
+    "AG_Allocation": "GA Plenary",
+    "AG_SessionNo": "79",
+    "AG_Item": "2",
+    "AG_Heading": "",
+    "AG_Body": "GA",
+    "_id": "66df319ba876b0ebfad00681"
+  },
+  {
+    "AG_Title": "Scale of assessments for the apportionment of the expenses of the United Nations",
+    "AG_Allocation": "Fifth Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "143",
+    "AG_Heading": "I. Organizational, administrative and other matters",
+    "AG_Body": "GA",
+    "_id": "66df31ea568e1b88fa3c5943"
+  },
+  {
+    "AG_Title": "Appointment of the members of the Credentials Committee",
+    "AG_Allocation": "GA Plenary",
+    "AG_SessionNo": "79",
+    "AG_Item": "3(a)",
+    "AG_Heading": "",
+    "AG_Body": "GA",
+    "_id": "66df3210568e1b88fa3c5945"
+  },
+  {
+    "AG_Title": "Organization of work, adoption of the agenda and allocation of items: reports of the General Committee",
+    "AG_Allocation": "GA Plenary",
+    "AG_SessionNo": "79",
+    "AG_Item": "7",
+    "AG_Heading": "",
+    "AG_Body": "GA",
+    "_id": "66df3293568e1b88fa3c5947"
+  },
+  {
+    "AG_Title": "Appointment of the Under-Secretary-General for Internal Oversight Services",
+    "AG_Allocation": "GA Plenary",
+    "AG_SessionNo": "79",
+    "AG_Item": "117(j)",
+    "AG_Heading": "I. Organizational, administrative and other matters",
+    "AG_Body": "GA",
+    "_id": "66e06509a876b0ebfadb9bb6"
+  },
+  {
+    "AG_Title": "General debate",
+    "AG_Allocation": "GA Plenary",
+    "AG_SessionNo": "79",
+    "AG_Item": "8",
+    "AG_Heading": "",
+    "AG_Body": "GA",
+    "_id": "66e1bac2a876b0ebfae79e22"
+  },
+  {
+    "AG_Title": "Report of the Secretary-General on the work of the Organization",
+    "AG_Allocation": "GA Plenary",
+    "AG_SessionNo": "79",
+    "AG_Item": "111",
+    "AG_Heading": "I. Organizational, administrative and other matters",
+    "AG_Body": "GA",
+    "_id": "66e33776a876b0ebfafaf77e"
+  },
+  {
+    "AG_Title": "Opening of the session by the President of the General Assembly",
+    "AG_Allocation": "GA Plenary",
+    "AG_SessionNo": "79",
+    "AG_Item": "1",
+    "AG_Heading": "",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469ad5"
+  },
+  {
+    "AG_Title": "Credentials of representatives to the seventy-ninth session of the General Assembly",
+    "AG_Allocation": "GA Plenary",
+    "AG_SessionNo": "79",
+    "AG_Item": "3",
+    "AG_Heading": "",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469ad7"
+  },
+  {
+    "AG_Title": "Organization of work, adoption of the agenda and allocation of items: reports of the General Committee",
+    "AG_Allocation": "GA Plenary",
+    "AG_SessionNo": "79",
+    "AG_Item": "7",
+    "AG_Heading": "",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469add"
+  },
+  {
+    "AG_Title": "General debate",
+    "AG_Allocation": "GA Plenary",
+    "AG_SessionNo": "79",
+    "AG_Item": "8",
+    "AG_Heading": "",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469ade"
+  },
+  {
+    "AG_Title": "Report of the Economic and Social Council",
+    "AG_Allocation": "GA Plenary",
+    "AG_SessionNo": "79",
+    "AG_Item": "9",
+    "AG_Heading": "A. Promotion of sustained economic growth and sustainable development in accordance with the relevant resolutions of the General Assembly and recent United Nations conferences",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469adf"
+  },
+  {
+    "AG_Title": "Return or restitution of cultural property to the countries of origin",
+    "AG_Allocation": "GA Plenary",
+    "AG_SessionNo": "79",
+    "AG_Item": "10",
+    "AG_Heading": "A. Promotion of sustained economic growth and sustainable development in accordance with the relevant resolutions of the General Assembly and recent United Nations conferences",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469ae0"
+  },
+  {
+    "AG_Title": "Implementation of the Declaration of Commitment on HIV/AIDS and the political declarations on HIV/AIDS",
+    "AG_Allocation": "GA Plenary",
+    "AG_SessionNo": "79",
+    "AG_Item": "11",
+    "AG_Heading": "A. Promotion of sustained economic growth and sustainable development in accordance with the relevant resolutions of the General Assembly and recent United Nations conferences",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469ae1"
+  },
+  {
+    "AG_Title": "Report of the Credentials Committee",
+    "AG_Allocation": "GA Plenary",
+    "AG_SessionNo": "79",
+    "AG_Item": "3(b)",
+    "AG_Heading": "",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469ad9"
+  },
+  {
+    "AG_Title": "Appointment of the members of the Credentials Committee",
+    "AG_Allocation": "GA Plenary",
+    "AG_SessionNo": "79",
+    "AG_Item": "3(a)",
+    "AG_Heading": "",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469ad8"
+  },
+  {
+    "AG_Title": "Election of the President of the General Assembly",
+    "AG_Allocation": "GA Plenary",
+    "AG_SessionNo": "79",
+    "AG_Item": "4",
+    "AG_Heading": "",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469ada"
+  },
+  {
+    "AG_Title": "Election of the Vice-Presidents of the General Assembly",
+    "AG_Allocation": "GA Plenary",
+    "AG_SessionNo": "79",
+    "AG_Item": "6",
+    "AG_Heading": "",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469adc"
+  },
+  {
+    "AG_Title": "Election of the officers of the Main Committees",
+    "AG_Allocation": "First Committee; Fourth Committee; Second Committee; Third Committee; Fifth Committee; Sixth Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "5",
+    "AG_Heading": "",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469adb"
+  },
+  {
+    "AG_Title": "Sport for development and peace",
+    "AG_Allocation": "GA Plenary",
+    "AG_SessionNo": "79",
+    "AG_Item": "12",
+    "AG_Heading": "A. Promotion of sustained economic growth and sustainable development in accordance with the relevant resolutions of the General Assembly and recent United Nations conferences",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469ae2"
+  },
+  {
+    "AG_Title": "Integrated and coordinated implementation of and follow-up to the outcomes of the major United Nations conferences and summits in the economic, social and related fields",
+    "AG_Allocation": "GA Plenary",
+    "AG_SessionNo": "79",
+    "AG_Item": "13",
+    "AG_Heading": "A. Promotion of sustained economic growth and sustainable development in accordance with the relevant resolutions of the General Assembly and recent United Nations conferences",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469ae3"
+  },
+  {
+    "AG_Title": "Culture of peace",
+    "AG_Allocation": "GA Plenary",
+    "AG_SessionNo": "79",
+    "AG_Item": "14",
+    "AG_Heading": "A. Promotion of sustained economic growth and sustainable development in accordance with the relevant resolutions of the General Assembly and recent United Nations conferences",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469ae4"
+  },
+  {
+    "AG_Title": "Promoting investments for sustainable development",
+    "AG_Allocation": "Second Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "16(e)",
+    "AG_Heading": "A. Promotion of sustained economic growth and sustainable development in accordance with the relevant resolutions of the General Assembly and recent United Nations conferences",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469aeb"
+  },
+  {
+    "AG_Title": "Sustainable development",
+    "AG_Allocation": "Second Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "18",
+    "AG_Heading": "A. Promotion of sustained economic growth and sustainable development in accordance with the relevant resolutions of the General Assembly and recent United Nations conferences",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469aee"
+  },
+  {
+    "AG_Title": "Promotion of inclusive and effective international cooperation on tax matters at the United Nations",
+    "AG_Allocation": "Second Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "16(f)",
+    "AG_Heading": "A. Promotion of sustained economic growth and sustainable development in accordance with the relevant resolutions of the General Assembly and recent United Nations conferences",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469aec"
+  },
+  {
+    "AG_Title": "Follow-up to and implementation of the outcomes of the International Conferences on Financing for Development",
+    "AG_Allocation": "Second Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "17",
+    "AG_Heading": "A. Promotion of sustained economic growth and sustainable development in accordance with the relevant resolutions of the General Assembly and recent United Nations conferences",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469aed"
+  },
+  {
+    "AG_Title": "Implementation of the United Nations Convention to Combat Desertification in Those Countries Experiencing Serious Drought and/or Desertification, Particularly in Africa",
+    "AG_Allocation": "Second Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "18(e)",
+    "AG_Heading": "A. Promotion of sustained economic growth and sustainable development in accordance with the relevant resolutions of the General Assembly and recent United Nations conferences",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469af3"
+  },
+  {
+    "AG_Title": "Information and communications technologies for sustainable development",
+    "AG_Allocation": "Second Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "15",
+    "AG_Heading": "A. Promotion of sustained economic growth and sustainable development in accordance with the relevant resolutions of the General Assembly and recent United Nations conferences",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469ae5"
+  },
+  {
+    "AG_Title": "International financial system and development",
+    "AG_Allocation": "Second Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "16(b)",
+    "AG_Heading": "A. Promotion of sustained economic growth and sustainable development in accordance with the relevant resolutions of the General Assembly and recent United Nations conferences",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469ae8"
+  },
+  {
+    "AG_Title": "Macroeconomic policy questions",
+    "AG_Allocation": "Second Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "16",
+    "AG_Heading": "A. Promotion of sustained economic growth and sustainable development in accordance with the relevant resolutions of the General Assembly and recent United Nations conferences",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469ae6"
+  },
+  {
+    "AG_Title": "International trade and development",
+    "AG_Allocation": "Second Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "16(a)",
+    "AG_Heading": "A. Promotion of sustained economic growth and sustainable development in accordance with the relevant resolutions of the General Assembly and recent United Nations conferences",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469ae7"
+  },
+  {
+    "AG_Title": "External debt sustainability and development",
+    "AG_Allocation": "Second Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "16(c)",
+    "AG_Heading": "A. Promotion of sustained economic growth and sustainable development in accordance with the relevant resolutions of the General Assembly and recent United Nations conferences",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469ae9"
+  },
+  {
+    "AG_Title": "Promotion of international cooperation to combat illicit financial flows and strengthen good practices on assets return to foster sustainable development",
+    "AG_Allocation": "Second Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "16(d)",
+    "AG_Heading": "A. Promotion of sustained economic growth and sustainable development in accordance with the relevant resolutions of the General Assembly and recent United Nations conferences",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469aea"
+  },
+  {
+    "AG_Title": "Disaster risk reduction",
+    "AG_Allocation": "Second Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "18(c)",
+    "AG_Heading": "A. Promotion of sustained economic growth and sustainable development in accordance with the relevant resolutions of the General Assembly and recent United Nations conferences",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469af1"
+  },
+  {
+    "AG_Title": "Protection of global climate for present and future generations of humankind",
+    "AG_Allocation": "Second Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "18(d)",
+    "AG_Heading": "A. Promotion of sustained economic growth and sustainable development in accordance with the relevant resolutions of the General Assembly and recent United Nations conferences",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469af2"
+  },
+  {
+    "AG_Title": "Towards the achievement of sustainable development: implementation of the 2030 Agenda for Sustainable Development, including through sustainable consumption and production, building on Agenda 21",
+    "AG_Allocation": "Second Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "18(a)",
+    "AG_Heading": "A. Promotion of sustained economic growth and sustainable development in accordance with the relevant resolutions of the General Assembly and recent United Nations conferences",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469aef"
+  },
+  {
+    "AG_Title": "Follow-up to and implementation of the SIDS Accelerated Modalities of Action (SAMOA) Pathway and the Mauritius Strategy for the Further Implementation of the Programme of Action for the Sustainable Development of Small Island Developing States",
+    "AG_Allocation": "Second Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "18(b)",
+    "AG_Heading": "A. Promotion of sustained economic growth and sustainable development in accordance with the relevant resolutions of the General Assembly and recent United Nations conferences",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469af0"
+  },
+  {
+    "AG_Title": "Report of the United Nations Environment Assembly of the United Nations Environment Programme",
+    "AG_Allocation": "Second Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "18(g)",
+    "AG_Heading": "A. Promotion of sustained economic growth and sustainable development in accordance with the relevant resolutions of the General Assembly and recent United Nations conferences",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469af5"
+  },
+  {
+    "AG_Title": "Harmony with Nature",
+    "AG_Allocation": "Second Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "18(h)",
+    "AG_Heading": "A. Promotion of sustained economic growth and sustainable development in accordance with the relevant resolutions of the General Assembly and recent United Nations conferences",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469af6"
+  },
+  {
+    "AG_Title": "Convention on Biological Diversity",
+    "AG_Allocation": "Second Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "18(f)",
+    "AG_Heading": "A. Promotion of sustained economic growth and sustainable development in accordance with the relevant resolutions of the General Assembly and recent United Nations conferences",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469af4"
+  },
+  {
+    "AG_Title": "Combating sand and dust storms",
+    "AG_Allocation": "Second Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "18(j)",
+    "AG_Heading": "A. Promotion of sustained economic growth and sustainable development in accordance with the relevant resolutions of the General Assembly and recent United Nations conferences",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469af8"
+  },
+  {
+    "AG_Title": "Ensuring access to affordable, reliable, sustainable and modern energy for all",
+    "AG_Allocation": "Second Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "18(i)",
+    "AG_Heading": "A. Promotion of sustained economic growth and sustainable development in accordance with the relevant resolutions of the General Assembly and recent United Nations conferences",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469af7"
+  },
+  {
+    "AG_Title": "Promoting the social and solidarity economy for sustainable development",
+    "AG_Allocation": "Second Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "18(k)",
+    "AG_Heading": "A. Promotion of sustained economic growth and sustainable development in accordance with the relevant resolutions of the General Assembly and recent United Nations conferences",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469af9"
+  },
+  {
+    "AG_Title": "Follow-up to the implementation of the New Urban Agenda and strengthening of the United Nations Human Settlements Programme (UN-Habitat)",
+    "AG_Allocation": "Second Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "19",
+    "AG_Heading": "A. Promotion of sustained economic growth and sustainable development in accordance with the relevant resolutions of the General Assembly and recent United Nations conferences",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469afa"
+  },
+  {
+    "AG_Title": "International migration and development",
+    "AG_Allocation": "Second Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "20(b)",
+    "AG_Heading": "A. Promotion of sustained economic growth and sustainable development in accordance with the relevant resolutions of the General Assembly and recent United Nations conferences",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469afd"
+  },
+  {
+    "AG_Title": "Follow-up to the Fifth United Nations Conference on the Least Developed Countries",
+    "AG_Allocation": "Second Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "21(a)",
+    "AG_Heading": "A. Promotion of sustained economic growth and sustainable development in accordance with the relevant resolutions of the General Assembly and recent United Nations conferences",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469aff"
+  },
+  {
+    "AG_Title": "Follow-up to the third United Nations Conference on Landlocked Developing Countries",
+    "AG_Allocation": "Second Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "21(b)",
+    "AG_Heading": "A. Promotion of sustained economic growth and sustainable development in accordance with the relevant resolutions of the General Assembly and recent United Nations conferences",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469b00"
+  },
+  {
+    "AG_Title": "Human resources development",
+    "AG_Allocation": "Second Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "22(d)",
+    "AG_Heading": "A. Promotion of sustained economic growth and sustainable development in accordance with the relevant resolutions of the General Assembly and recent United Nations conferences",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469b05"
+  },
+  {
+    "AG_Title": "Eradicating rural poverty to implement the 2030 Agenda for Sustainable Development",
+    "AG_Allocation": "Second Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "22(e)",
+    "AG_Heading": "A. Promotion of sustained economic growth and sustainable development in accordance with the relevant resolutions of the General Assembly and recent United Nations conferences",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469b06"
+  },
+  {
+    "AG_Title": "Operational activities for development",
+    "AG_Allocation": "Second Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "23",
+    "AG_Heading": "A. Promotion of sustained economic growth and sustainable development in accordance with the relevant resolutions of the General Assembly and recent United Nations conferences",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469b07"
+  },
+  {
+    "AG_Title": "South-South cooperation for development",
+    "AG_Allocation": "Second Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "23(b)",
+    "AG_Heading": "A. Promotion of sustained economic growth and sustainable development in accordance with the relevant resolutions of the General Assembly and recent United Nations conferences",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469b09"
+  },
+  {
+    "AG_Title": "Globalization and interdependence",
+    "AG_Allocation": "Second Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "20",
+    "AG_Heading": "A. Promotion of sustained economic growth and sustainable development in accordance with the relevant resolutions of the General Assembly and recent United Nations conferences",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469afb"
+  },
+  {
+    "AG_Title": "Role of the United Nations in promoting development in the context of globalization and interdependence",
+    "AG_Allocation": "Second Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "20(a)",
+    "AG_Heading": "A. Promotion of sustained economic growth and sustainable development in accordance with the relevant resolutions of the General Assembly and recent United Nations conferences",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469afc"
+  },
+  {
+    "AG_Title": "Groups of countries in special situations",
+    "AG_Allocation": "Second Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "21",
+    "AG_Heading": "A. Promotion of sustained economic growth and sustainable development in accordance with the relevant resolutions of the General Assembly and recent United Nations conferences",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469afe"
+  },
+  {
+    "AG_Title": "Eradication of poverty and other development issues",
+    "AG_Allocation": "Second Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "22",
+    "AG_Heading": "A. Promotion of sustained economic growth and sustainable development in accordance with the relevant resolutions of the General Assembly and recent United Nations conferences",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469b01"
+  },
+  {
+    "AG_Title": "Women in development",
+    "AG_Allocation": "Second Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "22(c)",
+    "AG_Heading": "A. Promotion of sustained economic growth and sustainable development in accordance with the relevant resolutions of the General Assembly and recent United Nations conferences",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469b04"
+  },
+  {
+    "AG_Title": "Operational activities for development of the United Nations system",
+    "AG_Allocation": "Second Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "23(a)",
+    "AG_Heading": "A. Promotion of sustained economic growth and sustainable development in accordance with the relevant resolutions of the General Assembly and recent United Nations conferences",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469b08"
+  },
+  {
+    "AG_Title": "Agriculture development, food security and nutrition",
+    "AG_Allocation": "Second Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "24",
+    "AG_Heading": "A. Promotion of sustained economic growth and sustainable development in accordance with the relevant resolutions of the General Assembly and recent United Nations conferences",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469b0a"
+  },
+  {
+    "AG_Title": "Implementation of the Third United Nations Decade for the Eradication of Poverty (2018\u20132027)",
+    "AG_Allocation": "Second Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "22(a)",
+    "AG_Heading": "A. Promotion of sustained economic growth and sustainable development in accordance with the relevant resolutions of the General Assembly and recent United Nations conferences",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469b02"
+  },
+  {
+    "AG_Title": "Industrial development cooperation",
+    "AG_Allocation": "Second Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "22(b)",
+    "AG_Heading": "A. Promotion of sustained economic growth and sustainable development in accordance with the relevant resolutions of the General Assembly and recent United Nations conferences",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469b03"
+  },
+  {
+    "AG_Title": "Towards global partnerships",
+    "AG_Allocation": "Second Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "25",
+    "AG_Heading": "A. Promotion of sustained economic growth and sustainable development in accordance with the relevant resolutions of the General Assembly and recent United Nations conferences",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469b0b"
+  },
+  {
+    "AG_Title": "Social development",
+    "AG_Allocation": "Third Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "26",
+    "AG_Heading": "A. Promotion of sustained economic growth and sustainable development in accordance with the relevant resolutions of the General Assembly and recent United Nations conferences",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469b0c"
+  },
+  {
+    "AG_Title": "Implementation of the outcome of the World Summit for Social Development and of the twenty-fourth special session of the General Assembly",
+    "AG_Allocation": "Third Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "26(a)",
+    "AG_Heading": "A. Promotion of sustained economic growth and sustainable development in accordance with the relevant resolutions of the General Assembly and recent United Nations conferences",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469b0d"
+  },
+  {
+    "AG_Title": "Social development, including questions relating to the world social situation and to youth, ageing, persons with disabilities and the family",
+    "AG_Allocation": "Third Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "26(b)",
+    "AG_Heading": "A. Promotion of sustained economic growth and sustainable development in accordance with the relevant resolutions of the General Assembly and recent United Nations conferences",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469b0e"
+  },
+  {
+    "AG_Title": "Literacy for life: shaping future agendas",
+    "AG_Allocation": "Third Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "26(c)",
+    "AG_Heading": "A. Promotion of sustained economic growth and sustainable development in accordance with the relevant resolutions of the General Assembly and recent United Nations conferences",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469b0f"
+  },
+  {
+    "AG_Title": "Advancement of women",
+    "AG_Allocation": "Third Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "27",
+    "AG_Heading": "A. Promotion of sustained economic growth and sustainable development in accordance with the relevant resolutions of the General Assembly and recent United Nations conferences",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469b10"
+  },
+  {
+    "AG_Title": "Report of the Security Council",
+    "AG_Allocation": "GA Plenary",
+    "AG_SessionNo": "79",
+    "AG_Item": "28",
+    "AG_Heading": "B. Maintenance of international peace and security",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469b11"
+  },
+  {
+    "AG_Title": "Report of the Peacebuilding Commission",
+    "AG_Allocation": "GA Plenary",
+    "AG_SessionNo": "79",
+    "AG_Item": "29",
+    "AG_Heading": "B. Maintenance of international peace and security",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469b12"
+  },
+  {
+    "AG_Title": "Elimination of unilateral extraterritorial coercive economic measures as a means of political and economic compulsion",
+    "AG_Allocation": "GA Plenary",
+    "AG_SessionNo": "79",
+    "AG_Item": "30",
+    "AG_Heading": "B. Maintenance of international peace and security",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469b13"
+  },
+  {
+    "AG_Title": "Prevention of armed conflict",
+    "AG_Allocation": "GA Plenary",
+    "AG_SessionNo": "79",
+    "AG_Item": "32",
+    "AG_Heading": "B. Maintenance of international peace and security",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469b15"
+  },
+  {
+    "AG_Title": "The role of diamonds in fuelling conflict",
+    "AG_Allocation": "GA Plenary",
+    "AG_SessionNo": "79",
+    "AG_Item": "31",
+    "AG_Heading": "B. Maintenance of international peace and security",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469b14"
+  },
+  {
+    "AG_Title": "Prevention of armed conflict",
+    "AG_Allocation": "GA Plenary",
+    "AG_SessionNo": "79",
+    "AG_Item": "32(a)",
+    "AG_Heading": "B. Maintenance of international peace and security",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469b16"
+  },
+  {
+    "AG_Title": "Strengthening the role of mediation in the peaceful settlement of disputes, conflict prevention and resolution",
+    "AG_Allocation": "GA Plenary",
+    "AG_SessionNo": "79",
+    "AG_Item": "32(b)",
+    "AG_Heading": "B. Maintenance of international peace and security",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469b17"
+  },
+  {
+    "AG_Title": "Question of the Comorian island of Mayotte",
+    "AG_Allocation": "GA Plenary",
+    "AG_SessionNo": "79",
+    "AG_Item": "37",
+    "AG_Heading": "B. Maintenance of international peace and security",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469b1c"
+  },
+  {
+    "AG_Title": "Protracted conflicts in the GUAM area and their implications for international peace, security and development",
+    "AG_Allocation": "GA Plenary",
+    "AG_SessionNo": "79",
+    "AG_Item": "33",
+    "AG_Heading": "B. Maintenance of international peace and security",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469b18"
+  },
+  {
+    "AG_Title": "The situation in the Middle East",
+    "AG_Allocation": "GA Plenary",
+    "AG_SessionNo": "79",
+    "AG_Item": "34",
+    "AG_Heading": "B. Maintenance of international peace and security",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469b19"
+  },
+  {
+    "AG_Title": "Question of Palestine",
+    "AG_Allocation": "GA Plenary",
+    "AG_SessionNo": "79",
+    "AG_Item": "35",
+    "AG_Heading": "B. Maintenance of international peace and security",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469b1a"
+  },
+  {
+    "AG_Title": "The situation in Afghanistan",
+    "AG_Allocation": "GA Plenary",
+    "AG_SessionNo": "79",
+    "AG_Item": "36",
+    "AG_Heading": "B. Maintenance of international peace and security",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469b1b"
+  },
+  {
+    "AG_Title": "The situation in Central America: progress in fashioning a region of peace, freedom, democracy and development",
+    "AG_Allocation": "GA Plenary",
+    "AG_SessionNo": "79",
+    "AG_Item": "39",
+    "AG_Heading": "B. Maintenance of international peace and security",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469b1e"
+  },
+  {
+    "AG_Title": "The situation of democracy and human rights in Haiti",
+    "AG_Allocation": "GA Plenary",
+    "AG_SessionNo": "79",
+    "AG_Item": "43",
+    "AG_Heading": "B. Maintenance of international peace and security",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469b22"
+  },
+  {
+    "AG_Title": "Armed Israeli aggression against the Iraqi nuclear installations and its grave consequences for the established international system concerning the peaceful uses of nuclear energy, the non-proliferation of nuclear weapons and international peace and security",
+    "AG_Allocation": "GA Plenary",
+    "AG_SessionNo": "79",
+    "AG_Item": "44",
+    "AG_Heading": "B. Maintenance of international peace and security",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469b23"
+  },
+  {
+    "AG_Title": "Necessity of ending the economic, commercial and financial embargo imposed by the United States of America against Cuba",
+    "AG_Allocation": "GA Plenary",
+    "AG_SessionNo": "79",
+    "AG_Item": "38",
+    "AG_Heading": "B. Maintenance of international peace and security",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469b1d"
+  },
+  {
+    "AG_Title": "Armed aggression against the Democratic Republic of the Congo",
+    "AG_Allocation": "GA Plenary",
+    "AG_SessionNo": "79",
+    "AG_Item": "41",
+    "AG_Heading": "B. Maintenance of international peace and security",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469b20"
+  },
+  {
+    "AG_Title": "Question of the Falkland Islands (Malvinas)",
+    "AG_Allocation": "GA Plenary",
+    "AG_SessionNo": "79",
+    "AG_Item": "42",
+    "AG_Heading": "B. Maintenance of international peace and security",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469b21"
+  },
+  {
+    "AG_Title": "Consequences of the Iraqi occupation of and aggression against Kuwait",
+    "AG_Allocation": "GA Plenary",
+    "AG_SessionNo": "79",
+    "AG_Item": "45",
+    "AG_Heading": "B. Maintenance of international peace and security",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469b24"
+  },
+  {
+    "AG_Title": "University for Peace",
+    "AG_Allocation": "Fourth Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "46",
+    "AG_Heading": "B. Maintenance of international peace and security",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469b25"
+  },
+  {
+    "AG_Title": "Question of Cyprus",
+    "AG_Allocation": "GA Plenary",
+    "AG_SessionNo": "79",
+    "AG_Item": "40",
+    "AG_Heading": "B. Maintenance of international peace and security",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469b1f"
+  },
+  {
+    "AG_Title": "Effects of atomic radiation",
+    "AG_Allocation": "Fourth Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "47",
+    "AG_Heading": "B. Maintenance of international peace and security",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469b26"
+  },
+  {
+    "AG_Title": "International cooperation in the peaceful uses of outer space",
+    "AG_Allocation": "Fourth Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "48(a)",
+    "AG_Heading": "B. Maintenance of international peace and security",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469b28"
+  },
+  {
+    "AG_Title": "International cooperation in the peaceful uses of outer space",
+    "AG_Allocation": "Fourth Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "48",
+    "AG_Heading": "B. Maintenance of international peace and security",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469b27"
+  },
+  {
+    "AG_Title": "Joint panel discussion of the First and Fourth Committees on possible challenges to space security and sustainability",
+    "AG_Allocation": "Fourth Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "48(b)",
+    "AG_Heading": "B. Maintenance of international peace and security",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469b29"
+  },
+  {
+    "AG_Title": "United Nations Relief and Works Agency for Palestine Refugees in the Near East",
+    "AG_Allocation": "Fourth Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "49",
+    "AG_Heading": "B. Maintenance of international peace and security",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469b2a"
+  },
+  {
+    "AG_Title": "Israeli practices and settlement activities affecting the rights of the Palestinian people and other Arabs of the occupied territories",
+    "AG_Allocation": "Fourth Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "50",
+    "AG_Heading": "B. Maintenance of international peace and security",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469b2b"
+  },
+  {
+    "AG_Title": "Economic and other activities which affect the interests of the peoples of the Non-Self-Governing Territories",
+    "AG_Allocation": "Fourth Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "55",
+    "AG_Heading": "B. Maintenance of international peace and security",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469b30"
+  },
+  {
+    "AG_Title": "Information from Non-Self-Governing Territories transmitted under Article 73 e of the Charter of the United Nations",
+    "AG_Allocation": "Fourth Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "54",
+    "AG_Heading": "B. Maintenance of international peace and security",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469b2f"
+  },
+  {
+    "AG_Title": "Report of the United Nations High Commissioner for Refugees, questions relating to refugees, returnees and displaced persons and humanitarian questions",
+    "AG_Allocation": "Third Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "60",
+    "AG_Heading": "B. Maintenance of international peace and security",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469b35"
+  },
+  {
+    "AG_Title": "Implementation of the Declaration on the Granting of Independence to Colonial Countries and Peoples by the specialized agencies and the international institutions associated with the United Nations",
+    "AG_Allocation": "Fourth Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "56",
+    "AG_Heading": "B. Maintenance of international peace and security",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469b31"
+  },
+  {
+    "AG_Title": "Implementation of the Declaration on the Granting of Independence to Colonial Countries and Peoples",
+    "AG_Allocation": "Fourth Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "58",
+    "AG_Heading": "B. Maintenance of international peace and security",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469b33"
+  },
+  {
+    "AG_Title": "Permanent sovereignty of the Palestinian people in the Occupied Palestinian Territory, including East Jerusalem, and of the Arab population in the occupied Syrian Golan over their natural resources",
+    "AG_Allocation": "Second Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "59",
+    "AG_Heading": "B. Maintenance of international peace and security",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469b34"
+  },
+  {
+    "AG_Title": "Comprehensive review of special political missions",
+    "AG_Allocation": "Fourth Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "52",
+    "AG_Heading": "B. Maintenance of international peace and security",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469b2d"
+  },
+  {
+    "AG_Title": "Comprehensive review of the whole question of peacekeeping operations in all their aspects",
+    "AG_Allocation": "Fourth Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "51",
+    "AG_Heading": "B. Maintenance of international peace and security",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469b2c"
+  },
+  {
+    "AG_Title": "Questions relating to information",
+    "AG_Allocation": "Fourth Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "53",
+    "AG_Heading": "B. Maintenance of international peace and security",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469b2e"
+  },
+  {
+    "AG_Title": "Peacebuilding and sustaining peace",
+    "AG_Allocation": "GA Plenary",
+    "AG_SessionNo": "79",
+    "AG_Item": "61",
+    "AG_Heading": "B. Maintenance of international peace and security",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469b36"
+  },
+  {
+    "AG_Title": "The situation in the temporarily occupied territories of Ukraine",
+    "AG_Allocation": "GA Plenary",
+    "AG_SessionNo": "79",
+    "AG_Item": "62",
+    "AG_Heading": "B. Maintenance of international peace and security",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469b37"
+  },
+  {
+    "AG_Title": "Offers by Member States of study and training facilities for inhabitants of Non-Self-Governing Territories",
+    "AG_Allocation": "Fourth Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "57",
+    "AG_Heading": "B. Maintenance of international peace and security",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469b32"
+  },
+  {
+    "AG_Title": "From the New Partnership for Africa\u2019s Development to Agenda 2063: progress in the implementation of sustainable development in Africa and international support",
+    "AG_Allocation": "GA Plenary",
+    "AG_SessionNo": "79",
+    "AG_Item": "65",
+    "AG_Heading": "C. Development of Africa",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469b3a"
+  },
+  {
+    "AG_Title": "Use of the veto",
+    "AG_Allocation": "GA Plenary",
+    "AG_SessionNo": "79",
+    "AG_Item": "63",
+    "AG_Heading": "B. Maintenance of international peace and security",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469b38"
+  },
+  {
+    "AG_Title": "Zone of peace, trust and cooperation of Central Asia",
+    "AG_Allocation": "GA Plenary",
+    "AG_SessionNo": "79",
+    "AG_Item": "64",
+    "AG_Heading": "B. Maintenance of international peace and security",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469b39"
+  },
+  {
+    "AG_Title": "From the New Partnership for Africa\u2019s Development to Agenda 2063: progress in the implementation of sustainable development in Africa and international support",
+    "AG_Allocation": "GA Plenary",
+    "AG_SessionNo": "79",
+    "AG_Item": "65(a)",
+    "AG_Heading": "C. Development of Africa",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469b3b"
+  },
+  {
+    "AG_Title": "Comprehensive implementation of and follow-up to the Durban Declaration and Programme of Action",
+    "AG_Allocation": "Third Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "69(b)",
+    "AG_Heading": "D. Promotion of human rights ",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469b46"
+  },
+  {
+    "AG_Title": "Rights of Indigenous Peoples",
+    "AG_Allocation": "Third Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "68",
+    "AG_Heading": "D. Promotion of human rights ",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469b41"
+  },
+  {
+    "AG_Title": "Right of peoples to self-determination",
+    "AG_Allocation": "Third Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "70",
+    "AG_Heading": "D. Promotion of human rights ",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469b47"
+  },
+  {
+    "AG_Title": "Strengthening of the coordination of humanitarian and disaster relief assistance of the United Nations, including special economic assistance",
+    "AG_Allocation": "GA Plenary",
+    "AG_SessionNo": "79",
+    "AG_Item": "72",
+    "AG_Heading": "E. Effective coordination of humanitarian assistance efforts",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469b4d"
+  },
+  {
+    "AG_Title": "Implementation of human rights instruments",
+    "AG_Allocation": "Third Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "71(a)",
+    "AG_Heading": "D. Promotion of human rights ",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469b49"
+  },
+  {
+    "AG_Title": "Human rights questions, including alternative approaches for improving the effective enjoyment of human rights and fundamental freedoms",
+    "AG_Allocation": "Third Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "71(b)",
+    "AG_Heading": "D. Promotion of human rights ",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469b4a"
+  },
+  {
+    "AG_Title": "Human rights situations and reports of special rapporteurs and representatives",
+    "AG_Allocation": "Third Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "71(c)",
+    "AG_Heading": "D. Promotion of human rights ",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469b4b"
+  },
+  {
+    "AG_Title": "Comprehensive implementation of and follow-up to the Vienna Declaration and Programme of Action",
+    "AG_Allocation": "Third Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "71(d)",
+    "AG_Heading": "D. Promotion of human rights ",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469b4c"
+  },
+  {
+    "AG_Title": "Follow-up to the outcome of the special session on children",
+    "AG_Allocation": "Third Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "67(b)",
+    "AG_Heading": "D. Promotion of human rights ",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469b40"
+  },
+  {
+    "AG_Title": "Follow-up to the outcome document of the high-level plenary meeting of the General Assembly known as the World Conference on Indigenous Peoples",
+    "AG_Allocation": "Third Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "68(b)",
+    "AG_Heading": "D. Promotion of human rights ",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469b43"
+  },
+  {
+    "AG_Title": "Elimination of racism, racial discrimination, xenophobia and related intolerance",
+    "AG_Allocation": "Third Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "69(a)",
+    "AG_Heading": "D. Promotion of human rights ",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469b45"
+  },
+  {
+    "AG_Title": "Causes of conflict and the promotion of durable peace and sustainable development in Africa",
+    "AG_Allocation": "GA Plenary",
+    "AG_SessionNo": "79",
+    "AG_Item": "65(b)",
+    "AG_Heading": "C. Development of Africa",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469b3c"
+  },
+  {
+    "AG_Title": "Report of the Human Rights Council",
+    "AG_Allocation": "Third Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "66",
+    "AG_Heading": "D. Promotion of human rights ",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469b3d"
+  },
+  {
+    "AG_Title": "Promotion and protection of the rights of children",
+    "AG_Allocation": "Third Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "67",
+    "AG_Heading": "D. Promotion of human rights ",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469b3e"
+  },
+  {
+    "AG_Title": "Promotion and protection of the rights of children",
+    "AG_Allocation": "Third Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "67(a)",
+    "AG_Heading": "D. Promotion of human rights ",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469b3f"
+  },
+  {
+    "AG_Title": "Rights of Indigenous Peoples",
+    "AG_Allocation": "Third Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "68(a)",
+    "AG_Heading": "D. Promotion of human rights ",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469b42"
+  },
+  {
+    "AG_Title": "Elimination of racism, racial discrimination, xenophobia and related intolerance",
+    "AG_Allocation": "Third Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "69",
+    "AG_Heading": "D. Promotion of human rights ",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469b44"
+  },
+  {
+    "AG_Title": "Promotion and protection of human rights",
+    "AG_Allocation": "Third Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "71",
+    "AG_Heading": "D. Promotion of human rights ",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469b48"
+  },
+  {
+    "AG_Title": "Strengthening of the coordination of emergency humanitarian assistance of the United Nations",
+    "AG_Allocation": "GA Plenary",
+    "AG_SessionNo": "79",
+    "AG_Item": "72(a)",
+    "AG_Heading": "E. Effective coordination of humanitarian assistance efforts",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469b4e"
+  },
+  {
+    "AG_Title": "Assistance to the Palestinian people",
+    "AG_Allocation": "GA Plenary",
+    "AG_SessionNo": "79",
+    "AG_Item": "72(b)",
+    "AG_Heading": "E. Effective coordination of humanitarian assistance efforts",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469b4f"
+  },
+  {
+    "AG_Title": "Special economic assistance to individual countries or regions",
+    "AG_Allocation": "GA Plenary",
+    "AG_SessionNo": "79",
+    "AG_Item": "72(c)",
+    "AG_Heading": "E. Effective coordination of humanitarian assistance efforts",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469b50"
+  },
+  {
+    "AG_Title": "Oceans and the law of the sea",
+    "AG_Allocation": "GA Plenary",
+    "AG_SessionNo": "79",
+    "AG_Item": "75",
+    "AG_Heading": "F. Promotion of justice and international law",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469b53"
+  },
+  {
+    "AG_Title": "Report of the International Court of Justice",
+    "AG_Allocation": "GA Plenary",
+    "AG_SessionNo": "79",
+    "AG_Item": "73",
+    "AG_Heading": "F. Promotion of justice and international law",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469b51"
+  },
+  {
+    "AG_Title": "Report of the International Criminal Court",
+    "AG_Allocation": "GA Plenary",
+    "AG_SessionNo": "79",
+    "AG_Item": "74",
+    "AG_Heading": "F. Promotion of justice and international law",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469b52"
+  },
+  {
+    "AG_Title": "Oceans and the law of the sea",
+    "AG_Allocation": "GA Plenary",
+    "AG_SessionNo": "79",
+    "AG_Item": "75(a)",
+    "AG_Heading": "F. Promotion of justice and international law",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469b54"
+  },
+  {
+    "AG_Title": "Sustainable fisheries, including through the 1995 Agreement for the Implementation of the Provisions of the United Nations Convention on the Law of the Sea of 10 December 1982 relating to the Conservation and Management of Straddling Fish Stocks and Highly Migratory Fish Stocks, and related instruments",
+    "AG_Allocation": "GA Plenary",
+    "AG_SessionNo": "79",
+    "AG_Item": "75(b)",
+    "AG_Heading": "F. Promotion of justice and international law",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469b55"
+  },
+  {
+    "AG_Title": "Agreement under the United Nations Convention on the Law of the Sea on the Conservation and Sustainable Use of Marine Biological Diversity of Areas beyond National Jurisdiction",
+    "AG_Allocation": "GA Plenary",
+    "AG_SessionNo": "79",
+    "AG_Item": "75(c)",
+    "AG_Heading": "F. Promotion of justice and international law",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469b56"
+  },
+  {
+    "AG_Title": "United Nations Programme of Assistance in the Teaching, Study, Dissemination and Wider Appreciation of International Law",
+    "AG_Allocation": "Sixth Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "78",
+    "AG_Heading": "F. Promotion of justice and international law",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469b59"
+  },
+  {
+    "AG_Title": "Crimes against humanity",
+    "AG_Allocation": "Sixth Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "80",
+    "AG_Heading": "F. Promotion of justice and international law",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469b5b"
+  },
+  {
+    "AG_Title": "Criminal accountability of United Nations officials and experts on mission",
+    "AG_Allocation": "Sixth Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "76",
+    "AG_Heading": "F. Promotion of justice and international law",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469b57"
+  },
+  {
+    "AG_Title": "Report of the International Law Commission on the work of its seventy-fifth session",
+    "AG_Allocation": "Sixth Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "79",
+    "AG_Heading": "F. Promotion of justice and international law",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469b5a"
+  },
+  {
+    "AG_Title": "Status of the Protocols Additional to the Geneva Conventions of 1949 and relating to the protection of victims of armed conflicts",
+    "AG_Allocation": "Sixth Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "81",
+    "AG_Heading": "F. Promotion of justice and international law",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469b5c"
+  },
+  {
+    "AG_Title": "Consideration of effective measures to enhance the protection, security and safety of diplomatic and consular missions and representatives",
+    "AG_Allocation": "Sixth Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "82",
+    "AG_Heading": "F. Promotion of justice and international law",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469b5d"
+  },
+  {
+    "AG_Title": "Report of the Special Committee on the Charter of the United Nations and on the Strengthening of the Role of the Organization",
+    "AG_Allocation": "Sixth Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "83",
+    "AG_Heading": "F. Promotion of justice and international law",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469b5e"
+  },
+  {
+    "AG_Title": "Report of the United Nations Commission on International Trade Law on the work of its fifty-seventh session",
+    "AG_Allocation": "Sixth Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "77",
+    "AG_Heading": "F. Promotion of justice and international law",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469b58"
+  },
+  {
+    "AG_Title": "The rule of law at the national and international levels",
+    "AG_Allocation": "Sixth Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "84",
+    "AG_Heading": "F. Promotion of justice and international law",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469b5f"
+  },
+  {
+    "AG_Title": "The scope and application of the principle of universal jurisdiction",
+    "AG_Allocation": "Sixth Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "85",
+    "AG_Heading": "F. Promotion of justice and international law",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469b60"
+  },
+  {
+    "AG_Title": "Protection of persons in the event of disasters",
+    "AG_Allocation": "Sixth Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "86",
+    "AG_Heading": "F. Promotion of justice and international law",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469b61"
+  },
+  {
+    "AG_Title": "Request for an advisory opinion of the International Court of Justice on the legal consequences of the separation of the Chagos Archipelago from Mauritius in 1965",
+    "AG_Allocation": "GA Plenary",
+    "AG_SessionNo": "79",
+    "AG_Item": "87",
+    "AG_Heading": "F. Promotion of justice and international law",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469b62"
+  },
+  {
+    "AG_Title": "Extraordinary Chambers in the Courts of Cambodia \u2013 residual functions",
+    "AG_Allocation": "GA Plenary",
+    "AG_SessionNo": "79",
+    "AG_Item": "88",
+    "AG_Heading": "F. Promotion of justice and international law",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469b63"
+  },
+  {
+    "AG_Title": "Reducing space threats through norms, rules and principles of responsible behaviours",
+    "AG_Allocation": "First Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "96(d)",
+    "AG_Heading": "G. Disarmament",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469b6f"
+  },
+  {
+    "AG_Title": "Notification of nuclear tests",
+    "AG_Allocation": "First Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "98(c)",
+    "AG_Heading": "G. Disarmament",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469b74"
+  },
+  {
+    "AG_Title": "Convening of the fourth special session of the General Assembly devoted to disarmament",
+    "AG_Allocation": "First Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "98(g)",
+    "AG_Heading": "G. Disarmament",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469b78"
+  },
+  {
+    "AG_Title": "Report of the International Atomic Energy Agency",
+    "AG_Allocation": "GA Plenary",
+    "AG_SessionNo": "79",
+    "AG_Item": "89",
+    "AG_Heading": "G. Disarmament",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469b64"
+  },
+  {
+    "AG_Title": "Developments in the field of information and telecommunications in the context of international security",
+    "AG_Allocation": "First Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "93",
+    "AG_Heading": "G. Disarmament",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469b68"
+  },
+  {
+    "AG_Title": "Conclusion of effective international arrangements to assure non-nuclear-weapon States against the use or threat of use of nuclear weapons",
+    "AG_Allocation": "First Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "95",
+    "AG_Heading": "G. Disarmament",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469b6a"
+  },
+  {
+    "AG_Title": "Nuclear disarmament",
+    "AG_Allocation": "First Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "98(b)",
+    "AG_Heading": "G. Disarmament",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469b73"
+  },
+  {
+    "AG_Title": "Reduction of military budgets",
+    "AG_Allocation": "First Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "90",
+    "AG_Heading": "G. Disarmament",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469b65"
+  },
+  {
+    "AG_Title": "African Nuclear-Weapon-Free Zone Treaty",
+    "AG_Allocation": "First Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "91",
+    "AG_Heading": "G. Disarmament",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469b66"
+  },
+  {
+    "AG_Title": "Establishment of a nuclear-weapon-free zone in the region of the Middle East",
+    "AG_Allocation": "First Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "94",
+    "AG_Heading": "G. Disarmament",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469b69"
+  },
+  {
+    "AG_Title": "Prevention of an arms race in outer space",
+    "AG_Allocation": "First Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "96(a)",
+    "AG_Heading": "G. Disarmament",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469b6c"
+  },
+  {
+    "AG_Title": "Treaty banning the production of fissile material for nuclear weapons or other nuclear explosive devices",
+    "AG_Allocation": "First Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "98(a)",
+    "AG_Heading": "G. Disarmament",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469b72"
+  },
+  {
+    "AG_Title": "Regional disarmament",
+    "AG_Allocation": "First Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "98(e)",
+    "AG_Heading": "G. Disarmament",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469b76"
+  },
+  {
+    "AG_Title": "Observance of environmental norms in the drafting and implementation of agreements on disarmament and arms control",
+    "AG_Allocation": "First Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "98(h)",
+    "AG_Heading": "G. Disarmament",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469b79"
+  },
+  {
+    "AG_Title": "Maintenance of international security \u2013 good-neighbourliness, stability and development in South-Eastern Europe",
+    "AG_Allocation": "First Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "92",
+    "AG_Heading": "G. Disarmament",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469b67"
+  },
+  {
+    "AG_Title": "Prevention of an arms race in outer space",
+    "AG_Allocation": "First Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "96",
+    "AG_Heading": "G. Disarmament",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469b6b"
+  },
+  {
+    "AG_Title": "No first placement of weapons in outer space",
+    "AG_Allocation": "First Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "96(b)",
+    "AG_Heading": "G. Disarmament",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469b6d"
+  },
+  {
+    "AG_Title": "Further practical measures for the prevention of an arms race in outer space",
+    "AG_Allocation": "First Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "96(c)",
+    "AG_Heading": "G. Disarmament",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469b6e"
+  },
+  {
+    "AG_Title": "Role of science and technology in the context of international security and disarmament",
+    "AG_Allocation": "First Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "97",
+    "AG_Heading": "G. Disarmament",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469b70"
+  },
+  {
+    "AG_Title": "General and complete disarmament",
+    "AG_Allocation": "GA Plenary; First Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "98",
+    "AG_Heading": "G. Disarmament",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469b71"
+  },
+  {
+    "AG_Title": "Relationship between disarmament and development",
+    "AG_Allocation": "First Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "98(d)",
+    "AG_Heading": "G. Disarmament",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469b75"
+  },
+  {
+    "AG_Title": "Conventional arms control at the regional and subregional levels",
+    "AG_Allocation": "First Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "98(f)",
+    "AG_Heading": "G. Disarmament",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469b77"
+  },
+  {
+    "AG_Title": "Follow-up to the advisory opinion of the International Court of Justice on the legality of the threat or use of nuclear weapons",
+    "AG_Allocation": "First Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "98(i)",
+    "AG_Heading": "G. Disarmament",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469b7a"
+  },
+  {
+    "AG_Title": "Implementation of the Convention on the Prohibition of the Development, Production, Stockpiling and Use of Chemical Weapons and on Their Destruction",
+    "AG_Allocation": "First Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "98(j)",
+    "AG_Heading": "G. Disarmament",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469b7b"
+  },
+  {
+    "AG_Title": "Measures to uphold the authority of the 1925 Geneva Protocol",
+    "AG_Allocation": "First Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "98(k)",
+    "AG_Heading": "G. Disarmament",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469b7c"
+  },
+  {
+    "AG_Title": "Implementation of the Convention on the Prohibition of the Use, Stockpiling, Production and Transfer of Anti-Personnel Mines and on Their Destruction",
+    "AG_Allocation": "First Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "98(l)",
+    "AG_Heading": "G. Disarmament",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469b7d"
+  },
+  {
+    "AG_Title": "Assistance to States for curbing the illicit traffic in small arms and light weapons and collecting them",
+    "AG_Allocation": "First Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "98(m)",
+    "AG_Heading": "G. Disarmament",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469b7e"
+  },
+  {
+    "AG_Title": "Treaty on a Nuclear-Weapon-Free Zone in Central Asia",
+    "AG_Allocation": "First Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "98(n)",
+    "AG_Heading": "G. Disarmament",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469b7f"
+  },
+  {
+    "AG_Title": "The illicit trade in small arms and light weapons in all its aspects",
+    "AG_Allocation": "First Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "98(p)",
+    "AG_Heading": "G. Disarmament",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469b81"
+  },
+  {
+    "AG_Title": "Disarmament and non-proliferation education",
+    "AG_Allocation": "First Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "98(t)",
+    "AG_Heading": "G. Disarmament",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469b85"
+  },
+  {
+    "AG_Title": "Promotion of multilateralism in the area of disarmament and non\u2011proliferation",
+    "AG_Allocation": "First Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "98(u)",
+    "AG_Heading": "G. Disarmament",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469b86"
+  },
+  {
+    "AG_Title": "Towards a nuclear-weapon-free world: accelerating the implementation of nuclear disarmament commitments",
+    "AG_Allocation": "First Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "98(q)",
+    "AG_Heading": "G. Disarmament",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469b82"
+  },
+  {
+    "AG_Title": "Mongolia\u2019s international security and nuclear-weapon-free status",
+    "AG_Allocation": "First Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "98(r)",
+    "AG_Heading": "G. Disarmament",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469b83"
+  },
+  {
+    "AG_Title": "Missiles",
+    "AG_Allocation": "First Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "98(s)",
+    "AG_Heading": "G. Disarmament",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469b84"
+  },
+  {
+    "AG_Title": "Measures to prevent terrorists from acquiring weapons of mass destruction",
+    "AG_Allocation": "First Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "98(v)",
+    "AG_Heading": "G. Disarmament",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469b87"
+  },
+  {
+    "AG_Title": "Confidence-building measures in the regional and subregional context",
+    "AG_Allocation": "First Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "98(w)",
+    "AG_Heading": "G. Disarmament",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469b88"
+  },
+  {
+    "AG_Title": "The Hague Code of Conduct against Ballistic Missile Proliferation",
+    "AG_Allocation": "First Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "98(x)",
+    "AG_Heading": "G. Disarmament",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469b89"
+  },
+  {
+    "AG_Title": "Reducing nuclear danger",
+    "AG_Allocation": "First Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "98(o)",
+    "AG_Heading": "G. Disarmament",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469b80"
+  },
+  {
+    "AG_Title": "Information on confidence-building measures in the field of conventional arms",
+    "AG_Allocation": "First Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "98(y)",
+    "AG_Heading": "G. Disarmament",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469b8a"
+  },
+  {
+    "AG_Title": "Transparency and confidence-building measures in outer space activities",
+    "AG_Allocation": "First Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "98(aa)",
+    "AG_Heading": "G. Disarmament",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469b8c"
+  },
+  {
+    "AG_Title": "Through-life conventional ammunition management",
+    "AG_Allocation": "First Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "98(z)",
+    "AG_Heading": "G. Disarmament",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469b8b"
+  },
+  {
+    "AG_Title": "The Arms Trade Treaty",
+    "AG_Allocation": "First Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "98(bb)",
+    "AG_Heading": "G. Disarmament",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469b8d"
+  },
+  {
+    "AG_Title": "Women, disarmament, non-proliferation and arms control",
+    "AG_Allocation": "First Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "98(ff)",
+    "AG_Heading": "G. Disarmament",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469b91"
+  },
+  {
+    "AG_Title": "Preventing the acquisition by terrorists of radioactive sources",
+    "AG_Allocation": "First Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "98(dd)",
+    "AG_Heading": "G. Disarmament",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469b8f"
+  },
+  {
+    "AG_Title": "Steps to building a common roadmap towards a world without nuclear weapons",
+    "AG_Allocation": "First Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "98(gg)",
+    "AG_Heading": "G. Disarmament",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469b92"
+  },
+  {
+    "AG_Title": "Follow-up to the 2013 high-level meeting of the General Assembly on nuclear disarmament",
+    "AG_Allocation": "First Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "98(hh)",
+    "AG_Heading": "G. Disarmament",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469b93"
+  },
+  {
+    "AG_Title": "Compliance with non-proliferation, arms limitation and disarmament agreements and commitments",
+    "AG_Allocation": "First Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "98(ee)",
+    "AG_Heading": "G. Disarmament",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469b90"
+  },
+  {
+    "AG_Title": "Effects of the use of armaments and ammunitions containing depleted uranium",
+    "AG_Allocation": "First Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "98(cc)",
+    "AG_Heading": "G. Disarmament",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469b8e"
+  },
+  {
+    "AG_Title": "Joint panel discussion of the First and Fourth Committees on possible challenges to space security and sustainability",
+    "AG_Allocation": "First Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "98(ii)",
+    "AG_Heading": "G. Disarmament",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469b94"
+  },
+  {
+    "AG_Title": "Countering the threat posed by improvised explosive devices",
+    "AG_Allocation": "First Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "98(jj)",
+    "AG_Heading": "G. Disarmament",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469b95"
+  },
+  {
+    "AG_Title": "Implementation of the Convention on Cluster Munitions",
+    "AG_Allocation": "First Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "98(mm)",
+    "AG_Heading": "G. Disarmament",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469b98"
+  },
+  {
+    "AG_Title": "Lethal autonomous weapons systems",
+    "AG_Allocation": "First Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "98(ss)",
+    "AG_Heading": "G. Disarmament",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469b9e"
+  },
+  {
+    "AG_Title": "Ethical imperatives for a nuclear-weapon-free world",
+    "AG_Allocation": "First Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "98(ll)",
+    "AG_Heading": "G. Disarmament",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469b97"
+  },
+  {
+    "AG_Title": "Universal Declaration on the Achievement of a Nuclear-Weapon-Free World",
+    "AG_Allocation": "First Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "98(nn)",
+    "AG_Heading": "G. Disarmament",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469b99"
+  },
+  {
+    "AG_Title": "Treaty on the Prohibition of Nuclear Weapons",
+    "AG_Allocation": "First Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "98(pp)",
+    "AG_Heading": "G. Disarmament",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469b9b"
+  },
+  {
+    "AG_Title": "Strengthening and developing the system of arms control, disarmament and non-proliferation treaties and agreements",
+    "AG_Allocation": "First Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "98(qq)",
+    "AG_Heading": "G. Disarmament",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469b9c"
+  },
+  {
+    "AG_Title": "Addressing the legacy of nuclear weapons: providing victim assistance and environmental remediation to Member States affected by the use or testing of nuclear weapons",
+    "AG_Allocation": "First Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "98(rr)",
+    "AG_Heading": "G. Disarmament",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469b9d"
+  },
+  {
+    "AG_Title": "Humanitarian consequences of nuclear weapons",
+    "AG_Allocation": "First Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "98(kk)",
+    "AG_Heading": "G. Disarmament",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469b96"
+  },
+  {
+    "AG_Title": "Nuclear disarmament verification",
+    "AG_Allocation": "First Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "98(oo)",
+    "AG_Heading": "G. Disarmament",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469b9a"
+  },
+  {
+    "AG_Title": "Review and implementation of the Concluding Document of the Twelfth Special Session of the General Assembly",
+    "AG_Allocation": "First Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "99",
+    "AG_Heading": "G. Disarmament",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469b9f"
+  },
+  {
+    "AG_Title": "Convention on the Prohibition of the Use of Nuclear Weapons",
+    "AG_Allocation": "First Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "99(b)",
+    "AG_Heading": "G. Disarmament",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469ba1"
+  },
+  {
+    "AG_Title": "United Nations disarmament fellowship, training and advisory services",
+    "AG_Allocation": "First Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "99(a)",
+    "AG_Heading": "G. Disarmament",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469ba0"
+  },
+  {
+    "AG_Title": "United Nations Regional Centre for Peace and Disarmament in Africa",
+    "AG_Allocation": "First Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "99(c)",
+    "AG_Heading": "G. Disarmament",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469ba2"
+  },
+  {
+    "AG_Title": "United Nations Regional Centre for Peace and Disarmament in Asia and the Pacific",
+    "AG_Allocation": "First Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "99(e)",
+    "AG_Heading": "G. Disarmament",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469ba4"
+  },
+  {
+    "AG_Title": "United Nations Regional Centre for Peace, Disarmament and Development in Latin America and the Caribbean",
+    "AG_Allocation": "First Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "99(d)",
+    "AG_Heading": "G. Disarmament",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469ba3"
+  },
+  {
+    "AG_Title": "Regional confidence-building measures: activities of the United Nations Standing Advisory Committee on Security Questions in Central Africa",
+    "AG_Allocation": "First Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "99(f)",
+    "AG_Heading": "G. Disarmament",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469ba5"
+  },
+  {
+    "AG_Title": "United Nations regional centres for peace and disarmament",
+    "AG_Allocation": "First Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "99(h)",
+    "AG_Heading": "G. Disarmament",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469ba7"
+  },
+  {
+    "AG_Title": "United Nations Disarmament Information Programme",
+    "AG_Allocation": "First Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "99(g)",
+    "AG_Heading": "G. Disarmament",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469ba6"
+  },
+  {
+    "AG_Title": "Review of the implementation of the recommendations and decisions adopted by the General Assembly at its tenth special session",
+    "AG_Allocation": "First Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "100",
+    "AG_Heading": "G. Disarmament",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469ba8"
+  },
+  {
+    "AG_Title": "Report of the Disarmament Commission",
+    "AG_Allocation": "First Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "100(b)",
+    "AG_Heading": "G. Disarmament",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469baa"
+  },
+  {
+    "AG_Title": "Report of the Conference on Disarmament",
+    "AG_Allocation": "First Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "100(a)",
+    "AG_Heading": "G. Disarmament",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469ba9"
+  },
+  {
+    "AG_Title": "The risk of nuclear proliferation in the Middle East",
+    "AG_Allocation": "First Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "101",
+    "AG_Heading": "G. Disarmament",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469bab"
+  },
+  {
+    "AG_Title": "Convention on Prohibitions or Restrictions on the Use of Certain Conventional Weapons Which May Be Deemed to Be Excessively Injurious or to Have Indiscriminate Effects",
+    "AG_Allocation": "First Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "102",
+    "AG_Heading": "G. Disarmament",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469bac"
+  },
+  {
+    "AG_Title": "Comprehensive Nuclear-Test-Ban Treaty",
+    "AG_Allocation": "First Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "104",
+    "AG_Heading": "G. Disarmament",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469bae"
+  },
+  {
+    "AG_Title": "Strengthening of security and cooperation in the Mediterranean region",
+    "AG_Allocation": "First Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "103",
+    "AG_Heading": "G. Disarmament",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469bad"
+  },
+  {
+    "AG_Title": "Crime prevention and criminal justice",
+    "AG_Allocation": "Third Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "107",
+    "AG_Heading": "H. Drug control, crime prevention and combating international terrorism in all its forms and manifestations",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469bb1"
+  },
+  {
+    "AG_Title": "Countering the use of information and communications technologies for criminal purposes",
+    "AG_Allocation": "Third Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "108",
+    "AG_Heading": "H. Drug control, crime prevention and combating international terrorism in all its forms and manifestations",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469bb2"
+  },
+  {
+    "AG_Title": "Convention on the Prohibition of the Development, Production and Stockpiling of Bacteriological (Biological) and Toxin Weapons and on Their Destruction",
+    "AG_Allocation": "First Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "105",
+    "AG_Heading": "G. Disarmament",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469baf"
+  },
+  {
+    "AG_Title": "Promoting international cooperation on peaceful uses in the context of international security",
+    "AG_Allocation": "First Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "106",
+    "AG_Heading": "G. Disarmament",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469bb0"
+  },
+  {
+    "AG_Title": "Measures to eliminate international terrorism",
+    "AG_Allocation": "Sixth Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "110",
+    "AG_Heading": "H. Drug control, crime prevention and combating international terrorism in all its forms and manifestations",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469bb4"
+  },
+  {
+    "AG_Title": "International drug control",
+    "AG_Allocation": "Third Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "109",
+    "AG_Heading": "H. Drug control, crime prevention and combating international terrorism in all its forms and manifestations",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469bb3"
+  },
+  {
+    "AG_Title": "Election of non-permanent members of the Security Council",
+    "AG_Allocation": "GA Plenary",
+    "AG_SessionNo": "79",
+    "AG_Item": "114(a)",
+    "AG_Heading": "I. Organizational, administrative and other matters",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469bb9"
+  },
+  {
+    "AG_Title": "Report of the Secretary-General on the Peacebuilding Fund",
+    "AG_Allocation": "GA Plenary",
+    "AG_SessionNo": "79",
+    "AG_Item": "112",
+    "AG_Heading": "I. Organizational, administrative and other matters",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469bb6"
+  },
+  {
+    "AG_Title": "Notification by the Secretary-General under Article 12, paragraph 2, of the Charter of the United Nations",
+    "AG_Allocation": "GA Plenary",
+    "AG_SessionNo": "79",
+    "AG_Item": "113",
+    "AG_Heading": "I. Organizational, administrative and other matters",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469bb7"
+  },
+  {
+    "AG_Title": "Report of the Secretary-General on the work of the Organization",
+    "AG_Allocation": "GA Plenary",
+    "AG_SessionNo": "79",
+    "AG_Item": "111",
+    "AG_Heading": "I. Organizational, administrative and other matters",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469bb5"
+  },
+  {
+    "AG_Title": "Elections to fill vacancies in principal organs",
+    "AG_Allocation": "GA Plenary",
+    "AG_SessionNo": "79",
+    "AG_Item": "114",
+    "AG_Heading": "I. Organizational, administrative and other matters",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469bb8"
+  },
+  {
+    "AG_Title": "Election of members of the Economic and Social Council",
+    "AG_Allocation": "GA Plenary",
+    "AG_SessionNo": "79",
+    "AG_Item": "114(b)",
+    "AG_Heading": "I. Organizational, administrative and other matters",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469bba"
+  },
+  {
+    "AG_Title": "Elections to fill vacancies in subsidiary organs and other elections",
+    "AG_Allocation": "GA Plenary",
+    "AG_SessionNo": "79",
+    "AG_Item": "115",
+    "AG_Heading": "I. Organizational, administrative and other matters",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469bbb"
+  },
+  {
+    "AG_Title": "Election of members of the Committee for Programme and Coordination",
+    "AG_Allocation": "GA Plenary",
+    "AG_SessionNo": "79",
+    "AG_Item": "115(a)",
+    "AG_Heading": "I. Organizational, administrative and other matters",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469bbc"
+  },
+  {
+    "AG_Title": "Election of members of the Human Rights Council",
+    "AG_Allocation": "GA Plenary",
+    "AG_SessionNo": "79",
+    "AG_Item": "115(c)",
+    "AG_Heading": "I. Organizational, administrative and other matters",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469bbe"
+  },
+  {
+    "AG_Title": "Election of members of the Organizational Committee of the Peacebuilding Commission",
+    "AG_Allocation": "GA Plenary",
+    "AG_SessionNo": "79",
+    "AG_Item": "115(b)",
+    "AG_Heading": "I. Organizational, administrative and other matters",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469bbd"
+  },
+  {
+    "AG_Title": "Election of members of the United Nations Commission on International Trade Law",
+    "AG_Allocation": "GA Plenary",
+    "AG_SessionNo": "79",
+    "AG_Item": "115(d)",
+    "AG_Heading": "I. Organizational, administrative and other matters",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469bbf"
+  },
+  {
+    "AG_Title": "Election of members of the Permanent Forum of People of African Descent",
+    "AG_Allocation": "GA Plenary",
+    "AG_SessionNo": "79",
+    "AG_Item": "115(e)",
+    "AG_Heading": "I. Organizational, administrative and other matters",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469bc0"
+  },
+  {
+    "AG_Title": "Appointments to fill vacancies in subsidiary organs and other appointments",
+    "AG_Allocation": "GA Plenary; Fifth Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "116",
+    "AG_Heading": "I. Organizational, administrative and other matters",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469bc1"
+  },
+  {
+    "AG_Title": "Appointment of members of the International Civil Service Commission",
+    "AG_Allocation": "Fifth Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "116(d)",
+    "AG_Heading": "I. Organizational, administrative and other matters",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469bc5"
+  },
+  {
+    "AG_Title": "Appointment of members and alternate members of the United Nations Staff Pension Committee",
+    "AG_Allocation": "Fifth Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "116(e)",
+    "AG_Heading": "I. Organizational, administrative and other matters",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469bc6"
+  },
+  {
+    "AG_Title": "Appointment of members of the Advisory Committee on Administrative and Budgetary Questions",
+    "AG_Allocation": "Fifth Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "116(a)",
+    "AG_Heading": "I. Organizational, administrative and other matters",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469bc2"
+  },
+  {
+    "AG_Title": "Appointment of members of the Committee on Contributions",
+    "AG_Allocation": "Fifth Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "116(b)",
+    "AG_Heading": "I. Organizational, administrative and other matters",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469bc3"
+  },
+  {
+    "AG_Title": "Confirmation of the appointment of members of the Investments Committee",
+    "AG_Allocation": "Fifth Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "116(c)",
+    "AG_Heading": "I. Organizational, administrative and other matters",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469bc4"
+  },
+  {
+    "AG_Title": "Appointment of members of the Committee on Conferences",
+    "AG_Allocation": "GA Plenary",
+    "AG_SessionNo": "79",
+    "AG_Item": "116(f)",
+    "AG_Heading": "I. Organizational, administrative and other matters",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469bc7"
+  },
+  {
+    "AG_Title": "Confirmation of the appointment of the Administrator of the United Nations Development Programme",
+    "AG_Allocation": "GA Plenary",
+    "AG_SessionNo": "79",
+    "AG_Item": "116(g)",
+    "AG_Heading": "I. Organizational, administrative and other matters",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469bc8"
+  },
+  {
+    "AG_Title": "Confirmation of the appointment of the Secretary-General of the United Nations Conference on Trade and Development",
+    "AG_Allocation": "GA Plenary",
+    "AG_SessionNo": "79",
+    "AG_Item": "116(h)",
+    "AG_Heading": "I. Organizational, administrative and other matters",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469bc9"
+  },
+  {
+    "AG_Title": "Admission of new Members to the United Nations",
+    "AG_Allocation": "GA Plenary",
+    "AG_SessionNo": "79",
+    "AG_Item": "117",
+    "AG_Heading": "I. Organizational, administrative and other matters",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469bcd"
+  },
+  {
+    "AG_Title": "Implementation of the resolutions of the United Nations",
+    "AG_Allocation": "GA Plenary",
+    "AG_SessionNo": "79",
+    "AG_Item": "120",
+    "AG_Heading": "I. Organizational, administrative and other matters",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469bd0"
+  },
+  {
+    "AG_Title": "Appointment of the Under-Secretary-General for Internal Oversight Services",
+    "AG_Allocation": "GA Plenary",
+    "AG_SessionNo": "79",
+    "AG_Item": "116(j)",
+    "AG_Heading": "I. Organizational, administrative and other matters",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469bcb"
+  },
+  {
+    "AG_Title": "Follow-up to the outcome of the Millennium Summit",
+    "AG_Allocation": "GA Plenary",
+    "AG_SessionNo": "79",
+    "AG_Item": "118",
+    "AG_Heading": "I. Organizational, administrative and other matters",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469bce"
+  },
+  {
+    "AG_Title": "Revitalization of the work of the General Assembly",
+    "AG_Allocation": " GA Plenary;First Committee;Fourth Committee;Second Committee;Third Committee;Fifth Committee;Sixth Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "121",
+    "AG_Heading": "I. Organizational, administrative and other matters",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469bd1"
+  },
+  {
+    "AG_Title": "Appointment of members of the Board of the 10-Year Framework of Programmes on Sustainable Consumption and Production Patterns",
+    "AG_Allocation": "GA Plenary",
+    "AG_SessionNo": "79",
+    "AG_Item": "116(k)",
+    "AG_Heading": "I. Organizational, administrative and other matters",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469bcc"
+  },
+  {
+    "AG_Title": "Appointment of members of the Joint Inspection Unit",
+    "AG_Allocation": "GA Plenary",
+    "AG_SessionNo": "79",
+    "AG_Item": "116(i)",
+    "AG_Heading": "I. Organizational, administrative and other matters",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469bca"
+  },
+  {
+    "AG_Title": "Commemoration of the abolition of slavery and the transatlantic slave trade",
+    "AG_Allocation": "GA Plenary",
+    "AG_SessionNo": "79",
+    "AG_Item": "119",
+    "AG_Heading": "I. Organizational, administrative and other matters",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469bcf"
+  },
+  {
+    "AG_Title": "Question of equitable representation on and increase in the membership of the Security Council and other matters related to the Security Council",
+    "AG_Allocation": "GA Plenary",
+    "AG_SessionNo": "79",
+    "AG_Item": "122",
+    "AG_Heading": "I. Organizational, administrative and other matters",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469bd2"
+  },
+  {
+    "AG_Title": "Strengthening of the United Nations system",
+    "AG_Allocation": "GA Plenary",
+    "AG_SessionNo": "79",
+    "AG_Item": "123",
+    "AG_Heading": "I. Organizational, administrative and other matters",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469bd3"
+  },
+  {
+    "AG_Title": "Central role of the United Nations system in global governance",
+    "AG_Allocation": "GA Plenary",
+    "AG_SessionNo": "79",
+    "AG_Item": "123(b)",
+    "AG_Heading": "I. Organizational, administrative and other matters",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469bd5"
+  },
+  {
+    "AG_Title": "Strengthening of the United Nations system",
+    "AG_Allocation": "GA Plenary",
+    "AG_SessionNo": "79",
+    "AG_Item": "123(a)",
+    "AG_Heading": "I. Organizational, administrative and other matters",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469bd4"
+  },
+  {
+    "AG_Title": "Cooperation between the United Nations and regional and other organizations",
+    "AG_Allocation": "GA Plenary",
+    "AG_SessionNo": "79",
+    "AG_Item": "125",
+    "AG_Heading": "I. Organizational, administrative and other matters",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469bd7"
+  },
+  {
+    "AG_Title": "United Nations reform: measures and proposals",
+    "AG_Allocation": "GA Plenary",
+    "AG_SessionNo": "79",
+    "AG_Item": "124",
+    "AG_Heading": "I. Organizational, administrative and other matters",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469bd6"
+  },
+  {
+    "AG_Title": "Cooperation between the United Nations and the African Union",
+    "AG_Allocation": "GA Plenary",
+    "AG_SessionNo": "79",
+    "AG_Item": "125(a)",
+    "AG_Heading": "I. Organizational, administrative and other matters",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469bd8"
+  },
+  {
+    "AG_Title": "Cooperation between the United Nations and the Asian-African Legal Consultative Organization",
+    "AG_Allocation": "GA Plenary",
+    "AG_SessionNo": "79",
+    "AG_Item": "125(c)",
+    "AG_Heading": "I. Organizational, administrative and other matters",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469bda"
+  },
+  {
+    "AG_Title": "Cooperation between the United Nations and the League of Arab States",
+    "AG_Allocation": "GA Plenary",
+    "AG_SessionNo": "79",
+    "AG_Item": "125(d)",
+    "AG_Heading": "I. Organizational, administrative and other matters",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469bdb"
+  },
+  {
+    "AG_Title": "Cooperation between the United Nations and the Latin American and Caribbean Economic System",
+    "AG_Allocation": "GA Plenary",
+    "AG_SessionNo": "79",
+    "AG_Item": "125(e)",
+    "AG_Heading": "I. Organizational, administrative and other matters",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469bdc"
+  },
+  {
+    "AG_Title": "Cooperation between the United Nations and the Organization of American States",
+    "AG_Allocation": "GA Plenary",
+    "AG_SessionNo": "79",
+    "AG_Item": "125(f)",
+    "AG_Heading": "I. Organizational, administrative and other matters",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469bdd"
+  },
+  {
+    "AG_Title": "Cooperation between the United Nations and the Economic Cooperation Organization",
+    "AG_Allocation": "GA Plenary",
+    "AG_SessionNo": "79",
+    "AG_Item": "125(i)",
+    "AG_Heading": "I. Organizational, administrative and other matters",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469be0"
+  },
+  {
+    "AG_Title": "Cooperation between the United Nations and the Council of Europe",
+    "AG_Allocation": "GA Plenary",
+    "AG_SessionNo": "79",
+    "AG_Item": "125(l)",
+    "AG_Heading": "I. Organizational, administrative and other matters",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469be3"
+  },
+  {
+    "AG_Title": "Cooperation between the United Nations and the Organisation for the Prohibition of Chemical Weapons",
+    "AG_Allocation": "GA Plenary",
+    "AG_SessionNo": "79",
+    "AG_Item": "125(n)",
+    "AG_Heading": "I. Organizational, administrative and other matters",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469be5"
+  },
+  {
+    "AG_Title": "Cooperation between the United Nations and the Organization for Security and Cooperation in Europe",
+    "AG_Allocation": "GA Plenary",
+    "AG_SessionNo": "79",
+    "AG_Item": "125(g)",
+    "AG_Heading": "I. Organizational, administrative and other matters",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469bde"
+  },
+  {
+    "AG_Title": "Cooperation between the United Nations and the Caribbean Community",
+    "AG_Allocation": "GA Plenary",
+    "AG_SessionNo": "79",
+    "AG_Item": "125(h)",
+    "AG_Heading": "I. Organizational, administrative and other matters",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469bdf"
+  },
+  {
+    "AG_Title": "Cooperation between the United Nations and the Economic Community of Central African States",
+    "AG_Allocation": "GA Plenary",
+    "AG_SessionNo": "79",
+    "AG_Item": "125(m)",
+    "AG_Heading": "I. Organizational, administrative and other matters",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469be4"
+  },
+  {
+    "AG_Title": "Cooperation between the United Nations and the International Organization of la Francophonie",
+    "AG_Allocation": "GA Plenary",
+    "AG_SessionNo": "79",
+    "AG_Item": "125(j)",
+    "AG_Heading": "I. Organizational, administrative and other matters",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469be1"
+  },
+  {
+    "AG_Title": "Cooperation between the United Nations and the Organization of Islamic Cooperation",
+    "AG_Allocation": "GA Plenary",
+    "AG_SessionNo": "79",
+    "AG_Item": "125(b)",
+    "AG_Heading": "I. Organizational, administrative and other matters",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469bd9"
+  },
+  {
+    "AG_Title": "Cooperation between the United Nations and the Preparatory Commission for the Comprehensive Nuclear-Test-Ban Treaty Organization",
+    "AG_Allocation": "GA Plenary",
+    "AG_SessionNo": "79",
+    "AG_Item": "125(k)",
+    "AG_Heading": "I. Organizational, administrative and other matters",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469be2"
+  },
+  {
+    "AG_Title": "Cooperation between the United Nations and the Pacific Islands Forum",
+    "AG_Allocation": "GA Plenary",
+    "AG_SessionNo": "79",
+    "AG_Item": "125(p)",
+    "AG_Heading": "I. Organizational, administrative and other matters",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469be7"
+  },
+  {
+    "AG_Title": "Cooperation between the United Nations and the Black Sea Economic Cooperation Organization",
+    "AG_Allocation": "GA Plenary",
+    "AG_SessionNo": "79",
+    "AG_Item": "125(o)",
+    "AG_Heading": "I. Organizational, administrative and other matters",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469be6"
+  },
+  {
+    "AG_Title": "Cooperation between the United Nations and the Commonwealth of Independent States",
+    "AG_Allocation": "GA Plenary",
+    "AG_SessionNo": "79",
+    "AG_Item": "125(w)",
+    "AG_Heading": "I. Organizational, administrative and other matters",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469bee"
+  },
+  {
+    "AG_Title": "Cooperation between the United Nations and the Association of Southeast Asian Nations",
+    "AG_Allocation": "GA Plenary",
+    "AG_SessionNo": "79",
+    "AG_Item": "125(q)",
+    "AG_Heading": "I. Organizational, administrative and other matters",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469be8"
+  },
+  {
+    "AG_Title": "Cooperation between the United Nations and the Community of Portuguese-speaking Countries",
+    "AG_Allocation": "GA Plenary",
+    "AG_SessionNo": "79",
+    "AG_Item": "125(r)",
+    "AG_Heading": "I. Organizational, administrative and other matters",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469be9"
+  },
+  {
+    "AG_Title": "Cooperation between the United Nations and the Shanghai Cooperation Organization",
+    "AG_Allocation": "GA Plenary",
+    "AG_SessionNo": "79",
+    "AG_Item": "125(s)",
+    "AG_Heading": "I. Organizational, administrative and other matters",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469bea"
+  },
+  {
+    "AG_Title": "Cooperation between the United Nations and the Collective Security Treaty Organization",
+    "AG_Allocation": "GA Plenary",
+    "AG_SessionNo": "79",
+    "AG_Item": "125(t)",
+    "AG_Heading": "I. Organizational, administrative and other matters",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469beb"
+  },
+  {
+    "AG_Title": "Cooperation between the United Nations and the Central European Initiative",
+    "AG_Allocation": "GA Plenary",
+    "AG_SessionNo": "79",
+    "AG_Item": "125(u)",
+    "AG_Heading": "I. Organizational, administrative and other matters",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469bec"
+  },
+  {
+    "AG_Title": "Cooperation between the United Nations and the Organization for Democracy and Economic Development \u2013 GUAM",
+    "AG_Allocation": "GA Plenary",
+    "AG_SessionNo": "79",
+    "AG_Item": "125(v)",
+    "AG_Heading": "I. Organizational, administrative and other matters",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469bed"
+  },
+  {
+    "AG_Title": "Cooperation between the United Nations and the International Organization for Migration",
+    "AG_Allocation": "GA Plenary",
+    "AG_SessionNo": "79",
+    "AG_Item": "125(x)",
+    "AG_Heading": "I. Organizational, administrative and other matters",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469bef"
+  },
+  {
+    "AG_Title": "Cooperation between the United Nations and the International Criminal Police Organization (INTERPOL)",
+    "AG_Allocation": "GA Plenary",
+    "AG_SessionNo": "79",
+    "AG_Item": "125(y)",
+    "AG_Heading": "I. Organizational, administrative and other matters",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469bf0"
+  },
+  {
+    "AG_Title": "International Residual Mechanism for Criminal Tribunals",
+    "AG_Allocation": "GA Plenary",
+    "AG_SessionNo": "79",
+    "AG_Item": "128",
+    "AG_Heading": "I. Organizational, administrative and other matters",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469bf4"
+  },
+  {
+    "AG_Title": "United Nations",
+    "AG_Allocation": "Fifth Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "136(a)",
+    "AG_Heading": "I. Organizational, administrative and other matters",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469bfd"
+  },
+  {
+    "AG_Title": "Sexual exploitation and abuse: implementing a zero-tolerance policy",
+    "AG_Allocation": "GA Plenary",
+    "AG_SessionNo": "79",
+    "AG_Item": "130",
+    "AG_Heading": "I. Organizational, administrative and other matters",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469bf6"
+  },
+  {
+    "AG_Title": "Investigation into the conditions and circumstances resulting in the tragic death of Dag Hammarskj\u00f6ld and of the members of the party accompanying him",
+    "AG_Allocation": "GA Plenary",
+    "AG_SessionNo": "79",
+    "AG_Item": "129",
+    "AG_Heading": "I. Organizational, administrative and other matters",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469bf5"
+  },
+  {
+    "AG_Title": "Eightieth anniversary of the end of the Second World War",
+    "AG_Allocation": "GA Plenary",
+    "AG_SessionNo": "79",
+    "AG_Item": "135",
+    "AG_Heading": "I. Organizational, administrative and other matters",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469bfb"
+  },
+  {
+    "AG_Title": "Financial reports and audited financial statements, and reports of the Board of Auditors",
+    "AG_Allocation": "Fifth Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "136",
+    "AG_Heading": "I. Organizational, administrative and other matters",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469bfc"
+  },
+  {
+    "AG_Title": "Cooperation between the United Nations and the Organisation for Economic Co-operation and Development (OECD)",
+    "AG_Allocation": "GA Plenary",
+    "AG_SessionNo": "79",
+    "AG_Item": "125(z)",
+    "AG_Heading": "I. Organizational, administrative and other matters",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469bf1"
+  },
+  {
+    "AG_Title": "Interaction between the United Nations, national parliaments and the Inter\u2011Parliamentary Union",
+    "AG_Allocation": "GA Plenary",
+    "AG_SessionNo": "79",
+    "AG_Item": "126",
+    "AG_Heading": "I. Organizational, administrative and other matters",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469bf2"
+  },
+  {
+    "AG_Title": "Global health and foreign policy",
+    "AG_Allocation": "GA Plenary",
+    "AG_SessionNo": "79",
+    "AG_Item": "127",
+    "AG_Heading": "I. Organizational, administrative and other matters",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469bf3"
+  },
+  {
+    "AG_Title": "Impact of rapid technological change on the achievement of the Sustainable Development Goals and targets",
+    "AG_Allocation": "GA Plenary",
+    "AG_SessionNo": "79",
+    "AG_Item": "133",
+    "AG_Heading": "I. Organizational, administrative and other matters",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469bf9"
+  },
+  {
+    "AG_Title": "Report of the United Nations Youth Office",
+    "AG_Allocation": "GA Plenary",
+    "AG_SessionNo": "79",
+    "AG_Item": "134",
+    "AG_Heading": "I. Organizational, administrative and other matters",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469bfa"
+  },
+  {
+    "AG_Title": "International cooperation on access to justice for survivors of sexual violence",
+    "AG_Allocation": "GA Plenary",
+    "AG_SessionNo": "79",
+    "AG_Item": "131",
+    "AG_Heading": "I. Organizational, administrative and other matters",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469bf7"
+  },
+  {
+    "AG_Title": "The responsibility to protect and the prevention of genocide, war crimes, ethnic cleansing and crimes against humanity",
+    "AG_Allocation": "GA Plenary",
+    "AG_SessionNo": "79",
+    "AG_Item": "132",
+    "AG_Heading": "I. Organizational, administrative and other matters",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469bf8"
+  },
+  {
+    "AG_Title": "International Trade Centre",
+    "AG_Allocation": "Fifth Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "136(c)",
+    "AG_Heading": "I. Organizational, administrative and other matters",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469bff"
+  },
+  {
+    "AG_Title": "United Nations peacekeeping operations",
+    "AG_Allocation": "Fifth Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "136(b)",
+    "AG_Heading": "I. Organizational, administrative and other matters",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469bfe"
+  },
+  {
+    "AG_Title": "United Nations Development Programme",
+    "AG_Allocation": "Fifth Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "136(e)",
+    "AG_Heading": "I. Organizational, administrative and other matters",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469c01"
+  },
+  {
+    "AG_Title": "United Nations University",
+    "AG_Allocation": "Fifth Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "136(d)",
+    "AG_Heading": "I. Organizational, administrative and other matters",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469c00"
+  },
+  {
+    "AG_Title": "United Nations Capital Development Fund",
+    "AG_Allocation": "Fifth Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "136(f)",
+    "AG_Heading": "I. Organizational, administrative and other matters",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469c02"
+  },
+  {
+    "AG_Title": "United Nations Children\u2019s Fund",
+    "AG_Allocation": "Fifth Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "136(g)",
+    "AG_Heading": "I. Organizational, administrative and other matters",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469c03"
+  },
+  {
+    "AG_Title": "United Nations Relief and Works Agency for Palestine Refugees in the Near East",
+    "AG_Allocation": "Fifth Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "136(h)",
+    "AG_Heading": "I. Organizational, administrative and other matters",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469c04"
+  },
+  {
+    "AG_Title": "Fund of the United Nations Environment Programme",
+    "AG_Allocation": "Fifth Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "136(k)",
+    "AG_Heading": "I. Organizational, administrative and other matters",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469c07"
+  },
+  {
+    "AG_Title": "United Nations Human Settlements Programme",
+    "AG_Allocation": "Fifth Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "136(m)",
+    "AG_Heading": "I. Organizational, administrative and other matters",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469c09"
+  },
+  {
+    "AG_Title": "United Nations Entity for Gender Equality and the Empowerment of Women (UN-Women)",
+    "AG_Allocation": "Fifth Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "136(p)",
+    "AG_Heading": "I. Organizational, administrative and other matters",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469c0c"
+  },
+  {
+    "AG_Title": "International Residual Mechanism for Criminal Tribunals",
+    "AG_Allocation": "Fifth Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "136(q)",
+    "AG_Heading": "I. Organizational, administrative and other matters",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469c0d"
+  },
+  {
+    "AG_Title": "United Nations Institute for Training and Research",
+    "AG_Allocation": "Fifth Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "136(i)",
+    "AG_Heading": "I. Organizational, administrative and other matters",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469c05"
+  },
+  {
+    "AG_Title": "Review of the efficiency of the administrative and financial functioning of the United Nations",
+    "AG_Allocation": "Fifth Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "137",
+    "AG_Heading": "I. Organizational, administrative and other matters",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469c0f"
+  },
+  {
+    "AG_Title": "United Nations Office for Project Services",
+    "AG_Allocation": "Fifth Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "136(o)",
+    "AG_Heading": "I. Organizational, administrative and other matters",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469c0b"
+  },
+  {
+    "AG_Title": "Voluntary funds administered by the United Nations High Commissioner for Refugees",
+    "AG_Allocation": "Fifth Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "136(j)",
+    "AG_Heading": "I. Organizational, administrative and other matters",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469c06"
+  },
+  {
+    "AG_Title": "United Nations Population Fund",
+    "AG_Allocation": "Fifth Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "136(l)",
+    "AG_Heading": "I. Organizational, administrative and other matters",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469c08"
+  },
+  {
+    "AG_Title": "United Nations Office on Drugs and Crime",
+    "AG_Allocation": "Fifth Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "136(n)",
+    "AG_Heading": "I. Organizational, administrative and other matters",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469c0a"
+  },
+  {
+    "AG_Title": "United Nations Joint Staff Pension Fund",
+    "AG_Allocation": "Fifth Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "136(r)",
+    "AG_Heading": "I. Organizational, administrative and other matters",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469c0e"
+  },
+  {
+    "AG_Title": "Programme budget for 2024",
+    "AG_Allocation": "Fifth Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "138",
+    "AG_Heading": "I. Organizational, administrative and other matters",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469c10"
+  },
+  {
+    "AG_Title": "Proposed programme budget for 2025",
+    "AG_Allocation": "Fifth Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "139",
+    "AG_Heading": "I. Organizational, administrative and other matters",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469c11"
+  },
+  {
+    "AG_Title": "Improving the financial situation of the United Nations",
+    "AG_Allocation": "Fifth Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "141",
+    "AG_Heading": "I. Organizational, administrative and other matters",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469c13"
+  },
+  {
+    "AG_Title": "Programme planning",
+    "AG_Allocation": " GA Plenary;First Committee;Fourth Committee;Second Committee;Third Committee;Fifth Committee;Sixth Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "140",
+    "AG_Heading": "I. Organizational, administrative and other matters",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469c12"
+  },
+  {
+    "AG_Title": "Pattern of conferences",
+    "AG_Allocation": "Fifth Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "142",
+    "AG_Heading": "I. Organizational, administrative and other matters",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469c14"
+  },
+  {
+    "AG_Title": "Report on the activities of the Ethics Office",
+    "AG_Allocation": "Fifth Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "145",
+    "AG_Heading": "I. Organizational, administrative and other matters",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469c17"
+  },
+  {
+    "AG_Title": "United Nations common system",
+    "AG_Allocation": "Fifth Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "147",
+    "AG_Heading": "I. Organizational, administrative and other matters",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469c19"
+  },
+  {
+    "AG_Title": "Joint Inspection Unit",
+    "AG_Allocation": "Fifth Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "146",
+    "AG_Heading": "I. Organizational, administrative and other matters",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469c18"
+  },
+  {
+    "AG_Title": "Financing of the United Nations Interim Security Force for Abyei",
+    "AG_Allocation": "Fifth Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "156",
+    "AG_Heading": "I. Organizational, administrative and other matters",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469c22"
+  },
+  {
+    "AG_Title": "Financing of the United Nations Multidimensional Integrated Stabilization Mission in the Central African Republic",
+    "AG_Allocation": "Fifth Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "157",
+    "AG_Heading": "I. Organizational, administrative and other matters",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469c23"
+  },
+  {
+    "AG_Title": "Administrative and budgetary coordination of the United Nations with the specialized agencies and the International Atomic Energy Agency",
+    "AG_Allocation": "Fifth Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "149",
+    "AG_Heading": "I. Organizational, administrative and other matters",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469c1b"
+  },
+  {
+    "AG_Title": "Financing of the International Residual Mechanism for Criminal Tribunals",
+    "AG_Allocation": "Fifth Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "153",
+    "AG_Heading": "I. Organizational, administrative and other matters",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469c1f"
+  },
+  {
+    "AG_Title": "Human resources management",
+    "AG_Allocation": "Fifth Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "144",
+    "AG_Heading": "I. Organizational, administrative and other matters",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469c16"
+  },
+  {
+    "AG_Title": "United Nations pension system",
+    "AG_Allocation": "Fifth Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "148",
+    "AG_Heading": "I. Organizational, administrative and other matters",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469c1a"
+  },
+  {
+    "AG_Title": "Administrative and budgetary aspects of the financing of the United Nations peacekeeping operations",
+    "AG_Allocation": "Fifth Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "155",
+    "AG_Heading": "I. Organizational, administrative and other matters",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469c21"
+  },
+  {
+    "AG_Title": "Report on the activities of the Office of Internal Oversight Services",
+    "AG_Allocation": "Fifth Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "150",
+    "AG_Heading": "I. Organizational, administrative and other matters",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469c1c"
+  },
+  {
+    "AG_Title": "Review of the implementation of General Assembly resolutions 48/218 B, 54/244, 59/272, 64/263, 69/253 and 74/257",
+    "AG_Allocation": "Fifth Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "151",
+    "AG_Heading": "I. Organizational, administrative and other matters",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469c1d"
+  },
+  {
+    "AG_Title": "Administration of justice at the United Nations",
+    "AG_Allocation": "Fifth Committee; Sixth Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "152",
+    "AG_Heading": "I. Organizational, administrative and other matters",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469c1e"
+  },
+  {
+    "AG_Title": "Scale of assessments for the apportionment of the expenses of United Nations peacekeeping operations",
+    "AG_Allocation": "Fifth Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "154",
+    "AG_Heading": "I. Organizational, administrative and other matters",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469c20"
+  },
+  {
+    "AG_Title": "Financing of the United Nations Mission in East Timor",
+    "AG_Allocation": "Fifth Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "160",
+    "AG_Heading": "I. Organizational, administrative and other matters",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469c26"
+  },
+  {
+    "AG_Title": "Financing of the United Nations Organization Stabilization Mission in the Democratic Republic of the Congo",
+    "AG_Allocation": "Fifth Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "159",
+    "AG_Heading": "I. Organizational, administrative and other matters",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469c25"
+  },
+  {
+    "AG_Title": "Financing of the United Nations Peacekeeping Force in Cyprus",
+    "AG_Allocation": "Fifth Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "158",
+    "AG_Heading": "I. Organizational, administrative and other matters",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469c24"
+  },
+  {
+    "AG_Title": "Financing of the United Nations Multidimensional Integrated Stabilization Mission in Mali",
+    "AG_Allocation": "Fifth Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "162",
+    "AG_Heading": "I. Organizational, administrative and other matters",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469c28"
+  },
+  {
+    "AG_Title": "Financing of the United Nations Interim Administration Mission in Kosovo",
+    "AG_Allocation": "Fifth Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "161",
+    "AG_Heading": "I. Organizational, administrative and other matters",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469c27"
+  },
+  {
+    "AG_Title": "Financing of the United Nations Mission in South Sudan",
+    "AG_Allocation": "Fifth Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "164",
+    "AG_Heading": "I. Organizational, administrative and other matters",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469c2c"
+  },
+  {
+    "AG_Title": "Financing of the African Union-United Nations Hybrid Operation in Darfur",
+    "AG_Allocation": "Fifth Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "166",
+    "AG_Heading": "I. Organizational, administrative and other matters",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469c2e"
+  },
+  {
+    "AG_Title": "Financing of the United Nations Mission for the Referendum in Western Sahara",
+    "AG_Allocation": "Fifth Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "165",
+    "AG_Heading": "I. Organizational, administrative and other matters",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469c2d"
+  },
+  {
+    "AG_Title": "Report of the Committee on Relations with the Host Country",
+    "AG_Allocation": "Sixth Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "168",
+    "AG_Heading": "I. Organizational, administrative and other matters",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469c30"
+  },
+  {
+    "AG_Title": "Financing of the United Nations peacekeeping forces in the Middle East",
+    "AG_Allocation": "Fifth Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "163",
+    "AG_Heading": "I. Organizational, administrative and other matters",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469c29"
+  },
+  {
+    "AG_Title": "Financing of the activities arising from Security Council resolution 1863 (2009)",
+    "AG_Allocation": "Fifth Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "167",
+    "AG_Heading": "I. Organizational, administrative and other matters",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469c2f"
+  },
+  {
+    "AG_Title": "United Nations Disengagement Observer Force",
+    "AG_Allocation": "Fifth Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "163(a)",
+    "AG_Heading": "I. Organizational, administrative and other matters",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469c2a"
+  },
+  {
+    "AG_Title": "United Nations Interim Force in Lebanon",
+    "AG_Allocation": "Fifth Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "163(b)",
+    "AG_Heading": "I. Organizational, administrative and other matters",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469c2b"
+  },
+  {
+    "AG_Title": "Observer status for the Cooperation Council of Turkic-speaking States in the General Assembly",
+    "AG_Allocation": "Sixth Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "169",
+    "AG_Heading": "I. Organizational, administrative and other matters",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469c31"
+  },
+  {
+    "AG_Title": "Observer status for the Regional Anti-Corruption Initiative in the General Assembly",
+    "AG_Allocation": "Sixth Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "178",
+    "AG_Heading": "I. Organizational, administrative and other matters",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469c3a"
+  },
+  {
+    "AG_Title": "Observer status for the International Coffee Organization in the General Assembly",
+    "AG_Allocation": "Sixth Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "179",
+    "AG_Heading": "I. Organizational, administrative and other matters",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469c3b"
+  },
+  {
+    "AG_Title": "Observer status for the Global Environment Facility in the General Assembly",
+    "AG_Allocation": "Sixth Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "173",
+    "AG_Heading": "I. Organizational, administrative and other matters",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469c35"
+  },
+  {
+    "AG_Title": "Observer status for the International Organization of Employers in the General Assembly",
+    "AG_Allocation": "Sixth Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "174",
+    "AG_Heading": "I. Organizational, administrative and other matters",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469c36"
+  },
+  {
+    "AG_Title": "Observer status for the International Trade Union Confederation in the General Assembly",
+    "AG_Allocation": "Sixth Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "175",
+    "AG_Heading": "I. Organizational, administrative and other matters",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469c37"
+  },
+  {
+    "AG_Title": "Observer status for the Eurasian Economic Union in the General Assembly",
+    "AG_Allocation": "Sixth Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "170",
+    "AG_Heading": "I. Organizational, administrative and other matters",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469c32"
+  },
+  {
+    "AG_Title": "Observer status for the Ramsar Convention on Wetlands Secretariat in the General Assembly",
+    "AG_Allocation": "Sixth Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "172",
+    "AG_Heading": "I. Organizational, administrative and other matters",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469c34"
+  },
+  {
+    "AG_Title": "Observer status for the Boao Forum for Asia in the General Assembly",
+    "AG_Allocation": "Sixth Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "176",
+    "AG_Heading": "I. Organizational, administrative and other matters",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469c38"
+  },
+  {
+    "AG_Title": "Observer status for the Community of Democracies in the General Assembly",
+    "AG_Allocation": "Sixth Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "171",
+    "AG_Heading": "I. Organizational, administrative and other matters",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469c33"
+  },
+  {
+    "AG_Title": "Observer status for the International Parliamentarians\u2019 Congress in the General Assembly",
+    "AG_Allocation": "Sixth Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "177",
+    "AG_Heading": "I. Organizational, administrative and other matters",
+    "AG_Body": "GA",
+    "_id": "66e4b1d5c7c7d4190a469c39"
+  },
+  {
+    "AG_Title": "Appointment of members of the Independent Audit Advisory Committee",
+    "AG_Allocation": "Fifth Committee",
+    "AG_SessionNo": "79",
+    "AG_Item": "116 (l)",
+    "AG_Heading": "",
+    "AG_Body": "GA",
+    "_id": "67760c449f55ca60efc8ddbf"
+  },
+  {
+    "AG_Title": "Election of a member of the International Court of Justice",
+    "AG_Allocation": "GA Plenary",
+    "AG_SessionNo": "79",
+    "AG_Item": "114(c)",
+    "AG_Heading": "I. Organizational, administrative and other matters",
+    "AG_Body": "GA",
+    "_id": "681522ab11bb51af42064d0c"
+  }
+]
