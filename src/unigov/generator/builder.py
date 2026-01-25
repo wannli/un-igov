@@ -3,6 +3,7 @@ from __future__ import annotations
 import json
 import shutil
 from dataclasses import dataclass
+from datetime import datetime
 from pathlib import Path
 from typing import Any
 
@@ -35,11 +36,21 @@ def copy_static_assets(config: Config) -> None:
     shutil.copytree(source, target)
 
 
+def datetime_format(value: str, format: str = "%B %d, %Y") -> str:
+    try:
+        dt = datetime.fromisoformat(value.replace("Z", "+00:00"))
+        return dt.strftime(format)
+    except (ValueError, AttributeError):
+        return value
+
+
 def build_environment(template_root: Path) -> Environment:
-    return Environment(
+    env = Environment(
         loader=FileSystemLoader(str(template_root)),
         autoescape=select_autoescape(["html"]),
     )
+    env.filters["datetime_format"] = datetime_format
+    return env
 
 
 def build_index(ctx: BuildContext, session_number: str) -> None:
