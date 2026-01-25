@@ -320,7 +320,7 @@
               Statements in explanation of vote before the vote:
               
                 <span class="text-gray-500">
-                  Singapore (to introduce draft resolutions A/80/L.13 and A/80/L/22)), Republic of Korea (to introduce draft resolution A/80/L.14), Norway (to introduce draft resolution A/80/L.17), Brazil (to introduce draft amendment A/80/L.29), European Union, PALAU, SOLOMON ISLANDS, Indonesia, France, GUATEMALA, United States, CHILE, PHILIPPINES, KUWAIT, Canada, Pakistan, Australia, Cuba, India, BANGLADESH, China, Algeria, United Kingdom, COSTA RICA, Thailand, MONACO, Japan, BRUNEI DARUSSALAM, CAMEROON, MALTA, ICELAND, MICRONESIA (FEDERATED STATES OF), Russian Federation, Germany, Viet Nam, New Zealand, Mexico, Maldives, MARSHALL ISLANDS, Iran (Islamic Republic of), PORTUGAL, Timor-Leste, Argentina, VANUATU, BARBADOS, CABO VERDE, NAMIBIA, FIJI, INTERNATIONAL TRIBUNAL FOR THE LAW OF THE SEA, INTERNATIONAL SEABED AUTHORITY, SINGAPORE, United States, PALAU, Türkiye, El Salvador, Japan, Russian Federation, Argentina, Venezuela (Bolivarian Republic of), New Zealand, Mexico, United Kingdom, Norway, Viet Nam, PHILIPPINES, Saudi Arabia.
+                  Singapore (to introduce draft resolutions A/80/L.13 and A/80/L/22)), Republic of Korea (to introduce draft resolution A/80/L.14), Norway (to introduce draft resolution A/80/L.17), Brazil (to introduce draft amendment A/80/L.29), European Union, Palau, Solomon Islands, Indonesia, France, Guatemala, United States, Chile, Philippines, Kuwait, Canada, Pakistan, Australia, Cuba, India, Bangladesh, China, Algeria, United Kingdom, Costa Rica, Thailand, Monaco, Japan, Brunei Darussalam, Cameroon, Malta, Iceland, Micronesia (FEDERATED STATES OF), Russian Federation, Germany, Viet Nam, New Zealand, Mexico, Maldives, Marshall Islands, Iran (Islamic Republic of), Portugal, Timor-Leste, Argentina, Vanuatu, Barbados, Cabo Verde, Namibia, Fiji, INTERNATIONAL TRIBUNAL FOR THE LAW OF THE SEA, INTERNATIONAL SEABED AUTHORITY, Singapore, United States, Palau, Türkiye, El Salvador, Japan, Russian Federation, Argentina, Venezuela (Bolivarian Republic of), New Zealand, Mexico, United Kingdom, Norway, Viet Nam, Philippines, Saudi Arabia.
                 </span>
               
             </div>
@@ -380,7 +380,7 @@
               Statements in explanation of vote after the vote:
               
                 <span class="text-gray-500">
-                  Singapore (to introduce draft resolutions A/80/L.13 and A/80/L/22)), Republic of Korea (to introduce draft resolution A/80/L.14), Norway (to introduce draft resolution A/80/L.17), Brazil (to introduce draft amendment A/80/L.29), European Union, PALAU, SOLOMON ISLANDS, Indonesia, France, GUATEMALA, United States, CHILE, PHILIPPINES, KUWAIT, Canada, Pakistan, Australia, Cuba, India, BANGLADESH, China, Algeria, United Kingdom, COSTA RICA, Thailand, MONACO, Japan, BRUNEI DARUSSALAM, CAMEROON, MALTA, ICELAND, MICRONESIA (FEDERATED STATES OF), Russian Federation, Germany, Viet Nam, New Zealand, Mexico, Maldives, MARSHALL ISLANDS, Iran (Islamic Republic of), PORTUGAL, Timor-Leste, Argentina, VANUATU, BARBADOS, CABO VERDE, NAMIBIA, FIJI, INTERNATIONAL TRIBUNAL FOR THE LAW OF THE SEA, INTERNATIONAL SEABED AUTHORITY, SINGAPORE, United States, PALAU, Türkiye, El Salvador, Japan, Russian Federation, Argentina, Venezuela (Bolivarian Republic of), New Zealand, Mexico, United Kingdom, Norway, Viet Nam, PHILIPPINES, Saudi Arabia.
+                  Singapore (to introduce draft resolutions A/80/L.13 and A/80/L/22)), Republic of Korea (to introduce draft resolution A/80/L.14), Norway (to introduce draft resolution A/80/L.17), Brazil (to introduce draft amendment A/80/L.29), European Union, Palau, Solomon Islands, Indonesia, France, Guatemala, United States, Chile, Philippines, Kuwait, Canada, Pakistan, Australia, Cuba, India, Bangladesh, China, Algeria, United Kingdom, Costa Rica, Thailand, Monaco, Japan, Brunei Darussalam, Cameroon, Malta, Iceland, Micronesia (FEDERATED STATES OF), Russian Federation, Germany, Viet Nam, New Zealand, Mexico, Maldives, Marshall Islands, Iran (Islamic Republic of), Portugal, Timor-Leste, Argentina, Vanuatu, Barbados, Cabo Verde, Namibia, Fiji, INTERNATIONAL TRIBUNAL FOR THE LAW OF THE SEA, INTERNATIONAL SEABED AUTHORITY, Singapore, United States, Palau, Türkiye, El Salvador, Japan, Russian Federation, Argentina, Venezuela (Bolivarian Republic of), New Zealand, Mexico, United Kingdom, Norway, Viet Nam, Philippines, Saudi Arabia.
                 </span>
               
             </div>
@@ -432,7 +432,7 @@
 
     <script>
       (function() {
-        var lastBuild = 1769368585;
+        var lastBuild = 1769368659;
         var pollInterval = 2000;
         function checkUpdate() {
           fetch('/__build__').then(function(r) { return r.json(); }).then(function(data) {
@@ -452,7 +452,7 @@
             var filterValue = this.value;
             var cards = document.querySelectorAll('.meeting-list .card');
             cards.forEach(function(card) {
-              var type = card.getAttribute('data-type') || '';
+              var type = (card.getAttribute('data-type') || '').toLowerCase();
               if (filterValue === 'all' || type.indexOf(filterValue) !== -1) {
                 card.style.display = '';
               } else {

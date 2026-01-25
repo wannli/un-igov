@@ -319,7 +319,7 @@
               Statements in explanation of vote before the vote:
               
                 <span class="text-gray-500">
-                  Belarus (to introduce draft resolution A/80/L.3 and draft amendment A/80/L.35), Denmark (to introduce draft resolution A/80/L.18), Russian Federation (to introduce draft amendments A/80/L.19, A/80/L.20 and A/80/L.36), Iraq (to introduce draft resolution A/80/L.23), Sweden (to introduce draft resolution A/80/L.25), United States (to introduce draft amendments A/80/L.30, A/80/L.31, A/80/L.32 and A/80/L.33), Ukraine (to introduce draft resolution A/80/L.27 and draft amendment A/80/L.28), European Union, Venezuela (Bolivarian Republic of), Canada, Australia, Qatar, Thailand, Norway, Egypt, New Zealand, United Kingdom, Poland, Morocco, Indonesia, Switzerland, China, Croatia, Pakistan, Spain, El Salvador, Netherlands (Kingdom of the), France, Türkiye, Maldives, Azerbaijan, Timor-Leste, Cambodia, United Arab Emirates, International Federation of Red Cross and Red Crescent Societies, International Committee of the Red Cross, Denmark, Nicaragua, Paraguay, United States, Kazakhstan, Switzerland, Slovakia, France, Israel, Ukraine, Belarus, Hungary, Cuba, Nicaragua, Serbia, Iran (Islamic Republic of), United States, Mexico, Iraq, Argentina, China, Russian Federation, Belarus.
+                  Belarus (to introduce draft resolution A/80/L.3 and draft amendment A/80/L.35), Denmark (to introduce draft resolution A/80/L.18), Russian Federation (to introduce draft amendments A/80/L.19, A/80/L.20 and A/80/L.36), Iraq (to introduce draft resolution A/80/L.23), Sweden (to introduce draft resolution A/80/L.25), United States (to introduce draft amendments A/80/L.30, A/80/L.31, A/80/L.32 and A/80/L.33), Ukraine (to introduce draft resolution A/80/L.27 and draft amendment A/80/L.28), European Union, Venezuela (Bolivarian Republic of), Canada, Australia, Qatar, Thailand, Norway, Egypt, New Zealand, United Kingdom, Poland, Morocco, Indonesia, Switzerland, China, Croatia, Pakistan, Spain, El Salvador, Netherlands (Kingdom of the), France, Türkiye, Maldives, Azerbaijan, Timor-Leste, Cambodia, United Arab Emirates, INTERNATIONAL FEDERATION OF RED CROSS AND RED CRESCENT SOCIETIES, INTERNATIONAL COMMITTEE OF THE RED CROSS, Denmark, Nicaragua, Paraguay, United States, Kazakhstan, Switzerland, Slovakia, France, Israel, Ukraine, Belarus, Hungary, Cuba, Nicaragua, Serbia, Iran (Islamic Republic of), United States, Mexico, Iraq, Argentina, China, Russian Federation, Belarus.
                 </span>
               
             </div>
@@ -411,7 +411,7 @@
               Statements in explanation of vote after the vote:
               
                 <span class="text-gray-500">
-                  Belarus (to introduce draft resolution A/80/L.3 and draft amendment A/80/L.35), Denmark (to introduce draft resolution A/80/L.18), Russian Federation (to introduce draft amendments A/80/L.19, A/80/L.20 and A/80/L.36), Iraq (to introduce draft resolution A/80/L.23), Sweden (to introduce draft resolution A/80/L.25), United States (to introduce draft amendments A/80/L.30, A/80/L.31, A/80/L.32 and A/80/L.33), Ukraine (to introduce draft resolution A/80/L.27 and draft amendment A/80/L.28), European Union, Venezuela (Bolivarian Republic of), Canada, Australia, Qatar, Thailand, Norway, Egypt, New Zealand, United Kingdom, Poland, Morocco, Indonesia, Switzerland, China, Croatia, Pakistan, Spain, El Salvador, Netherlands (Kingdom of the), France, Türkiye, Maldives, Azerbaijan, Timor-Leste, Cambodia, United Arab Emirates, International Federation of Red Cross and Red Crescent Societies, International Committee of the Red Cross, Denmark, Nicaragua, Paraguay, United States, Kazakhstan, Switzerland, Slovakia, France, Israel, Ukraine, Belarus, Hungary, Cuba, Nicaragua, Serbia, Iran (Islamic Republic of), United States, Mexico, Iraq, Argentina, China, Russian Federation, Belarus.
+                  Belarus (to introduce draft resolution A/80/L.3 and draft amendment A/80/L.35), Denmark (to introduce draft resolution A/80/L.18), Russian Federation (to introduce draft amendments A/80/L.19, A/80/L.20 and A/80/L.36), Iraq (to introduce draft resolution A/80/L.23), Sweden (to introduce draft resolution A/80/L.25), United States (to introduce draft amendments A/80/L.30, A/80/L.31, A/80/L.32 and A/80/L.33), Ukraine (to introduce draft resolution A/80/L.27 and draft amendment A/80/L.28), European Union, Venezuela (Bolivarian Republic of), Canada, Australia, Qatar, Thailand, Norway, Egypt, New Zealand, United Kingdom, Poland, Morocco, Indonesia, Switzerland, China, Croatia, Pakistan, Spain, El Salvador, Netherlands (Kingdom of the), France, Türkiye, Maldives, Azerbaijan, Timor-Leste, Cambodia, United Arab Emirates, INTERNATIONAL FEDERATION OF RED CROSS AND RED CRESCENT SOCIETIES, INTERNATIONAL COMMITTEE OF THE RED CROSS, Denmark, Nicaragua, Paraguay, United States, Kazakhstan, Switzerland, Slovakia, France, Israel, Ukraine, Belarus, Hungary, Cuba, Nicaragua, Serbia, Iran (Islamic Republic of), United States, Mexico, Iraq, Argentina, China, Russian Federation, Belarus.
                 </span>
               
             </div>
@@ -495,7 +495,7 @@
 
     <script>
       (function() {
-        var lastBuild = 1769368585;
+        var lastBuild = 1769368659;
         var pollInterval = 2000;
         function checkUpdate() {
           fetch('/__build__').then(function(r) { return r.json(); }).then(function(data) {
@@ -515,7 +515,7 @@
             var filterValue = this.value;
             var cards = document.querySelectorAll('.meeting-list .card');
             cards.forEach(function(card) {
-              var type = card.getAttribute('data-type') || '';
+              var type = (card.getAttribute('data-type') || '').toLowerCase();
               if (filterValue === 'all' || type.indexOf(filterValue) !== -1) {
                 card.style.display = '';
               } else {

@@ -253,7 +253,7 @@
             var filterValue = this.value;
             var cards = document.querySelectorAll('.meeting-list .card');
             cards.forEach(function(card) {
-              var type = card.getAttribute('data-type') || '';
+              var type = (card.getAttribute('data-type') || '').toLowerCase();
               if (filterValue === 'all' || type.indexOf(filterValue) !== -1) {
                 card.style.display = '';
               } else {

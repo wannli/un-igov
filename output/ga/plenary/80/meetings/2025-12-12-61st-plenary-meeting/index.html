@@ -287,7 +287,7 @@
               Statements in explanation of vote after the vote:
               
                 <span class="text-gray-500">
-                   (no speakers), ECUADOR, Iran (Islamic Republic of), Argentina, Paraguay, PERU.
+                   (no speakers), Ecuador, Iran (Islamic Republic of), Argentina, Paraguay, Peru.
                 </span>
               
             </div>
@@ -400,7 +400,7 @@
               Statements in explanation of vote before the vote:
               
                 <span class="text-gray-500">
-                  Norway (to introduce draft resolution A/80/L.26), Israel, United States, Cuba, ----- EXPLANATIONS OF VOTE/POSITION AFTER  ------, SYRIAN ARAB REPUBLIC, SINGAPORE, Japan, BULGARIA, ITALY, Canada, Russian Federation, ROMANIA, SWEDEN, Germany, Iran (Islamic Republic of).
+                  Norway (to introduce draft resolution A/80/L.26), Israel, United States, Cuba, ----- EXPLANATIONS OF VOTE/POSITION AFTER  ------, Syrian Arab Republic, Singapore, Japan, Bulgaria, Italy, Canada, Russian Federation, Romania, Sweden, Germany, Iran (Islamic Republic of).
                 </span>
               
             </div>
@@ -420,7 +420,7 @@
               Statements in explanation of vote after the vote:
               
                 <span class="text-gray-500">
-                  Norway (to introduce draft resolution A/80/L.26), Israel, United States, Cuba, ----- EXPLANATIONS OF VOTE/POSITION AFTER  ------, SYRIAN ARAB REPUBLIC, SINGAPORE, Japan, BULGARIA, ITALY, Canada, Russian Federation, ROMANIA, SWEDEN, Germany, Iran (Islamic Republic of).
+                  Norway (to introduce draft resolution A/80/L.26), Israel, United States, Cuba, ----- EXPLANATIONS OF VOTE/POSITION AFTER  ------, Syrian Arab Republic, Singapore, Japan, Bulgaria, Italy, Canada, Russian Federation, Romania, Sweden, Germany, Iran (Islamic Republic of).
                 </span>
               
             </div>
@@ -495,7 +495,7 @@
 
     <script>
       (function() {
-        var lastBuild = 1769368585;
+        var lastBuild = 1769368659;
         var pollInterval = 2000;
         function checkUpdate() {
           fetch('/__build__').then(function(r) { return r.json(); }).then(function(data) {
@@ -515,7 +515,7 @@
             var filterValue = this.value;
             var cards = document.querySelectorAll('.meeting-list .card');
             cards.forEach(function(card) {
-              var type = card.getAttribute('data-type') || '';
+              var type = (card.getAttribute('data-type') || '').toLowerCase();
               if (filterValue === 'all' || type.indexOf(filterValue) !== -1) {
                 card.style.display = '';
               } else {

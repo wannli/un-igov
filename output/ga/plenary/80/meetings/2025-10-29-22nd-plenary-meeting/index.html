@@ -295,7 +295,7 @@
               Statements in explanation of vote before the vote:
               
                 <span class="text-gray-500">
-                  SINGAPORE, Türkiye, BARBADOS, GUINEA-BISSAU, UGANDA, Iraq, ERITREA, India, United States, Venezuela (Bolivarian Republic of), CABO VERDE, Timor-Leste, Russian Federation, ETHIOPIA, China, PHILIPPINES, Pakistan, Iran (Islamic Republic of), KUWAIT, KENYA, ANTIGUA AND BARBUDA, ANGOLA, Belarus, COLOMBIA, BRAZIL, SOUTH AFRICA, BOLIVIA (PLURINATIONAL STATE OF), SAINT VINCENT AND THE GRENADINES, EQUATORIAL GUINEA, SAINT KITTS AND NEVIS, Viet Nam, Malaysia, Indonesia, Algeria, LAO PEOPLE&#39;S DEMOCRATIC REPUBLIC, ZIMBABWE, Mexico, Egypt, GHANA, SOLOMON ISLANDS, Nicaragua, Cuba (to introduce draft resolution A/80/L.6), Poland, NAMIBIA, Denmark, SRI LANKA, Australia, United States, Nicaragua, Israel, Ukraine, PERU, ROMANIA.
+                  Singapore, Türkiye, Barbados, Guinea-Bissau, Uganda, Iraq, Eritrea, India, United States, Venezuela (Bolivarian Republic of), Cabo Verde, Timor-Leste, Russian Federation, Ethiopia, China, Philippines, Pakistan, Iran (Islamic Republic of), Kuwait, Kenya, Antigua and Barbuda, Angola, Belarus, Colombia, Brazil, South Africa, Bolivia (PLURINATIONAL STATE OF), Saint Vincent and the Grenadines, Equatorial Guinea, Saint Kitts and Nevis, Viet Nam, Malaysia, Indonesia, Algeria, Lao People&#39;s Democratic Republic, Zimbabwe, Mexico, Egypt, Ghana, Solomon Islands, Nicaragua, Cuba (to introduce draft resolution A/80/L.6), Poland, Namibia, Denmark, Sri Lanka, Australia, United States, Nicaragua, Israel, Ukraine, Peru, Romania.
                 </span>
               
             </div>
@@ -315,7 +315,7 @@
               Statements in explanation of vote after the vote:
               
                 <span class="text-gray-500">
-                  SINGAPORE, Türkiye, BARBADOS, GUINEA-BISSAU, UGANDA, Iraq, ERITREA, India, United States, Venezuela (Bolivarian Republic of), CABO VERDE, Timor-Leste, Russian Federation, ETHIOPIA, China, PHILIPPINES, Pakistan, Iran (Islamic Republic of), KUWAIT, KENYA, ANTIGUA AND BARBUDA, ANGOLA, Belarus, COLOMBIA, BRAZIL, SOUTH AFRICA, BOLIVIA (PLURINATIONAL STATE OF), SAINT VINCENT AND THE GRENADINES, EQUATORIAL GUINEA, SAINT KITTS AND NEVIS, Viet Nam, Malaysia, Indonesia, Algeria, LAO PEOPLE&#39;S DEMOCRATIC REPUBLIC, ZIMBABWE, Mexico, Egypt, GHANA, SOLOMON ISLANDS, Nicaragua, Cuba (to introduce draft resolution A/80/L.6), Poland, NAMIBIA, Denmark, SRI LANKA, Australia, United States, Nicaragua, Israel, Ukraine, PERU, ROMANIA.
+                  Singapore, Türkiye, Barbados, Guinea-Bissau, Uganda, Iraq, Eritrea, India, United States, Venezuela (Bolivarian Republic of), Cabo Verde, Timor-Leste, Russian Federation, Ethiopia, China, Philippines, Pakistan, Iran (Islamic Republic of), Kuwait, Kenya, Antigua and Barbuda, Angola, Belarus, Colombia, Brazil, South Africa, Bolivia (PLURINATIONAL STATE OF), Saint Vincent and the Grenadines, Equatorial Guinea, Saint Kitts and Nevis, Viet Nam, Malaysia, Indonesia, Algeria, Lao People&#39;s Democratic Republic, Zimbabwe, Mexico, Egypt, Ghana, Solomon Islands, Nicaragua, Cuba (to introduce draft resolution A/80/L.6), Poland, Namibia, Denmark, Sri Lanka, Australia, United States, Nicaragua, Israel, Ukraine, Peru, Romania.
                 </span>
               
             </div>
@@ -375,7 +375,7 @@
 
     <script>
       (function() {
-        var lastBuild = 1769368585;
+        var lastBuild = 1769368659;
         var pollInterval = 2000;
         function checkUpdate() {
           fetch('/__build__').then(function(r) { return r.json(); }).then(function(data) {
@@ -395,7 +395,7 @@
             var filterValue = this.value;
             var cards = document.querySelectorAll('.meeting-list .card');
             cards.forEach(function(card) {
-              var type = card.getAttribute('data-type') || '';
+              var type = (card.getAttribute('data-type') || '').toLowerCase();
               if (filterValue === 'all' || type.indexOf(filterValue) !== -1) {
                 card.style.display = '';
               } else {

@@ -317,7 +317,7 @@
 
     <script>
       (function() {
-        var lastBuild = 1769368585;
+        var lastBuild = 1769368659;
         var pollInterval = 2000;
         function checkUpdate() {
           fetch('/__build__').then(function(r) { return r.json(); }).then(function(data) {
@@ -337,7 +337,7 @@
             var filterValue = this.value;
             var cards = document.querySelectorAll('.meeting-list .card');
             cards.forEach(function(card) {
-              var type = card.getAttribute('data-type') || '';
+              var type = (card.getAttribute('data-type') || '').toLowerCase();
               if (filterValue === 'all' || type.indexOf(filterValue) !== -1) {
                 card.style.display = '';
               } else {
