@@ -87,9 +87,9 @@ cd output && python3 -m http.server 8000
 
 ## Branch Management
 
-- **Commit directly to main** - No need to create branches for each session.
-- Exception: For a HUGE overhaul of something specific, open a temporary branch to avoid merge conflicts.
-- When done, commit changes with a clear message describing what was done.
+- **Commit directly to main for small fixes and changes** - No need to create branches for each session.
+- **Use opencode branches for significant features or multi-step changes** - When working on major updates that may span multiple sessions.
+- When done with an opencode branch: merge to main promptly and delete the remote branch.
 - Before pushing, run `git pull --rebase` to avoid merge conflicts.
 
 ## Collaboration Flow
