@@ -8,7 +8,7 @@ on:
     - cron: "0 6 * * *"
 
 permissions:
-  contents: read
+  contents: write
   pages: write
   id-token: write
 
@@ -33,6 +33,18 @@ jobs:
 
       - name: Scrape data
         run: unigov scrape --session 80 --all
+
+      - name: Commit scraped data
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data
+          if git diff --cached --quiet; then
+            echo "No data changes to commit."
+          else
+            git commit -m "Update iGov data"
+            git push
+          fi
 
       - name: Build site
         run: unigov build --session 80 --all
