@@ -1,41 +1,49 @@
 {% extends "base.html" %}
 {% set page_title = "Meetings" %}
+{% set active_page = "meetings" %}
 {% block content %}
-<div class="mb-4">
-  <nav class="flex items-center gap-2 text-sm text-muted">
-    <a href="{{ site.base_url }}index.html" class="hover:text-un-blue transition-colors">igov</a>
-    <span>/</span>
-    <span class="text-gray-700">GA</span>
-    <span>/</span>
-    <a href="{{ site.base_url }}ga/plenary/{{ session }}/meetings/index.html" class="text-gray-700 hover:text-un-blue transition-colors">Plenary</a>
-    <span>/</span>
-    <span class="text-gray-700">{{ session }}</span>
-    <span>/</span>
-    <span class="text-gray-900 font-medium">Meetings</span>
-  </nav>
+<div class="sdg-banner">
+  <div class="sdg-color sdg-1"></div>
+  <div class="sdg-color sdg-2"></div>
+  <div class="sdg-color sdg-3"></div>
+  <div class="sdg-color sdg-4"></div>
+  <div class="sdg-color sdg-5"></div>
+  <div class="sdg-color sdg-6"></div>
+  <div class="sdg-color sdg-7"></div>
+  <div class="sdg-color sdg-8"></div>
+  <div class="sdg-color sdg-9"></div>
+  <div class="sdg-color sdg-10"></div>
+  <div class="sdg-color sdg-11"></div>
+  <div class="sdg-color sdg-12"></div>
+  <div class="sdg-color sdg-13"></div>
+  <div class="sdg-color sdg-14"></div>
+  <div class="sdg-color sdg-15"></div>
+  <div class="sdg-color sdg-16"></div>
+  <div class="sdg-color sdg-17"></div>
 </div>
 
-<div class="mb-6">
-  <h1 class="text-3xl font-bold text-gray-900 tracking-tight">Meetings</h1>
+<div class="breadcrumbs">
+  <a href="{{ site.base_url }}index.html">Home</a>
+  <span>/</span>
+  <span>Meetings</span>
 </div>
 
-<div class="sticky top-20 z-10 space-y-3 bg-white/95 pb-3 backdrop-blur">
-  <div class="rounded-xl border border-gray-200 bg-white p-2 shadow-sm">
-    <div class="flex flex-wrap items-center gap-1.5 md:grid md:grid-cols-2">
-      <div class="flex flex-wrap items-center gap-1.5 md:block">
-        <label class="hidden md:inline-flex items-center text-[11px] font-semibold uppercase tracking-wide text-gray-500">Type</label>
-        <select id="meeting-type-filter" class="filter-pill inline-flex items-center h-6 whitespace-nowrap rounded-full border border-gray-200 px-3 py-0.5 text-[11px] font-medium text-gray-600 transition-colors hover:border-gray-300 hover:text-gray-900 bg-white cursor-pointer">
-          <option value="all">All</option>
-          <option value="formal">Formal meetings</option>
-          <option value="informal">Informal meetings</option>
-          <option value="consultations">Informal consultations</option>
-        </select>
-      </div>
-    </div>
-  </div>
+<div class="page-header">
+  <h1>Meetings — {{ session }}th Session</h1>
+  <p class="lead">Official meeting records and schedules</p>
 </div>
 
-<div class="space-y-4">
+<div class="filter-bar">
+  <label class="filter-bar-label">Filter by:</label>
+  <select id="meeting-type-filter">
+    <option value="all">All Meeting Types</option>
+    <option value="formal">Formal Meetings</option>
+    <option value="informal">Informal Meetings</option>
+    <option value="consultations">Informal Consultations</option>
+  </select>
+</div>
+
+<div class="meeting-list">
   {% set upcoming_meetings = [] %}
   {% set past_meetings = [] %}
 
@@ -49,55 +57,67 @@
   {% endfor %}
 
   {% if upcoming_meetings %}
-    <h2 class="text-lg font-semibold text-gray-900 mt-8 mb-4">Upcoming meetings</h2>
-    <div class="space-y-4" id="upcoming-meetings">
+    <div class="section-header mt-4">
+      <h2>Upcoming Meetings</h2>
+    </div>
+    <div class="card-list" id="upcoming-meetings">
       {% for meeting in upcoming_meetings %}
-        <article class="border border-gray-200 rounded-lg overflow-hidden hover:border-gray-300 transition-colors hover-lift" data-type="{{ meeting.MT_type | lower if meeting.MT_type else '' }}">
-          <a href="{{ meeting | meeting_url }}" class="block">
-          <div class="bg-gray-50 px-4 py-3 border-b border-gray-200">
-            <div class="flex items-start justify-between gap-4">
-              <div class="flex-1 min-w-0">
-                <div class="flex items-center gap-3">
-                  <span class="font-semibold text-gray-900">{{ meeting.MT_name or "Meeting" }}</span>
-                  {% if meeting.MT_type %}
-                    <span class="px-2 py-0.5 rounded text-xs font-medium bg-blue-100 text-blue-800">{{ meeting.MT_type }}</span>
-                  {% endif %}
-                </div>
-                {% if meeting.MT_commentary %}
-                  <div class="mt-2 text-sm text-gray-600 prose prose-sm max-w-none">
-                    {{ meeting.MT_commentary | safe }}
-                  </div>
+        <article class="card" data-type="{{ meeting.MT_type | lower if meeting.MT_type else '' }}">
+          <a href="{{ meeting | meeting_url }}" class="card-link">
+            <div class="card-body">
+              <div class="card-header">
+                <h3 class="card-title">{{ meeting.MT_name or "Meeting" }}</h3>
+                {% if meeting.MT_type %}
+                  <span class="badge">{{ meeting.MT_type }}</span>
                 {% endif %}
               </div>
-              <div class="flex flex-col items-end gap-1 text-sm text-gray-600 whitespace-nowrap flex-shrink-0">
-                <span class="font-medium">{{ meeting.MT_dateTimeScheduleStart | datetime_format("%A, %d %B %Y") }}</span>
-                <span>{{ meeting.MT_dateTimeScheduleStart[11:16] }} - {{ meeting.MT_dateTimeScheduleEnd[11:16] }}</span>
+              {% if meeting.MT_commentary %}
+                <p class="card-subtitle">{{ meeting.MT_commentary | safe }}</p>
+              {% endif %}
+              <div class="card-meta">
+                <span class="card-meta-item">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+                    <line x1="16" y1="2" x2="16" y2="6"/>
+                    <line x1="8" y1="2" x2="8" y2="6"/>
+                    <line x1="3" y1="10" x2="21" y2="10"/>
+                  </svg>
+                  {{ meeting.MT_dateTimeScheduleStart | datetime_format("%A, %d %B %Y") }}
+                </span>
+                <span class="card-meta-item">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"/>
+                    <polyline points="12 6 12 12 16 14"/>
+                  </svg>
+                  {{ meeting.MT_dateTimeScheduleStart[11:16] }} - {{ meeting.MT_dateTimeScheduleEnd[11:16] }}
+                </span>
                 {% if meeting.MT_room %}
-                  <span class="text-muted">{{ meeting.MT_room }}</span>
+                  <span class="card-meta-item">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                      <circle cx="12" cy="10" r="3"/>
+                    </svg>
+                    {{ meeting.MT_room }}
+                  </span>
                 {% endif %}
               </div>
+              {% if meeting.MT_segment %}
+                <div class="card-agenda">
+                  {% for segment in meeting.MT_segment %}
+                    <div class="agenda-item">
+                      {% if segment.MTS_agenda %}
+                        {% for agenda in segment.MTS_agenda %}
+                          <span class="agenda-item-label">Item {{ agenda.item }}</span>
+                        {% endfor %}
+                      {% endif %}
+                      {% if segment.MTS_segmentTitle %}
+                        <span class="agenda-item-title">{{ segment.MTS_segmentTitle }}</span>
+                      {% endif %}
+                    </div>
+                  {% endfor %}
+                </div>
+              {% endif %}
             </div>
-          </div>
-          {% if meeting.MT_segment %}
-            <div class="border-t border-gray-200 px-4 py-3">
-              <div class="space-y-3">
-                {% for segment in meeting.MT_segment %}
-                  <div class="border-l-2 border-un-blue pl-3">
-                    {% if segment.MTS_agenda %}
-                      {% for agenda in segment.MTS_agenda %}
-                        <div class="mb-1">
-                          <span class="text-[11px] font-semibold uppercase tracking-wide text-muted">Item {{ agenda.item }}</span>
-                        </div>
-                      {% endfor %}
-                    {% endif %}
-                    {% if segment.MTS_segmentTitle %}
-                      <h3 class="text-sm font-medium text-gray-900">{{ segment.MTS_segmentTitle }}</h3>
-                    {% endif %}
-                  </div>
-                {% endfor %}
-              </div>
-            </div>
-          {% endif %}
           </a>
         </article>
       {% endfor %}
@@ -105,38 +125,46 @@
   {% endif %}
 
   {% if past_meetings %}
-    <h2 class="text-lg font-semibold text-gray-900 mt-10 mb-4">Past meetings</h2>
-    <div class="space-y-3" id="past-meetings">
+    <div class="section-header mt-4">
+      <h2>Past Meetings</h2>
+    </div>
+    <div class="card-list compact" id="past-meetings">
       {% for meeting in past_meetings %}
-        <article class="border border-gray-200 rounded-lg overflow-hidden p-4 hover:border-gray-300 transition-colors" data-type="{{ meeting.MT_type | lower if meeting.MT_type else '' }}">
-          <a href="{{ meeting | meeting_url }}" class="block">
-          <div class="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between">
-            <div class="flex-1 min-w-0">
-              <h3 class="font-medium text-gray-900">{{ meeting.MT_name or "Meeting" }}</h3>
-              <p class="mt-1 text-sm text-muted">
-                {% if meeting.MT_type %}{{ meeting.MT_type }}{% endif %}
-                {% if meeting.MT_session %}· {{ meeting.MT_session }}{% endif %}
-              </p>
-              {% if meeting.MT_segment %}
-                <div class="mt-2 space-y-1">
-                  {% for segment in meeting.MT_segment[:3] %}
-                    {% if segment.MTS_agenda %}
-                      {% for agenda in segment.MTS_agenda %}
-                        <p class="text-xs text-muted">Item {{ agenda.item }}: {{ agenda.title[:50] }}{% if agenda.title and agenda.title|length > 50 %}...{% endif %}</p>
-                      {% endfor %}
+        <article class="card" data-type="{{ meeting.MT_type | lower if meeting.MT_type else '' }}">
+          <a href="{{ meeting | meeting_url }}" class="card-link">
+            <div class="card-body" style="padding: 16px 20px;">
+              <div class="card-list-item" style="padding: 0; border: none; margin: 0;">
+                <div class="card-list-main">
+                  <h3 class="card-title">{{ meeting.MT_name or "Meeting" }}</h3>
+                  <div class="card-list-meta">
+                    {% if meeting.MT_type %}
+                      <span class="badge badge-outline">{{ meeting.MT_type }}</span>
                     {% endif %}
-                  {% endfor %}
-                  {% if meeting.MT_segment|length > 3 %}
-                    <p class="text-xs text-muted">+ {{ meeting.MT_segment|length - 3 }} more items</p>
+                    {% if meeting.MT_session %}
+                      <span>{{ meeting.MT_session }}</span>
+                    {% endif %}
+                  </div>
+                  {% if meeting.MT_segment %}
+                    <div class="card-agenda-inline" style="margin-top: 12px;">
+                      {% for segment in meeting.MT_segment[:3] %}
+                        {% if segment.MTS_agenda %}
+                          {% for agenda in segment.MTS_agenda %}
+                            <span class="agenda-ref">Item {{ agenda.item }}: {{ agenda.title[:40] }}{% if agenda.title and agenda.title|length > 40 %}...{% endif %}</span>
+                          {% endfor %}
+                        {% endif %}
+                      {% endfor %}
+                      {% if meeting.MT_segment|length > 3 %}
+                        <span class="agenda-more">+ {{ meeting.MT_segment|length - 3 }} more</span>
+                      {% endif %}
+                    </div>
                   {% endif %}
                 </div>
-              {% endif %}
+                <div class="card-list-date">
+                  <span>{{ meeting.MT_dateTimeScheduleStart | datetime_format("%d %b %Y") }}</span>
+                  <span class="time">{{ meeting.MT_dateTimeScheduleStart[11:16] }}</span>
+                </div>
+              </div>
             </div>
-            <div class="flex flex-col items-end gap-1 text-sm text-gray-600 whitespace-nowrap flex-shrink-0">
-              <span>{{ meeting.MT_dateTimeScheduleStart | datetime_format("%A, %d %B %Y") }}</span>
-              <span>{{ meeting.MT_dateTimeScheduleStart[11:16] }} - {{ meeting.MT_dateTimeScheduleEnd[11:16] }}</span>
-            </div>
-          </div>
           </a>
         </article>
       {% endfor %}
@@ -144,8 +172,8 @@
   {% endif %}
 
   {% if not meetings %}
-    <div class="border border-gray-200 rounded-lg bg-gray-50 p-12 text-center">
-      <p class="text-muted">No meetings data available yet.</p>
+    <div class="empty-state">
+      <p>No meetings data available yet.</p>
     </div>
   {% endif %}
 </div>

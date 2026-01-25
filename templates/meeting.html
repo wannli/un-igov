@@ -1,269 +1,232 @@
 {% extends "base.html" %}
 {% set page_title = meeting.MT_name or "Meeting" %}
 {% block content %}
-<div class="mb-4">
-  <nav class="flex items-center gap-2 text-sm text-muted">
-    <a href="{{ site.base_url }}index.html" class="hover:text-un-blue transition-colors">igov</a>
-    <span>/</span>
-    <span class="text-gray-700">GA</span>
-    <span>/</span>
-    <a href="{{ site.base_url }}ga/plenary/{{ session }}/meetings/index.html" class="text-gray-700 hover:text-un-blue transition-colors">Plenary</a>
-    <span>/</span>
-    <span class="text-gray-700">{{ session }}</span>
-    <span>/</span>
-    <span class="text-gray-700">Meetings</span>
-    <span>/</span>
-    <span class="text-gray-900 font-medium">Meeting</span>
-  </nav>
+<div class="sdg-banner">
+  <div class="sdg-color sdg-1"></div>
+  <div class="sdg-color sdg-2"></div>
+  <div class="sdg-color sdg-3"></div>
+  <div class="sdg-color sdg-4"></div>
+  <div class="sdg-color sdg-5"></div>
+  <div class="sdg-color sdg-6"></div>
+  <div class="sdg-color sdg-7"></div>
+  <div class="sdg-color sdg-8"></div>
+  <div class="sdg-color sdg-9"></div>
+  <div class="sdg-color sdg-10"></div>
+  <div class="sdg-color sdg-11"></div>
+  <div class="sdg-color sdg-12"></div>
+  <div class="sdg-color sdg-13"></div>
+  <div class="sdg-color sdg-14"></div>
+  <div class="sdg-color sdg-15"></div>
+  <div class="sdg-color sdg-16"></div>
+  <div class="sdg-color sdg-17"></div>
 </div>
 
-<div class="mb-6">
-  <h1 class="text-3xl font-bold text-gray-900 tracking-tight">{{ meeting.MT_name or "Meeting" }}</h1>
+<div class="breadcrumbs">
+  <a href="{{ site.base_url }}index.html">Home</a>
+  <span>/</span>
+  <a href="{{ site.base_url }}ga/plenary/{{ session }}/meetings/index.html">Meetings</a>
+  <span>/</span>
+  <span>{{ meeting.MT_name or "Meeting" }}</span>
+</div>
+
+<div class="page-header">
+  <h1>{{ meeting.MT_name or "Meeting" }}</h1>
   {% if meeting.MT_type %}
-    <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800 mt-2">{{ meeting.MT_type }}</span>
+    <span class="badge">{{ meeting.MT_type }}</span>
   {% endif %}
 </div>
 
-<div class="grid grid-cols-1 lg:grid-cols-4 gap-6">
-  <div class="lg:col-span-3 space-y-8">
-    <div class="border border-gray-200 rounded-lg p-6 bg-gray-50">
-      <div class="flex flex-wrap gap-6 text-sm">
-        <div>
-          <span class="block text-xs font-semibold uppercase tracking-wide text-muted mb-1">Date</span>
-          <span class="font-medium">{{ meeting.MT_dateTimeScheduleStart | datetime_format("%A, %d %B %Y") }}</span>
-        </div>
-        <div>
-          <span class="block text-xs font-semibold uppercase tracking-wide text-muted mb-1">Time</span>
-          <span class="font-medium">{{ meeting.MT_dateTimeScheduleStart[11:16] }} - {{ meeting.MT_dateTimeScheduleEnd[11:16] }}</span>
-        </div>
-        {% if meeting.MT_room %}
-        <div>
-          <span class="block text-xs font-semibold uppercase tracking-wide text-muted mb-1">Location</span>
-          <span class="font-medium">{{ meeting.MT_room }}</span>
-        </div>
-        {% endif %}
-        {% if meeting.MT_session %}
-        <div>
-          <span class="block text-xs font-semibold uppercase tracking-wide text-muted mb-1">Session</span>
-          <span class="font-medium">{{ meeting.MT_session }}</span>
-        </div>
-        {% endif %}
+<div class="card mb-4">
+  <div class="card-body">
+    <div class="filter-bar" style="margin-bottom: 0; border: none; padding: 0;">
+      <div class="meta-item" style="display: flex; flex-direction: column; gap: 4px;">
+        <span class="filter-bar-label">Date</span>
+        <span style="font-size: 1rem; color: var(--un-black);">{{ meeting.MT_dateTimeScheduleStart | datetime_format("%A, %d %B %Y") }}</span>
       </div>
-      {% if meeting.MT_commentary %}
-        <div class="mt-4 pt-4 border-t border-gray-200 prose prose-sm max-w-none">
-          {{ meeting.MT_commentary | safe }}
-        </div>
+      <div class="meta-item" style="display: flex; flex-direction: column; gap: 4px;">
+        <span class="filter-bar-label">Time</span>
+        <span style="font-size: 1rem; color: var(--un-black);">{{ meeting.MT_dateTimeScheduleStart[11:16] }} - {{ meeting.MT_dateTimeScheduleEnd[11:16] }}</span>
+      </div>
+      {% if meeting.MT_room %}
+      <div class="meta-item" style="display: flex; flex-direction: column; gap: 4px;">
+        <span class="filter-bar-label">Location</span>
+        <span style="font-size: 1rem; color: var(--un-black);">{{ meeting.MT_room }}</span>
+      </div>
+      {% endif %}
+      {% if meeting.MT_session %}
+      <div class="meta-item" style="display: flex; flex-direction: column; gap: 4px;">
+        <span class="filter-bar-label">Session</span>
+        <span style="font-size: 1rem; color: var(--un-black);">{{ meeting.MT_session }}</span>
+      </div>
       {% endif %}
     </div>
-
-    {% set voting_steps = [] %}
-    {% set non_voting_steps = [] %}
-    {% set statements = [] %}
-    {% set adopted_resolutions = [] %}
-    {% set adopted_decisions = [] %}
-    
-    {% for step in meeting.procedureStep | default([]) %}
-      {% if step.PS_type_label == 'Statements in explanation of vote before the vote' %}
-        {% set statements = (statements.append(step), statements) %}
-      {% elif step.PS_voting == 'Yes' or step.PS_voting == 'No' %}
-        {% set voting_steps = (voting_steps.append(step), voting_steps) %}
-      {% elif step.PS_type_label and 'adopted' in step.PS_type_label|lower %}
-        {% if step.PS_recordResolutionNumber %}
-          {% set adopted_resolutions = (adopted_resolutions.append(step), adopted_resolutions) %}
-        {% elif step.PS_recordDecisionNumber %}
-          {% set adopted_decisions = (adopted_decisions.append(step), adopted_decisions) %}
-        {% endif %}
-      {% else %}
-        {% set non_voting_steps = (non_voting_steps.append(step), non_voting_steps) %}
-      {% endif %}
-    {% endfor %}
-
-    {% if statements %}
-      <div>
-        <h2 class="text-xl font-semibold text-gray-900 mb-4">Explanation of vote before the vote</h2>
-        <div class="space-y-3">
-          {% for step in statements %}
-            {% for speaker in step.PS_ListOfSpeakers | default([]) %}
-              <div class="border-l-4 border-yellow-400 pl-4 py-2 bg-yellow-50 rounded-r">
-                <p class="font-medium text-gray-900">{{ speaker.SP_entity.SP_entity | default('Unknown') }}</p>
-              </div>
-            {% endfor %}
-          {% endfor %}
-        </div>
-      </div>
-    {% endif %}
-
-    {% if voting_steps %}
-      <div>
-        <h2 class="text-xl font-semibold text-gray-900 mb-4">Voting</h2>
-        <div class="space-y-3">
-          {% for step in voting_steps %}
-            {% set resolution_symbol = resolution_map.get(step.PS_recordResolutionNumber, '') %}
-            <div class="border border-gray-200 rounded-lg p-4 hover:border-gray-300 transition-colors">
-              <div class="flex items-start gap-3">
-                <div class="flex-shrink-0 w-8 h-8 rounded-full bg-un-blue/10 flex items-center justify-center mt-0.5">
-                  <span class="text-xs font-semibold text-un-blue">{{ loop.index }}</span>
-                </div>
-                <div class="flex-1 min-w-0">
-                  {% if step.PS_type_label and 'part of proposal' in step.PS_type_label|lower %}
-                    <div class="mb-3">
-                      {% if step.PS_preambularParagraphs %}
-                        {% for para in step.PS_preambularParagraphs %}
-                          <p class="text-sm text-gray-700">Preambular paragraph {{ para }} was adopted</p>
-                        {% endfor %}
-                      {% endif %}
-                      {% if step.PS_operativeParagraphs %}
-                        {% for para in step.PS_operativeParagraphs %}
-                          <p class="text-sm text-gray-700">Operative paragraph {{ para }} was adopted</p>
-                        {% endfor %}
-                      {% endif %}
-                    </div>
-                  {% endif %}
-                  
-                  {% if step.PS_voting == 'Yes' and (step.PS_InFavor or step.PS_against or step.PS_abstention) %}
-                    <p class="text-gray-900">{% if resolution_symbol %}Draft resolution {{ resolution_symbol }}{% endif %} was adopted by {% if step.PS_InFavor %}{{ step.PS_InFavor }} votes to {{ step.PS_against }}{% endif %}{% if step.PS_abstention %}, with {{ step.PS_abstention }} abstentions{% endif %}{% if step.PS_recordResolutionNumber %} (resolution {{ step.PS_recordResolutionNumber }}){% endif %}</p>
-                  {% endif %}
-                  
-                  {% if step.PS_voting == 'No' %}
-                    <p class="text-gray-900">{% if resolution_symbol %}Draft resolution {{ resolution_symbol }}{% endif %} was adopted{% if step.PS_recordResolutionNumber %} (resolution {{ step.PS_recordResolutionNumber }}){% endif %}</p>
-                  {% endif %}
-                </div>
-              </div>
-            </div>
-          {% endfor %}
-        </div>
-      </div>
-    {% endif %}
-
-    {% if adopted_resolutions %}
-      <div>
-        <h2 class="text-xl font-semibold text-gray-900 mb-4">Resolutions Adopted</h2>
-        <div class="grid gap-3">
-          {% for step in adopted_resolutions %}
-            {% set resolution_symbol = resolution_map.get(step.PS_recordResolutionNumber, '') %}
-            <div class="border border-gray-200 rounded-lg p-4 bg-green-50">
-              <p class="font-medium text-gray-900">
-                {% if resolution_symbol %}
-                  Draft resolution {{ resolution_symbol }} was adopted
-                {% elif step.PS_recordResolutionNumber %}
-                  Draft resolution {{ step.PS_recordResolutionNumber }} was adopted
-                {% else %}
-                  Draft resolution was adopted
-                {% endif %}
-              </p>
-            </div>
-          {% endfor %}
-        </div>
-      </div>
-    {% endif %}
-
-    {% if adopted_decisions %}
-      <div>
-        <h2 class="text-xl font-semibold text-gray-900 mb-4">Decisions Adopted</h2>
-        <div class="grid gap-3">
-          {% for step in adopted_decisions %}
-            <div class="border border-gray-200 rounded-lg p-4 bg-blue-50">
-              <p class="font-medium text-gray-900">
-                {% if step.PS_recordDecisionNumber %}
-                  Draft decision {{ step.PS_recordDecisionNumber }} was adopted
-                {% else %}
-                  Draft decision was adopted
-                {% endif %}
-              </p>
-            </div>
-          {% endfor %}
-        </div>
-      </div>
-    {% endif %}
-
-    {% if meeting.MT_segment %}
-      <div>
-        <h2 class="text-xl font-semibold text-gray-900 mb-4">Agenda Items</h2>
-        <div class="space-y-4">
-          {% for segment in meeting.MT_segment %}
-            <div class="border border-gray-200 rounded-lg p-4">
-              {% if segment.MTS_agenda %}
-                {% for agenda in segment.MTS_agenda %}
-                  <div class="mb-2">
-                    <span class="inline-flex items-center px-2.5 py-0.5 rounded-md bg-gray-100 text-xs font-semibold text-gray-800">Item {{ agenda.item }}</span>
-                  </div>
-                {% endfor %}
-              {% endif %}
-              {% if segment.MTS_segmentTitle %}
-                <h3 class="text-base font-medium text-gray-900">{{ segment.MTS_segmentTitle }}</h3>
-              {% endif %}
-              {% if segment.MTS_segmentInfo %}
-                <p class="mt-2 text-sm text-gray-600">{{ segment.MTS_segmentInfo }}</p>
-              {% endif %}
-            </div>
-          {% endfor %}
-        </div>
-      </div>
-    {% endif %}
   </div>
+</div>
 
-  <div class="space-y-6">
-    <div class="border border-gray-200 rounded-lg p-4">
-      <h3 class="text-sm font-semibold text-gray-900 mb-3">Meeting Information</h3>
-      <dl class="space-y-3 text-sm">
-        <div>
-          <dt class="text-muted">Session</dt>
-          <dd class="font-medium">{{ meeting.MT_session or "—" }}</dd>
-        </div>
-        <div>
-          <dt class="text-muted">Type</dt>
-          <dd class="font-medium">{{ meeting.MT_type or "—" }}</dd>
-        </div>
-        <div>
-          <dt class="text-muted">Date</dt>
-          <dd class="font-medium">{{ meeting.MT_dateTimeScheduleStart[:10] or "—" }}</dd>
-        </div>
-        <div>
-          <dt class="text-muted">Time</dt>
-          <dd class="font-medium">{{ meeting.MT_dateTimeScheduleStart[11:16] or "—" }} - {{ meeting.MT_dateTimeScheduleEnd[11:16] or "—" }}</dd>
-        </div>
-        <div>
-          <dt class="text-muted">Location</dt>
-          <dd class="font-medium">{{ meeting.MT_room or "—" }}</dd>
-        </div>
-      </dl>
+{% if meeting.MT_commentary %}
+<div class="section-header mt-4">
+  <h2>Overview</h2>
+</div>
+<div class="card mb-4">
+  <div class="card-body">
+    {{ meeting.MT_commentary | safe }}
+  </div>
+</div>
+{% endif %}
+
+{% if meeting.MT_segment %}
+<div class="section-header mt-4">
+  <h2>Agenda Items</h2>
+</div>
+<div class="card-list">
+  {% for segment in meeting.MT_segment %}
+  <article class="card">
+    <div class="card-body">
+      {% if segment.MTS_agenda %}
+        {% for agenda in segment.MTS_agenda %}
+          <span class="badge mb-2" style="display: inline-block; margin-bottom: 8px;">Item {{ agenda.item }}</span>
+        {% endfor %}
+      {% endif %}
+      {% if segment.MTS_segmentTitle %}
+        <h3 style="font-size: 1.2rem; margin-bottom: 12px;">{{ segment.MTS_segmentTitle }}</h3>
+      {% endif %}
+      {% if segment.MTS_segmentInfo %}
+        <p style="margin: 0;">{{ segment.MTS_segmentInfo }}</p>
+      {% endif %}
     </div>
+  </article>
+  {% endfor %}
+</div>
+{% endif %}
 
-    {% if meeting.procedureStep and meeting.procedureStep|length > 0 %}
-      <div class="border border-gray-200 rounded-lg p-4">
-        <h3 class="text-sm font-semibold text-gray-900 mb-3">Quick Stats</h3>
-        <dl class="space-y-2 text-sm">
-          <div class="flex justify-between">
-            <dt class="text-muted">Procedure steps</dt>
-            <dd class="font-medium">{{ meeting.procedureStep|length }}</dd>
+{% set voting_steps = [] %}
+{% set statements = [] %}
+{% set adopted_resolutions = [] %}
+{% set adopted_decisions = [] %}
+
+{% for step in meeting.procedureStep | default([]) %}
+  {% if step.PS_type_label == 'Statements in explanation of vote before the vote' %}
+    {% set statements = (statements.append(step), statements) %}
+  {% elif step.PS_voting == 'Yes' or step.PS_voting == 'No' %}
+    {% set voting_steps = (voting_steps.append(step), voting_steps) %}
+  {% elif step.PS_type_label and 'adopted' in step.PS_type_label|lower %}
+    {% if step.PS_recordResolutionNumber %}
+      {% set adopted_resolutions = (adopted_resolutions.append(step), adopted_resolutions) %}
+    {% elif step.PS_recordDecisionNumber %}
+      {% set adopted_decisions = (adopted_decisions.append(step), adopted_decisions) %}
+    {% endif %}
+  {% endif %}
+{% endfor %}
+
+{% if statements %}
+<div class="section-header mt-4">
+  <h2>Explanation of Vote</h2>
+</div>
+<div class="card-list">
+  {% for step in statements %}
+    {% for speaker in step.PS_ListOfSpeakers | default([]) %}
+      <div class="card">
+        <div class="card-body" style="padding: 16px 20px;">
+          <div class="card-list-item" style="padding: 0; border: none; margin: 0;">
+            <div class="card-list-main">
+              <h3 style="font-size: 1rem; margin: 0;">{{ speaker.SP_entity.SP_entity | default('Unknown') }}</h3>
+            </div>
           </div>
-          {% set voting_count = meeting.procedureStep|selectattr('PS_voting')|list|length %}
-          {% if voting_count > 0 %}
-            <div class="flex justify-between">
-              <dt class="text-muted">Votes taken</dt>
-              <dd class="font-medium">{{ voting_count }}</dd>
-            </div>
-          {% endif %}
-          {% set resolutions_adopted = meeting.procedureStep|selectattr('PS_recordResolutionNumber')|list|length %}
-          {% if resolutions_adopted > 0 %}
-            <div class="flex justify-between">
-              <dt class="text-muted">Resolutions</dt>
-              <dd class="font-medium">{{ resolutions_adopted }}</dd>
-            </div>
-          {% endif %}
-        </dl>
+        </div>
       </div>
-    {% endif %}
+    {% endfor %}
+  {% endfor %}
+</div>
+{% endif %}
 
-    <div class="border border-gray-200 rounded-lg p-4">
-      <h3 class="text-sm font-semibold text-gray-900 mb-3">Source</h3>
-      <a href="https://igov.un.org/ga/plenary/{{ session }}/meeting/{{ meeting_id }}" target="_blank" rel="noopener noreferrer" class="text-sm text-un-blue hover:underline flex items-center gap-1">
-        View on igov.un.org
-        <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-        </svg>
-      </a>
+{% if voting_steps %}
+<div class="section-header mt-4">
+  <h2>Voting Records</h2>
+</div>
+<div class="card-list">
+  {% for step in voting_steps %}
+    {% set resolution_symbol = resolution_map.get(step.PS_recordResolutionNumber, '') %}
+    <div class="card">
+      <div class="card-body" style="padding: 16px 20px;">
+        <div class="card-list-item" style="padding: 0; border: none; margin: 0;">
+          <div class="card-list-main">
+            {% if resolution_symbol %}
+              <h3 style="font-size: 1rem; margin: 0 0 8px 0;">Draft resolution {{ resolution_symbol }}</h3>
+            {% endif %}
+            <p style="margin: 0; color: var(--un-gray-dark);">
+              {% if step.PS_voting == 'Yes' and (step.PS_InFavor or step.PS_against or step.PS_abstention) %}
+                Adopted by {{ step.PS_InFavor }} to {{ step.PS_against }}{% if step.PS_abstention %}, {{ step.PS_abstention }} abstentions{% endif %}
+              {% elif step.PS_voting == 'No' %}
+                Rejected
+              {% endif %}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  {% endfor %}
+</div>
+{% endif %}
+
+{% if adopted_resolutions or adopted_decisions %}
+<div class="section-header mt-4">
+  <h2>Adopted Documents</h2>
+</div>
+<div class="card-list">
+  {% for step in adopted_resolutions %}
+    {% set resolution_symbol = resolution_map.get(step.PS_recordResolutionNumber, '') %}
+    <div class="card">
+      <div class="card-body" style="padding: 16px 20px;">
+        <div class="card-list-item" style="padding: 0; border: none; margin: 0;">
+          <div class="card-list-main">
+            <span class="badge badge-outline" style="margin-bottom: 4px;">Resolution</span>
+            <h3 style="font-size: 1rem; margin: 0;">{{ resolution_symbol or step.PS_recordResolutionNumber }}</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  {% endfor %}
+  {% for step in adopted_decisions %}
+    <div class="card">
+      <div class="card-body" style="padding: 16px 20px;">
+        <div class="card-list-item" style="padding: 0; border: none; margin: 0;">
+          <div class="card-list-main">
+            <span class="badge badge-outline" style="margin-bottom: 4px;">Decision</span>
+            <h3 style="font-size: 1rem; margin: 0;">{{ step.PS_recordDecisionNumber }}</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  {% endfor %}
+</div>
+{% endif %}
+
+{% if rendered_procedure_steps %}
+<div class="section-header mt-4">
+  <h2>Procedure Steps</h2>
+</div>
+<div class="card-list">
+  {% for step in rendered_procedure_steps %}
+  <div class="card">
+    <div class="card-body" style="padding: 16px 20px;">
+      <span class="badge badge-outline" style="margin-bottom: 4px;">{{ step.type_label }}</span>
+      <p style="margin: 8px 0 0 0;">{{ step.text | safe }}</p>
+      {% if step.speakers %}
+      <ul style="margin: 12px 0 0 0; padding-left: 20px; color: var(--un-gray-dark);">
+        {% for speaker in step.speakers %}
+        <li style="margin-bottom: 4px;">{{ speaker.name }}</li>
+        {% endfor %}
+      </ul>
+      {% endif %}
     </div>
   </div>
+  {% endfor %}
+</div>
+{% endif %}
+
+<div class="mt-4 text-center">
+  <a href="https://igov.un.org/ga/plenary/{{ session }}/meeting/{{ meeting_id }}" target="_blank" rel="noopener" class="btn btn-outline">
+    View on igov.un.org →
+  </a>
 </div>
 {% endblock %}

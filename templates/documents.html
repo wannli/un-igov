@@ -1,51 +1,74 @@
 {% extends "base.html" %}
 {% set page_title = "Documents" %}
+{% set active_page = "documents" %}
 {% block content %}
-<div class="mb-4">
-  <nav class="flex items-center gap-2 text-sm text-muted">
-    <a href="{{ site.base_url }}index.html" class="hover:text-un-blue transition-colors">igov</a>
-    <span>/</span>
-    <span class="text-gray-700">GA</span>
-    <span>/</span>
-    <a href="{{ site.base_url }}ga/plenary/{{ session }}/documents/index.html" class="text-gray-700 hover:text-un-blue transition-colors">Plenary</a>
-    <span>/</span>
-    <span class="text-gray-700">{{ session }}</span>
-    <span>/</span>
-    <span class="text-gray-900 font-medium">Documents</span>
-  </nav>
+<div class="sdg-banner">
+  <div class="sdg-color sdg-1"></div>
+  <div class="sdg-color sdg-2"></div>
+  <div class="sdg-color sdg-3"></div>
+  <div class="sdg-color sdg-4"></div>
+  <div class="sdg-color sdg-5"></div>
+  <div class="sdg-color sdg-6"></div>
+  <div class="sdg-color sdg-7"></div>
+  <div class="sdg-color sdg-8"></div>
+  <div class="sdg-color sdg-9"></div>
+  <div class="sdg-color sdg-10"></div>
+  <div class="sdg-color sdg-11"></div>
+  <div class="sdg-color sdg-12"></div>
+  <div class="sdg-color sdg-13"></div>
+  <div class="sdg-color sdg-14"></div>
+  <div class="sdg-color sdg-15"></div>
+  <div class="sdg-color sdg-16"></div>
+  <div class="sdg-color sdg-17"></div>
 </div>
 
-<div class="mb-6">
-  <h1 class="text-3xl font-bold text-gray-900 tracking-tight">Documents</h1>
+<div class="breadcrumbs">
+  <a href="{{ site.base_url }}index.html">Home</a>
+  <span>/</span>
+  <span>Documents</span>
 </div>
 
-<div class="space-y-4">
+<div class="page-header">
+  <h1>Documents — {{ session }}th Session</h1>
+  <p class="lead">Official documents, resolutions, and reports</p>
+</div>
+
+{% if documents %}
+<div class="card-list">
   {% for doc in documents %}
-    <article class="border border-gray-200 rounded-lg p-4 hover:border-gray-300 transition-colors hover-lift bg-white">
-      <div class="flex flex-col gap-2 md:flex-row md:items-start md:justify-between">
-        <div class="flex-1 min-w-0">
-          <div class="flex items-center gap-3 mb-2">
-            <span class="font-mono text-[11px] font-semibold uppercase tracking-wide text-un-blue">{{ doc.symbol }}</span>
-            {% if doc.doc_type %}
-              <span class="px-2 py-0.5 rounded text-xs font-medium bg-gray-100 text-gray-700">{{ doc.doc_type }}</span>
+    <article class="card">
+      <div class="card-body" style="padding: 20px;">
+        <div class="card-list-item" style="padding: 0; border: none; margin: 0;">
+          <div class="card-list-main">
+            <div class="flex items-center gap-3 mb-2">
+              <span class="mono" style="font-size: 0.8rem; font-weight: 600; text-transform: uppercase; color: var(--un-blue);">{{ doc.symbol }}</span>
+              {% if doc.doc_type %}
+                <span class="badge badge-outline">{{ doc.doc_type }}</span>
+              {% endif %}
+            </div>
+            <h3 style="font-size: 1.05rem; margin: 0 0 8px 0;">
+              <a href="#" class="table-link">{{ doc.title or "Untitled document" }}</a>
+            </h3>
+            {% if doc.agenda_title %}
+              <div class="card-list-meta">
+                <span>Agenda {{ doc.agenda_item }}</span>
+                <span>{{ doc.agenda_title }}</span>
+              </div>
             {% endif %}
           </div>
-          <h2 class="text-lg font-medium text-gray-900">{{ doc.title or "Untitled document" }}</h2>
-          {% if doc.agenda_title %}
-            <p class="mt-1 text-sm text-muted">Agenda {{ doc.agenda_item }} · {{ doc.agenda_title }}</p>
-          {% endif %}
-        </div>
-        <div class="flex flex-col items-end gap-1 text-sm text-muted whitespace-nowrap flex-shrink-0">
-          {% if doc.date %}
-            <span>{{ doc.date }}</span>
-          {% endif %}
+          <div class="card-list-date">
+            {% if doc.date %}
+              <span>{{ doc.date }}</span>
+            {% endif %}
+          </div>
         </div>
       </div>
     </article>
-  {% else %}
-    <div class="border border-gray-200 rounded-lg bg-gray-50 p-12 text-center">
-      <p class="text-muted">No documents data available yet.</p>
-    </div>
   {% endfor %}
 </div>
+{% else %}
+<div class="empty-state">
+  <p>No documents data available yet.</p>
+</div>
+{% endif %}
 {% endblock %}

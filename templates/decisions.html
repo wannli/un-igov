@@ -1,56 +1,92 @@
 {% extends "base.html" %}
 {% set page_title = "Decisions" %}
+{% set active_page = "decisions" %}
 {% block content %}
-<div class="mb-4">
-  <nav class="flex items-center gap-2 text-sm text-muted">
-    <a href="{{ site.base_url }}index.html" class="hover:text-un-blue transition-colors">igov</a>
-    <span>/</span>
-    <span class="text-gray-700">GA</span>
-    <span>/</span>
-    <a href="{{ site.base_url }}ga/plenary/{{ session }}/decisions/index.html" class="text-gray-700 hover:text-un-blue transition-colors">Plenary</a>
-    <span>/</span>
-    <span class="text-gray-700">{{ session }}</span>
-    <span>/</span>
-    <span class="text-gray-900 font-medium">Decisions</span>
-  </nav>
+<div class="sdg-banner">
+  <div class="sdg-color sdg-1"></div>
+  <div class="sdg-color sdg-2"></div>
+  <div class="sdg-color sdg-3"></div>
+  <div class="sdg-color sdg-4"></div>
+  <div class="sdg-color sdg-5"></div>
+  <div class="sdg-color sdg-6"></div>
+  <div class="sdg-color sdg-7"></div>
+  <div class="sdg-color sdg-8"></div>
+  <div class="sdg-color sdg-9"></div>
+  <div class="sdg-color sdg-10"></div>
+  <div class="sdg-color sdg-11"></div>
+  <div class="sdg-color sdg-12"></div>
+  <div class="sdg-color sdg-13"></div>
+  <div class="sdg-color sdg-14"></div>
+  <div class="sdg-color sdg-15"></div>
+  <div class="sdg-color sdg-16"></div>
+  <div class="sdg-color sdg-17"></div>
 </div>
 
-<div class="mb-6">
-  <h1 class="text-3xl font-bold text-gray-900 tracking-tight">Decisions</h1>
+<div class="breadcrumbs">
+  <a href="{{ site.base_url }}index.html">Home</a>
+  <span>/</span>
+  <span>Decisions</span>
 </div>
 
-<div class="space-y-4">
-  {% for decision in decisions %}
-    <article class="border border-gray-200 rounded-lg p-4 hover:border-gray-300 transition-colors hover-lift bg-white">
-      <div class="flex flex-col gap-2 md:flex-row md:items-start md:justify-between">
-        <div class="flex-1 min-w-0">
-          <div class="flex items-center gap-3 mb-2">
-            <span class="font-mono text-[11px] font-semibold uppercase tracking-wide text-un-blue">{{ decision.ED_DecisionNumber }}</span>
-            {% if decision.ED_Type %}
-              <span class="px-2 py-0.5 rounded text-xs font-medium bg-gray-100 text-gray-700">{{ decision.ED_Type }}</span>
-            {% endif %}
-          </div>
-          <h2 class="text-lg font-medium text-gray-900">{{ decision.ED_Title }}</h2>
-          {% if decision.ED_AgendaItem %}
-            <p class="mt-1 text-sm text-muted">Agenda {{ decision.ED_AgendaItem }}</p>
+<div class="page-header">
+  <h1>Decisions — {{ session }}th Session</h1>
+  <p class="lead">Decisions adopted by the General Assembly</p>
+</div>
+
+{% if decisions %}
+<div class="data-table-container">
+  <table>
+    <thead>
+      <tr>
+        <th style="width: 120px;">Decision</th>
+        <th>Title</th>
+        <th style="width: 100px;">Agenda</th>
+        <th style="width: 140px;">Meeting</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for decision in decisions %}
+      <tr>
+        <td>
+          <span class="mono">{{ decision.ED_DecisionNumber }}</span>
+          {% if decision.ED_Type %}
+            <br><span class="badge badge-outline" style="margin-top: 4px;">{{ decision.ED_Type }}</span>
           {% endif %}
-        </div>
-        {% if decision.ED_Meeting %}
-          <div class="flex flex-col items-end gap-1 text-sm text-muted whitespace-nowrap flex-shrink-0">
+        </td>
+        <td>
+          <a href="#" class="table-link">{{ decision.ED_Title }}</a>
+        </td>
+        <td>
+          {% if decision.ED_AgendaItem %}
+            Item {{ decision.ED_AgendaItem }}
+          {% endif %}
+        </td>
+        <td>
+          {% if decision.ED_Meeting and decision.ED_Meeting[0] %}
             {% if decision.ED_Meeting[0].ED_Date %}
-              <span>{{ decision.ED_Meeting[0].ED_Date[:10] }}</span>
+              {{ decision.ED_Meeting[0].ED_Date[:10] }}
             {% endif %}
             {% if decision.ED_Meeting[0].ED_Number %}
-              <span class="text-xs">{{ decision.ED_Meeting[0].ED_Number }}</span>
+              <div class="meta-row">Meeting {{ decision.ED_Meeting[0].ED_Number }}</div>
             {% endif %}
+          {% endif %}
+        </td>
+      </tr>
+      {% else %}
+      <tr>
+        <td colspan="4">
+          <div class="empty-state">
+            <p>No decisions data available yet.</p>
           </div>
-        {% endif %}
-      </div>
-    </article>
-  {% else %}
-    <div class="border border-gray-200 rounded-lg bg-gray-50 p-12 text-center">
-      <p class="text-muted">No decisions data available yet.</p>
-    </div>
-  {% endfor %}
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
 </div>
+{% else %}
+<div class="empty-state">
+  <p>No decisions data available yet.</p>
+</div>
+{% endif %}
 {% endblock %}

@@ -1,46 +1,73 @@
 {% extends "base.html" %}
 {% set page_title = "Agenda" %}
+{% set active_page = "agenda" %}
 {% block content %}
-<div class="mb-4">
-  <nav class="flex items-center gap-2 text-sm text-muted">
-    <a href="{{ site.base_url }}index.html" class="hover:text-un-blue transition-colors">igov</a>
-    <span>/</span>
-    <span class="text-gray-700">GA</span>
-    <span>/</span>
-    <a href="{{ site.base_url }}ga/plenary/{{ session }}/agenda/index.html" class="text-gray-700 hover:text-un-blue transition-colors">Plenary</a>
-    <span>/</span>
-    <span class="text-gray-700">{{ session }}</span>
-    <span>/</span>
-    <span class="text-gray-900 font-medium">Agenda</span>
-  </nav>
+<div class="sdg-banner">
+  <div class="sdg-color sdg-1"></div>
+  <div class="sdg-color sdg-2"></div>
+  <div class="sdg-color sdg-3"></div>
+  <div class="sdg-color sdg-4"></div>
+  <div class="sdg-color sdg-5"></div>
+  <div class="sdg-color sdg-6"></div>
+  <div class="sdg-color sdg-7"></div>
+  <div class="sdg-color sdg-8"></div>
+  <div class="sdg-color sdg-9"></div>
+  <div class="sdg-color sdg-10"></div>
+  <div class="sdg-color sdg-11"></div>
+  <div class="sdg-color sdg-12"></div>
+  <div class="sdg-color sdg-13"></div>
+  <div class="sdg-color sdg-14"></div>
+  <div class="sdg-color sdg-15"></div>
+  <div class="sdg-color sdg-16"></div>
+  <div class="sdg-color sdg-17"></div>
 </div>
 
-<div class="mb-6">
-  <h1 class="text-3xl font-bold text-gray-900 tracking-tight">Agenda Items</h1>
+<div class="breadcrumbs">
+  <a href="{{ site.base_url }}index.html">Home</a>
+  <span>/</span>
+  <span>Agenda Items</span>
 </div>
 
-<div class="space-y-4">
-  {% for item in agenda %}
-    <article class="border border-gray-200 rounded-lg p-4 hover:border-gray-300 transition-colors hover-lift bg-white">
-      <div class="flex flex-col gap-2 md:flex-row md:items-start md:justify-between">
-        <div class="flex-1 min-w-0">
-          <div class="flex items-center gap-3 mb-2">
-            <span class="text-[11px] font-semibold uppercase tracking-wide text-muted">Item {{ item.AG_Item }}</span>
-            {% if item.AG_Body %}
-              <span class="px-2 py-0.5 rounded text-xs font-medium bg-gray-100 text-gray-700">{{ item.AG_Body }}</span>
-            {% endif %}
-          </div>
-          <h2 class="text-lg font-medium text-gray-900">{{ item.AG_Title }}</h2>
+<div class="page-header">
+  <h1>Agenda Items — {{ session }}th Session</h1>
+  <p class="lead">Complete list of agenda items for the session</p>
+</div>
+
+{% if agenda %}
+<div class="data-table-container">
+  <table>
+    <thead>
+      <tr>
+        <th style="width: 100px;">Item</th>
+        <th>Title</th>
+        <th style="width: 180px;">Committee</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for item in agenda %}
+      <tr>
+        <td>
+          <a href="#" class="table-link">Item {{ item.AG_Item }}</a>
+        </td>
+        <td>
+          <div style="font-weight: 500;">{{ item.AG_Title }}</div>
           {% if item.AG_Heading %}
-            <p class="mt-1 text-sm text-muted">{{ item.AG_Heading }}</p>
+            <div class="meta-row">{{ item.AG_Heading }}</div>
           {% endif %}
-        </div>
-      </div>
-    </article>
-  {% else %}
-    <div class="border border-gray-200 rounded-lg bg-gray-50 p-12 text-center">
-      <p class="text-muted">No agenda data available yet.</p>
-    </div>
-  {% endfor %}
+        </td>
+        <td>
+          {% if item.AG_Body %}
+            <span class="badge">{{ item.AG_Body }}</span>
+          {% endif %}
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
 </div>
+{% else %}
+<div class="empty-state">
+  <p>No agenda data available yet.</p>
+</div>
+{% endif %}
 {% endblock %}

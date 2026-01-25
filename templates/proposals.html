@@ -1,59 +1,90 @@
 {% extends "base.html" %}
 {% set page_title = "Proposals" %}
+{% set active_page = "proposals" %}
 {% block content %}
-<div class="mb-4">
-  <nav class="flex items-center gap-2 text-sm text-muted">
-    <a href="{{ site.base_url }}index.html" class="hover:text-un-blue transition-colors">igov</a>
-    <span>/</span>
-    <span class="text-gray-700">GA</span>
-    <span>/</span>
-    <a href="{{ site.base_url }}ga/plenary/{{ session }}/proposals/index.html" class="text-gray-700 hover:text-un-blue transition-colors">Plenary</a>
-    <span>/</span>
-    <span class="text-gray-700">{{ session }}</span>
-    <span>/</span>
-    <span class="text-gray-900 font-medium">Proposals</span>
-  </nav>
+<div class="sdg-banner">
+  <div class="sdg-color sdg-1"></div>
+  <div class="sdg-color sdg-2"></div>
+  <div class="sdg-color sdg-3"></div>
+  <div class="sdg-color sdg-4"></div>
+  <div class="sdg-color sdg-5"></div>
+  <div class="sdg-color sdg-6"></div>
+  <div class="sdg-color sdg-7"></div>
+  <div class="sdg-color sdg-8"></div>
+  <div class="sdg-color sdg-9"></div>
+  <div class="sdg-color sdg-10"></div>
+  <div class="sdg-color sdg-11"></div>
+  <div class="sdg-color sdg-12"></div>
+  <div class="sdg-color sdg-13"></div>
+  <div class="sdg-color sdg-14"></div>
+  <div class="sdg-color sdg-15"></div>
+  <div class="sdg-color sdg-16"></div>
+  <div class="sdg-color sdg-17"></div>
 </div>
 
-<div class="mb-6">
-  <h1 class="text-3xl font-bold text-gray-900 tracking-tight">Proposals</h1>
+<div class="breadcrumbs">
+  <a href="{{ site.base_url }}index.html">Home</a>
+  <span>/</span>
+  <span>Proposals</span>
 </div>
 
-<div class="space-y-4">
-  {% for proposal in proposals %}
-    <article class="border border-gray-200 rounded-lg p-4 hover:border-gray-300 transition-colors hover-lift bg-white">
-      <div class="flex flex-col gap-2 md:flex-row md:items-start md:justify-between">
-        <div class="flex-1 min-w-0">
-          <div class="flex items-center gap-3 mb-2">
-            {% if proposal.PR_AgendaItem %}
-              <span class="text-[11px] font-semibold uppercase tracking-wide text-muted">Item {{ proposal.PR_AgendaItem }}</span>
-            {% endif %}
-            {% if proposal.PR_BodyOriginated %}
-              <span class="px-2 py-0.5 rounded text-xs font-medium bg-gray-100 text-gray-700">{{ proposal.PR_BodyOriginated }}</span>
-            {% endif %}
-          </div>
-          <h2 class="text-lg font-medium text-gray-900">{{ proposal.PR_Title }}</h2>
-          <div class="flex flex-wrap items-center gap-x-4 gap-y-1 mt-2 text-sm text-muted">
-            <span>{{ proposal.PR_Session }}</span>
-            {% if proposal.PR_MainSponsors %}
-              <span>Sponsor: {{ proposal.PR_MainSponsors }}</span>
-            {% endif %}
-          </div>
-        </div>
-        {% if proposal.PR_Stage and proposal.PR_Stage[0].DocSymbol %}
-          <div class="flex flex-col items-end gap-1 text-sm text-muted whitespace-nowrap flex-shrink-0">
-            <span class="font-mono">{{ proposal.PR_Stage[0].DocSymbol }}</span>
-            {% if proposal.PR_Stage[0].StageName %}
-              <span class="text-xs">{{ proposal.PR_Stage[0].StageName }}</span>
-            {% endif %}
-          </div>
-        {% endif %}
-      </div>
-    </article>
-  {% else %}
-    <div class="border border-gray-200 rounded-lg bg-gray-50 p-12 text-center">
-      <p class="text-muted">No proposals data available yet.</p>
-    </div>
-  {% endfor %}
+<div class="page-header">
+  <h1>Proposals — {{ session }}th Session</h1>
+  <p class="lead">Draft resolutions and amendments</p>
 </div>
+
+{% if proposals %}
+<div class="data-table-container">
+  <table>
+    <thead>
+      <tr>
+        <th style="width: 140px;">Document</th>
+        <th>Title</th>
+        <th style="width: 100px;">Agenda</th>
+        <th style="width: 160px;">Originating Body</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for proposal in proposals %}
+      <tr>
+        <td>
+          {% if proposal.PR_Stage and proposal.PR_Stage[0].DocSymbol %}
+            <span class="mono">{{ proposal.PR_Stage[0].DocSymbol }}</span>
+            <br><span class="meta-row">{{ proposal.PR_Stage[0].StageName }}</span>
+          {% endif %}
+        </td>
+        <td>
+          <a href="#" class="table-link">{{ proposal.PR_Title }}</a>
+          {% if proposal.PR_MainSponsors %}
+            <div class="meta-row">Sponsor: {{ proposal.PR_MainSponsors }}</div>
+          {% endif %}
+        </td>
+        <td>
+          {% if proposal.PR_AgendaItem %}
+            Item {{ proposal.PR_AgendaItem }}
+          {% endif %}
+        </td>
+        <td>
+          {% if proposal.PR_BodyOriginated %}
+            <span class="badge badge-outline">{{ proposal.PR_BodyOriginated }}</span>
+          {% endif %}
+        </td>
+      </tr>
+      {% else %}
+      <tr>
+        <td colspan="4">
+          <div class="empty-state">
+            <p>No proposals data available yet.</p>
+          </div>
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% else %}
+<div class="empty-state">
+  <p>No proposals data available yet.</p>
+</div>
+{% endif %}
 {% endblock %}
