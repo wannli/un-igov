@@ -88,6 +88,7 @@ cd output && python3 -m http.server 8000
 ## Branch Management
 
 - **Commit directly to main** - No need to create branches for each session.
+- Exception: For a HUGE overhaul of something specific, open a temporary branch to avoid merge conflicts.
 - When done, commit changes with a clear message describing what was done.
 - Before pushing, run `git pull --rebase` to avoid merge conflicts.
 
