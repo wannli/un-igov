@@ -109,7 +109,45 @@ def meeting_id(meeting: dict) -> str:
     return f"{date}-{name}"
 
 
-def build_meeting_detail(ctx: BuildContext, session_number: str, meeting_id_str: str, meeting: dict) -> None:
+def load_proposals_map(data_dir: Path):
+    proposals_map = {}
+    resolution_map = {}
+    ga_dir = data_dir / "ga"
+    if not ga_dir.exists():
+        return proposals_map, resolution_map
+
+    for committee in ga_dir.iterdir():
+        if not committee.is_dir():
+            continue
+        for session in committee.iterdir():
+            if not session.is_dir():
+                continue
+            proposals_file = session / "proposals.json"
+            if not proposals_file.exists():
+                continue
+            proposals = load_json(proposals_file) or {}
+            for proposal in proposals.get("result", []):
+                for stage in proposal.get("PR_Stage", []):
+                    doc_symbol = stage.get("DocSymbol", "")
+                    if doc_symbol and "DR " in doc_symbol:
+                        for vote in stage.get("VotesAdd", []):
+                            psid = vote.get("PSID")
+                            if psid:
+                                if psid not in proposals_map:
+                                    proposals_map[psid] = {}
+                                proposals_map[psid]["draft_symbol"] = doc_symbol
+                                if proposal.get("PR_Title"):
+                                    proposals_map[psid]["title"] = proposal.get("PR_Title")
+                    if doc_symbol and "/" in doc_symbol:
+                        if doc_symbol.startswith("A/80/") and "DR " in doc_symbol:
+                            resolution_num = doc_symbol.split("DR ")[-1].strip()
+                            full_res = f"80/{resolution_num}"
+                            if full_res not in resolution_map:
+                                resolution_map[full_res] = doc_symbol
+    return proposals_map, resolution_map
+
+
+def build_meeting_detail(ctx: BuildContext, session_number: str, meeting_id_str: str, meeting: dict, proposals_map: dict | None = None, resolution_map: dict | None = None) -> None:
     template = ctx.templates.get_template("meeting.html")
 
     output = template.render(
@@ -117,6 +155,8 @@ def build_meeting_detail(ctx: BuildContext, session_number: str, meeting_id_str:
         session=session_number,
         meeting=meeting,
         meeting_id=meeting_id_str,
+        proposals_map=proposals_map or {},
+        resolution_map=resolution_map or {},
     )
 
     output_dir = ctx.config.site.output_dir / "ga" / "plenary" / session_number / "meetings" / meeting_id_str
@@ -130,6 +170,8 @@ def build_meetings(ctx: BuildContext, session_number: str) -> None:
     meetings = load_json(data_dir / "meetings.json") or []
     current_date = datetime.now().strftime("%Y-%m-%d")
 
+    proposals_map, resolution_map = load_proposals_map(ctx.config.site.data_dir)
+
     output = template.render(site=ctx.config.site, session=session_number, meetings=meetings, current_date=current_date)
 
     output_dir = ctx.config.site.output_dir / "ga" / "plenary" / session_number / "meetings"
@@ -138,7 +180,7 @@ def build_meetings(ctx: BuildContext, session_number: str) -> None:
 
     for meeting in meetings:
         mid = meeting_id(meeting)
-        build_meeting_detail(ctx, session_number, mid, meeting)
+        build_meeting_detail(ctx, session_number, mid, meeting, proposals_map, resolution_map)
 
 
 def build_agenda(ctx: BuildContext, session_number: str) -> None:

@@ -98,70 +98,34 @@
         <h2 class="text-xl font-semibold text-gray-900 mb-4">Voting</h2>
         <div class="space-y-3">
           {% for step in voting_steps %}
+            {% set resolution_symbol = resolution_map.get(step.PS_recordResolutionNumber, '') %}
             <div class="border border-gray-200 rounded-lg p-4 hover:border-gray-300 transition-colors">
               <div class="flex items-start gap-3">
                 <div class="flex-shrink-0 w-8 h-8 rounded-full bg-un-blue/10 flex items-center justify-center mt-0.5">
                   <span class="text-xs font-semibold text-un-blue">{{ loop.index }}</span>
                 </div>
                 <div class="flex-1 min-w-0">
-                  {% if step.PS_title %}
-                    <p class="text-gray-900 font-medium">{{ step.PS_title }}</p>
+                  {% if step.PS_type_label and 'part of proposal' in step.PS_type_label|lower %}
+                    <div class="mb-3">
+                      {% if step.PS_preambularParagraphs %}
+                        {% for para in step.PS_preambularParagraphs %}
+                          <p class="text-sm text-gray-700">Preambular paragraph {{ para }} was adopted</p>
+                        {% endfor %}
+                      {% endif %}
+                      {% if step.PS_operativeParagraphs %}
+                        {% for para in step.PS_operativeParagraphs %}
+                          <p class="text-sm text-gray-700">Operative paragraph {{ para }} was adopted</p>
+                        {% endfor %}
+                      {% endif %}
+                    </div>
                   {% endif %}
                   
                   {% if step.PS_voting == 'Yes' and (step.PS_InFavor or step.PS_against or step.PS_abstention) %}
-                    <div class="mt-3 p-3 bg-yellow-50 rounded border border-yellow-200">
-                      {% if step.PS_type_label and 'part of proposal' in step.PS_type_label|lower %}
-                        {% if step.PS_preambularParagraphs %}
-                          {% for para in step.PS_preambularParagraphs %}
-                            <p class="text-sm text-yellow-900 mb-1">Preambular paragraph {{ para }} was adopted</p>
-                          {% endfor %}
-                        {% endif %}
-                        {% if step.PS_operativeParagraphs %}
-                          {% for para in step.PS_operativeParagraphs %}
-                            <p class="text-sm text-yellow-900 mb-1">Operative paragraph {{ para }} was adopted</p>
-                          {% endfor %}
-                        {% endif %}
-                      {% endif %}
-                      <p class="text-sm font-medium text-yellow-900 mt-2">
-                        {% if step.PS_InFavor %}{{ step.PS_InFavor }} in favor{% endif %}
-                        {% if step.PS_against %}, {{ step.PS_against }} against{% endif %}
-                        {% if step.PS_abstention %}, {{ step.PS_abstention }} abstentions{% endif %}
-                      </p>
-                      {% if step.PS_recordResolutionNumber %}
-                        <p class="text-sm mt-2">
-                          <span class="inline-flex items-center px-2 py-0.5 bg-green-100 text-green-800 text-xs font-medium rounded">
-                            Resolution {{ step.PS_recordResolutionNumber }} adopted
-                          </span>
-                        </p>
-                      {% endif %}
-                      {% if step.PS_recordDecisionNumber %}
-                        <p class="text-sm mt-2">
-                          <span class="inline-flex items-center px-2 py-0.5 bg-blue-100 text-blue-800 text-xs font-medium rounded">
-                            Decision {{ step.PS_recordDecisionNumber }} adopted
-                          </span>
-                        </p>
-                      {% endif %}
-                    </div>
+                    <p class="text-gray-900">{% if resolution_symbol %}Draft resolution {{ resolution_symbol }}{% endif %} was adopted by {% if step.PS_InFavor %}{{ step.PS_InFavor }} votes to {{ step.PS_against }}{% endif %}{% if step.PS_abstention %}, with {{ step.PS_abstention }} abstentions{% endif %}{% if step.PS_recordResolutionNumber %} (resolution {{ step.PS_recordResolutionNumber }}){% endif %}</p>
                   {% endif %}
                   
                   {% if step.PS_voting == 'No' %}
-                    <div class="mt-3 p-3 bg-green-50 rounded border border-green-200">
-                      <p class="text-sm text-green-900">The Assembly decided to proceed to adopt without a vote</p>
-                      {% if step.PS_recordResolutionNumber %}
-                        <p class="text-sm mt-1">
-                          <span class="inline-flex items-center px-2 py-0.5 bg-green-100 text-green-800 text-xs font-medium rounded">
-                            Resolution {{ step.PS_recordResolutionNumber }} adopted
-                          </span>
-                        </p>
-                      {% endif %}
-                      {% if step.PS_recordDecisionNumber %}
-                        <p class="text-sm mt-1">
-                          <span class="inline-flex items-center px-2 py-0.5 bg-blue-100 text-blue-800 text-xs font-medium rounded">
-                            Decision {{ step.PS_recordDecisionNumber }} adopted
-                          </span>
-                        </p>
-                      {% endif %}
-                    </div>
+                    <p class="text-gray-900">{% if resolution_symbol %}Draft resolution {{ resolution_symbol }}{% endif %} was adopted{% if step.PS_recordResolutionNumber %} (resolution {{ step.PS_recordResolutionNumber }}){% endif %}</p>
                   {% endif %}
                 </div>
               </div>
@@ -176,19 +140,16 @@
         <h2 class="text-xl font-semibold text-gray-900 mb-4">Resolutions Adopted</h2>
         <div class="grid gap-3">
           {% for step in adopted_resolutions %}
+            {% set resolution_symbol = resolution_map.get(step.PS_recordResolutionNumber, '') %}
             <div class="border border-gray-200 rounded-lg p-4 bg-green-50">
-              {% if step.PS_voting == 'No' %}
-                <p class="text-green-900">
-                  <span class="inline-flex items-center px-2 py-0.5 bg-green-200 text-green-800 text-xs font-semibold rounded mb-2">Adopted without vote</span>
-                </p>
-              {% endif %}
               <p class="font-medium text-gray-900">
-                {% if step.PS_recordResolutionNumber %}
-                  Draft resolution {{ step.PS_recordResolutionNumber }}
+                {% if resolution_symbol %}
+                  Draft resolution {{ resolution_symbol }} was adopted
+                {% elif step.PS_recordResolutionNumber %}
+                  Draft resolution {{ step.PS_recordResolutionNumber }} was adopted
                 {% else %}
-                  Draft resolution
+                  Draft resolution was adopted
                 {% endif %}
-                {% if step.PS_type_label and 'numbered' in step.PS_type_label|lower %}was adopted{% endif %}
               </p>
             </div>
           {% endfor %}
@@ -204,11 +165,10 @@
             <div class="border border-gray-200 rounded-lg p-4 bg-blue-50">
               <p class="font-medium text-gray-900">
                 {% if step.PS_recordDecisionNumber %}
-                  Draft decision {{ step.PS_recordDecisionNumber }}
+                  Draft decision {{ step.PS_recordDecisionNumber }} was adopted
                 {% else %}
-                  Draft decision
+                  Draft decision was adopted
                 {% endif %}
-                was adopted
               </p>
             </div>
           {% endfor %}
