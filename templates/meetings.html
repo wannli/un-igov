@@ -131,7 +131,7 @@
     <div class="card">
       <div class="p-0">
         {% for meeting in past_meetings %}
-          <a href="{{ meeting | meeting_url }}" class="card-link">
+          <a href="{{ meeting | meeting_url }}" class="card-link" data-type="{{ meeting.MT_type | lower if meeting.MT_type else '' }}">
             <div class="card-list-item">
               <div class="card-list-main">
                 <h3>{{ meeting.MT_name or "Meeting" }}</h3>
