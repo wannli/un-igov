@@ -1,0 +1,25 @@
+site:
+  title: "UN iGov Static"
+  base_url: "/"
+  output_dir: "output"
+  data_dir: "data"
+
+ga:
+  body_code: "GA"
+  sessions:
+    "80":
+      label: "EIGHTIETH"
+      decision_label: "80th session of the General Assembly"
+    "79":
+      label: "SEVENTY-NINTH"
+      decision_label: "79th session of the General Assembly"
+    "78":
+      label: "SEVENTY-EIGHTH"
+      decision_label: "78th session of the General Assembly"
+  committees:
+    c1: "First Committee"
+    c2: "Second Committee"
+    c3: "Third Committee"
+    c4: "Fourth Committee"
+    c5: "Fifth Committee"
+    c6: "Sixth Committee"

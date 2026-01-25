@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% set page_title = "Documents" %}
+{% block content %}
+<section class="page-hero">
+  <div class="mx-auto w-full max-w-6xl px-6 py-10">
+    <p class="eyebrow">General Assembly · Session {{ session }}</p>
+    <h1 class="page-title">Documents</h1>
+  </div>
+</section>
+
+<section class="mx-auto w-full max-w-6xl px-6 py-10">
+  <div class="space-y-4">
+    {% for doc in documents %}
+      <article class="content-card">
+        <div class="flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
+          <div>
+            <p class="text-xs uppercase tracking-widest text-slate-500">{{ doc.symbol }}</p>
+            <h2 class="mt-1 text-lg font-semibold text-slate-900">{{ doc.title or "Untitled document" }}</h2>
+            <p class="mt-1 text-sm text-slate-600">Agenda {{ doc.agenda_item }} · {{ doc.agenda_title }}</p>
+          </div>
+          <div class="text-sm text-slate-500">{{ doc.date or "" }}</div>
+        </div>
+      </article>
+    {% else %}
+      <p class="text-slate-500">No documents data available yet.</p>
+    {% endfor %}
+  </div>
+</section>
+{% endblock %}

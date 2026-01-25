@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% set page_title = "Decisions" %}
+{% block content %}
+<section class="page-hero">
+  <div class="mx-auto w-full max-w-6xl px-6 py-10">
+    <p class="eyebrow">General Assembly · Session {{ session }}</p>
+    <h1 class="page-title">Decisions</h1>
+  </div>
+</section>
+
+<section class="mx-auto w-full max-w-6xl px-6 py-10">
+  <div class="space-y-4">
+    {% for decision in decisions %}
+      <article class="content-card">
+        <div class="flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
+          <div>
+            <p class="text-xs uppercase tracking-widest text-slate-500">{{ decision.ED_DecisionNumber }}</p>
+            <h2 class="mt-1 text-lg font-semibold text-slate-900">{{ decision.ED_Title }}</h2>
+            <p class="mt-1 text-sm text-slate-600">{{ decision.ED_Type }} · Agenda {{ decision.ED_AgendaItem }}</p>
+          </div>
+          {% if decision.ED_Meeting %}
+            <div class="text-sm text-slate-500">{{ decision.ED_Meeting[0].ED_Date[:10] }}</div>
+          {% endif %}
+        </div>
+      </article>
+    {% else %}
+      <p class="text-slate-500">No decisions data available yet.</p>
+    {% endfor %}
+  </div>
+</section>
+{% endblock %}

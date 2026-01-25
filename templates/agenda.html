@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% set page_title = "Agenda" %}
+{% block content %}
+<section class="page-hero">
+  <div class="mx-auto w-full max-w-6xl px-6 py-10">
+    <p class="eyebrow">General Assembly · Session {{ session }}</p>
+    <h1 class="page-title">Agenda Items</h1>
+  </div>
+</section>
+
+<section class="mx-auto w-full max-w-6xl px-6 py-10">
+  <div class="grid gap-6 md:grid-cols-2">
+    {% for item in agenda %}
+      <article class="content-card">
+        <p class="text-xs uppercase tracking-widest text-slate-500">Item {{ item.AG_Item }}</p>
+        <h2 class="mt-2 text-lg font-semibold text-slate-900">{{ item.AG_Title }}</h2>
+        <p class="mt-1 text-sm text-slate-600">{{ item.AG_Body }}</p>
+      </article>
+    {% else %}
+      <p class="text-slate-500">No agenda data available yet.</p>
+    {% endfor %}
+  </div>
+</section>
+{% endblock %}
