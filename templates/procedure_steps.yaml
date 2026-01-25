@@ -131,7 +131,7 @@
 
   - condition:
       PS_selectDocumentFromWorkPackage.0.DD_symbol1: present
-    template: "Introduction of draft resolution {symbol}: {title}"
+    template: "Draft resolution {symbol} was introduced: {title}"
     fields:
       symbol:
         path: "PS_selectDocumentFromWorkPackage.0.DD_symbol1"

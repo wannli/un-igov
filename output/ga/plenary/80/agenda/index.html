@@ -8,79 +8,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="/static/css/un-design-system.css" />
-    <style>
-      .dropdown-menu {
-        display: none;
-        position: absolute;
-        background: white;
-        border: 1px solid var(--un-gray-light);
-        box-shadow: var(--shadow-md);
-        min-width: 280px;
-        z-index: 1000;
-        padding: 8px 0;
-      }
-      .dropdown:hover .dropdown-menu,
-      .dropdown-menu:hover {
-        display: block;
-      }
-      .dropdown-item {
-        display: block;
-        padding: 10px 16px;
-        color: var(--un-black);
-        text-decoration: none;
-        font-size: 14px;
-        transition: background var(--transition-fast);
-      }
-      .dropdown-item:hover {
-        background: var(--un-blue-light);
-        color: var(--un-blue);
-      }
-      .dropdown-divider {
-        height: 1px;
-        background: var(--un-gray-light);
-        margin: 8px 0;
-      }
-      .dropdown-header {
-        padding: 8px 16px;
-        font-size: 11px;
-        font-weight: 600;
-        text-transform: uppercase;
-        letter-spacing: 0.5px;
-        color: var(--un-gray);
-      }
-      .site-nav .nav-item {
-        position: relative;
-      }
-      .site-nav .nav-link {
-        display: flex;
-        align-items: center;
-        gap: 4px;
-        padding: 12px 16px;
-        font-size: 14px;
-        font-weight: 500;
-        color: var(--un-dark);
-        text-decoration: none;
-        cursor: pointer;
-      }
-      .site-nav .nav-link:hover,
-      .site-nav .nav-link.active {
-        color: var(--un-blue);
-      }
-      .site-nav .nav-link::after {
-        content: '';
-        display: inline-block;
-        width: 0;
-        height: 0;
-        margin-left: 4px;
-        border-left: 4px solid transparent;
-        border-right: 4px solid transparent;
-        border-top: 4px solid var(--un-gray);
-      }
-      .site-nav .nav-link:hover::after,
-      .site-nav .nav-item:hover .nav-link::after {
-        border-top-color: var(--un-blue);
-      }
-    </style>
     <svg style="display: none;">
       <symbol id="icon-document" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
         <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
@@ -243,9 +170,9 @@
   <table>
     <thead>
       <tr>
-        <th style="width: 100px;">Item</th>
+        <th class="w-100">Item</th>
         <th>Title</th>
-        <th style="width: 180px;">Committee</th>
+        <th class="w-180">Committee</th>
       </tr>
     </thead>
     <tbody>
@@ -255,7 +182,7 @@
           <a href="#" class="table-link">Item 26</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Advancement of women</div>
+          <div class="font-medium">Advancement of women</div>
           
         </td>
         <td>
@@ -270,7 +197,7 @@
           <a href="#" class="table-link">Item 26 (b)</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Implementation of the outcome of the Fourth World Conference on Women and of the twenty-third special session of the General Assembly </div>
+          <div class="font-medium">Implementation of the outcome of the Fourth World Conference on Women and of the twenty-third special session of the General Assembly </div>
           
         </td>
         <td>
@@ -285,7 +212,7 @@
           <a href="#" class="table-link">Item 69</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Rights of Indigenous Peoples</div>
+          <div class="font-medium">Rights of Indigenous Peoples</div>
           
         </td>
         <td>
@@ -300,7 +227,7 @@
           <a href="#" class="table-link">Item 1</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Opening of the session by the President of the General Assembly</div>
+          <div class="font-medium">Opening of the session by the President of the General Assembly</div>
           
         </td>
         <td>
@@ -315,7 +242,7 @@
           <a href="#" class="table-link">Item 2</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Minute of silent prayer or meditation</div>
+          <div class="font-medium">Minute of silent prayer or meditation</div>
           
         </td>
         <td>
@@ -330,7 +257,7 @@
           <a href="#" class="table-link">Item 3(a)</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Appointment of the members of the Credentials Committee</div>
+          <div class="font-medium">Appointment of the members of the Credentials Committee</div>
           
         </td>
         <td>
@@ -345,7 +272,7 @@
           <a href="#" class="table-link">Item 3(b)</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Report of the Credentials Committee</div>
+          <div class="font-medium">Report of the Credentials Committee</div>
           
         </td>
         <td>
@@ -360,7 +287,7 @@
           <a href="#" class="table-link">Item 3</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Credentials of representatives to the eightieth session of the General Assembly</div>
+          <div class="font-medium">Credentials of representatives to the eightieth session of the General Assembly</div>
           
         </td>
         <td>
@@ -375,7 +302,7 @@
           <a href="#" class="table-link">Item 4</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Election of the President of the General Assembly</div>
+          <div class="font-medium">Election of the President of the General Assembly</div>
           
         </td>
         <td>
@@ -390,7 +317,7 @@
           <a href="#" class="table-link">Item 6</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Election of the Vice-Presidents of the General Assembly</div>
+          <div class="font-medium">Election of the Vice-Presidents of the General Assembly</div>
           
         </td>
         <td>
@@ -405,7 +332,7 @@
           <a href="#" class="table-link">Item 7</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Organization of work, adoption of the agenda and allocation of items</div>
+          <div class="font-medium">Organization of work, adoption of the agenda and allocation of items</div>
           
         </td>
         <td>
@@ -420,7 +347,7 @@
           <a href="#" class="table-link">Item 5</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Election of the officers of the Main Committees</div>
+          <div class="font-medium">Election of the officers of the Main Committees</div>
           
         </td>
         <td>
@@ -435,7 +362,7 @@
           <a href="#" class="table-link">Item 8</a>
         </td>
         <td>
-          <div style="font-weight: 500;">General debate</div>
+          <div class="font-medium">General debate</div>
           
         </td>
         <td>
@@ -450,7 +377,7 @@
           <a href="#" class="table-link">Item 9</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Report of the Economic and Social Council</div>
+          <div class="font-medium">Report of the Economic and Social Council</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">A. Promotion of sustained economic growth and sustainable development in accordance with the relevant resolutions of the General Assembly and recent United Nations conferences</div>
           
@@ -467,7 +394,7 @@
           <a href="#" class="table-link">Item 10</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Implementation of the Declaration of Commitment on HIV/AIDS and the political declarations on HIV/AIDS</div>
+          <div class="font-medium">Implementation of the Declaration of Commitment on HIV/AIDS and the political declarations on HIV/AIDS</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">A. Promotion of sustained economic growth and sustainable development in accordance with the relevant resolutions of the General Assembly and recent United Nations conferences</div>
           
@@ -484,7 +411,7 @@
           <a href="#" class="table-link">Item 12</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Improving global road safety</div>
+          <div class="font-medium">Improving global road safety</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">A. Promotion of sustained economic growth and sustainable development in accordance with the relevant resolutions of the General Assembly and recent United Nations conferences</div>
           
@@ -501,7 +428,7 @@
           <a href="#" class="table-link">Item 13</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Integrated and coordinated implementation of and follow-up to the outcomes of the major United Nations conferences and summits in the economic, social and related fields</div>
+          <div class="font-medium">Integrated and coordinated implementation of and follow-up to the outcomes of the major United Nations conferences and summits in the economic, social and related fields</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">A. Promotion of sustained economic growth and sustainable development in accordance with the relevant resolutions of the General Assembly and recent United Nations conferences</div>
           
@@ -518,7 +445,7 @@
           <a href="#" class="table-link">Item 11</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Sport for development and peace: building a peaceful and better world through sport and the Olympic ideal</div>
+          <div class="font-medium">Sport for development and peace: building a peaceful and better world through sport and the Olympic ideal</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">A. Promotion of sustained economic growth and sustainable development in accordance with the relevant resolutions of the General Assembly and recent United Nations conferences</div>
           
@@ -535,7 +462,7 @@
           <a href="#" class="table-link">Item 14</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Culture of peace</div>
+          <div class="font-medium">Culture of peace</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">A. Promotion of sustained economic growth and sustainable development in accordance with the relevant resolutions of the General Assembly and recent United Nations conferences</div>
           
@@ -552,7 +479,7 @@
           <a href="#" class="table-link">Item 15</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Information and communications technologies for sustainable development</div>
+          <div class="font-medium">Information and communications technologies for sustainable development</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">A. Promotion of sustained economic growth and sustainable development in accordance with the relevant resolutions of the General Assembly and recent United Nations conferences</div>
           
@@ -569,7 +496,7 @@
           <a href="#" class="table-link">Item 16</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Macroeconomic policy questions</div>
+          <div class="font-medium">Macroeconomic policy questions</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">A. Promotion of sustained economic growth and sustainable development in accordance with the relevant resolutions of the General Assembly and recent United Nations conferences</div>
           
@@ -586,7 +513,7 @@
           <a href="#" class="table-link">Item 16(a)</a>
         </td>
         <td>
-          <div style="font-weight: 500;">International trade and development</div>
+          <div class="font-medium">International trade and development</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">A. Promotion of sustained economic growth and sustainable development in accordance with the relevant resolutions of the General Assembly and recent United Nations conferences</div>
           
@@ -603,7 +530,7 @@
           <a href="#" class="table-link">Item 16(b)</a>
         </td>
         <td>
-          <div style="font-weight: 500;">International financial system and development</div>
+          <div class="font-medium">International financial system and development</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">A. Promotion of sustained economic growth and sustainable development in accordance with the relevant resolutions of the General Assembly and recent United Nations conferences</div>
           
@@ -620,7 +547,7 @@
           <a href="#" class="table-link">Item 16(c)</a>
         </td>
         <td>
-          <div style="font-weight: 500;">External debt sustainability and development</div>
+          <div class="font-medium">External debt sustainability and development</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">A. Promotion of sustained economic growth and sustainable development in accordance with the relevant resolutions of the General Assembly and recent United Nations conferences</div>
           
@@ -637,7 +564,7 @@
           <a href="#" class="table-link">Item 16(d)</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Commodities</div>
+          <div class="font-medium">Commodities</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">A. Promotion of sustained economic growth and sustainable development in accordance with the relevant resolutions of the General Assembly and recent United Nations conferences</div>
           
@@ -654,7 +581,7 @@
           <a href="#" class="table-link">Item 16(e)</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Financial inclusion for sustainable development</div>
+          <div class="font-medium">Financial inclusion for sustainable development</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">A. Promotion of sustained economic growth and sustainable development in accordance with the relevant resolutions of the General Assembly and recent United Nations conferences</div>
           
@@ -671,7 +598,7 @@
           <a href="#" class="table-link">Item 16(f)</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Promotion of international cooperation to combat illicit financial flows and strengthen good practices on assets return to foster sustainable development</div>
+          <div class="font-medium">Promotion of international cooperation to combat illicit financial flows and strengthen good practices on assets return to foster sustainable development</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">A. Promotion of sustained economic growth and sustainable development in accordance with the relevant resolutions of the General Assembly and recent United Nations conferences</div>
           
@@ -688,7 +615,7 @@
           <a href="#" class="table-link">Item 16(g)</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Promoting investments for sustainable development</div>
+          <div class="font-medium">Promoting investments for sustainable development</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">A. Promotion of sustained economic growth and sustainable development in accordance with the relevant resolutions of the General Assembly and recent United Nations conferences</div>
           
@@ -705,7 +632,7 @@
           <a href="#" class="table-link">Item 16(h)</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Promotion of inclusive and effective international tax cooperation at the United Nations</div>
+          <div class="font-medium">Promotion of inclusive and effective international tax cooperation at the United Nations</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">A. Promotion of sustained economic growth and sustainable development in accordance with the relevant resolutions of the General Assembly and recent United Nations conferences</div>
           
@@ -722,7 +649,7 @@
           <a href="#" class="table-link">Item 17</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Follow-up to and implementation of the outcomes of the International Conferences on Financing for Development</div>
+          <div class="font-medium">Follow-up to and implementation of the outcomes of the International Conferences on Financing for Development</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">A. Promotion of sustained economic growth and sustainable development in accordance with the relevant resolutions of the General Assembly and recent United Nations conferences</div>
           
@@ -739,7 +666,7 @@
           <a href="#" class="table-link">Item 18</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Sustainable development</div>
+          <div class="font-medium">Sustainable development</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">A. Promotion of sustained economic growth and sustainable development in accordance with the relevant resolutions of the General Assembly and recent United Nations conferences</div>
           
@@ -756,7 +683,7 @@
           <a href="#" class="table-link">Item 18(a)</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Towards the achievement of sustainable development: implementation of the 2030 Agenda for Sustainable Development, including through sustainable consumption and production, building on Agenda 21</div>
+          <div class="font-medium">Towards the achievement of sustainable development: implementation of the 2030 Agenda for Sustainable Development, including through sustainable consumption and production, building on Agenda 21</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">A. Promotion of sustained economic growth and sustainable development in accordance with the relevant resolutions of the General Assembly and recent United Nations conferences</div>
           
@@ -773,7 +700,7 @@
           <a href="#" class="table-link">Item 18(b)</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Follow-up to and implementation of the Antigua and Barbuda Agenda for Small Island Developing States: A Renewed Declaration for Resilient Prosperity</div>
+          <div class="font-medium">Follow-up to and implementation of the Antigua and Barbuda Agenda for Small Island Developing States: A Renewed Declaration for Resilient Prosperity</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">A. Promotion of sustained economic growth and sustainable development in accordance with the relevant resolutions of the General Assembly and recent United Nations conferences</div>
           
@@ -790,7 +717,7 @@
           <a href="#" class="table-link">Item 18(c)</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Disaster risk reduction</div>
+          <div class="font-medium">Disaster risk reduction</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">A. Promotion of sustained economic growth and sustainable development in accordance with the relevant resolutions of the General Assembly and recent United Nations conferences</div>
           
@@ -807,7 +734,7 @@
           <a href="#" class="table-link">Item 18(d)</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Protection of global climate for present and future generations of humankind</div>
+          <div class="font-medium">Protection of global climate for present and future generations of humankind</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">A. Promotion of sustained economic growth and sustainable development in accordance with the relevant resolutions of the General Assembly and recent United Nations conferences</div>
           
@@ -824,7 +751,7 @@
           <a href="#" class="table-link">Item 18(e)</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Implementation of the United Nations Convention to Combat Desertification in Those Countries Experiencing Serious Drought and/or Desertification, Particularly in Africa</div>
+          <div class="font-medium">Implementation of the United Nations Convention to Combat Desertification in Those Countries Experiencing Serious Drought and/or Desertification, Particularly in Africa</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">A. Promotion of sustained economic growth and sustainable development in accordance with the relevant resolutions of the General Assembly and recent United Nations conferences</div>
           
@@ -841,7 +768,7 @@
           <a href="#" class="table-link">Item 18(f)</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Convention on Biological Diversity</div>
+          <div class="font-medium">Convention on Biological Diversity</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">A. Promotion of sustained economic growth and sustainable development in accordance with the relevant resolutions of the General Assembly and recent United Nations conferences</div>
           
@@ -858,7 +785,7 @@
           <a href="#" class="table-link">Item 18(h)</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Ensuring access to affordable, reliable, sustainable and modern energy for all</div>
+          <div class="font-medium">Ensuring access to affordable, reliable, sustainable and modern energy for all</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">A. Promotion of sustained economic growth and sustainable development in accordance with the relevant resolutions of the General Assembly and recent United Nations conferences</div>
           
@@ -875,7 +802,7 @@
           <a href="#" class="table-link">Item 18(g)</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Education for sustainable development</div>
+          <div class="font-medium">Education for sustainable development</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">A. Promotion of sustained economic growth and sustainable development in accordance with the relevant resolutions of the General Assembly and recent United Nations conferences</div>
           
@@ -892,7 +819,7 @@
           <a href="#" class="table-link">Item 18(i)</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Combating sand and dust storms</div>
+          <div class="font-medium">Combating sand and dust storms</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">A. Promotion of sustained economic growth and sustainable development in accordance with the relevant resolutions of the General Assembly and recent United Nations conferences</div>
           
@@ -909,7 +836,7 @@
           <a href="#" class="table-link">Item 18(j)</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Sustainable mountain development</div>
+          <div class="font-medium">Sustainable mountain development</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">A. Promotion of sustained economic growth and sustainable development in accordance with the relevant resolutions of the General Assembly and recent United Nations conferences</div>
           
@@ -926,7 +853,7 @@
           <a href="#" class="table-link">Item 18(l)</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Multidimensional vulnerability index</div>
+          <div class="font-medium">Multidimensional vulnerability index</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">A. Promotion of sustained economic growth and sustainable development in accordance with the relevant resolutions of the General Assembly and recent United Nations conferences</div>
           
@@ -943,7 +870,7 @@
           <a href="#" class="table-link">Item 18(k)</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Strengthening cooperation for integrated coastal zone management for achieving sustainable development</div>
+          <div class="font-medium">Strengthening cooperation for integrated coastal zone management for achieving sustainable development</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">A. Promotion of sustained economic growth and sustainable development in accordance with the relevant resolutions of the General Assembly and recent United Nations conferences</div>
           
@@ -960,7 +887,7 @@
           <a href="#" class="table-link">Item 19</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Global Code of Ethics for Tourism</div>
+          <div class="font-medium">Global Code of Ethics for Tourism</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">A. Promotion of sustained economic growth and sustainable development in accordance with the relevant resolutions of the General Assembly and recent United Nations conferences</div>
           
@@ -977,7 +904,7 @@
           <a href="#" class="table-link">Item 20</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Globalization and interdependence</div>
+          <div class="font-medium">Globalization and interdependence</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">A. Promotion of sustained economic growth and sustainable development in accordance with the relevant resolutions of the General Assembly and recent United Nations conferences</div>
           
@@ -994,7 +921,7 @@
           <a href="#" class="table-link">Item 20(a)</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Science, technology and innovation for sustainable development</div>
+          <div class="font-medium">Science, technology and innovation for sustainable development</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">A. Promotion of sustained economic growth and sustainable development in accordance with the relevant resolutions of the General Assembly and recent United Nations conferences</div>
           
@@ -1011,7 +938,7 @@
           <a href="#" class="table-link">Item 20(b)</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Culture and sustainable development</div>
+          <div class="font-medium">Culture and sustainable development</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">A. Promotion of sustained economic growth and sustainable development in accordance with the relevant resolutions of the General Assembly and recent United Nations conferences</div>
           
@@ -1028,7 +955,7 @@
           <a href="#" class="table-link">Item 20(c)</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Development cooperation with middle-income countries</div>
+          <div class="font-medium">Development cooperation with middle-income countries</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">A. Promotion of sustained economic growth and sustainable development in accordance with the relevant resolutions of the General Assembly and recent United Nations conferences</div>
           
@@ -1045,7 +972,7 @@
           <a href="#" class="table-link">Item 21</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Groups of countries in special situations</div>
+          <div class="font-medium">Groups of countries in special situations</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">A. Promotion of sustained economic growth and sustainable development in accordance with the relevant resolutions of the General Assembly and recent United Nations conferences</div>
           
@@ -1062,7 +989,7 @@
           <a href="#" class="table-link">Item 21(b)</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Follow-up to the Third United Nations Conference on Landlocked Developing Countries</div>
+          <div class="font-medium">Follow-up to the Third United Nations Conference on Landlocked Developing Countries</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">A. Promotion of sustained economic growth and sustainable development in accordance with the relevant resolutions of the General Assembly and recent United Nations conferences</div>
           
@@ -1079,7 +1006,7 @@
           <a href="#" class="table-link">Item 22(a)</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Implementation of the Third United Nations Decade for the Eradication of Poverty (2018–2027)</div>
+          <div class="font-medium">Implementation of the Third United Nations Decade for the Eradication of Poverty (2018–2027)</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">A. Promotion of sustained economic growth and sustainable development in accordance with the relevant resolutions of the General Assembly and recent United Nations conferences</div>
           
@@ -1096,7 +1023,7 @@
           <a href="#" class="table-link">Item 22</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Eradication of poverty and other development issues</div>
+          <div class="font-medium">Eradication of poverty and other development issues</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">A. Promotion of sustained economic growth and sustainable development in accordance with the relevant resolutions of the General Assembly and recent United Nations conferences</div>
           
@@ -1113,7 +1040,7 @@
           <a href="#" class="table-link">Item 21(a)</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Follow-up to the Fifth United Nations Conference on the Least Developed Countries</div>
+          <div class="font-medium">Follow-up to the Fifth United Nations Conference on the Least Developed Countries</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">A. Promotion of sustained economic growth and sustainable development in accordance with the relevant resolutions of the General Assembly and recent United Nations conferences</div>
           
@@ -1130,7 +1057,7 @@
           <a href="#" class="table-link">Item 22(b)</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Eradicating rural poverty to implement the 2030 Agenda for Sustainable Development</div>
+          <div class="font-medium">Eradicating rural poverty to implement the 2030 Agenda for Sustainable Development</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">A. Promotion of sustained economic growth and sustainable development in accordance with the relevant resolutions of the General Assembly and recent United Nations conferences</div>
           
@@ -1147,7 +1074,7 @@
           <a href="#" class="table-link">Item 23</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Operational activities for development</div>
+          <div class="font-medium">Operational activities for development</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">A. Promotion of sustained economic growth and sustainable development in accordance with the relevant resolutions of the General Assembly and recent United Nations conferences</div>
           
@@ -1164,7 +1091,7 @@
           <a href="#" class="table-link">Item 23(a)</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Operational activities for development of the United Nations system</div>
+          <div class="font-medium">Operational activities for development of the United Nations system</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">A. Promotion of sustained economic growth and sustainable development in accordance with the relevant resolutions of the General Assembly and recent United Nations conferences</div>
           
@@ -1181,7 +1108,7 @@
           <a href="#" class="table-link">Item 23(b)</a>
         </td>
         <td>
-          <div style="font-weight: 500;">South-South cooperation for development</div>
+          <div class="font-medium">South-South cooperation for development</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">A. Promotion of sustained economic growth and sustainable development in accordance with the relevant resolutions of the General Assembly and recent United Nations conferences</div>
           
@@ -1198,7 +1125,7 @@
           <a href="#" class="table-link">Item 24(a)</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Agriculture development, food security and nutrition</div>
+          <div class="font-medium">Agriculture development, food security and nutrition</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">A. Promotion of sustained economic growth and sustainable development in accordance with the relevant resolutions of the General Assembly and recent United Nations conferences</div>
           
@@ -1215,7 +1142,7 @@
           <a href="#" class="table-link">Item 24</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Agriculture development, food security and nutrition</div>
+          <div class="font-medium">Agriculture development, food security and nutrition</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">A. Promotion of sustained economic growth and sustainable development in accordance with the relevant resolutions of the General Assembly and recent United Nations conferences</div>
           
@@ -1232,7 +1159,7 @@
           <a href="#" class="table-link">Item 24(b)</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Natural plant fibres and sustainable development</div>
+          <div class="font-medium">Natural plant fibres and sustainable development</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">A. Promotion of sustained economic growth and sustainable development in accordance with the relevant resolutions of the General Assembly and recent United Nations conferences</div>
           
@@ -1249,7 +1176,7 @@
           <a href="#" class="table-link">Item 25</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Social development</div>
+          <div class="font-medium">Social development</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">A. Promotion of sustained economic growth and sustainable development in accordance with the relevant resolutions of the General Assembly and recent United Nations conferences</div>
           
@@ -1266,7 +1193,7 @@
           <a href="#" class="table-link">Item 25(a)</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Implementation of the outcome of the World Summit for Social Development and of the twenty-fourth special session of the General Assembly</div>
+          <div class="font-medium">Implementation of the outcome of the World Summit for Social Development and of the twenty-fourth special session of the General Assembly</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">A. Promotion of sustained economic growth and sustainable development in accordance with the relevant resolutions of the General Assembly and recent United Nations conferences</div>
           
@@ -1283,7 +1210,7 @@
           <a href="#" class="table-link">Item 30</a>
         </td>
         <td>
-          <div style="font-weight: 500;">The role of diamonds in fuelling conflict</div>
+          <div class="font-medium">The role of diamonds in fuelling conflict</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">B. Maintenance of international peace and security</div>
           
@@ -1300,7 +1227,7 @@
           <a href="#" class="table-link">Item 27</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Report of the Security Council</div>
+          <div class="font-medium">Report of the Security Council</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">B. Maintenance of international peace and security</div>
           
@@ -1317,7 +1244,7 @@
           <a href="#" class="table-link">Item 28</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Report of the Peacebuilding Commission</div>
+          <div class="font-medium">Report of the Peacebuilding Commission</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">B. Maintenance of international peace and security</div>
           
@@ -1334,7 +1261,7 @@
           <a href="#" class="table-link">Item 29</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Support by the United Nations system of the efforts of Governments to promote and consolidate new or restored democracies</div>
+          <div class="font-medium">Support by the United Nations system of the efforts of Governments to promote and consolidate new or restored democracies</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">B. Maintenance of international peace and security</div>
           
@@ -1351,7 +1278,7 @@
           <a href="#" class="table-link">Item 26(b)</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Implementation of the outcome of the Fourth World Conference on Women and of the twenty-third special session of the General Assembly</div>
+          <div class="font-medium">Implementation of the outcome of the Fourth World Conference on Women and of the twenty-third special session of the General Assembly</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">A. Promotion of sustained economic growth and sustainable development in accordance with the relevant resolutions of the General Assembly and recent United Nations conferences</div>
           
@@ -1368,7 +1295,7 @@
           <a href="#" class="table-link">Item 31</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Prevention of armed conflict</div>
+          <div class="font-medium">Prevention of armed conflict</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">B. Maintenance of international peace and security</div>
           
@@ -1385,7 +1312,7 @@
           <a href="#" class="table-link">Item 25(b)</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Social development, including questions relating to the world social situation and to youth, ageing, persons with disabilities and the family</div>
+          <div class="font-medium">Social development, including questions relating to the world social situation and to youth, ageing, persons with disabilities and the family</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">A. Promotion of sustained economic growth and sustainable development in accordance with the relevant resolutions of the General Assembly and recent United Nations conferences</div>
           
@@ -1402,7 +1329,7 @@
           <a href="#" class="table-link">Item 26</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Advancement of women</div>
+          <div class="font-medium">Advancement of women</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">A. Promotion of sustained economic growth and sustainable development in accordance with the relevant resolutions of the General Assembly and recent United Nations conferences</div>
           
@@ -1419,7 +1346,7 @@
           <a href="#" class="table-link">Item 26(a)</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Advancement of women</div>
+          <div class="font-medium">Advancement of women</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">A. Promotion of sustained economic growth and sustainable development in accordance with the relevant resolutions of the General Assembly and recent United Nations conferences</div>
           
@@ -1436,7 +1363,7 @@
           <a href="#" class="table-link">Item 31(a)</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Prevention of armed conflict</div>
+          <div class="font-medium">Prevention of armed conflict</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">B. Maintenance of international peace and security</div>
           
@@ -1453,7 +1380,7 @@
           <a href="#" class="table-link">Item 31(b)</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Strengthening the role of mediation in the peaceful settlement of disputes, conflict prevention and resolution</div>
+          <div class="font-medium">Strengthening the role of mediation in the peaceful settlement of disputes, conflict prevention and resolution</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">B. Maintenance of international peace and security</div>
           
@@ -1470,7 +1397,7 @@
           <a href="#" class="table-link">Item 32</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Protracted conflicts in the GUAM area and their implications for international peace, security and development</div>
+          <div class="font-medium">Protracted conflicts in the GUAM area and their implications for international peace, security and development</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">B. Maintenance of international peace and security</div>
           
@@ -1487,7 +1414,7 @@
           <a href="#" class="table-link">Item 33</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Zone of peace and cooperation of the South Atlantic</div>
+          <div class="font-medium">Zone of peace and cooperation of the South Atlantic</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">B. Maintenance of international peace and security</div>
           
@@ -1504,7 +1431,7 @@
           <a href="#" class="table-link">Item 34</a>
         </td>
         <td>
-          <div style="font-weight: 500;">The situation in the Middle East</div>
+          <div class="font-medium">The situation in the Middle East</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">B. Maintenance of international peace and security</div>
           
@@ -1521,7 +1448,7 @@
           <a href="#" class="table-link">Item 35</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Question of Palestine</div>
+          <div class="font-medium">Question of Palestine</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">B. Maintenance of international peace and security</div>
           
@@ -1538,7 +1465,7 @@
           <a href="#" class="table-link">Item 36</a>
         </td>
         <td>
-          <div style="font-weight: 500;">The situation in Afghanistan</div>
+          <div class="font-medium">The situation in Afghanistan</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">B. Maintenance of international peace and security</div>
           
@@ -1555,7 +1482,7 @@
           <a href="#" class="table-link">Item 39</a>
         </td>
         <td>
-          <div style="font-weight: 500;">The situation in Central America: progress in fashioning a region of peace, freedom, democracy and development</div>
+          <div class="font-medium">The situation in Central America: progress in fashioning a region of peace, freedom, democracy and development</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">B. Maintenance of international peace and security</div>
           
@@ -1572,7 +1499,7 @@
           <a href="#" class="table-link">Item 37</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Question of the Comorian island of Mayotte</div>
+          <div class="font-medium">Question of the Comorian island of Mayotte</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">B. Maintenance of international peace and security</div>
           
@@ -1589,7 +1516,7 @@
           <a href="#" class="table-link">Item 38</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Necessity of ending the economic, commercial and financial embargo imposed by the United States of America against Cuba</div>
+          <div class="font-medium">Necessity of ending the economic, commercial and financial embargo imposed by the United States of America against Cuba</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">B. Maintenance of international peace and security</div>
           
@@ -1606,7 +1533,7 @@
           <a href="#" class="table-link">Item 40</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Question of Cyprus</div>
+          <div class="font-medium">Question of Cyprus</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">B. Maintenance of international peace and security</div>
           
@@ -1623,7 +1550,7 @@
           <a href="#" class="table-link">Item 41</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Armed aggression against the Democratic Republic of the Congo</div>
+          <div class="font-medium">Armed aggression against the Democratic Republic of the Congo</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">B. Maintenance of international peace and security</div>
           
@@ -1640,7 +1567,7 @@
           <a href="#" class="table-link">Item 44</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Armed Israeli aggression against the Iraqi nuclear installations and its grave consequences for the established international system concerning the peaceful uses of nuclear energy, the non-proliferation of nuclear weapons and international peace and security</div>
+          <div class="font-medium">Armed Israeli aggression against the Iraqi nuclear installations and its grave consequences for the established international system concerning the peaceful uses of nuclear energy, the non-proliferation of nuclear weapons and international peace and security</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">B. Maintenance of international peace and security</div>
           
@@ -1657,7 +1584,7 @@
           <a href="#" class="table-link">Item 42</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Question of the Falkland Islands (Malvinas)</div>
+          <div class="font-medium">Question of the Falkland Islands (Malvinas)</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">B. Maintenance of international peace and security</div>
           
@@ -1674,7 +1601,7 @@
           <a href="#" class="table-link">Item 43</a>
         </td>
         <td>
-          <div style="font-weight: 500;">The situation of democracy and human rights in Haiti</div>
+          <div class="font-medium">The situation of democracy and human rights in Haiti</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">B. Maintenance of international peace and security</div>
           
@@ -1691,7 +1618,7 @@
           <a href="#" class="table-link">Item 45</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Consequences of the Iraqi occupation of and aggression against Kuwait</div>
+          <div class="font-medium">Consequences of the Iraqi occupation of and aggression against Kuwait</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">B. Maintenance of international peace and security</div>
           
@@ -1708,7 +1635,7 @@
           <a href="#" class="table-link">Item 46</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Assistance in mine action</div>
+          <div class="font-medium">Assistance in mine action</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">B. Maintenance of international peace and security</div>
           
@@ -1725,7 +1652,7 @@
           <a href="#" class="table-link">Item 47</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Effects of atomic radiation</div>
+          <div class="font-medium">Effects of atomic radiation</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">B. Maintenance of international peace and security</div>
           
@@ -1742,7 +1669,7 @@
           <a href="#" class="table-link">Item 48</a>
         </td>
         <td>
-          <div style="font-weight: 500;">International cooperation in the peaceful uses of outer space</div>
+          <div class="font-medium">International cooperation in the peaceful uses of outer space</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">B. Maintenance of international peace and security</div>
           
@@ -1759,7 +1686,7 @@
           <a href="#" class="table-link">Item 50</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Israeli practices and settlement activities affecting the rights of the Palestinian people and other Arabs of the occupied territories</div>
+          <div class="font-medium">Israeli practices and settlement activities affecting the rights of the Palestinian people and other Arabs of the occupied territories</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">B. Maintenance of international peace and security</div>
           
@@ -1776,7 +1703,7 @@
           <a href="#" class="table-link">Item 49</a>
         </td>
         <td>
-          <div style="font-weight: 500;">United Nations Relief and Works Agency for Palestine Refugees in the Near East</div>
+          <div class="font-medium">United Nations Relief and Works Agency for Palestine Refugees in the Near East</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">B. Maintenance of international peace and security</div>
           
@@ -1793,7 +1720,7 @@
           <a href="#" class="table-link">Item 51</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Comprehensive review of the whole question of peacekeeping operations in all their aspects</div>
+          <div class="font-medium">Comprehensive review of the whole question of peacekeeping operations in all their aspects</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">B. Maintenance of international peace and security</div>
           
@@ -1810,7 +1737,7 @@
           <a href="#" class="table-link">Item 52</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Comprehensive review of special political missions</div>
+          <div class="font-medium">Comprehensive review of special political missions</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">B. Maintenance of international peace and security</div>
           
@@ -1827,7 +1754,7 @@
           <a href="#" class="table-link">Item 54</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Information from Non-Self-Governing Territories transmitted under Article 73 e of the Charter of the United Nations</div>
+          <div class="font-medium">Information from Non-Self-Governing Territories transmitted under Article 73 e of the Charter of the United Nations</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">B. Maintenance of international peace and security</div>
           
@@ -1844,7 +1771,7 @@
           <a href="#" class="table-link">Item 57</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Offers by Member States of study and training facilities for inhabitants of Non-Self-Governing Territories</div>
+          <div class="font-medium">Offers by Member States of study and training facilities for inhabitants of Non-Self-Governing Territories</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">B. Maintenance of international peace and security</div>
           
@@ -1861,7 +1788,7 @@
           <a href="#" class="table-link">Item 58</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Implementation of the Declaration on the Granting of Independence to Colonial Countries and Peoples</div>
+          <div class="font-medium">Implementation of the Declaration on the Granting of Independence to Colonial Countries and Peoples</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">B. Maintenance of international peace and security</div>
           
@@ -1878,7 +1805,7 @@
           <a href="#" class="table-link">Item 59</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Eradicating colonialism in all its forms and manifestations</div>
+          <div class="font-medium">Eradicating colonialism in all its forms and manifestations</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">B. Maintenance of international peace and security</div>
           
@@ -1895,7 +1822,7 @@
           <a href="#" class="table-link">Item 60</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Permanent sovereignty of the Palestinian people in the Occupied Palestinian Territory, including East Jerusalem, and of the Arab population in the occupied Syrian Golan over their natural resources</div>
+          <div class="font-medium">Permanent sovereignty of the Palestinian people in the Occupied Palestinian Territory, including East Jerusalem, and of the Arab population in the occupied Syrian Golan over their natural resources</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">B. Maintenance of international peace and security</div>
           
@@ -1912,7 +1839,7 @@
           <a href="#" class="table-link">Item 53</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Questions relating to information</div>
+          <div class="font-medium">Questions relating to information</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">B. Maintenance of international peace and security</div>
           
@@ -1929,7 +1856,7 @@
           <a href="#" class="table-link">Item 56</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Implementation of the Declaration on the Granting of Independence to Colonial Countries and Peoples by the specialized agencies and the international institutions associated with the United Nations</div>
+          <div class="font-medium">Implementation of the Declaration on the Granting of Independence to Colonial Countries and Peoples by the specialized agencies and the international institutions associated with the United Nations</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">B. Maintenance of international peace and security</div>
           
@@ -1946,7 +1873,7 @@
           <a href="#" class="table-link">Item 61</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Report of the United Nations High Commissioner for Refugees, questions relating to refugees, returnees and displaced persons and humanitarian questions</div>
+          <div class="font-medium">Report of the United Nations High Commissioner for Refugees, questions relating to refugees, returnees and displaced persons and humanitarian questions</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">B. Maintenance of international peace and security</div>
           
@@ -1963,7 +1890,7 @@
           <a href="#" class="table-link">Item 55</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Economic and other activities which affect the interests of the peoples of the Non-Self-Governing Territories</div>
+          <div class="font-medium">Economic and other activities which affect the interests of the peoples of the Non-Self-Governing Territories</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">B. Maintenance of international peace and security</div>
           
@@ -1980,7 +1907,7 @@
           <a href="#" class="table-link">Item 62</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Peacebuilding and sustaining peace</div>
+          <div class="font-medium">Peacebuilding and sustaining peace</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">B. Maintenance of international peace and security</div>
           
@@ -1997,7 +1924,7 @@
           <a href="#" class="table-link">Item 63</a>
         </td>
         <td>
-          <div style="font-weight: 500;">The situation in the temporarily occupied territories of Ukraine</div>
+          <div class="font-medium">The situation in the temporarily occupied territories of Ukraine</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">B. Maintenance of international peace and security</div>
           
@@ -2014,7 +1941,7 @@
           <a href="#" class="table-link">Item 64</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Use of the veto</div>
+          <div class="font-medium">Use of the veto</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">B. Maintenance of international peace and security</div>
           
@@ -2031,7 +1958,7 @@
           <a href="#" class="table-link">Item 65</a>
         </td>
         <td>
-          <div style="font-weight: 500;">From the New Partnership for Africa’s Development to Agenda 2063: progress in the implementation of sustainable development in Africa and international support</div>
+          <div class="font-medium">From the New Partnership for Africa’s Development to Agenda 2063: progress in the implementation of sustainable development in Africa and international support</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">C. Development of Africa</div>
           
@@ -2048,7 +1975,7 @@
           <a href="#" class="table-link">Item 65(a)</a>
         </td>
         <td>
-          <div style="font-weight: 500;">From the New Partnership for Africa’s Development to Agenda 2063: progress in the implementation of sustainable development in Africa and international support</div>
+          <div class="font-medium">From the New Partnership for Africa’s Development to Agenda 2063: progress in the implementation of sustainable development in Africa and international support</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">C. Development of Africa</div>
           
@@ -2065,7 +1992,7 @@
           <a href="#" class="table-link">Item 65(b)</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Causes of conflict and the promotion of durable peace and sustainable development in Africa</div>
+          <div class="font-medium">Causes of conflict and the promotion of durable peace and sustainable development in Africa</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">C. Development of Africa</div>
           
@@ -2082,7 +2009,7 @@
           <a href="#" class="table-link">Item 66</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Report of the Human Rights Council</div>
+          <div class="font-medium">Report of the Human Rights Council</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">D. Promotion of human rights</div>
           
@@ -2099,7 +2026,7 @@
           <a href="#" class="table-link">Item 67</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Promotion and protection of the rights of children</div>
+          <div class="font-medium">Promotion and protection of the rights of children</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">D. Promotion of human rights</div>
           
@@ -2116,7 +2043,7 @@
           <a href="#" class="table-link">Item 68</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Rights of Indigenous Peoples</div>
+          <div class="font-medium">Rights of Indigenous Peoples</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">D. Promotion of human rights</div>
           
@@ -2133,7 +2060,7 @@
           <a href="#" class="table-link">Item 69</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Elimination of racism, racial discrimination, xenophobia and related intolerance</div>
+          <div class="font-medium">Elimination of racism, racial discrimination, xenophobia and related intolerance</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">D. Promotion of human rights</div>
           
@@ -2150,7 +2077,7 @@
           <a href="#" class="table-link">Item 69(a)</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Elimination of racism, racial discrimination, xenophobia and related intolerance</div>
+          <div class="font-medium">Elimination of racism, racial discrimination, xenophobia and related intolerance</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">D. Promotion of human rights</div>
           
@@ -2167,7 +2094,7 @@
           <a href="#" class="table-link">Item 69(b)</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Comprehensive implementation of and follow-up to the Durban Declaration and Programme of Action</div>
+          <div class="font-medium">Comprehensive implementation of and follow-up to the Durban Declaration and Programme of Action</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">D. Promotion of human rights</div>
           
@@ -2184,7 +2111,7 @@
           <a href="#" class="table-link">Item 68(a)</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Rights of Indigenous Peoples</div>
+          <div class="font-medium">Rights of Indigenous Peoples</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">D. Promotion of human rights</div>
           
@@ -2201,7 +2128,7 @@
           <a href="#" class="table-link">Item 68(b)</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Follow-up to the outcome document of the high-level plenary meeting of the General Assembly known as the World Conference on Indigenous Peoples</div>
+          <div class="font-medium">Follow-up to the outcome document of the high-level plenary meeting of the General Assembly known as the World Conference on Indigenous Peoples</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">D. Promotion of human rights</div>
           
@@ -2218,7 +2145,7 @@
           <a href="#" class="table-link">Item 70</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Right of peoples to self-determination</div>
+          <div class="font-medium">Right of peoples to self-determination</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">D. Promotion of human rights</div>
           
@@ -2235,7 +2162,7 @@
           <a href="#" class="table-link">Item 71</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Promotion and protection of human rights</div>
+          <div class="font-medium">Promotion and protection of human rights</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">D. Promotion of human rights</div>
           
@@ -2252,7 +2179,7 @@
           <a href="#" class="table-link">Item 71(a)</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Implementation of human rights instruments</div>
+          <div class="font-medium">Implementation of human rights instruments</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">D. Promotion of human rights</div>
           
@@ -2269,7 +2196,7 @@
           <a href="#" class="table-link">Item 71(b)</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Human rights questions, including alternative approaches for improving the effective enjoyment of human rights and fundamental freedoms</div>
+          <div class="font-medium">Human rights questions, including alternative approaches for improving the effective enjoyment of human rights and fundamental freedoms</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">D. Promotion of human rights</div>
           
@@ -2286,7 +2213,7 @@
           <a href="#" class="table-link">Item 72(a)</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Strengthening of the coordination of emergency humanitarian assistance of the United Nations</div>
+          <div class="font-medium">Strengthening of the coordination of emergency humanitarian assistance of the United Nations</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">E. Effective coordination of humanitarian assistance efforts</div>
           
@@ -2303,7 +2230,7 @@
           <a href="#" class="table-link">Item 72(d)</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Strengthening of international cooperation and coordination of efforts to study, mitigate and minimize the consequences of the Chernobyl disaster</div>
+          <div class="font-medium">Strengthening of international cooperation and coordination of efforts to study, mitigate and minimize the consequences of the Chernobyl disaster</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">E. Effective coordination of humanitarian assistance efforts</div>
           
@@ -2320,7 +2247,7 @@
           <a href="#" class="table-link">Item 75(b)</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Agreement under the United Nations Convention on the Law of the Sea on the Conservation and Sustainable Use of Marine Biological Diversity of Areas beyond National Jurisdiction</div>
+          <div class="font-medium">Agreement under the United Nations Convention on the Law of the Sea on the Conservation and Sustainable Use of Marine Biological Diversity of Areas beyond National Jurisdiction</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">F. Promotion of justice and international law</div>
           
@@ -2337,7 +2264,7 @@
           <a href="#" class="table-link">Item 71(d)</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Comprehensive implementation of and follow-up to the Vienna Declaration and Programme of Action</div>
+          <div class="font-medium">Comprehensive implementation of and follow-up to the Vienna Declaration and Programme of Action</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">D. Promotion of human rights</div>
           
@@ -2354,7 +2281,7 @@
           <a href="#" class="table-link">Item 74</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Report of the International Criminal Court</div>
+          <div class="font-medium">Report of the International Criminal Court</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">F. Promotion of justice and international law</div>
           
@@ -2371,7 +2298,7 @@
           <a href="#" class="table-link">Item 75</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Oceans and the law of the sea</div>
+          <div class="font-medium">Oceans and the law of the sea</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">F. Promotion of justice and international law</div>
           
@@ -2388,7 +2315,7 @@
           <a href="#" class="table-link">Item 75(a)</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Sustainable fisheries, including through the 1995 Agreement for the Implementation of the Provisions of the United Nations Convention on the Law of the Sea of 10 December 1982 relating to the Conservation and Management of Straddling Fish Stocks and Highly Migratory Fish Stocks, and related instruments</div>
+          <div class="font-medium">Sustainable fisheries, including through the 1995 Agreement for the Implementation of the Provisions of the United Nations Convention on the Law of the Sea of 10 December 1982 relating to the Conservation and Management of Straddling Fish Stocks and Highly Migratory Fish Stocks, and related instruments</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">F. Promotion of justice and international law</div>
           
@@ -2405,7 +2332,7 @@
           <a href="#" class="table-link">Item 71(c)</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Human rights situations and reports of special rapporteurs and representatives</div>
+          <div class="font-medium">Human rights situations and reports of special rapporteurs and representatives</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">D. Promotion of human rights</div>
           
@@ -2422,7 +2349,7 @@
           <a href="#" class="table-link">Item 72</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Strengthening of the coordination of humanitarian and disaster relief assistance of the United Nations, including special economic assistance</div>
+          <div class="font-medium">Strengthening of the coordination of humanitarian and disaster relief assistance of the United Nations, including special economic assistance</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">E. Effective coordination of humanitarian assistance efforts</div>
           
@@ -2439,7 +2366,7 @@
           <a href="#" class="table-link">Item 72(b)</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Assistance to the Palestinian people</div>
+          <div class="font-medium">Assistance to the Palestinian people</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">E. Effective coordination of humanitarian assistance efforts</div>
           
@@ -2456,7 +2383,7 @@
           <a href="#" class="table-link">Item 72(c)</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Special economic assistance to individual countries or regions</div>
+          <div class="font-medium">Special economic assistance to individual countries or regions</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">E. Effective coordination of humanitarian assistance efforts</div>
           
@@ -2473,7 +2400,7 @@
           <a href="#" class="table-link">Item 73</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Report of the International Court of Justice</div>
+          <div class="font-medium">Report of the International Court of Justice</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">F. Promotion of justice and international law</div>
           
@@ -2490,7 +2417,7 @@
           <a href="#" class="table-link">Item 79</a>
         </td>
         <td>
-          <div style="font-weight: 500;">United Nations Programme of Assistance in the Teaching, Study, Dissemination and Wider Appreciation of International Law</div>
+          <div class="font-medium">United Nations Programme of Assistance in the Teaching, Study, Dissemination and Wider Appreciation of International Law</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">F. Promotion of justice and international law</div>
           
@@ -2507,7 +2434,7 @@
           <a href="#" class="table-link">Item 80</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Report of the International Law Commission on the work of its seventy-sixth session</div>
+          <div class="font-medium">Report of the International Law Commission on the work of its seventy-sixth session</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">F. Promotion of justice and international law</div>
           
@@ -2524,7 +2451,7 @@
           <a href="#" class="table-link">Item 81</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Crimes against humanity</div>
+          <div class="font-medium">Crimes against humanity</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">F. Promotion of justice and international law</div>
           
@@ -2541,7 +2468,7 @@
           <a href="#" class="table-link">Item 82</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Diplomatic protection</div>
+          <div class="font-medium">Diplomatic protection</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">F. Promotion of justice and international law</div>
           
@@ -2558,7 +2485,7 @@
           <a href="#" class="table-link">Item 83</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Report of the Special Committee on the Charter of the United Nations and on the Strengthening of the Role of the Organization</div>
+          <div class="font-medium">Report of the Special Committee on the Charter of the United Nations and on the Strengthening of the Role of the Organization</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">F. Promotion of justice and international law</div>
           
@@ -2575,7 +2502,7 @@
           <a href="#" class="table-link">Item 76</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Responsibility of States for internationally wrongful acts</div>
+          <div class="font-medium">Responsibility of States for internationally wrongful acts</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">F. Promotion of justice and international law</div>
           
@@ -2592,7 +2519,7 @@
           <a href="#" class="table-link">Item 77</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Criminal accountability of United Nations officials and experts on mission</div>
+          <div class="font-medium">Criminal accountability of United Nations officials and experts on mission</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">F. Promotion of justice and international law</div>
           
@@ -2609,7 +2536,7 @@
           <a href="#" class="table-link">Item 78</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Report of the United Nations Commission on International Trade Law on the work of its fifty-eighth session</div>
+          <div class="font-medium">Report of the United Nations Commission on International Trade Law on the work of its fifty-eighth session</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">F. Promotion of justice and international law</div>
           
@@ -2626,7 +2553,7 @@
           <a href="#" class="table-link">Item 84</a>
         </td>
         <td>
-          <div style="font-weight: 500;">The rule of law at the national and international levels</div>
+          <div class="font-medium">The rule of law at the national and international levels</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">F. Promotion of justice and international law</div>
           
@@ -2643,7 +2570,7 @@
           <a href="#" class="table-link">Item 85</a>
         </td>
         <td>
-          <div style="font-weight: 500;">The scope and application of the principle of universal jurisdiction</div>
+          <div class="font-medium">The scope and application of the principle of universal jurisdiction</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">F. Promotion of justice and international law</div>
           
@@ -2660,7 +2587,7 @@
           <a href="#" class="table-link">Item 86</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Protection of persons in the event of disasters</div>
+          <div class="font-medium">Protection of persons in the event of disasters</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">F. Promotion of justice and international law</div>
           
@@ -2677,7 +2604,7 @@
           <a href="#" class="table-link">Item 87</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Strengthening and promoting the international treaty framework</div>
+          <div class="font-medium">Strengthening and promoting the international treaty framework</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">F. Promotion of justice and international law</div>
           
@@ -2694,7 +2621,7 @@
           <a href="#" class="table-link">Item 88</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Request for an advisory opinion of the International Court of Justice on the legal consequences of the separation of the Chagos Archipelago from Mauritius in 1965</div>
+          <div class="font-medium">Request for an advisory opinion of the International Court of Justice on the legal consequences of the separation of the Chagos Archipelago from Mauritius in 1965</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">F. Promotion of justice and international law</div>
           
@@ -2711,7 +2638,7 @@
           <a href="#" class="table-link">Item 89</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Report of the International Atomic Energy Agency</div>
+          <div class="font-medium">Report of the International Atomic Energy Agency</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">G. Disarmament</div>
           
@@ -2728,7 +2655,7 @@
           <a href="#" class="table-link">Item 90</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Reduction of military budgets</div>
+          <div class="font-medium">Reduction of military budgets</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">G. Disarmament</div>
           
@@ -2745,7 +2672,7 @@
           <a href="#" class="table-link">Item 90(a)</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Reduction of military budgets</div>
+          <div class="font-medium">Reduction of military budgets</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">G. Disarmament</div>
           
@@ -2762,7 +2689,7 @@
           <a href="#" class="table-link">Item 92</a>
         </td>
         <td>
-          <div style="font-weight: 500;">African Nuclear-Weapon-Free Zone Treaty</div>
+          <div class="font-medium">African Nuclear-Weapon-Free Zone Treaty</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">G. Disarmament</div>
           
@@ -2779,7 +2706,7 @@
           <a href="#" class="table-link">Item 94</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Developments in the field of information and telecommunications in the context of international security</div>
+          <div class="font-medium">Developments in the field of information and telecommunications in the context of international security</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">G. Disarmament</div>
           
@@ -2796,7 +2723,7 @@
           <a href="#" class="table-link">Item 96</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Conclusion of effective international arrangements to assure non-nuclear-weapon States against the use or threat of use of nuclear weapons</div>
+          <div class="font-medium">Conclusion of effective international arrangements to assure non-nuclear-weapon States against the use or threat of use of nuclear weapons</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">G. Disarmament</div>
           
@@ -2813,7 +2740,7 @@
           <a href="#" class="table-link">Item 97</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Prevention of an arms race in outer space</div>
+          <div class="font-medium">Prevention of an arms race in outer space</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">G. Disarmament</div>
           
@@ -2830,7 +2757,7 @@
           <a href="#" class="table-link">Item 90(b)</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Objective information on military matters, including transparency of military expenditures</div>
+          <div class="font-medium">Objective information on military matters, including transparency of military expenditures</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">G. Disarmament</div>
           
@@ -2847,7 +2774,7 @@
           <a href="#" class="table-link">Item 91</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Implementation of the Declaration of the Indian Ocean as a Zone of Peace</div>
+          <div class="font-medium">Implementation of the Declaration of the Indian Ocean as a Zone of Peace</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">G. Disarmament</div>
           
@@ -2864,7 +2791,7 @@
           <a href="#" class="table-link">Item 93</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Treaty for the Prohibition of Nuclear Weapons in Latin America and the Caribbean (Treaty of Tlatelolco)</div>
+          <div class="font-medium">Treaty for the Prohibition of Nuclear Weapons in Latin America and the Caribbean (Treaty of Tlatelolco)</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">G. Disarmament</div>
           
@@ -2881,7 +2808,7 @@
           <a href="#" class="table-link">Item 95</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Establishment of a nuclear-weapon-free zone in the region of the Middle East</div>
+          <div class="font-medium">Establishment of a nuclear-weapon-free zone in the region of the Middle East</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">G. Disarmament</div>
           
@@ -2898,7 +2825,7 @@
           <a href="#" class="table-link">Item 97(a)</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Prevention of an arms race in outer space</div>
+          <div class="font-medium">Prevention of an arms race in outer space</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">G. Disarmament</div>
           
@@ -2915,7 +2842,7 @@
           <a href="#" class="table-link">Item 97(b)</a>
         </td>
         <td>
-          <div style="font-weight: 500;">No first placement of weapons in outer space</div>
+          <div class="font-medium">No first placement of weapons in outer space</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">G. Disarmament</div>
           
@@ -2932,7 +2859,7 @@
           <a href="#" class="table-link">Item 97(c)</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Further practical measures for the prevention of an arms race in outer space</div>
+          <div class="font-medium">Further practical measures for the prevention of an arms race in outer space</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">G. Disarmament</div>
           
@@ -2949,7 +2876,7 @@
           <a href="#" class="table-link">Item 97(d)</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Reducing space threats through norms, rules and principles of responsible behaviours</div>
+          <div class="font-medium">Reducing space threats through norms, rules and principles of responsible behaviours</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">G. Disarmament</div>
           
@@ -2966,7 +2893,7 @@
           <a href="#" class="table-link">Item 99</a>
         </td>
         <td>
-          <div style="font-weight: 500;">General and complete disarmament</div>
+          <div class="font-medium">General and complete disarmament</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">G. Disarmament</div>
           
@@ -2983,7 +2910,7 @@
           <a href="#" class="table-link">Item 98</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Role of science and technology in the context of international security and disarmament</div>
+          <div class="font-medium">Role of science and technology in the context of international security and disarmament</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">G. Disarmament</div>
           
@@ -3000,7 +2927,7 @@
           <a href="#" class="table-link">Item 99(a)</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Treaty banning the production of fissile material for nuclear weapons or other nuclear explosive devices</div>
+          <div class="font-medium">Treaty banning the production of fissile material for nuclear weapons or other nuclear explosive devices</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">G. Disarmament</div>
           
@@ -3017,7 +2944,7 @@
           <a href="#" class="table-link">Item 99(b)</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Nuclear disarmament</div>
+          <div class="font-medium">Nuclear disarmament</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">G. Disarmament</div>
           
@@ -3034,7 +2961,7 @@
           <a href="#" class="table-link">Item 99(c)</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Notification of nuclear tests</div>
+          <div class="font-medium">Notification of nuclear tests</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">G. Disarmament</div>
           
@@ -3051,7 +2978,7 @@
           <a href="#" class="table-link">Item 99(d)</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Relationship between disarmament and development</div>
+          <div class="font-medium">Relationship between disarmament and development</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">G. Disarmament</div>
           
@@ -3068,7 +2995,7 @@
           <a href="#" class="table-link">Item 99(e)</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Prohibition of the dumping of radioactive wastes</div>
+          <div class="font-medium">Prohibition of the dumping of radioactive wastes</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">G. Disarmament</div>
           
@@ -3085,7 +3012,7 @@
           <a href="#" class="table-link">Item 99(f)</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Regional disarmament</div>
+          <div class="font-medium">Regional disarmament</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">G. Disarmament</div>
           
@@ -3102,7 +3029,7 @@
           <a href="#" class="table-link">Item 99(g)</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Transparency in armaments</div>
+          <div class="font-medium">Transparency in armaments</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">G. Disarmament</div>
           
@@ -3119,7 +3046,7 @@
           <a href="#" class="table-link">Item 99(i)</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Convening of the fourth special session of the General Assembly devoted to disarmament</div>
+          <div class="font-medium">Convening of the fourth special session of the General Assembly devoted to disarmament</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">G. Disarmament</div>
           
@@ -3136,7 +3063,7 @@
           <a href="#" class="table-link">Item 99(k)</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Observance of environmental norms in the drafting and implementation of agreements on disarmament and arms control</div>
+          <div class="font-medium">Observance of environmental norms in the drafting and implementation of agreements on disarmament and arms control</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">G. Disarmament</div>
           
@@ -3153,7 +3080,7 @@
           <a href="#" class="table-link">Item 99(l)</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Follow-up to the advisory opinion of the International Court of Justice on the legality of the threat or use of nuclear weapons</div>
+          <div class="font-medium">Follow-up to the advisory opinion of the International Court of Justice on the legality of the threat or use of nuclear weapons</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">G. Disarmament</div>
           
@@ -3170,7 +3097,7 @@
           <a href="#" class="table-link">Item 99(h)</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Conventional arms control at the regional and subregional levels</div>
+          <div class="font-medium">Conventional arms control at the regional and subregional levels</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">G. Disarmament</div>
           
@@ -3187,7 +3114,7 @@
           <a href="#" class="table-link">Item 99(j)</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Nuclear-weapon-free southern hemisphere and adjacent areas</div>
+          <div class="font-medium">Nuclear-weapon-free southern hemisphere and adjacent areas</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">G. Disarmament</div>
           
@@ -3204,7 +3131,7 @@
           <a href="#" class="table-link">Item 99(m)</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Implementation of the Convention on the Prohibition of the Development, Production, Stockpiling and Use of Chemical Weapons and on Their Destruction</div>
+          <div class="font-medium">Implementation of the Convention on the Prohibition of the Development, Production, Stockpiling and Use of Chemical Weapons and on Their Destruction</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">G. Disarmament</div>
           
@@ -3221,7 +3148,7 @@
           <a href="#" class="table-link">Item 99(n)</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Implementation of the Convention on the Prohibition of the Use, Stockpiling, Production and Transfer of Anti-Personnel Mines and on Their Destruction</div>
+          <div class="font-medium">Implementation of the Convention on the Prohibition of the Use, Stockpiling, Production and Transfer of Anti-Personnel Mines and on Their Destruction</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">G. Disarmament</div>
           
@@ -3238,7 +3165,7 @@
           <a href="#" class="table-link">Item 99(o)</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Assistance to States for curbing the illicit traffic in small arms and light weapons and collecting them</div>
+          <div class="font-medium">Assistance to States for curbing the illicit traffic in small arms and light weapons and collecting them</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">G. Disarmament</div>
           
@@ -3255,7 +3182,7 @@
           <a href="#" class="table-link">Item 99(p)</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Reducing nuclear danger</div>
+          <div class="font-medium">Reducing nuclear danger</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">G. Disarmament</div>
           
@@ -3272,7 +3199,7 @@
           <a href="#" class="table-link">Item 99(q)</a>
         </td>
         <td>
-          <div style="font-weight: 500;">The illicit trade in small arms and light weapons in all its aspects</div>
+          <div class="font-medium">The illicit trade in small arms and light weapons in all its aspects</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">G. Disarmament</div>
           
@@ -3289,7 +3216,7 @@
           <a href="#" class="table-link">Item 99(r)</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Towards a nuclear-weapon-free world: accelerating the implementation of nuclear disarmament commitments</div>
+          <div class="font-medium">Towards a nuclear-weapon-free world: accelerating the implementation of nuclear disarmament commitments</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">G. Disarmament</div>
           
@@ -3306,7 +3233,7 @@
           <a href="#" class="table-link">Item 99(w)</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Transparency and confidence-building measures in outer space activities</div>
+          <div class="font-medium">Transparency and confidence-building measures in outer space activities</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">G. Disarmament</div>
           
@@ -3323,7 +3250,7 @@
           <a href="#" class="table-link">Item 99(u)</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Confidence-building measures in the regional and subregional context</div>
+          <div class="font-medium">Confidence-building measures in the regional and subregional context</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">G. Disarmament</div>
           
@@ -3340,7 +3267,7 @@
           <a href="#" class="table-link">Item 99(v)</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Through-life conventional ammunition management</div>
+          <div class="font-medium">Through-life conventional ammunition management</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">G. Disarmament</div>
           
@@ -3357,7 +3284,7 @@
           <a href="#" class="table-link">Item 99(s)</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Promotion of multilateralism in the area of disarmament and non‑proliferation</div>
+          <div class="font-medium">Promotion of multilateralism in the area of disarmament and non‑proliferation</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">G. Disarmament</div>
           
@@ -3374,7 +3301,7 @@
           <a href="#" class="table-link">Item 99(t)</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Measures to prevent terrorists from acquiring weapons of mass destruction</div>
+          <div class="font-medium">Measures to prevent terrorists from acquiring weapons of mass destruction</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">G. Disarmament</div>
           
@@ -3391,7 +3318,7 @@
           <a href="#" class="table-link">Item 99(x)</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Follow-up to nuclear disarmament obligations agreed to at the 1995, 2000 and 2010 Review Conferences of the Parties to the Treaty on the Non-Proliferation of Nuclear Weapons</div>
+          <div class="font-medium">Follow-up to nuclear disarmament obligations agreed to at the 1995, 2000 and 2010 Review Conferences of the Parties to the Treaty on the Non-Proliferation of Nuclear Weapons</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">G. Disarmament</div>
           
@@ -3408,7 +3335,7 @@
           <a href="#" class="table-link">Item 99(y)</a>
         </td>
         <td>
-          <div style="font-weight: 500;">The Arms Trade Treaty</div>
+          <div class="font-medium">The Arms Trade Treaty</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">G. Disarmament</div>
           
@@ -3425,7 +3352,7 @@
           <a href="#" class="table-link">Item 99(dd)</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Humanitarian consequences of nuclear weapons</div>
+          <div class="font-medium">Humanitarian consequences of nuclear weapons</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">G. Disarmament</div>
           
@@ -3442,7 +3369,7 @@
           <a href="#" class="table-link">Item 99(ee)</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Ethical imperatives for a nuclear-weapon-free world</div>
+          <div class="font-medium">Ethical imperatives for a nuclear-weapon-free world</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">G. Disarmament</div>
           
@@ -3459,7 +3386,7 @@
           <a href="#" class="table-link">Item 99(bb)</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Steps to building a common roadmap towards a world without nuclear weapons</div>
+          <div class="font-medium">Steps to building a common roadmap towards a world without nuclear weapons</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">G. Disarmament</div>
           
@@ -3476,7 +3403,7 @@
           <a href="#" class="table-link">Item 99(ff)</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Implementation of the Convention on Cluster Munitions</div>
+          <div class="font-medium">Implementation of the Convention on Cluster Munitions</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">G. Disarmament</div>
           
@@ -3493,7 +3420,7 @@
           <a href="#" class="table-link">Item 99(cc)</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Follow-up to the 2013 high-level meeting of the General Assembly on nuclear disarmament</div>
+          <div class="font-medium">Follow-up to the 2013 high-level meeting of the General Assembly on nuclear disarmament</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">G. Disarmament</div>
           
@@ -3510,7 +3437,7 @@
           <a href="#" class="table-link">Item 99(z)</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Treaty on the South-East Asia Nuclear-Weapon-Free Zone (Bangkok Treaty)</div>
+          <div class="font-medium">Treaty on the South-East Asia Nuclear-Weapon-Free Zone (Bangkok Treaty)</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">G. Disarmament</div>
           
@@ -3527,7 +3454,7 @@
           <a href="#" class="table-link">Item 99(aa)</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Compliance with non-proliferation, arms limitation and disarmament agreements and commitments</div>
+          <div class="font-medium">Compliance with non-proliferation, arms limitation and disarmament agreements and commitments</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">G. Disarmament</div>
           
@@ -3544,7 +3471,7 @@
           <a href="#" class="table-link">Item 99(gg)</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Nuclear disarmament verification</div>
+          <div class="font-medium">Nuclear disarmament verification</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">G. Disarmament</div>
           
@@ -3561,7 +3488,7 @@
           <a href="#" class="table-link">Item 99(hh)</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Treaty on the Prohibition of Nuclear Weapons</div>
+          <div class="font-medium">Treaty on the Prohibition of Nuclear Weapons</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">G. Disarmament</div>
           
@@ -3578,7 +3505,7 @@
           <a href="#" class="table-link">Item 99(ll)</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Nuclear war effects and scientific research</div>
+          <div class="font-medium">Nuclear war effects and scientific research</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">G. Disarmament</div>
           
@@ -3595,7 +3522,7 @@
           <a href="#" class="table-link">Item 99(jj)</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Addressing the legacy of nuclear weapons: providing victim assistance and environmental remediation to Member States affected by the use or testing of nuclear weapons</div>
+          <div class="font-medium">Addressing the legacy of nuclear weapons: providing victim assistance and environmental remediation to Member States affected by the use or testing of nuclear weapons</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">G. Disarmament</div>
           
@@ -3612,7 +3539,7 @@
           <a href="#" class="table-link">Item 99(ii)</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Youth, disarmament and non-proliferation</div>
+          <div class="font-medium">Youth, disarmament and non-proliferation</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">G. Disarmament</div>
           
@@ -3629,7 +3556,7 @@
           <a href="#" class="table-link">Item 99(kk)</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Lethal autonomous weapons systems</div>
+          <div class="font-medium">Lethal autonomous weapons systems</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">G. Disarmament</div>
           
@@ -3646,7 +3573,7 @@
           <a href="#" class="table-link">Item 99(mm)</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Artificial intelligence in the military domain and its implications for international peace and security</div>
+          <div class="font-medium">Artificial intelligence in the military domain and its implications for international peace and security</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">G. Disarmament</div>
           
@@ -3663,7 +3590,7 @@
           <a href="#" class="table-link">Item 100</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Review and implementation of the Concluding Document of the Twelfth Special Session of the General Assembly</div>
+          <div class="font-medium">Review and implementation of the Concluding Document of the Twelfth Special Session of the General Assembly</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">G. Disarmament</div>
           
@@ -3680,7 +3607,7 @@
           <a href="#" class="table-link">Item 100(d)</a>
         </td>
         <td>
-          <div style="font-weight: 500;">United Nations Regional Centre for Peace and Disarmament in Asia and the Pacific</div>
+          <div class="font-medium">United Nations Regional Centre for Peace and Disarmament in Asia and the Pacific</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">G. Disarmament</div>
           
@@ -3697,7 +3624,7 @@
           <a href="#" class="table-link">Item 100(b)</a>
         </td>
         <td>
-          <div style="font-weight: 500;">United Nations Regional Centre for Peace and Disarmament in Africa</div>
+          <div class="font-medium">United Nations Regional Centre for Peace and Disarmament in Africa</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">G. Disarmament</div>
           
@@ -3714,7 +3641,7 @@
           <a href="#" class="table-link">Item 100(a)</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Convention on the Prohibition of the Use of Nuclear Weapons</div>
+          <div class="font-medium">Convention on the Prohibition of the Use of Nuclear Weapons</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">G. Disarmament</div>
           
@@ -3731,7 +3658,7 @@
           <a href="#" class="table-link">Item 100(c)</a>
         </td>
         <td>
-          <div style="font-weight: 500;">United Nations Regional Centre for Peace, Disarmament and Development in Latin America and the Caribbean</div>
+          <div class="font-medium">United Nations Regional Centre for Peace, Disarmament and Development in Latin America and the Caribbean</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">G. Disarmament</div>
           
@@ -3748,7 +3675,7 @@
           <a href="#" class="table-link">Item 100(e)</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Regional confidence-building measures: activities of the United Nations Standing Advisory Committee on Security Questions in Central Africa</div>
+          <div class="font-medium">Regional confidence-building measures: activities of the United Nations Standing Advisory Committee on Security Questions in Central Africa</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">G. Disarmament</div>
           
@@ -3765,7 +3692,7 @@
           <a href="#" class="table-link">Item 100(f)</a>
         </td>
         <td>
-          <div style="font-weight: 500;">United Nations regional centres for peace and disarmament</div>
+          <div class="font-medium">United Nations regional centres for peace and disarmament</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">G. Disarmament</div>
           
@@ -3782,7 +3709,7 @@
           <a href="#" class="table-link">Item 103</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Convention on Prohibitions or Restrictions on the Use of Certain Conventional Weapons Which May Be Deemed to Be Excessively Injurious or to Have Indiscriminate Effects</div>
+          <div class="font-medium">Convention on Prohibitions or Restrictions on the Use of Certain Conventional Weapons Which May Be Deemed to Be Excessively Injurious or to Have Indiscriminate Effects</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">G. Disarmament</div>
           
@@ -3799,7 +3726,7 @@
           <a href="#" class="table-link">Item 106</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Convention on the Prohibition of the Development, Production and Stockpiling of Bacteriological (Biological) and Toxin Weapons and on Their Destruction</div>
+          <div class="font-medium">Convention on the Prohibition of the Development, Production and Stockpiling of Bacteriological (Biological) and Toxin Weapons and on Their Destruction</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">G. Disarmament</div>
           
@@ -3816,7 +3743,7 @@
           <a href="#" class="table-link">Item 101</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Review of the implementation of the recommendations and decisions adopted by the General Assembly at its tenth special session</div>
+          <div class="font-medium">Review of the implementation of the recommendations and decisions adopted by the General Assembly at its tenth special session</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">G. Disarmament</div>
           
@@ -3833,7 +3760,7 @@
           <a href="#" class="table-link">Item 101(b)</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Report of the Disarmament Commission</div>
+          <div class="font-medium">Report of the Disarmament Commission</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">G. Disarmament</div>
           
@@ -3850,7 +3777,7 @@
           <a href="#" class="table-link">Item 102</a>
         </td>
         <td>
-          <div style="font-weight: 500;">The risk of nuclear proliferation in the Middle East</div>
+          <div class="font-medium">The risk of nuclear proliferation in the Middle East</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">G. Disarmament</div>
           
@@ -3867,7 +3794,7 @@
           <a href="#" class="table-link">Item 101(a)</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Report of the Conference on Disarmament</div>
+          <div class="font-medium">Report of the Conference on Disarmament</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">G. Disarmament</div>
           
@@ -3884,7 +3811,7 @@
           <a href="#" class="table-link">Item 105</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Comprehensive Nuclear-Test-Ban Treaty</div>
+          <div class="font-medium">Comprehensive Nuclear-Test-Ban Treaty</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">G. Disarmament</div>
           
@@ -3901,7 +3828,7 @@
           <a href="#" class="table-link">Item 104</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Strengthening of security and cooperation in the Mediterranean region</div>
+          <div class="font-medium">Strengthening of security and cooperation in the Mediterranean region</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">G. Disarmament</div>
           
@@ -3918,7 +3845,7 @@
           <a href="#" class="table-link">Item 107</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Crime prevention and criminal justice</div>
+          <div class="font-medium">Crime prevention and criminal justice</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">H. Drug control, crime prevention and combating international terrorism in all its forms and manifestations</div>
           
@@ -3935,7 +3862,7 @@
           <a href="#" class="table-link">Item 108</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Countering the use of information and communications technologies for criminal purposes</div>
+          <div class="font-medium">Countering the use of information and communications technologies for criminal purposes</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">H. Drug control, crime prevention and combating international terrorism in all its forms and manifestations</div>
           
@@ -3952,7 +3879,7 @@
           <a href="#" class="table-link">Item 113</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Elections to fill vacancies in principal organs</div>
+          <div class="font-medium">Elections to fill vacancies in principal organs</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">I. Organizational, administrative and other matters</div>
           
@@ -3969,7 +3896,7 @@
           <a href="#" class="table-link">Item 113(c)</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Election of a member of the International Court of Justice</div>
+          <div class="font-medium">Election of a member of the International Court of Justice</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">I. Organizational, administrative and other matters</div>
           
@@ -3986,7 +3913,7 @@
           <a href="#" class="table-link">Item 114</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Elections to fill vacancies in subsidiary organs and other elections</div>
+          <div class="font-medium">Elections to fill vacancies in subsidiary organs and other elections</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">I. Organizational, administrative and other matters</div>
           
@@ -4003,7 +3930,7 @@
           <a href="#" class="table-link">Item 114(a)</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Election of members of the Committee for Programme and Coordination</div>
+          <div class="font-medium">Election of members of the Committee for Programme and Coordination</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">I. Organizational, administrative and other matters</div>
           
@@ -4020,7 +3947,7 @@
           <a href="#" class="table-link">Item 114(c)</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Election of members of the Human Rights Council</div>
+          <div class="font-medium">Election of members of the Human Rights Council</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">I. Organizational, administrative and other matters</div>
           
@@ -4037,7 +3964,7 @@
           <a href="#" class="table-link">Item 115(a)</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Appointment of members of the Advisory Committee on Administrative and Budgetary Questions</div>
+          <div class="font-medium">Appointment of members of the Advisory Committee on Administrative and Budgetary Questions</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">I. Organizational, administrative and other matters</div>
           
@@ -4054,7 +3981,7 @@
           <a href="#" class="table-link">Item 112</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Notification by the Secretary-General under Article 12, paragraph 2, of the Charter of the United Nations</div>
+          <div class="font-medium">Notification by the Secretary-General under Article 12, paragraph 2, of the Charter of the United Nations</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">I. Organizational, administrative and other matters</div>
           
@@ -4071,7 +3998,7 @@
           <a href="#" class="table-link">Item 114(b)</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Election of members of the Organizational Committee of the Peacebuilding Commission</div>
+          <div class="font-medium">Election of members of the Organizational Committee of the Peacebuilding Commission</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">I. Organizational, administrative and other matters</div>
           
@@ -4088,7 +4015,7 @@
           <a href="#" class="table-link">Item 114(d)</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Election of members of the United Nations Commission on International Trade Law</div>
+          <div class="font-medium">Election of members of the United Nations Commission on International Trade Law</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">I. Organizational, administrative and other matters</div>
           
@@ -4105,7 +4032,7 @@
           <a href="#" class="table-link">Item 115(c)</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Confirmation of the appointment of members of the Investments Committee</div>
+          <div class="font-medium">Confirmation of the appointment of members of the Investments Committee</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">I. Organizational, administrative and other matters</div>
           
@@ -4122,7 +4049,7 @@
           <a href="#" class="table-link">Item 115(e)</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Appointment of members of the International Civil Service Commission</div>
+          <div class="font-medium">Appointment of members of the International Civil Service Commission</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">I. Organizational, administrative and other matters</div>
           
@@ -4139,7 +4066,7 @@
           <a href="#" class="table-link">Item 109</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Measures to eliminate international terrorism</div>
+          <div class="font-medium">Measures to eliminate international terrorism</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">H. Drug control, crime prevention and combating international terrorism in all its forms and manifestations</div>
           
@@ -4156,7 +4083,7 @@
           <a href="#" class="table-link">Item 110</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Report of the Secretary-General on the work of the Organization</div>
+          <div class="font-medium">Report of the Secretary-General on the work of the Organization</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">I. Organizational, administrative and other matters</div>
           
@@ -4173,7 +4100,7 @@
           <a href="#" class="table-link">Item 113(a)</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Election of non-permanent members of the Security Council</div>
+          <div class="font-medium">Election of non-permanent members of the Security Council</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">I. Organizational, administrative and other matters</div>
           
@@ -4190,7 +4117,7 @@
           <a href="#" class="table-link">Item 113(b)</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Election of members of the Economic and Social Council</div>
+          <div class="font-medium">Election of members of the Economic and Social Council</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">I. Organizational, administrative and other matters</div>
           
@@ -4207,7 +4134,7 @@
           <a href="#" class="table-link">Item 115</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Appointments to fill vacancies in subsidiary organs and other appointments</div>
+          <div class="font-medium">Appointments to fill vacancies in subsidiary organs and other appointments</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">I. Organizational, administrative and other matters</div>
           
@@ -4224,7 +4151,7 @@
           <a href="#" class="table-link">Item 115(d)</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Appointment of a member of the Board of Auditors</div>
+          <div class="font-medium">Appointment of a member of the Board of Auditors</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">I. Organizational, administrative and other matters</div>
           
@@ -4241,7 +4168,7 @@
           <a href="#" class="table-link">Item 111</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Report of the Secretary-General on the Peacebuilding Fund</div>
+          <div class="font-medium">Report of the Secretary-General on the Peacebuilding Fund</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">I. Organizational, administrative and other matters</div>
           
@@ -4258,7 +4185,7 @@
           <a href="#" class="table-link">Item 114(e)</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Election of the United Nations High Commissioner for Refugees</div>
+          <div class="font-medium">Election of the United Nations High Commissioner for Refugees</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">I. Organizational, administrative and other matters</div>
           
@@ -4275,7 +4202,7 @@
           <a href="#" class="table-link">Item 115(b)</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Appointment of members of the Committee on Contributions</div>
+          <div class="font-medium">Appointment of members of the Committee on Contributions</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">I. Organizational, administrative and other matters</div>
           
@@ -4292,7 +4219,7 @@
           <a href="#" class="table-link">Item 115(e)(i)</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Appointment of members of the Commission</div>
+          <div class="font-medium">Appointment of members of the Commission</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">I. Organizational, administrative and other matters</div>
           
@@ -4309,7 +4236,7 @@
           <a href="#" class="table-link">Item 116</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Admission of new Members to the United Nations</div>
+          <div class="font-medium">Admission of new Members to the United Nations</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">I. Organizational, administrative and other matters</div>
           
@@ -4326,7 +4253,7 @@
           <a href="#" class="table-link">Item 115(f)</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Appointment of members of the Independent Audit Advisory Committee</div>
+          <div class="font-medium">Appointment of members of the Independent Audit Advisory Committee</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">I. Organizational, administrative and other matters</div>
           
@@ -4343,7 +4270,7 @@
           <a href="#" class="table-link">Item 115(j)</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Appointment of the judges of the United Nations Appeals Tribunal</div>
+          <div class="font-medium">Appointment of the judges of the United Nations Appeals Tribunal</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">I. Organizational, administrative and other matters</div>
           
@@ -4360,7 +4287,7 @@
           <a href="#" class="table-link">Item 115(e)(ii)</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Designation of the Vice-Chair of the Commission</div>
+          <div class="font-medium">Designation of the Vice-Chair of the Commission</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">I. Organizational, administrative and other matters</div>
           
@@ -4377,7 +4304,7 @@
           <a href="#" class="table-link">Item 115(g)</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Appointment of members of the Committee on Conferences</div>
+          <div class="font-medium">Appointment of members of the Committee on Conferences</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">I. Organizational, administrative and other matters</div>
           
@@ -4394,7 +4321,7 @@
           <a href="#" class="table-link">Item 115(i)</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Appointment of members of the Joint Inspection Unit</div>
+          <div class="font-medium">Appointment of members of the Joint Inspection Unit</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">I. Organizational, administrative and other matters</div>
           
@@ -4411,7 +4338,7 @@
           <a href="#" class="table-link">Item 115(h)</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Confirmation of the appointment of the Administrator of the United Nations Development Programme</div>
+          <div class="font-medium">Confirmation of the appointment of the Administrator of the United Nations Development Programme</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">I. Organizational, administrative and other matters</div>
           
@@ -4428,7 +4355,7 @@
           <a href="#" class="table-link">Item 115(k)</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Appointment of the judges of the United Nations Dispute Tribunal</div>
+          <div class="font-medium">Appointment of the judges of the United Nations Dispute Tribunal</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">I. Organizational, administrative and other matters</div>
           
@@ -4445,7 +4372,7 @@
           <a href="#" class="table-link">Item 115(l)</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Appointment of members of the Board of the 10-Year Framework of Programmes on Sustainable Consumption and Production Patterns</div>
+          <div class="font-medium">Appointment of members of the Board of the 10-Year Framework of Programmes on Sustainable Consumption and Production Patterns</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">I. Organizational, administrative and other matters</div>
           
@@ -4462,7 +4389,7 @@
           <a href="#" class="table-link">Item 118</a>
         </td>
         <td>
-          <div style="font-weight: 500;">The United Nations Global Counter-Terrorism Strategy</div>
+          <div class="font-medium">The United Nations Global Counter-Terrorism Strategy</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">I. Organizational, administrative and other matters</div>
           
@@ -4479,7 +4406,7 @@
           <a href="#" class="table-link">Item 117</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Follow-up to the outcome of the Millennium Summit</div>
+          <div class="font-medium">Follow-up to the outcome of the Millennium Summit</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">I. Organizational, administrative and other matters</div>
           
@@ -4496,7 +4423,7 @@
           <a href="#" class="table-link">Item 121</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Revitalization of the work of the General Assembly</div>
+          <div class="font-medium">Revitalization of the work of the General Assembly</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">I. Organizational, administrative and other matters</div>
           
@@ -4513,7 +4440,7 @@
           <a href="#" class="table-link">Item 120</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Implementation of the resolutions of the United Nations</div>
+          <div class="font-medium">Implementation of the resolutions of the United Nations</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">I. Organizational, administrative and other matters</div>
           
@@ -4530,7 +4457,7 @@
           <a href="#" class="table-link">Item 119</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Commemoration of the abolition of slavery and the transatlantic slave trade</div>
+          <div class="font-medium">Commemoration of the abolition of slavery and the transatlantic slave trade</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">I. Organizational, administrative and other matters</div>
           
@@ -4547,7 +4474,7 @@
           <a href="#" class="table-link">Item 123</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Strengthening of the United Nations system</div>
+          <div class="font-medium">Strengthening of the United Nations system</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">I. Organizational, administrative and other matters</div>
           
@@ -4564,7 +4491,7 @@
           <a href="#" class="table-link">Item 125</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Multilingualism</div>
+          <div class="font-medium">Multilingualism</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">I. Organizational, administrative and other matters</div>
           
@@ -4581,7 +4508,7 @@
           <a href="#" class="table-link">Item 124</a>
         </td>
         <td>
-          <div style="font-weight: 500;">United Nations reform: measures and proposals</div>
+          <div class="font-medium">United Nations reform: measures and proposals</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">I. Organizational, administrative and other matters</div>
           
@@ -4598,7 +4525,7 @@
           <a href="#" class="table-link">Item 122</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Question of equitable representation on and increase in the membership of the Security Council and other matters related to the Security Council</div>
+          <div class="font-medium">Question of equitable representation on and increase in the membership of the Security Council and other matters related to the Security Council</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">I. Organizational, administrative and other matters</div>
           
@@ -4615,7 +4542,7 @@
           <a href="#" class="table-link">Item 126(b)</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Cooperation between the United Nations and the Pacific Islands Forum</div>
+          <div class="font-medium">Cooperation between the United Nations and the Pacific Islands Forum</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">I. Organizational, administrative and other matters</div>
           
@@ -4632,7 +4559,7 @@
           <a href="#" class="table-link">Item 127</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Global health and foreign policy</div>
+          <div class="font-medium">Global health and foreign policy</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">I. Organizational, administrative and other matters</div>
           
@@ -4649,7 +4576,7 @@
           <a href="#" class="table-link">Item 126</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Cooperation between the United Nations and regional and other organizations</div>
+          <div class="font-medium">Cooperation between the United Nations and regional and other organizations</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">I. Organizational, administrative and other matters</div>
           
@@ -4666,7 +4593,7 @@
           <a href="#" class="table-link">Item 126(a)</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Cooperation between the United Nations and the Gulf Cooperation Council</div>
+          <div class="font-medium">Cooperation between the United Nations and the Gulf Cooperation Council</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">I. Organizational, administrative and other matters</div>
           
@@ -4683,7 +4610,7 @@
           <a href="#" class="table-link">Item 129</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Investigation into the conditions and circumstances resulting in the tragic death of Dag Hammarskjöld and of the members of the party accompanying him</div>
+          <div class="font-medium">Investigation into the conditions and circumstances resulting in the tragic death of Dag Hammarskjöld and of the members of the party accompanying him</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">I. Organizational, administrative and other matters</div>
           
@@ -4700,7 +4627,7 @@
           <a href="#" class="table-link">Item 128</a>
         </td>
         <td>
-          <div style="font-weight: 500;">International Residual Mechanism for Criminal Tribunals</div>
+          <div class="font-medium">International Residual Mechanism for Criminal Tribunals</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">I. Organizational, administrative and other matters</div>
           
@@ -4717,7 +4644,7 @@
           <a href="#" class="table-link">Item 130</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Sexual exploitation and abuse: implementing a zero-tolerance policy</div>
+          <div class="font-medium">Sexual exploitation and abuse: implementing a zero-tolerance policy</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">I. Organizational, administrative and other matters</div>
           
@@ -4734,7 +4661,7 @@
           <a href="#" class="table-link">Item 131</a>
         </td>
         <td>
-          <div style="font-weight: 500;">The responsibility to protect and the prevention of genocide, war crimes, ethnic cleansing and crimes against humanity</div>
+          <div class="font-medium">The responsibility to protect and the prevention of genocide, war crimes, ethnic cleansing and crimes against humanity</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">I. Organizational, administrative and other matters</div>
           
@@ -4751,7 +4678,7 @@
           <a href="#" class="table-link">Item 132</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Report of the United Nations Youth Office</div>
+          <div class="font-medium">Report of the United Nations Youth Office</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">I. Organizational, administrative and other matters</div>
           
@@ -4768,7 +4695,7 @@
           <a href="#" class="table-link">Item 133</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Financial reports and audited financial statements, and reports of the Board of Auditors</div>
+          <div class="font-medium">Financial reports and audited financial statements, and reports of the Board of Auditors</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">I. Organizational, administrative and other matters</div>
           
@@ -4785,7 +4712,7 @@
           <a href="#" class="table-link">Item 133(b)</a>
         </td>
         <td>
-          <div style="font-weight: 500;">United Nations peacekeeping operations</div>
+          <div class="font-medium">United Nations peacekeeping operations</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">I. Organizational, administrative and other matters</div>
           
@@ -4802,7 +4729,7 @@
           <a href="#" class="table-link">Item 133(a)</a>
         </td>
         <td>
-          <div style="font-weight: 500;">United Nations</div>
+          <div class="font-medium">United Nations</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">I. Organizational, administrative and other matters</div>
           
@@ -4819,7 +4746,7 @@
           <a href="#" class="table-link">Item 133(c)</a>
         </td>
         <td>
-          <div style="font-weight: 500;">International Trade Centre</div>
+          <div class="font-medium">International Trade Centre</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">I. Organizational, administrative and other matters</div>
           
@@ -4836,7 +4763,7 @@
           <a href="#" class="table-link">Item 133(e)</a>
         </td>
         <td>
-          <div style="font-weight: 500;">United Nations Development Programme</div>
+          <div class="font-medium">United Nations Development Programme</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">I. Organizational, administrative and other matters</div>
           
@@ -4853,7 +4780,7 @@
           <a href="#" class="table-link">Item 133(n)</a>
         </td>
         <td>
-          <div style="font-weight: 500;">United Nations Office on Drugs and Crime</div>
+          <div class="font-medium">United Nations Office on Drugs and Crime</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">I. Organizational, administrative and other matters</div>
           
@@ -4870,7 +4797,7 @@
           <a href="#" class="table-link">Item 133(h)</a>
         </td>
         <td>
-          <div style="font-weight: 500;">United Nations Relief and Works Agency for Palestine Refugees in the Near East</div>
+          <div class="font-medium">United Nations Relief and Works Agency for Palestine Refugees in the Near East</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">I. Organizational, administrative and other matters</div>
           
@@ -4887,7 +4814,7 @@
           <a href="#" class="table-link">Item 133(f)</a>
         </td>
         <td>
-          <div style="font-weight: 500;">United Nations Capital Development Fund</div>
+          <div class="font-medium">United Nations Capital Development Fund</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">I. Organizational, administrative and other matters</div>
           
@@ -4904,7 +4831,7 @@
           <a href="#" class="table-link">Item 133(d)</a>
         </td>
         <td>
-          <div style="font-weight: 500;">United Nations University</div>
+          <div class="font-medium">United Nations University</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">I. Organizational, administrative and other matters</div>
           
@@ -4921,7 +4848,7 @@
           <a href="#" class="table-link">Item 133(i)</a>
         </td>
         <td>
-          <div style="font-weight: 500;">United Nations Institute for Training and Research</div>
+          <div class="font-medium">United Nations Institute for Training and Research</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">I. Organizational, administrative and other matters</div>
           
@@ -4938,7 +4865,7 @@
           <a href="#" class="table-link">Item 133(j)</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Voluntary funds administered by the United Nations High Commissioner for Refugees</div>
+          <div class="font-medium">Voluntary funds administered by the United Nations High Commissioner for Refugees</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">I. Organizational, administrative and other matters</div>
           
@@ -4955,7 +4882,7 @@
           <a href="#" class="table-link">Item 133(k)</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Fund of the United Nations Environment Programme</div>
+          <div class="font-medium">Fund of the United Nations Environment Programme</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">I. Organizational, administrative and other matters</div>
           
@@ -4972,7 +4899,7 @@
           <a href="#" class="table-link">Item 133(l)</a>
         </td>
         <td>
-          <div style="font-weight: 500;">United Nations Population Fund</div>
+          <div class="font-medium">United Nations Population Fund</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">I. Organizational, administrative and other matters</div>
           
@@ -4989,7 +4916,7 @@
           <a href="#" class="table-link">Item 133(g)</a>
         </td>
         <td>
-          <div style="font-weight: 500;">United Nations Children’s Fund</div>
+          <div class="font-medium">United Nations Children’s Fund</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">I. Organizational, administrative and other matters</div>
           
@@ -5006,7 +4933,7 @@
           <a href="#" class="table-link">Item 133(m)</a>
         </td>
         <td>
-          <div style="font-weight: 500;">United Nations Human Settlements Programme</div>
+          <div class="font-medium">United Nations Human Settlements Programme</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">I. Organizational, administrative and other matters</div>
           
@@ -5023,7 +4950,7 @@
           <a href="#" class="table-link">Item 133(p)</a>
         </td>
         <td>
-          <div style="font-weight: 500;">United Nations Entity for Gender Equality and the Empowerment of Women (UN-Women)</div>
+          <div class="font-medium">United Nations Entity for Gender Equality and the Empowerment of Women (UN-Women)</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">I. Organizational, administrative and other matters</div>
           
@@ -5040,7 +4967,7 @@
           <a href="#" class="table-link">Item 133(o)</a>
         </td>
         <td>
-          <div style="font-weight: 500;">United Nations Office for Project Services</div>
+          <div class="font-medium">United Nations Office for Project Services</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">I. Organizational, administrative and other matters</div>
           
@@ -5057,7 +4984,7 @@
           <a href="#" class="table-link">Item 133(q)</a>
         </td>
         <td>
-          <div style="font-weight: 500;">International Residual Mechanism for Criminal Tribunals</div>
+          <div class="font-medium">International Residual Mechanism for Criminal Tribunals</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">I. Organizational, administrative and other matters</div>
           
@@ -5074,7 +5001,7 @@
           <a href="#" class="table-link">Item 136</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Proposed programme budget for 2026</div>
+          <div class="font-medium">Proposed programme budget for 2026</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">I. Organizational, administrative and other matters</div>
           
@@ -5091,7 +5018,7 @@
           <a href="#" class="table-link">Item 138</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Improving the financial situation of the United Nations</div>
+          <div class="font-medium">Improving the financial situation of the United Nations</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">I. Organizational, administrative and other matters</div>
           
@@ -5108,7 +5035,7 @@
           <a href="#" class="table-link">Item 135</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Programme budget for 2025</div>
+          <div class="font-medium">Programme budget for 2025</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">I. Organizational, administrative and other matters</div>
           
@@ -5125,7 +5052,7 @@
           <a href="#" class="table-link">Item 133(r)</a>
         </td>
         <td>
-          <div style="font-weight: 500;">United Nations Joint Staff Pension Fund</div>
+          <div class="font-medium">United Nations Joint Staff Pension Fund</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">I. Organizational, administrative and other matters</div>
           
@@ -5142,7 +5069,7 @@
           <a href="#" class="table-link">Item 134</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Review of the efficiency of the administrative and financial functioning of the United Nations</div>
+          <div class="font-medium">Review of the efficiency of the administrative and financial functioning of the United Nations</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">I. Organizational, administrative and other matters</div>
           
@@ -5159,7 +5086,7 @@
           <a href="#" class="table-link">Item 137</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Programme planning</div>
+          <div class="font-medium">Programme planning</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">I. Organizational, administrative and other matters</div>
           
@@ -5176,7 +5103,7 @@
           <a href="#" class="table-link">Item 140</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Scale of assessments for the apportionment of the expenses of the United Nations</div>
+          <div class="font-medium">Scale of assessments for the apportionment of the expenses of the United Nations</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">I. Organizational, administrative and other matters</div>
           
@@ -5193,7 +5120,7 @@
           <a href="#" class="table-link">Item 139</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Pattern of conferences</div>
+          <div class="font-medium">Pattern of conferences</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">I. Organizational, administrative and other matters</div>
           
@@ -5210,7 +5137,7 @@
           <a href="#" class="table-link">Item 141</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Human resources management</div>
+          <div class="font-medium">Human resources management</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">I. Organizational, administrative and other matters</div>
           
@@ -5227,7 +5154,7 @@
           <a href="#" class="table-link">Item 147</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Financing of the International Residual Mechanism for Criminal Tribunals</div>
+          <div class="font-medium">Financing of the International Residual Mechanism for Criminal Tribunals</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">I. Organizational, administrative and other matters</div>
           
@@ -5244,7 +5171,7 @@
           <a href="#" class="table-link">Item 143</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Joint Inspection Unit</div>
+          <div class="font-medium">Joint Inspection Unit</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">I. Organizational, administrative and other matters</div>
           
@@ -5261,7 +5188,7 @@
           <a href="#" class="table-link">Item 142</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Report on the activities of the Ethics Office</div>
+          <div class="font-medium">Report on the activities of the Ethics Office</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">I. Organizational, administrative and other matters</div>
           
@@ -5278,7 +5205,7 @@
           <a href="#" class="table-link">Item 145</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Report on the activities of the Office of Internal Oversight Services</div>
+          <div class="font-medium">Report on the activities of the Office of Internal Oversight Services</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">I. Organizational, administrative and other matters</div>
           
@@ -5295,7 +5222,7 @@
           <a href="#" class="table-link">Item 146</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Administration of justice at the United Nations</div>
+          <div class="font-medium">Administration of justice at the United Nations</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">I. Organizational, administrative and other matters</div>
           
@@ -5312,7 +5239,7 @@
           <a href="#" class="table-link">Item 144</a>
         </td>
         <td>
-          <div style="font-weight: 500;">United Nations common system</div>
+          <div class="font-medium">United Nations common system</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">I. Organizational, administrative and other matters</div>
           
@@ -5329,7 +5256,7 @@
           <a href="#" class="table-link">Item 148</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Administrative and budgetary aspects of the financing of the United Nations peacekeeping operations</div>
+          <div class="font-medium">Administrative and budgetary aspects of the financing of the United Nations peacekeeping operations</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">I. Organizational, administrative and other matters</div>
           
@@ -5346,7 +5273,7 @@
           <a href="#" class="table-link">Item 149</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Financing of the United Nations Interim Security Force for Abyei</div>
+          <div class="font-medium">Financing of the United Nations Interim Security Force for Abyei</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">I. Organizational, administrative and other matters</div>
           
@@ -5363,7 +5290,7 @@
           <a href="#" class="table-link">Item 155</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Financing of the United Nations Multidimensional Integrated Stabilization Mission in Mali</div>
+          <div class="font-medium">Financing of the United Nations Multidimensional Integrated Stabilization Mission in Mali</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">I. Organizational, administrative and other matters</div>
           
@@ -5380,7 +5307,7 @@
           <a href="#" class="table-link">Item 150</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Financing of the United Nations Multidimensional Integrated Stabilization Mission in the Central African Republic</div>
+          <div class="font-medium">Financing of the United Nations Multidimensional Integrated Stabilization Mission in the Central African Republic</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">I. Organizational, administrative and other matters</div>
           
@@ -5397,7 +5324,7 @@
           <a href="#" class="table-link">Item 151</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Financing of the United Nations Peacekeeping Force in Cyprus</div>
+          <div class="font-medium">Financing of the United Nations Peacekeeping Force in Cyprus</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">I. Organizational, administrative and other matters</div>
           
@@ -5414,7 +5341,7 @@
           <a href="#" class="table-link">Item 156</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Financing of the United Nations peacekeeping forces in the Middle East</div>
+          <div class="font-medium">Financing of the United Nations peacekeeping forces in the Middle East</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">I. Organizational, administrative and other matters</div>
           
@@ -5431,7 +5358,7 @@
           <a href="#" class="table-link">Item 152</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Financing of the United Nations Organization Stabilization Mission in the Democratic Republic of the Congo</div>
+          <div class="font-medium">Financing of the United Nations Organization Stabilization Mission in the Democratic Republic of the Congo</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">I. Organizational, administrative and other matters</div>
           
@@ -5448,7 +5375,7 @@
           <a href="#" class="table-link">Item 153</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Financing of the United Nations Mission in East Timor</div>
+          <div class="font-medium">Financing of the United Nations Mission in East Timor</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">I. Organizational, administrative and other matters</div>
           
@@ -5465,7 +5392,7 @@
           <a href="#" class="table-link">Item 154</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Financing of the United Nations Interim Administration Mission in Kosovo</div>
+          <div class="font-medium">Financing of the United Nations Interim Administration Mission in Kosovo</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">I. Organizational, administrative and other matters</div>
           
@@ -5482,7 +5409,7 @@
           <a href="#" class="table-link">Item 156(a)</a>
         </td>
         <td>
-          <div style="font-weight: 500;">United Nations Disengagement Observer Force</div>
+          <div class="font-medium">United Nations Disengagement Observer Force</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">I. Organizational, administrative and other matters</div>
           
@@ -5499,7 +5426,7 @@
           <a href="#" class="table-link">Item 156(b)</a>
         </td>
         <td>
-          <div style="font-weight: 500;">United Nations Interim Force in Lebanon</div>
+          <div class="font-medium">United Nations Interim Force in Lebanon</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">I. Organizational, administrative and other matters</div>
           
@@ -5516,7 +5443,7 @@
           <a href="#" class="table-link">Item 158</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Financing of the United Nations Mission for the Referendum in Western Sahara</div>
+          <div class="font-medium">Financing of the United Nations Mission for the Referendum in Western Sahara</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">I. Organizational, administrative and other matters</div>
           
@@ -5533,7 +5460,7 @@
           <a href="#" class="table-link">Item 157</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Financing of the United Nations Mission in South Sudan</div>
+          <div class="font-medium">Financing of the United Nations Mission in South Sudan</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">I. Organizational, administrative and other matters</div>
           
@@ -5550,7 +5477,7 @@
           <a href="#" class="table-link">Item 159</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Financing of the activities arising from Security Council resolution 1863 (2009)</div>
+          <div class="font-medium">Financing of the activities arising from Security Council resolution 1863 (2009)</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">I. Organizational, administrative and other matters</div>
           
@@ -5567,7 +5494,7 @@
           <a href="#" class="table-link">Item 160</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Report of the Committee on Relations with the Host Country</div>
+          <div class="font-medium">Report of the Committee on Relations with the Host Country</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">I. Organizational, administrative and other matters</div>
           
@@ -5584,7 +5511,7 @@
           <a href="#" class="table-link">Item 162</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Observer status for the Eurasian Economic Union in the General Assembly</div>
+          <div class="font-medium">Observer status for the Eurasian Economic Union in the General Assembly</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">I. Organizational, administrative and other matters</div>
           
@@ -5601,7 +5528,7 @@
           <a href="#" class="table-link">Item 161</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Observer status for the Cooperation Council of Turkic-speaking States in the General Assembly</div>
+          <div class="font-medium">Observer status for the Cooperation Council of Turkic-speaking States in the General Assembly</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">I. Organizational, administrative and other matters</div>
           
@@ -5618,7 +5545,7 @@
           <a href="#" class="table-link">Item 164</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Observer status for the Ramsar Convention on Wetlands Secretariat in the General Assembly</div>
+          <div class="font-medium">Observer status for the Ramsar Convention on Wetlands Secretariat in the General Assembly</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">I. Organizational, administrative and other matters</div>
           
@@ -5635,7 +5562,7 @@
           <a href="#" class="table-link">Item 163</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Observer status for the Community of Democracies in the General Assembly</div>
+          <div class="font-medium">Observer status for the Community of Democracies in the General Assembly</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">I. Organizational, administrative and other matters</div>
           
@@ -5652,7 +5579,7 @@
           <a href="#" class="table-link">Item 166</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Observer status for the International Organization of Employers in the General Assembly</div>
+          <div class="font-medium">Observer status for the International Organization of Employers in the General Assembly</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">I. Organizational, administrative and other matters</div>
           
@@ -5669,7 +5596,7 @@
           <a href="#" class="table-link">Item 165</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Observer status for the Global Environment Facility in the General Assembly</div>
+          <div class="font-medium">Observer status for the Global Environment Facility in the General Assembly</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">I. Organizational, administrative and other matters</div>
           
@@ -5686,7 +5613,7 @@
           <a href="#" class="table-link">Item 168</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Observer status for the Boao Forum for Asia in the General Assembly</div>
+          <div class="font-medium">Observer status for the Boao Forum for Asia in the General Assembly</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">I. Organizational, administrative and other matters</div>
           
@@ -5703,7 +5630,7 @@
           <a href="#" class="table-link">Item 167</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Observer status for the International Trade Union Confederation in the General Assembly</div>
+          <div class="font-medium">Observer status for the International Trade Union Confederation in the General Assembly</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">I. Organizational, administrative and other matters</div>
           
@@ -5720,7 +5647,7 @@
           <a href="#" class="table-link">Item 169</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Observer status for the International Parliamentarians’ Congress in the General Assembly</div>
+          <div class="font-medium">Observer status for the International Parliamentarians’ Congress in the General Assembly</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">I. Organizational, administrative and other matters</div>
           
@@ -5737,7 +5664,7 @@
           <a href="#" class="table-link">Item 170</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Observer status for the Regional Anti-Corruption Initiative in the General Assembly</div>
+          <div class="font-medium">Observer status for the Regional Anti-Corruption Initiative in the General Assembly</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">I. Organizational, administrative and other matters</div>
           
@@ -5754,7 +5681,7 @@
           <a href="#" class="table-link">Item 172</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Observer status for the Islamic Organization for Food Security in the General Assembly</div>
+          <div class="font-medium">Observer status for the Islamic Organization for Food Security in the General Assembly</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">I. Organizational, administrative and other matters</div>
           
@@ -5771,7 +5698,7 @@
           <a href="#" class="table-link">Item 171</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Observer status for the International Centre for Integrated Mountain Development in the General Assembly</div>
+          <div class="font-medium">Observer status for the International Centre for Integrated Mountain Development in the General Assembly</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">I. Organizational, administrative and other matters</div>
           
@@ -5788,7 +5715,7 @@
           <a href="#" class="table-link">Item 173</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Observer status for the African Export-Import Bank in the General Assembly</div>
+          <div class="font-medium">Observer status for the African Export-Import Bank in the General Assembly</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">I. Organizational, administrative and other matters</div>
           
@@ -5805,7 +5732,7 @@
           <a href="#" class="table-link">Item 174</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Observer status for the International Tropical Timber Organization in the General Assembly</div>
+          <div class="font-medium">Observer status for the International Tropical Timber Organization in the General Assembly</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">I. Organizational, administrative and other matters</div>
           
@@ -5822,7 +5749,7 @@
           <a href="#" class="table-link">Item 175</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Observer status for the Brazilian-Argentine Agency for Accounting and Control of Nuclear Materials in the General Assembly</div>
+          <div class="font-medium">Observer status for the Brazilian-Argentine Agency for Accounting and Control of Nuclear Materials in the General Assembly</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">I. Organizational, administrative and other matters</div>
           
@@ -5839,7 +5766,7 @@
           <a href="#" class="table-link">Item 176</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Observer status for the Climate Vulnerable Forum in the General Assembly</div>
+          <div class="font-medium">Observer status for the Climate Vulnerable Forum in the General Assembly</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">I. Organizational, administrative and other matters</div>
           
@@ -5856,7 +5783,7 @@
           <a href="#" class="table-link">Item 91</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Reduction of military budgets</div>
+          <div class="font-medium">Reduction of military budgets</div>
           
         </td>
         <td>
@@ -5871,7 +5798,7 @@
           <a href="#" class="table-link">Item 95</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Developments in the field of information and telecommunications in the context of international security</div>
+          <div class="font-medium">Developments in the field of information and telecommunications in the context of international security</div>
           
         </td>
         <td>
@@ -5886,7 +5813,7 @@
           <a href="#" class="table-link">Item 177</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Financing of the United Nations Support Office in Haiti</div>
+          <div class="font-medium">Financing of the United Nations Support Office in Haiti</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">I. Organizational, administrative and other matters</div>
           
@@ -5903,7 +5830,7 @@
           <a href="#" class="table-link">Item 178</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Follow-up to the implementation of the New Urban Agenda and strengthening of the United Nations Human Settlements Programme (UN-Habitat)</div>
+          <div class="font-medium">Follow-up to the implementation of the New Urban Agenda and strengthening of the United Nations Human Settlements Programme (UN-Habitat)</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">I. Organizational, administrative and other matters</div>
           
@@ -5920,7 +5847,7 @@
           <a href="#" class="table-link">Item 115(m)</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Appointment of members of the Independent International Scientific Panel on Artificial Intelligence</div>
+          <div class="font-medium">Appointment of members of the Independent International Scientific Panel on Artificial Intelligence</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">I. Organizational, administrative and other matters</div>
           
@@ -5937,7 +5864,7 @@
           <a href="#" class="table-link">Item 62(a)</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Peacebuilding and sustaining peace</div>
+          <div class="font-medium">Peacebuilding and sustaining peace</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">B. Maintenance of international peace and security</div>
           
@@ -5954,7 +5881,7 @@
           <a href="#" class="table-link">Item 62(b)</a>
         </td>
         <td>
-          <div style="font-weight: 500;">Neutrality for peace and security</div>
+          <div class="font-medium">Neutrality for peace and security</div>
           
             <div class="meta-row text-gray-500 text-sm mt-1">B. Maintenance of international peace and security</div>
           
@@ -5999,7 +5926,7 @@
 
     <script>
       (function() {
-        var lastBuild = 1769368659;
+        var lastBuild = 1769368951;
         var pollInterval = 2000;
         function checkUpdate() {
           fetch('/__build__').then(function(r) { return r.json(); }).then(function(data) {

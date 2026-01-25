@@ -8,79 +8,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="/static/css/un-design-system.css" />
-    <style>
-      .dropdown-menu {
-        display: none;
-        position: absolute;
-        background: white;
-        border: 1px solid var(--un-gray-light);
-        box-shadow: var(--shadow-md);
-        min-width: 280px;
-        z-index: 1000;
-        padding: 8px 0;
-      }
-      .dropdown:hover .dropdown-menu,
-      .dropdown-menu:hover {
-        display: block;
-      }
-      .dropdown-item {
-        display: block;
-        padding: 10px 16px;
-        color: var(--un-black);
-        text-decoration: none;
-        font-size: 14px;
-        transition: background var(--transition-fast);
-      }
-      .dropdown-item:hover {
-        background: var(--un-blue-light);
-        color: var(--un-blue);
-      }
-      .dropdown-divider {
-        height: 1px;
-        background: var(--un-gray-light);
-        margin: 8px 0;
-      }
-      .dropdown-header {
-        padding: 8px 16px;
-        font-size: 11px;
-        font-weight: 600;
-        text-transform: uppercase;
-        letter-spacing: 0.5px;
-        color: var(--un-gray);
-      }
-      .site-nav .nav-item {
-        position: relative;
-      }
-      .site-nav .nav-link {
-        display: flex;
-        align-items: center;
-        gap: 4px;
-        padding: 12px 16px;
-        font-size: 14px;
-        font-weight: 500;
-        color: var(--un-dark);
-        text-decoration: none;
-        cursor: pointer;
-      }
-      .site-nav .nav-link:hover,
-      .site-nav .nav-link.active {
-        color: var(--un-blue);
-      }
-      .site-nav .nav-link::after {
-        content: '';
-        display: inline-block;
-        width: 0;
-        height: 0;
-        margin-left: 4px;
-        border-left: 4px solid transparent;
-        border-right: 4px solid transparent;
-        border-top: 4px solid var(--un-gray);
-      }
-      .site-nav .nav-link:hover::after,
-      .site-nav .nav-item:hover .nav-link::after {
-        border-top-color: var(--un-blue);
-      }
-    </style>
     <svg style="display: none;">
       <symbol id="icon-document" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
         <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
@@ -243,17 +170,17 @@
   <table>
     <thead>
       <tr>
-        <th style="width: 120px;">Decision</th>
+        <th class="w-120">Decision</th>
         <th>Title</th>
-        <th style="width: 100px;">Agenda</th>
-        <th style="width: 140px;">Meeting</th>
+        <th class="w-100">Agenda</th>
+        <th class="w-140">Meeting</th>
       </tr>
     </thead>
     <tbody>
       
       <tr>
         <td>
-          <span style="font-family: monospace; font-weight: 600;">80/401</span>
+          <span class="font-mono font-semibold">80/401</span>
           
             <br><span class="badge badge-outline mt-2">Elections and Appointments</span>
           
@@ -280,7 +207,7 @@
       
       <tr>
         <td>
-          <span style="font-family: monospace; font-weight: 600;">80/501</span>
+          <span class="font-mono font-semibold">80/501</span>
           
             <br><span class="badge badge-outline mt-2">Other Decisions</span>
           
@@ -307,7 +234,7 @@
       
       <tr>
         <td>
-          <span style="font-family: monospace; font-weight: 600;">80/502</span>
+          <span class="font-mono font-semibold">80/502</span>
           
             <br><span class="badge badge-outline mt-2">Other Decisions</span>
           
@@ -334,7 +261,7 @@
       
       <tr>
         <td>
-          <span style="font-family: monospace; font-weight: 600;">80/503</span>
+          <span class="font-mono font-semibold">80/503</span>
           
             <br><span class="badge badge-outline mt-2">Other Decisions</span>
           
@@ -361,7 +288,7 @@
       
       <tr>
         <td>
-          <span style="font-family: monospace; font-weight: 600;">80/504</span>
+          <span class="font-mono font-semibold">80/504</span>
           
             <br><span class="badge badge-outline mt-2">Other Decisions</span>
           
@@ -388,7 +315,7 @@
       
       <tr>
         <td>
-          <span style="font-family: monospace; font-weight: 600;">80/505</span>
+          <span class="font-mono font-semibold">80/505</span>
           
             <br><span class="badge badge-outline mt-2">Other Decisions</span>
           
@@ -415,7 +342,7 @@
       
       <tr>
         <td>
-          <span style="font-family: monospace; font-weight: 600;">80/506</span>
+          <span class="font-mono font-semibold">80/506</span>
           
             <br><span class="badge badge-outline mt-2">Other Decisions</span>
           
@@ -442,7 +369,7 @@
       
       <tr>
         <td>
-          <span style="font-family: monospace; font-weight: 600;">80/507</span>
+          <span class="font-mono font-semibold">80/507</span>
           
             <br><span class="badge badge-outline mt-2">Other Decisions</span>
           
@@ -469,7 +396,7 @@
       
       <tr>
         <td>
-          <span style="font-family: monospace; font-weight: 600;">80/402</span>
+          <span class="font-mono font-semibold">80/402</span>
           
             <br><span class="badge badge-outline mt-2">Elections and Appointments</span>
           
@@ -496,7 +423,7 @@
       
       <tr>
         <td>
-          <span style="font-family: monospace; font-weight: 600;">80/508</span>
+          <span class="font-mono font-semibold">80/508</span>
           
             <br><span class="badge badge-outline mt-2">Other Decisions</span>
           
@@ -523,7 +450,7 @@
       
       <tr>
         <td>
-          <span style="font-family: monospace; font-weight: 600;">80/509</span>
+          <span class="font-mono font-semibold">80/509</span>
           
             <br><span class="badge badge-outline mt-2">Other Decisions</span>
           
@@ -550,7 +477,7 @@
       
       <tr>
         <td>
-          <span style="font-family: monospace; font-weight: 600;">80/403</span>
+          <span class="font-mono font-semibold">80/403</span>
           
             <br><span class="badge badge-outline mt-2">Elections and Appointments</span>
           
@@ -577,7 +504,7 @@
       
       <tr>
         <td>
-          <span style="font-family: monospace; font-weight: 600;">80/510</span>
+          <span class="font-mono font-semibold">80/510</span>
           
             <br><span class="badge badge-outline mt-2">Other Decisions</span>
           
@@ -604,7 +531,7 @@
       
       <tr>
         <td>
-          <span style="font-family: monospace; font-weight: 600;">80/404</span>
+          <span class="font-mono font-semibold">80/404</span>
           
             <br><span class="badge badge-outline mt-2">Elections and Appointments</span>
           
@@ -631,7 +558,7 @@
       
       <tr>
         <td>
-          <span style="font-family: monospace; font-weight: 600;">80/405</span>
+          <span class="font-mono font-semibold">80/405</span>
           
             <br><span class="badge badge-outline mt-2">Elections and Appointments</span>
           
@@ -658,7 +585,7 @@
       
       <tr>
         <td>
-          <span style="font-family: monospace; font-weight: 600;">80/406</span>
+          <span class="font-mono font-semibold">80/406</span>
           
             <br><span class="badge badge-outline mt-2">Elections and Appointments</span>
           
@@ -685,7 +612,7 @@
       
       <tr>
         <td>
-          <span style="font-family: monospace; font-weight: 600;">80/407</span>
+          <span class="font-mono font-semibold">80/407</span>
           
             <br><span class="badge badge-outline mt-2">Elections and Appointments</span>
           
@@ -712,7 +639,7 @@
       
       <tr>
         <td>
-          <span style="font-family: monospace; font-weight: 600;">80/409</span>
+          <span class="font-mono font-semibold">80/409</span>
           
             <br><span class="badge badge-outline mt-2">Elections and Appointments</span>
           
@@ -739,7 +666,7 @@
       
       <tr>
         <td>
-          <span style="font-family: monospace; font-weight: 600;">80/410</span>
+          <span class="font-mono font-semibold">80/410</span>
           
             <br><span class="badge badge-outline mt-2">Elections and Appointments</span>
           
@@ -766,7 +693,7 @@
       
       <tr>
         <td>
-          <span style="font-family: monospace; font-weight: 600;">80/411</span>
+          <span class="font-mono font-semibold">80/411</span>
           
             <br><span class="badge badge-outline mt-2">Elections and Appointments</span>
           
@@ -793,7 +720,7 @@
       
       <tr>
         <td>
-          <span style="font-family: monospace; font-weight: 600;">80/412</span>
+          <span class="font-mono font-semibold">80/412</span>
           
             <br><span class="badge badge-outline mt-2">Elections and Appointments</span>
           
@@ -820,7 +747,7 @@
       
       <tr>
         <td>
-          <span style="font-family: monospace; font-weight: 600;">80/413</span>
+          <span class="font-mono font-semibold">80/413</span>
           
             <br><span class="badge badge-outline mt-2">Elections and Appointments</span>
           
@@ -847,7 +774,7 @@
       
       <tr>
         <td>
-          <span style="font-family: monospace; font-weight: 600;">80/414</span>
+          <span class="font-mono font-semibold">80/414</span>
           
             <br><span class="badge badge-outline mt-2">Elections and Appointments</span>
           
@@ -874,7 +801,7 @@
       
       <tr>
         <td>
-          <span style="font-family: monospace; font-weight: 600;">80/408 A and B</span>
+          <span class="font-mono font-semibold">80/408 A and B</span>
           
             <br><span class="badge badge-outline mt-2">Elections and Appointments</span>
           
@@ -901,7 +828,7 @@
       
       <tr>
         <td>
-          <span style="font-family: monospace; font-weight: 600;">80/511</span>
+          <span class="font-mono font-semibold">80/511</span>
           
             <br><span class="badge badge-outline mt-2">Other Decisions</span>
           
@@ -928,7 +855,7 @@
       
       <tr>
         <td>
-          <span style="font-family: monospace; font-weight: 600;">80/512</span>
+          <span class="font-mono font-semibold">80/512</span>
           
             <br><span class="badge badge-outline mt-2">Other Decisions</span>
           
@@ -955,7 +882,7 @@
       
       <tr>
         <td>
-          <span style="font-family: monospace; font-weight: 600;">80/513</span>
+          <span class="font-mono font-semibold">80/513</span>
           
             <br><span class="badge badge-outline mt-2">Other Decisions</span>
           
@@ -982,7 +909,7 @@
       
       <tr>
         <td>
-          <span style="font-family: monospace; font-weight: 600;">80/514</span>
+          <span class="font-mono font-semibold">80/514</span>
           
             <br><span class="badge badge-outline mt-2">Other Decisions</span>
           
@@ -1009,7 +936,7 @@
       
       <tr>
         <td>
-          <span style="font-family: monospace; font-weight: 600;">80/515</span>
+          <span class="font-mono font-semibold">80/515</span>
           
             <br><span class="badge badge-outline mt-2">Other Decisions</span>
           
@@ -1036,7 +963,7 @@
       
       <tr>
         <td>
-          <span style="font-family: monospace; font-weight: 600;">80/516 A, B, C and D</span>
+          <span class="font-mono font-semibold">80/516 A, B, C and D</span>
           
             <br><span class="badge badge-outline mt-2">Other Decisions</span>
           
@@ -1063,7 +990,7 @@
       
       <tr>
         <td>
-          <span style="font-family: monospace; font-weight: 600;">80/517</span>
+          <span class="font-mono font-semibold">80/517</span>
           
             <br><span class="badge badge-outline mt-2">Other Decisions</span>
           
@@ -1090,7 +1017,7 @@
       
       <tr>
         <td>
-          <span style="font-family: monospace; font-weight: 600;">80/518</span>
+          <span class="font-mono font-semibold">80/518</span>
           
             <br><span class="badge badge-outline mt-2">Other Decisions</span>
           
@@ -1117,7 +1044,7 @@
       
       <tr>
         <td>
-          <span style="font-family: monospace; font-weight: 600;">80/519</span>
+          <span class="font-mono font-semibold">80/519</span>
           
             <br><span class="badge badge-outline mt-2">Other Decisions</span>
           
@@ -1144,7 +1071,7 @@
       
       <tr>
         <td>
-          <span style="font-family: monospace; font-weight: 600;">80/520</span>
+          <span class="font-mono font-semibold">80/520</span>
           
             <br><span class="badge badge-outline mt-2">Other Decisions</span>
           
@@ -1171,7 +1098,7 @@
       
       <tr>
         <td>
-          <span style="font-family: monospace; font-weight: 600;">80/521</span>
+          <span class="font-mono font-semibold">80/521</span>
           
             <br><span class="badge badge-outline mt-2">Other Decisions</span>
           
@@ -1198,7 +1125,7 @@
       
       <tr>
         <td>
-          <span style="font-family: monospace; font-weight: 600;">80/522</span>
+          <span class="font-mono font-semibold">80/522</span>
           
             <br><span class="badge badge-outline mt-2">Other Decisions</span>
           
@@ -1225,7 +1152,7 @@
       
       <tr>
         <td>
-          <span style="font-family: monospace; font-weight: 600;">80/523</span>
+          <span class="font-mono font-semibold">80/523</span>
           
             <br><span class="badge badge-outline mt-2">Other Decisions</span>
           
@@ -1252,7 +1179,7 @@
       
       <tr>
         <td>
-          <span style="font-family: monospace; font-weight: 600;">80/524</span>
+          <span class="font-mono font-semibold">80/524</span>
           
             <br><span class="badge badge-outline mt-2">Other Decisions</span>
           
@@ -1279,7 +1206,7 @@
       
       <tr>
         <td>
-          <span style="font-family: monospace; font-weight: 600;">80/525</span>
+          <span class="font-mono font-semibold">80/525</span>
           
             <br><span class="badge badge-outline mt-2">Other Decisions</span>
           
@@ -1306,7 +1233,7 @@
       
       <tr>
         <td>
-          <span style="font-family: monospace; font-weight: 600;">80/526</span>
+          <span class="font-mono font-semibold">80/526</span>
           
             <br><span class="badge badge-outline mt-2">Other Decisions</span>
           
@@ -1333,7 +1260,7 @@
       
       <tr>
         <td>
-          <span style="font-family: monospace; font-weight: 600;">80/527</span>
+          <span class="font-mono font-semibold">80/527</span>
           
             <br><span class="badge badge-outline mt-2">Other Decisions</span>
           
@@ -1360,7 +1287,7 @@
       
       <tr>
         <td>
-          <span style="font-family: monospace; font-weight: 600;">80/415</span>
+          <span class="font-mono font-semibold">80/415</span>
           
             <br><span class="badge badge-outline mt-2">Elections and Appointments</span>
           
@@ -1387,7 +1314,7 @@
       
       <tr>
         <td>
-          <span style="font-family: monospace; font-weight: 600;">80/416</span>
+          <span class="font-mono font-semibold">80/416</span>
           
             <br><span class="badge badge-outline mt-2">Elections and Appointments</span>
           
@@ -1445,7 +1372,7 @@
 
     <script>
       (function() {
-        var lastBuild = 1769368659;
+        var lastBuild = 1769368951;
         var pollInterval = 2000;
         function checkUpdate() {
           fetch('/__build__').then(function(r) { return r.json(); }).then(function(data) {
