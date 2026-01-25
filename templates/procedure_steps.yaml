@@ -131,13 +131,11 @@
 
   - condition:
       PS_selectDocumentFromWorkPackage.0.DD_symbol1: present
-    template: "Draft resolution {symbol} was introduced: {title}"
+    template: "Draft resolution {symbol} was introduced."
     fields:
       symbol:
         path: "PS_selectDocumentFromWorkPackage.0.DD_symbol1"
         transform: ["strip_prefix:A/79/", "strip_prefix:A/80/", "strip_prefix:L. ", "strip_prefix:DR "]
-      title:
-        path: "PS_selectDocumentFromWorkPackage.0.DD_workingTitle"
 
   - template: "Introduction of proposal"
     fields: {}
