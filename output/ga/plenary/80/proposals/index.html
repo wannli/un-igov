@@ -3,720 +3,1539 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>UN iGov Static | Proposals</title>
+    <title>iGov: portal to the work of intergovernmental bodies | Proposals</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;600;700&family=Noto+Serif:wght@500;600&display=swap"
-      rel="stylesheet"
-    />
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="/static/css/style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Roboto+Condensed:wght@400;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/static/css/un-design-system.css" />
+    <style>
+      .dropdown-menu {
+        display: none;
+        position: absolute;
+        background: white;
+        border: 1px solid var(--un-gray-light);
+        box-shadow: var(--shadow-md);
+        min-width: 280px;
+        z-index: 1000;
+        padding: 8px 0;
+      }
+      .dropdown:hover .dropdown-menu,
+      .dropdown-menu:hover {
+        display: block;
+      }
+      .dropdown-item {
+        display: block;
+        padding: 10px 16px;
+        color: var(--un-black);
+        text-decoration: none;
+        font-size: 14px;
+        transition: background var(--transition-fast);
+      }
+      .dropdown-item:hover {
+        background: var(--un-blue-light);
+        color: var(--un-blue);
+      }
+      .dropdown-divider {
+        height: 1px;
+        background: var(--un-gray-light);
+        margin: 8px 0;
+      }
+      .dropdown-header {
+        padding: 8px 16px;
+        font-size: 11px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        color: var(--un-gray);
+      }
+      .site-nav .nav-item {
+        position: relative;
+      }
+      .site-nav .nav-link {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        padding: 12px 16px;
+        font-size: 14px;
+        font-weight: 500;
+        color: var(--un-dark);
+        text-decoration: none;
+        cursor: pointer;
+      }
+      .site-nav .nav-link:hover,
+      .site-nav .nav-link.active {
+        color: var(--un-blue);
+      }
+      .site-nav .nav-link::after {
+        content: '';
+        display: inline-block;
+        width: 0;
+        height: 0;
+        margin-left: 4px;
+        border-left: 4px solid transparent;
+        border-right: 4px solid transparent;
+        border-top: 4px solid var(--un-gray);
+      }
+      .site-nav .nav-link:hover::after,
+      .site-nav .nav-item:hover .nav-link::after {
+        border-top-color: var(--un-blue);
+      }
+    </style>
   </head>
-  <body class="min-h-screen bg-slate-50 text-slate-900">
-    <header class="border-b border-slate-200 bg-white">
-  <div class="mx-auto flex w-full max-w-6xl items-center gap-6 px-6 py-4">
-    <a class="flex items-center gap-3" href="/index.html">
-      <img
-        src="https://www.un.org/sites/un2.un.org/files/un_emblem_blue.svg"
-        alt="United Nations"
-        class="h-10 w-10"
-      />
-      <div>
-        <p class="font-serif text-xl text-slate-900">United Nations</p>
-        <p class="text-sm uppercase tracking-wide text-slate-500">Intergovernmental Data</p>
+  <body>
+    <header class="site-header">
+      <div class="site-header-top">
+        <div class="site-header-top-inner">
+          <div class="language-switcher">
+            <a href="/en" class="active">English</a>
+            <a href="/ar">العربية</a>
+            <a href="/zh">中文</a>
+            <a href="/fr">Français</a>
+            <a href="/ru">Русский</a>
+            <a href="/es">Español</a>
+          </div>
+          <div class="header-tools">
+            <a href="https://www.un.org/en/site-index">A-Z Index</a>
+            <a href="https://www.un.org/en/contact-us-0">Contact</a>
+          </div>
+        </div>
       </div>
-    </a>
-    <nav class="ml-auto flex items-center gap-4 text-sm font-semibold text-slate-600">
-      <a class="nav-link" href="/ga/plenary/80/meetings/index.html">Meetings</a>
-      <a class="nav-link" href="/ga/plenary/80/agenda/index.html">Agenda</a>
-      <a class="nav-link" href="/ga/plenary/80/documents/index.html">Documents</a>
-      <a class="nav-link" href="/ga/plenary/80/decisions/index.html">Decisions</a>
-      <a class="nav-link" href="/ga/plenary/80/proposals/index.html">Proposals</a>
-    </nav>
-  </div>
-</header>
-    <main class="min-h-[70vh]">
-      
-<section class="page-hero">
-  <div class="mx-auto w-full max-w-6xl px-6 py-10">
-    <p class="eyebrow">General Assembly · Session 80</p>
-    <h1 class="page-title">Proposals</h1>
-  </div>
-</section>
+      <div class="site-header-main">
+        <div class="site-header-inner">
+          <a href="/index.html" class="site-logo">
+            <div class="site-logo-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"/>
+                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                <path d="M2 12h20"/>
+              </svg>
+            </div>
+            <div class="site-logo-text">
+              <span class="site-logo-title">United Nations</span>
+              <span class="site-logo-subtitle">iGov: portal to the work of intergovernmental bodies</span>
+            </div>
+          </a>
+          <nav class="site-nav">
+            <div class="nav-item dropdown">
+              <a href="/ga/plenary/80/index.html" class="nav-link ">General Assembly</a>
+              <div class="dropdown-menu">
+                <div class="dropdown-header">80th Session</div>
+                <a href="/ga/plenary/80/index.html" class="dropdown-item">Plenary</a>
+                <a href="/ga/c1/80/index.html" class="dropdown-item">First Committee</a>
+                <a href="/ga/c2/80/index.html" class="dropdown-item">Second Committee</a>
+                <a href="/ga/c3/80/index.html" class="dropdown-item">Third Committee</a>
+                <a href="/ga/c4/80/index.html" class="dropdown-item">Fourth Committee</a>
+                <a href="/ga/c5/80/index.html" class="dropdown-item">Fifth Committee</a>
+                <div class="dropdown-divider"></div>
+                <div class="dropdown-header">Previous Sessions</div>
+                <a href="/ga/plenary/79/index.html" class="dropdown-item">79th Session</a>
+                <a href="/ga/plenary/78/index.html" class="dropdown-item">78th Session</a>
+              </div>
+            </div>
+            <div class="nav-item dropdown">
+              <a href="/ecosoc/plenary/2026/index.html" class="nav-link ">Economic and Social Council</a>
+              <div class="dropdown-menu">
+                <div class="dropdown-header">2026 Session</div>
+                <a href="/ecosoc/plenary/2026/index.html" class="dropdown-item">Plenary</a>
+                <div class="dropdown-divider"></div>
+                <div class="dropdown-header">Bodies</div>
+                <a href="/ecosoc/hlpf/2025/index.html" class="dropdown-item">High-level Political Forum</a>
+                <a href="/ecosoc/csw/70/index.html" class="dropdown-item">Commission on the Status of Women</a>
+                <a href="/ecosoc/ggim/15/index.html" class="dropdown-item">Committee of Experts on GGIM</a>
+                <a href="/ecosoc/unff/20/index.html" class="dropdown-item">UN Forum on Forests</a>
+                <a href="/ecosoc/ungegn/2025/index.html" class="dropdown-item">UNGEGN</a>
+              </div>
+            </div>
+            <div class="nav-item dropdown">
+              <a href="#" class="nav-link ">Conferences</a>
+              <div class="dropdown-menu">
+                <a href="/conferences/ffd4/2025/index.html" class="dropdown-item">FFD4 - Financing for Development</a>
+                <a href="/conferences/ffd4pc/3/index.html" class="dropdown-item">FFD4 PrepCom</a>
+              </div>
+            </div>
+          </nav>
+        </div>
+      </div>
+    </header>
 
-<section class="mx-auto w-full max-w-6xl px-6 py-10">
-  <div class="space-y-4">
-    
-      <article class="content-card">
-        <div class="flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
-          <div>
-            <p class="text-xs uppercase tracking-widest text-slate-500">Agenda ‎35‎</p>
-            <h2 class="mt-1 text-lg font-semibold text-slate-900">Endorsement of the New York Declaration on the Peaceful Settlement of the Question of Palestine and the Implementation of the Two-State Solution</h2>
-            <p class="mt-1 text-sm text-slate-600">GA · EIGHTIETH</p>
-          </div>
-          
-        </div>
-      </article>
-    
-      <article class="content-card">
-        <div class="flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
-          <div>
-            <p class="text-xs uppercase tracking-widest text-slate-500">Agenda 72(d)</p>
-            <h2 class="mt-1 text-lg font-semibold text-slate-900">Persistent legacy of the Chernobyl disaster</h2>
-            <p class="mt-1 text-sm text-slate-600">GA · EIGHTIETH</p>
-          </div>
-          
-        </div>
-      </article>
-    
-      <article class="content-card">
-        <div class="flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
-          <div>
-            <p class="text-xs uppercase tracking-widest text-slate-500">Agenda 7</p>
-            <h2 class="mt-1 text-lg font-semibold text-slate-900">Participation by the State of Palestine during the eightieth session</h2>
-            <p class="mt-1 text-sm text-slate-600">GA · EIGHTIETH</p>
-          </div>
-          
-        </div>
-      </article>
-    
-      <article class="content-card">
-        <div class="flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
-          <div>
-            <p class="text-xs uppercase tracking-widest text-slate-500">Agenda 13</p>
-            <h2 class="mt-1 text-lg font-semibold text-slate-900">International Day of the World&#39;s Indigenous Women and Girls</h2>
-            <p class="mt-1 text-sm text-slate-600">GA · EIGHTIETH</p>
-          </div>
-          
-        </div>
-      </article>
-    
-      <article class="content-card">
-        <div class="flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
-          <div>
-            <p class="text-xs uppercase tracking-widest text-slate-500">Agenda 13</p>
-            <h2 class="mt-1 text-lg font-semibold text-slate-900">The Assembly of Mother Earth</h2>
-            <p class="mt-1 text-sm text-slate-600">GA · EIGHTIETH</p>
-          </div>
-          
-        </div>
-      </article>
-    
-      <article class="content-card">
-        <div class="flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
-          <div>
-            <p class="text-xs uppercase tracking-widest text-slate-500">Agenda 13</p>
-            <h2 class="mt-1 text-lg font-semibold text-slate-900">Awaza Political Declaration</h2>
-            <p class="mt-1 text-sm text-slate-600">GA · EIGHTIETH</p>
-          </div>
-          
-        </div>
-      </article>
-    
-      <article class="content-card">
-        <div class="flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
-          <div>
-            <p class="text-xs uppercase tracking-widest text-slate-500">Agenda 11</p>
-            <h2 class="mt-1 text-lg font-semibold text-slate-900">Building a peaceful and better world through sport and the Olympic ideal</h2>
-            <p class="mt-1 text-sm text-slate-600">GA · EIGHTIETH</p>
-          </div>
-          
-        </div>
-      </article>
-    
-      <article class="content-card">
-        <div class="flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
-          <div>
-            <p class="text-xs uppercase tracking-widest text-slate-500">Agenda 25(b)</p>
-            <h2 class="mt-1 text-lg font-semibold text-slate-900">Doha Political Declaration of the “World Social Summit” under the title “the Second World Summit for Social Development”</h2>
-            <p class="mt-1 text-sm text-slate-600">GA · EIGHTIETH</p>
-          </div>
-          
-            <div class="text-sm text-slate-500">A/80/L.5</div>
-          
-        </div>
-      </article>
-    
-      <article class="content-card">
-        <div class="flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
-          <div>
-            <p class="text-xs uppercase tracking-widest text-slate-500">Agenda 38</p>
-            <h2 class="mt-1 text-lg font-semibold text-slate-900">Necessity of ending the economic, commercial and financial embargo imposed by the United States of America against Cuba</h2>
-            <p class="mt-1 text-sm text-slate-600">GA · EIGHTIETH</p>
-          </div>
-          
-        </div>
-      </article>
-    
-      <article class="content-card">
-        <div class="flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
-          <div>
-            <p class="text-xs uppercase tracking-widest text-slate-500">Agenda 140</p>
-            <h2 class="mt-1 text-lg font-semibold text-slate-900">Scale of assessments for the apportionment of the expenses of the United Nations: requests under Article 19 of the Charter</h2>
-            <p class="mt-1 text-sm text-slate-600">GA · EIGHTIETH</p>
-          </div>
-          
-            <div class="text-sm text-slate-500">A/80/401 DR</div>
-          
-        </div>
-      </article>
-    
-      <article class="content-card">
-        <div class="flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
-          <div>
-            <p class="text-xs uppercase tracking-widest text-slate-500">Agenda 13</p>
-            <h2 class="mt-1 text-lg font-semibold text-slate-900">International Year of Legal Literacy, 2027</h2>
-            <p class="mt-1 text-sm text-slate-600">GA · EIGHTIETH</p>
-          </div>
-          
-        </div>
-      </article>
-    
-      <article class="content-card">
-        <div class="flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
-          <div>
-            <p class="text-xs uppercase tracking-widest text-slate-500">Agenda 89</p>
-            <h2 class="mt-1 text-lg font-semibold text-slate-900">Report of the International Atomic Energy Agency</h2>
-            <p class="mt-1 text-sm text-slate-600">GA · EIGHTIETH</p>
-          </div>
-          
-        </div>
-      </article>
-    
-      <article class="content-card">
-        <div class="flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
-          <div>
-            <p class="text-xs uppercase tracking-widest text-slate-500">Agenda 107</p>
-            <h2 class="mt-1 text-lg font-semibold text-slate-900">2025 Political Declaration on the Implementation of the United Nations Global Plan of Action to Combat Trafficking in Persons</h2>
-            <p class="mt-1 text-sm text-slate-600">GA · EIGHTIETH</p>
-          </div>
-          
-            <div class="text-sm text-slate-500">A/80/L.8</div>
-          
-        </div>
-      </article>
-    
-      <article class="content-card">
-        <div class="flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
-          <div>
-            <p class="text-xs uppercase tracking-widest text-slate-500">Agenda 13</p>
-            <h2 class="mt-1 text-lg font-semibold text-slate-900">International Day of the Amazon</h2>
-            <p class="mt-1 text-sm text-slate-600">GA · EIGHTIETH</p>
-          </div>
-          
-        </div>
-      </article>
-    
-      <article class="content-card">
-        <div class="flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
-          <div>
-            <p class="text-xs uppercase tracking-widest text-slate-500">Agenda 75(b)</p>
-            <h2 class="mt-1 text-lg font-semibold text-slate-900">Agreement under the United Nations Convention on the Law of the Sea on the Conservation and Sustainable Use of Marine Biological Diversity of Areas beyond National Jurisdiction</h2>
-            <p class="mt-1 text-sm text-slate-600">GA · EIGHTIETH</p>
-          </div>
-          
-        </div>
-      </article>
-    
-      <article class="content-card">
-        <div class="flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
-          <div>
-            <p class="text-xs uppercase tracking-widest text-slate-500">Agenda 74</p>
-            <h2 class="mt-1 text-lg font-semibold text-slate-900">Report of the International Criminal Court</h2>
-            <p class="mt-1 text-sm text-slate-600">GA · EIGHTIETH</p>
-          </div>
-          
-        </div>
-      </article>
-    
-      <article class="content-card">
-        <div class="flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
-          <div>
-            <p class="text-xs uppercase tracking-widest text-slate-500">Agenda 13</p>
-            <h2 class="mt-1 text-lg font-semibold text-slate-900">International Day of the Mediterranean Diet</h2>
-            <p class="mt-1 text-sm text-slate-600">GA · EIGHTIETH</p>
-          </div>
-          
-        </div>
-      </article>
-    
-      <article class="content-card">
-        <div class="flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
-          <div>
-            <p class="text-xs uppercase tracking-widest text-slate-500">Agenda 13</p>
-            <h2 class="mt-1 text-lg font-semibold text-slate-900">2028 United Nations Conference to Support the Implementation of Sustainable Development Goal 14: Conserve and sustainably use the oceans, seas and marine resources for sustainable development</h2>
-            <p class="mt-1 text-sm text-slate-600">GA · EIGHTIETH</p>
-          </div>
-          
-        </div>
-      </article>
-    
-      <article class="content-card">
-        <div class="flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
-          <div>
-            <p class="text-xs uppercase tracking-widest text-slate-500">Agenda 34</p>
-            <h2 class="mt-1 text-lg font-semibold text-slate-900">The Syrian Golan</h2>
-            <p class="mt-1 text-sm text-slate-600">GA · EIGHTIETH</p>
-          </div>
-          
-        </div>
-      </article>
-    
-      <article class="content-card">
-        <div class="flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
-          <div>
-            <p class="text-xs uppercase tracking-widest text-slate-500">Agenda 72(a)</p>
-            <h2 class="mt-1 text-lg font-semibold text-slate-900">Safety and security of humanitarian personnel and protection of United Nations personnel</h2>
-            <p class="mt-1 text-sm text-slate-600">GA · EIGHTIETH</p>
-          </div>
-          
-        </div>
-      </article>
-    
-      <article class="content-card">
-        <div class="flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
-          <div>
-            <p class="text-xs uppercase tracking-widest text-slate-500">Agenda 72(d)</p>
-            <h2 class="mt-1 text-lg font-semibold text-slate-900">Strengthening of international cooperation and coordination of efforts to study, mitigate and minimize the consequences of the Chornobyl disaster</h2>
-            <p class="mt-1 text-sm text-slate-600">GA · EIGHTIETH</p>
-          </div>
-          
-        </div>
-      </article>
-    
-      <article class="content-card">
-        <div class="flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
-          <div>
-            <p class="text-xs uppercase tracking-widest text-slate-500">Agenda 75(a)</p>
-            <h2 class="mt-1 text-lg font-semibold text-slate-900">Sustainable fisheries, including through the 1995 Agreement for the Implementation of the Provisions of the United Nations Convention on the Law of the Sea of 10 December 1982 relating to the Conservation and Management of Straddling Fish Stocks and Highly Migratory Fish Stocks, and related instruments </h2>
-            <p class="mt-1 text-sm text-slate-600">GA · EIGHTIETH</p>
-          </div>
-          
-        </div>
-      </article>
-    
-      <article class="content-card">
-        <div class="flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
-          <div>
-            <p class="text-xs uppercase tracking-widest text-slate-500">Agenda 13</p>
-            <h2 class="mt-1 text-lg font-semibold text-slate-900">Transit Corridors as Key Drivers of Peace, Regional Integration, and Sustainable Development for Landlocked Developing Countries</h2>
-            <p class="mt-1 text-sm text-slate-600">GA · EIGHTIETH</p>
-          </div>
-          
-        </div>
-      </article>
-    
-      <article class="content-card">
-        <div class="flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
-          <div>
-            <p class="text-xs uppercase tracking-widest text-slate-500">Agenda 62</p>
-            <h2 class="mt-1 text-lg font-semibold text-slate-900">2025 Review of the peacebuilding architecture</h2>
-            <p class="mt-1 text-sm text-slate-600">GA · EIGHTIETH</p>
-          </div>
-          
-            <div class="text-sm text-slate-500">A/80/L.15</div>
-          
-        </div>
-      </article>
-    
-      <article class="content-card">
-        <div class="flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
-          <div>
-            <p class="text-xs uppercase tracking-widest text-slate-500">Agenda 72(a)</p>
-            <h2 class="mt-1 text-lg font-semibold text-slate-900">Amendment (first) to draft resolution Safety and security of humanitarian personnel and protection of United Nations personnel</h2>
-            <p class="mt-1 text-sm text-slate-600">GA · EIGHTIETH</p>
-          </div>
-          
-        </div>
-      </article>
-    
-      <article class="content-card">
-        <div class="flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
-          <div>
-            <p class="text-xs uppercase tracking-widest text-slate-500">Agenda 72(a)</p>
-            <h2 class="mt-1 text-lg font-semibold text-slate-900">Amendment (second) to draft resolution Safety and security of humanitarian personnel and protection of United Nations personnel</h2>
-            <p class="mt-1 text-sm text-slate-600">GA · EIGHTIETH</p>
-          </div>
-          
-        </div>
-      </article>
-    
-      <article class="content-card">
-        <div class="flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
-          <div>
-            <p class="text-xs uppercase tracking-widest text-slate-500">Agenda 35</p>
-            <h2 class="mt-1 text-lg font-semibold text-slate-900">peaceful settlement of the question of Palestine</h2>
-            <p class="mt-1 text-sm text-slate-600">GA · EIGHTIETH</p>
-          </div>
-          
-        </div>
-      </article>
-    
-      <article class="content-card">
-        <div class="flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
-          <div>
-            <p class="text-xs uppercase tracking-widest text-slate-500">Agenda 75</p>
-            <h2 class="mt-1 text-lg font-semibold text-slate-900">Oceans and the law of the sea</h2>
-            <p class="mt-1 text-sm text-slate-600">GA · EIGHTIETH</p>
-          </div>
-          
-        </div>
-      </article>
-    
-      <article class="content-card">
-        <div class="flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
-          <div>
-            <p class="text-xs uppercase tracking-widest text-slate-500">Agenda 72(a)</p>
-            <h2 class="mt-1 text-lg font-semibold text-slate-900">International cooperation on humanitarian assistance in the field of natural disasters, from relief to development</h2>
-            <p class="mt-1 text-sm text-slate-600">GA · EIGHTIETH</p>
-          </div>
-          
-            <div class="text-sm text-slate-500">A/80/L.23</div>
-          
-        </div>
-      </article>
-    
-      <article class="content-card">
-        <div class="flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
-          <div>
-            <p class="text-xs uppercase tracking-widest text-slate-500">Agenda 123</p>
-            <h2 class="mt-1 text-lg font-semibold text-slate-900">Advisory opinion of the International Court of Justice on the Obligations of Israel in relation to the Presence and Activities of the United Nations, Other International Organizations and Third States in and in relation to the Occupied Palestinian Territory</h2>
-            <p class="mt-1 text-sm text-slate-600">GA · EIGHTIETH</p>
-          </div>
-          
-        </div>
-      </article>
-    
-      <article class="content-card">
-        <div class="flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
-          <div>
-            <p class="text-xs uppercase tracking-widest text-slate-500">Agenda 72(a)</p>
-            <h2 class="mt-1 text-lg font-semibold text-slate-900">Strengthening of the coordination of emergency humanitarian assistance of the United Nations</h2>
-            <p class="mt-1 text-sm text-slate-600">GA · EIGHTIETH</p>
-          </div>
-          
-        </div>
-      </article>
-    
-      <article class="content-card">
-        <div class="flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
-          <div>
-            <p class="text-xs uppercase tracking-widest text-slate-500">Agenda 72(d)</p>
-            <h2 class="mt-1 text-lg font-semibold text-slate-900">Amendment to draft resolution &#34;Persistent legacy of the Chernobyl disaster&#34;</h2>
-            <p class="mt-1 text-sm text-slate-600">GA · EIGHTIETH</p>
-          </div>
-          
-        </div>
-      </article>
-    
-      <article class="content-card">
-        <div class="flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
-          <div>
-            <p class="text-xs uppercase tracking-widest text-slate-500">Agenda 75</p>
-            <h2 class="mt-1 text-lg font-semibold text-slate-900">Amendment to draft resolution &#34;Oceans and the law of the sea&#34;</h2>
-            <p class="mt-1 text-sm text-slate-600">GA · EIGHTIETH</p>
-          </div>
-          
-        </div>
-      </article>
-    
-      <article class="content-card">
-        <div class="flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
-          <div>
-            <p class="text-xs uppercase tracking-widest text-slate-500">Agenda 72(d)</p>
-            <h2 class="mt-1 text-lg font-semibold text-slate-900">Amendment to draft resolution &#34;Persistent legacy of the Chernobyl disaster&#34;</h2>
-            <p class="mt-1 text-sm text-slate-600">GA · EIGHTIETH</p>
-          </div>
-          
-        </div>
-      </article>
-    
-      <article class="content-card">
-        <div class="flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
-          <div>
-            <p class="text-xs uppercase tracking-widest text-slate-500">Agenda 72</p>
-            <h2 class="mt-1 text-lg font-semibold text-slate-900">Amendments </h2>
-            <p class="mt-1 text-sm text-slate-600">GA · EIGHTIETH</p>
-          </div>
-          
-        </div>
-      </article>
-    
-      <article class="content-card">
-        <div class="flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
-          <div>
-            <p class="text-xs uppercase tracking-widest text-slate-500">Agenda 72</p>
-            <h2 class="mt-1 text-lg font-semibold text-slate-900">Amendment to A/80/L.18 Strengthening of the coordination of humanitarian and disaster relief assistance of the United Nations, including special economic assistance</h2>
-            <p class="mt-1 text-sm text-slate-600">GA · EIGHTIETH</p>
-          </div>
-          
-        </div>
-      </article>
-    
-      <article class="content-card">
-        <div class="flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
-          <div>
-            <p class="text-xs uppercase tracking-widest text-slate-500">Agenda 72</p>
-            <h2 class="mt-1 text-lg font-semibold text-slate-900">Amendment to A/80/L.18 Strengthening of the coordination of humanitarian and disaster relief assistance of the United Nations, including special economic assistance</h2>
-            <p class="mt-1 text-sm text-slate-600">GA · EIGHTIETH</p>
-          </div>
-          
-        </div>
-      </article>
-    
-      <article class="content-card">
-        <div class="flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
-          <div>
-            <p class="text-xs uppercase tracking-widest text-slate-500">Agenda 72</p>
-            <h2 class="mt-1 text-lg font-semibold text-slate-900">Amendment to draft proposal A/80/L.25 on Strengthening of the coordination of emergency humanitarian assistance of the United Nations. </h2>
-            <p class="mt-1 text-sm text-slate-600">GA · EIGHTIETH</p>
-          </div>
-          
-        </div>
-      </article>
-    
-      <article class="content-card">
-        <div class="flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
-          <div>
-            <p class="text-xs uppercase tracking-widest text-slate-500">Agenda 72(a)</p>
-            <h2 class="mt-1 text-lg font-semibold text-slate-900">Amendment to draft proposal A/80/L.25 on Strengthening of the coordination of emergency humanitarian assistance of the United Nations. </h2>
-            <p class="mt-1 text-sm text-slate-600">GA · EIGHTIETH</p>
-          </div>
-          
-        </div>
-      </article>
-    
-      <article class="content-card">
-        <div class="flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
-          <div>
-            <p class="text-xs uppercase tracking-widest text-slate-500">Agenda 72(a)</p>
-            <h2 class="mt-1 text-lg font-semibold text-slate-900">Amendment to draft proposal A/80/L.25 on Strengthening of the coordination of emergency humanitarian assistance of the United Nations</h2>
-            <p class="mt-1 text-sm text-slate-600">GA · EIGHTIETH</p>
-          </div>
-          
-        </div>
-      </article>
-    
-      <article class="content-card">
-        <div class="flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
-          <div>
-            <p class="text-xs uppercase tracking-widest text-slate-500">Agenda 72(a)</p>
-            <h2 class="mt-1 text-lg font-semibold text-slate-900">Amendment to draft proposal A/80/L.25 on Strengthening of the coordination of emergency humanitarian assistance of the United Nations</h2>
-            <p class="mt-1 text-sm text-slate-600">GA · EIGHTIETH</p>
-          </div>
-          
-        </div>
-      </article>
-    
-      <article class="content-card">
-        <div class="flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
-          <div>
-            <p class="text-xs uppercase tracking-widest text-slate-500">Agenda 72(d)</p>
-            <h2 class="mt-1 text-lg font-semibold text-slate-900">Amendment to draft resolution A/80/L.27 &#34;Strengthening of international cooperation and coordination of efforts to study, mitigate and minimize the consequences of the Chornobyl disaster&#34;</h2>
-            <p class="mt-1 text-sm text-slate-600">GA · EIGHTIETH</p>
-          </div>
-          
-        </div>
-      </article>
-    
-      <article class="content-card">
-        <div class="flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
-          <div>
-            <p class="text-xs uppercase tracking-widest text-slate-500">Agenda 127</p>
-            <h2 class="mt-1 text-lg font-semibold text-slate-900">Political declaration of the fourth high-level meeting of the General Assembly on the prevention and control of noncommunicable diseases and the promotion of mental health and well-being</h2>
-            <p class="mt-1 text-sm text-slate-600">GA · EIGHTIETH</p>
-          </div>
-          
-            <div class="text-sm text-slate-500">A/80/L.34</div>
-          
-        </div>
-      </article>
-    
-      <article class="content-card">
-        <div class="flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
-          <div>
-            <p class="text-xs uppercase tracking-widest text-slate-500">Agenda 72(a)</p>
-            <h2 class="mt-1 text-lg font-semibold text-slate-900">Amendment to draft resolution  A/80/L.25 on Strengthening of the coordination of emergency humanitarian assistance of the United Nations</h2>
-            <p class="mt-1 text-sm text-slate-600">GA · EIGHTIETH</p>
-          </div>
-          
-        </div>
-      </article>
-    
-      <article class="content-card">
-        <div class="flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
-          <div>
-            <p class="text-xs uppercase tracking-widest text-slate-500">Agenda 23</p>
-            <h2 class="mt-1 text-lg font-semibold text-slate-900">United Nations Pledging Conference for Development Activities</h2>
-            <p class="mt-1 text-sm text-slate-600">GA · EIGHTIETH</p>
-          </div>
-          
-            <div class="text-sm text-slate-500">A/80/L.37</div>
-          
-        </div>
-      </article>
-    
-      <article class="content-card">
-        <div class="flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
-          <div>
-            <p class="text-xs uppercase tracking-widest text-slate-500">Agenda 16(a)</p>
-            <h2 class="mt-1 text-lg font-semibold text-slate-900">Amendment to draft resolution 4 contained in document A/80/555</h2>
-            <p class="mt-1 text-sm text-slate-600">GA · EIGHTIETH</p>
-          </div>
-          
-        </div>
-      </article>
-    
-      <article class="content-card">
-        <div class="flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
-          <div>
-            <p class="text-xs uppercase tracking-widest text-slate-500">Agenda 16(c)</p>
-            <h2 class="mt-1 text-lg font-semibold text-slate-900">Amendment to draft resolution 6 contained in document A/80/555</h2>
-            <p class="mt-1 text-sm text-slate-600">GA · EIGHTIETH</p>
-          </div>
-          
-        </div>
-      </article>
-    
-      <article class="content-card">
-        <div class="flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
-          <div>
-            <p class="text-xs uppercase tracking-widest text-slate-500">Agenda 71(a)</p>
-            <h2 class="mt-1 text-lg font-semibold text-slate-900">Amendment to draft resolution 23 as contained in document A/80/545</h2>
-            <p class="mt-1 text-sm text-slate-600">GA · EIGHTIETH</p>
-          </div>
-          
-        </div>
-      </article>
-    
-      <article class="content-card">
-        <div class="flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
-          <div>
-            <p class="text-xs uppercase tracking-widest text-slate-500">Agenda 3(b)</p>
-            <h2 class="mt-1 text-lg font-semibold text-slate-900">Report of the Credentials Committee</h2>
-            <p class="mt-1 text-sm text-slate-600">GA · EIGHTIETH</p>
-          </div>
-          
-            <div class="text-sm text-slate-500">A/80/547 DR</div>
-          
-        </div>
-      </article>
-    
-      <article class="content-card">
-        <div class="flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
-          <div>
-            <p class="text-xs uppercase tracking-widest text-slate-500">Agenda 13</p>
-            <h2 class="mt-1 text-lg font-semibold text-slate-900">Education for Peace</h2>
-            <p class="mt-1 text-sm text-slate-600">GA · EIGHTIETH</p>
-          </div>
-          
-        </div>
-      </article>
-    
-      <article class="content-card">
-        <div class="flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
-          <div>
-            <p class="text-xs uppercase tracking-widest text-slate-500">Agenda 15</p>
-            <h2 class="mt-1 text-lg font-semibold text-slate-900">Outcome document of the high-level meeting of the General Assembly on the overall review of the implementation of the outcomes of the World Summit on the Information Society</h2>
-            <p class="mt-1 text-sm text-slate-600">GA · EIGHTIETH</p>
-          </div>
-          
-            <div class="text-sm text-slate-500">A/80/L.41</div>
-          
-        </div>
-      </article>
-    
-      <article class="content-card">
-        <div class="flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
-          <div>
-            <p class="text-xs uppercase tracking-widest text-slate-500">Agenda 127</p>
-            <h2 class="mt-1 text-lg font-semibold text-slate-900">Global health and foreign policy: accelerating the fight against socially determined diseases and addressing Social Determinants of Health</h2>
-            <p class="mt-1 text-sm text-slate-600">GA · EIGHTIETH</p>
-          </div>
-          
-        </div>
-      </article>
-    
-      <article class="content-card">
-        <div class="flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
-          <div>
-            <p class="text-xs uppercase tracking-widest text-slate-500">Agenda 127</p>
-            <h2 class="mt-1 text-lg font-semibold text-slate-900">Global health and foreign policy: accelerating the fight against socially determined diseases and addressing Social Determinants of Health</h2>
-            <p class="mt-1 text-sm text-slate-600">GA · EIGHTIETH</p>
-          </div>
-          
-        </div>
-      </article>
-    
-      <article class="content-card">
-        <div class="flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
-          <div>
-            <p class="text-xs uppercase tracking-widest text-slate-500">Agenda 18</p>
-            <h2 class="mt-1 text-lg font-semibold text-slate-900">Postponement of the consideration of the modalities of the 2028 United Nations Water Conference to the eighty-first session of the General Assembly</h2>
-            <p class="mt-1 text-sm text-slate-600">GA · EIGHTIETH</p>
-          </div>
-          
-        </div>
-      </article>
-    
-      <article class="content-card">
-        <div class="flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
-          <div>
-            <p class="text-xs uppercase tracking-widest text-slate-500">Agenda 127</p>
-            <h2 class="mt-1 text-lg font-semibold text-slate-900">Draft Resolution on International Wellness Day</h2>
-            <p class="mt-1 text-sm text-slate-600">GA · EIGHTIETH</p>
-          </div>
-          
-        </div>
-      </article>
-    
-      <article class="content-card">
-        <div class="flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
-          <div>
-            <p class="text-xs uppercase tracking-widest text-slate-500">Agenda 14</p>
-            <h2 class="mt-1 text-lg font-semibold text-slate-900">Promotion of interreligious and intercultural dialogue, understanding and cooperation for peace</h2>
-            <p class="mt-1 text-sm text-slate-600">GA · EIGHTIETH</p>
-          </div>
-          
-        </div>
-      </article>
-    
-      <article class="content-card">
-        <div class="flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
-          <div>
-            <p class="text-xs uppercase tracking-widest text-slate-500">Agenda 13</p>
-            <h2 class="mt-1 text-lg font-semibold text-slate-900">International Coffee Day</h2>
-            <p class="mt-1 text-sm text-slate-600">GA · EIGHTIETH</p>
-          </div>
-          
-        </div>
-      </article>
-    
-      <article class="content-card">
-        <div class="flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
-          <div>
-            <p class="text-xs uppercase tracking-widest text-slate-500">Agenda 13</p>
-            <h2 class="mt-1 text-lg font-semibold text-slate-900">International Coffee Day</h2>
-            <p class="mt-1 text-sm text-slate-600">GA · EIGHTIETH</p>
-          </div>
-          
-        </div>
-      </article>
-    
-  </div>
-</section>
+    <main class="main-container">
+      
+<div class="sdg-banner">
+  <div class="sdg-color sdg-1"></div>
+  <div class="sdg-color sdg-2"></div>
+  <div class="sdg-color sdg-3"></div>
+  <div class="sdg-color sdg-4"></div>
+  <div class="sdg-color sdg-5"></div>
+  <div class="sdg-color sdg-6"></div>
+  <div class="sdg-color sdg-7"></div>
+  <div class="sdg-color sdg-8"></div>
+  <div class="sdg-color sdg-9"></div>
+  <div class="sdg-color sdg-10"></div>
+  <div class="sdg-color sdg-11"></div>
+  <div class="sdg-color sdg-12"></div>
+  <div class="sdg-color sdg-13"></div>
+  <div class="sdg-color sdg-14"></div>
+  <div class="sdg-color sdg-15"></div>
+  <div class="sdg-color sdg-16"></div>
+  <div class="sdg-color sdg-17"></div>
+</div>
+
+<div class="breadcrumbs">
+  <a href="/index.html">Home</a>
+  <span>/</span>
+  <span>Proposals</span>
+</div>
+
+<div class="page-header">
+  <h1>Proposals — 80th Session</h1>
+  <p class="lead">Draft resolutions and amendments</p>
+</div>
+
+
+<div class="data-table-container">
+  <table>
+    <thead>
+      <tr>
+        <th style="width: 140px;">Document</th>
+        <th>Title</th>
+        <th style="width: 100px;">Agenda</th>
+        <th style="width: 160px;">Originating Body</th>
+      </tr>
+    </thead>
+    <tbody>
+      
+      <tr>
+        <td>
+          
+        </td>
+        <td>
+          <a href="#" class="table-link">Endorsement of the New York Declaration on the Peaceful Settlement of the Question of Palestine and the Implementation of the Two-State Solution</a>
+          
+            <div class="meta-row">Sponsor: FRANCE, SAUDI ARABIA</div>
+          
+        </td>
+        <td>
+          
+            Item ‎35‎
+          
+        </td>
+        <td>
+          
+            <span class="badge badge-outline">GA</span>
+          
+        </td>
+      </tr>
+      
+      <tr>
+        <td>
+          
+        </td>
+        <td>
+          <a href="#" class="table-link">Persistent legacy of the Chernobyl disaster</a>
+          
+            <div class="meta-row">Sponsor: BELARUS</div>
+          
+        </td>
+        <td>
+          
+            Item 72(d)
+          
+        </td>
+        <td>
+          
+            <span class="badge badge-outline">GA</span>
+          
+        </td>
+      </tr>
+      
+      <tr>
+        <td>
+          
+        </td>
+        <td>
+          <a href="#" class="table-link">Participation by the State of Palestine during the eightieth session</a>
+          
+            <div class="meta-row">Sponsor: STATE OF PALESTINE</div>
+          
+        </td>
+        <td>
+          
+            Item 7
+          
+        </td>
+        <td>
+          
+            <span class="badge badge-outline">GA</span>
+          
+        </td>
+      </tr>
+      
+      <tr>
+        <td>
+          
+        </td>
+        <td>
+          <a href="#" class="table-link">International Day of the World&#39;s Indigenous Women and Girls</a>
+          
+            <div class="meta-row">Sponsor: BOLIVIA (PLURINATIONAL STATE OF)</div>
+          
+        </td>
+        <td>
+          
+            Item 13
+          
+        </td>
+        <td>
+          
+            <span class="badge badge-outline">GA</span>
+          
+        </td>
+      </tr>
+      
+      <tr>
+        <td>
+          
+        </td>
+        <td>
+          <a href="#" class="table-link">The Assembly of Mother Earth</a>
+          
+            <div class="meta-row">Sponsor: BOLIVIA (PLURINATIONAL STATE OF)</div>
+          
+        </td>
+        <td>
+          
+            Item 13
+          
+        </td>
+        <td>
+          
+            <span class="badge badge-outline">GA</span>
+          
+        </td>
+      </tr>
+      
+      <tr>
+        <td>
+          
+        </td>
+        <td>
+          <a href="#" class="table-link">Awaza Political Declaration</a>
+          
+            <div class="meta-row">Sponsor: BOLIVIA (PLURINATIONAL STATE OF), AFGHANISTAN, ARMENIA, AZERBAIJAN, BHUTAN, BOTSWANA, BURKINA FASO, BURUNDI, CENTRAL AFRICAN REPUBLIC, CHAD, ESWATINI, ETHIOPIA, KAZAKHSTAN, KYRGYZSTAN, LAO PEOPLE&#39;S DEMOCRATIC REPUBLIC, LESOTHO, MALAWI, MALI, MONGOLIA, NEPAL, NIGER, NORTH MACEDONIA, PARAGUAY, REPUBLIC OF MOLDOVA, RWANDA, SOUTH SUDAN, TAJIKISTAN, TURKMENISTAN, UGANDA, UZBEKISTAN, ZAMBIA, ZIMBABWE</div>
+          
+        </td>
+        <td>
+          
+            Item 13
+          
+        </td>
+        <td>
+          
+            <span class="badge badge-outline">GA</span>
+          
+        </td>
+      </tr>
+      
+      <tr>
+        <td>
+          
+        </td>
+        <td>
+          <a href="#" class="table-link">Building a peaceful and better world through sport and the Olympic ideal</a>
+          
+            <div class="meta-row">Sponsor: ITALY</div>
+          
+        </td>
+        <td>
+          
+            Item 11
+          
+        </td>
+        <td>
+          
+            <span class="badge badge-outline">GA</span>
+          
+        </td>
+      </tr>
+      
+      <tr>
+        <td>
+          
+            <span class="mono">A/80/L.5</span>
+            <br><span class="meta-row">Submission</span>
+          
+        </td>
+        <td>
+          <a href="#" class="table-link">Doha Political Declaration of the “World Social Summit” under the title “the Second World Summit for Social Development”</a>
+          
+        </td>
+        <td>
+          
+            Item 25(b)
+          
+        </td>
+        <td>
+          
+            <span class="badge badge-outline">GA</span>
+          
+        </td>
+      </tr>
+      
+      <tr>
+        <td>
+          
+        </td>
+        <td>
+          <a href="#" class="table-link">Necessity of ending the economic, commercial and financial embargo imposed by the United States of America against Cuba</a>
+          
+            <div class="meta-row">Sponsor: CUBA</div>
+          
+        </td>
+        <td>
+          
+            Item 38
+          
+        </td>
+        <td>
+          
+            <span class="badge badge-outline">GA</span>
+          
+        </td>
+      </tr>
+      
+      <tr>
+        <td>
+          
+            <span class="mono">A/80/401 DR</span>
+            <br><span class="meta-row">Submission</span>
+          
+        </td>
+        <td>
+          <a href="#" class="table-link">Scale of assessments for the apportionment of the expenses of the United Nations: requests under Article 19 of the Charter</a>
+          
+        </td>
+        <td>
+          
+            Item 140
+          
+        </td>
+        <td>
+          
+            <span class="badge badge-outline">GA</span>
+          
+        </td>
+      </tr>
+      
+      <tr>
+        <td>
+          
+        </td>
+        <td>
+          <a href="#" class="table-link">International Year of Legal Literacy, 2027</a>
+          
+            <div class="meta-row">Sponsor: TAJIKISTAN</div>
+          
+        </td>
+        <td>
+          
+            Item 13
+          
+        </td>
+        <td>
+          
+            <span class="badge badge-outline">GA</span>
+          
+        </td>
+      </tr>
+      
+      <tr>
+        <td>
+          
+        </td>
+        <td>
+          <a href="#" class="table-link">Report of the International Atomic Energy Agency</a>
+          
+            <div class="meta-row">Sponsor: AUSTRALIA</div>
+          
+        </td>
+        <td>
+          
+            Item 89
+          
+        </td>
+        <td>
+          
+            <span class="badge badge-outline">GA</span>
+          
+        </td>
+      </tr>
+      
+      <tr>
+        <td>
+          
+            <span class="mono">A/80/L.8</span>
+            <br><span class="meta-row">Submission</span>
+          
+        </td>
+        <td>
+          <a href="#" class="table-link">2025 Political Declaration on the Implementation of the United Nations Global Plan of Action to Combat Trafficking in Persons</a>
+          
+        </td>
+        <td>
+          
+            Item 107
+          
+        </td>
+        <td>
+          
+            <span class="badge badge-outline">GA</span>
+          
+        </td>
+      </tr>
+      
+      <tr>
+        <td>
+          
+        </td>
+        <td>
+          <a href="#" class="table-link">International Day of the Amazon</a>
+          
+            <div class="meta-row">Sponsor: BOLIVIA (PLURINATIONAL STATE OF)</div>
+          
+        </td>
+        <td>
+          
+            Item 13
+          
+        </td>
+        <td>
+          
+            <span class="badge badge-outline">GA</span>
+          
+        </td>
+      </tr>
+      
+      <tr>
+        <td>
+          
+        </td>
+        <td>
+          <a href="#" class="table-link">Agreement under the United Nations Convention on the Law of the Sea on the Conservation and Sustainable Use of Marine Biological Diversity of Areas beyond National Jurisdiction</a>
+          
+            <div class="meta-row">Sponsor: SINGAPORE</div>
+          
+        </td>
+        <td>
+          
+            Item 75(b)
+          
+        </td>
+        <td>
+          
+            <span class="badge badge-outline">GA</span>
+          
+        </td>
+      </tr>
+      
+      <tr>
+        <td>
+          
+        </td>
+        <td>
+          <a href="#" class="table-link">Report of the International Criminal Court</a>
+          
+            <div class="meta-row">Sponsor: NETHERLANDS (KINGDOM OF THE)</div>
+          
+        </td>
+        <td>
+          
+            Item 74
+          
+        </td>
+        <td>
+          
+            <span class="badge badge-outline">GA</span>
+          
+        </td>
+      </tr>
+      
+      <tr>
+        <td>
+          
+        </td>
+        <td>
+          <a href="#" class="table-link">International Day of the Mediterranean Diet</a>
+          
+            <div class="meta-row">Sponsor: ITALY, CROATIA, CYPRUS, FRANCE, GREECE, LEBANON, MOROCCO, PORTUGAL, SAN MARINO, SPAIN, TUNISIA</div>
+          
+        </td>
+        <td>
+          
+            Item 13
+          
+        </td>
+        <td>
+          
+            <span class="badge badge-outline">GA</span>
+          
+        </td>
+      </tr>
+      
+      <tr>
+        <td>
+          
+        </td>
+        <td>
+          <a href="#" class="table-link">2028 United Nations Conference to Support the Implementation of Sustainable Development Goal 14: Conserve and sustainably use the oceans, seas and marine resources for sustainable development</a>
+          
+            <div class="meta-row">Sponsor: REPUBLIC OF KOREA, CHILE</div>
+          
+        </td>
+        <td>
+          
+            Item 13
+          
+        </td>
+        <td>
+          
+            <span class="badge badge-outline">GA</span>
+          
+        </td>
+      </tr>
+      
+      <tr>
+        <td>
+          
+        </td>
+        <td>
+          <a href="#" class="table-link">The Syrian Golan</a>
+          
+            <div class="meta-row">Sponsor: EGYPT</div>
+          
+        </td>
+        <td>
+          
+            Item 34
+          
+        </td>
+        <td>
+          
+            <span class="badge badge-outline">GA</span>
+          
+        </td>
+      </tr>
+      
+      <tr>
+        <td>
+          
+        </td>
+        <td>
+          <a href="#" class="table-link">Safety and security of humanitarian personnel and protection of United Nations personnel</a>
+          
+            <div class="meta-row">Sponsor: DENMARK, AUSTRIA, BELGIUM, BULGARIA, CROATIA, CYPRUS, CZECHIA, ESTONIA, FINLAND, FRANCE, GERMANY, GREECE, HUNGARY, IRELAND, ITALY, LATVIA, LITHUANIA, LUXEMBOURG, MALTA, NETHERLANDS (THE KINGDOM OF THE), POLAND, PORTUGAL, ROMANIA, SLOVAKIA, SLOVENIA, SPAIN, SWEDEN</div>
+          
+        </td>
+        <td>
+          
+            Item 72(a)
+          
+        </td>
+        <td>
+          
+            <span class="badge badge-outline">GA</span>
+          
+        </td>
+      </tr>
+      
+      <tr>
+        <td>
+          
+        </td>
+        <td>
+          <a href="#" class="table-link">Strengthening of international cooperation and coordination of efforts to study, mitigate and minimize the consequences of the Chornobyl disaster</a>
+          
+            <div class="meta-row">Sponsor: UKRAINE</div>
+          
+        </td>
+        <td>
+          
+            Item 72(d)
+          
+        </td>
+        <td>
+          
+            <span class="badge badge-outline">GA</span>
+          
+        </td>
+      </tr>
+      
+      <tr>
+        <td>
+          
+        </td>
+        <td>
+          <a href="#" class="table-link">Sustainable fisheries, including through the 1995 Agreement for the Implementation of the Provisions of the United Nations Convention on the Law of the Sea of 10 December 1982 relating to the Conservation and Management of Straddling Fish Stocks and Highly Migratory Fish Stocks, and related instruments </a>
+          
+            <div class="meta-row">Sponsor: NORWAY</div>
+          
+        </td>
+        <td>
+          
+            Item 75(a)
+          
+        </td>
+        <td>
+          
+            <span class="badge badge-outline">GA</span>
+          
+        </td>
+      </tr>
+      
+      <tr>
+        <td>
+          
+        </td>
+        <td>
+          <a href="#" class="table-link">Transit Corridors as Key Drivers of Peace, Regional Integration, and Sustainable Development for Landlocked Developing Countries</a>
+          
+            <div class="meta-row">Sponsor: BOLIVIA (PLURINATIONAL STATE OF)</div>
+          
+        </td>
+        <td>
+          
+            Item 13
+          
+        </td>
+        <td>
+          
+            <span class="badge badge-outline">GA</span>
+          
+        </td>
+      </tr>
+      
+      <tr>
+        <td>
+          
+            <span class="mono">A/80/L.15</span>
+            <br><span class="meta-row">Submission</span>
+          
+        </td>
+        <td>
+          <a href="#" class="table-link">2025 Review of the peacebuilding architecture</a>
+          
+        </td>
+        <td>
+          
+            Item 62
+          
+        </td>
+        <td>
+          
+            <span class="badge badge-outline">GA</span>
+          
+        </td>
+      </tr>
+      
+      <tr>
+        <td>
+          
+        </td>
+        <td>
+          <a href="#" class="table-link">Amendment (first) to draft resolution Safety and security of humanitarian personnel and protection of United Nations personnel</a>
+          
+            <div class="meta-row">Sponsor: RUSSIAN FEDERATION</div>
+          
+        </td>
+        <td>
+          
+            Item 72(a)
+          
+        </td>
+        <td>
+          
+            <span class="badge badge-outline">GA</span>
+          
+        </td>
+      </tr>
+      
+      <tr>
+        <td>
+          
+        </td>
+        <td>
+          <a href="#" class="table-link">Amendment (second) to draft resolution Safety and security of humanitarian personnel and protection of United Nations personnel</a>
+          
+            <div class="meta-row">Sponsor: RUSSIAN FEDERATION</div>
+          
+        </td>
+        <td>
+          
+            Item 72(a)
+          
+        </td>
+        <td>
+          
+            <span class="badge badge-outline">GA</span>
+          
+        </td>
+      </tr>
+      
+      <tr>
+        <td>
+          
+        </td>
+        <td>
+          <a href="#" class="table-link">peaceful settlement of the question of Palestine</a>
+          
+            <div class="meta-row">Sponsor: SENEGAL</div>
+          
+        </td>
+        <td>
+          
+            Item 35
+          
+        </td>
+        <td>
+          
+            <span class="badge badge-outline">GA</span>
+          
+        </td>
+      </tr>
+      
+      <tr>
+        <td>
+          
+        </td>
+        <td>
+          <a href="#" class="table-link">Oceans and the law of the sea</a>
+          
+            <div class="meta-row">Sponsor: SINGAPORE</div>
+          
+        </td>
+        <td>
+          
+            Item 75
+          
+        </td>
+        <td>
+          
+            <span class="badge badge-outline">GA</span>
+          
+        </td>
+      </tr>
+      
+      <tr>
+        <td>
+          
+            <span class="mono">A/80/L.23</span>
+            <br><span class="meta-row">Submission</span>
+          
+        </td>
+        <td>
+          <a href="#" class="table-link">International cooperation on humanitarian assistance in the field of natural disasters, from relief to development</a>
+          
+            <div class="meta-row">Sponsor: IRAQ (on behalf of Group of 77 and China)</div>
+          
+        </td>
+        <td>
+          
+            Item 72(a)
+          
+        </td>
+        <td>
+          
+            <span class="badge badge-outline">GA</span>
+          
+        </td>
+      </tr>
+      
+      <tr>
+        <td>
+          
+        </td>
+        <td>
+          <a href="#" class="table-link">Advisory opinion of the International Court of Justice on the Obligations of Israel in relation to the Presence and Activities of the United Nations, Other International Organizations and Third States in and in relation to the Occupied Palestinian Territory</a>
+          
+            <div class="meta-row">Sponsor: NORWAY, CHILE, EGYPT, GUYANA, INDONESIA, IRELAND, JORDAN, MALAYSIA, NAMIBIA, QATAR, SAUDI ARABIA, SLOVENIA, SOUTH AFRICA, SPAIN</div>
+          
+        </td>
+        <td>
+          
+            Item 123
+          
+        </td>
+        <td>
+          
+            <span class="badge badge-outline">GA</span>
+          
+        </td>
+      </tr>
+      
+      <tr>
+        <td>
+          
+        </td>
+        <td>
+          <a href="#" class="table-link">Strengthening of the coordination of emergency humanitarian assistance of the United Nations</a>
+          
+            <div class="meta-row">Sponsor: SWEDEN</div>
+          
+        </td>
+        <td>
+          
+            Item 72(a)
+          
+        </td>
+        <td>
+          
+            <span class="badge badge-outline">GA</span>
+          
+        </td>
+      </tr>
+      
+      <tr>
+        <td>
+          
+        </td>
+        <td>
+          <a href="#" class="table-link">Amendment to draft resolution &#34;Persistent legacy of the Chernobyl disaster&#34;</a>
+          
+            <div class="meta-row">Sponsor: UKRAINE</div>
+          
+        </td>
+        <td>
+          
+            Item 72(d)
+          
+        </td>
+        <td>
+          
+            <span class="badge badge-outline">GA</span>
+          
+        </td>
+      </tr>
+      
+      <tr>
+        <td>
+          
+        </td>
+        <td>
+          <a href="#" class="table-link">Amendment to draft resolution &#34;Oceans and the law of the sea&#34;</a>
+          
+            <div class="meta-row">Sponsor: BRAZIL</div>
+          
+        </td>
+        <td>
+          
+            Item 75
+          
+        </td>
+        <td>
+          
+            <span class="badge badge-outline">GA</span>
+          
+        </td>
+      </tr>
+      
+      <tr>
+        <td>
+          
+        </td>
+        <td>
+          <a href="#" class="table-link">Amendment to draft resolution &#34;Persistent legacy of the Chernobyl disaster&#34;</a>
+          
+            <div class="meta-row">Sponsor: UKRAINE</div>
+          
+        </td>
+        <td>
+          
+            Item 72(d)
+          
+        </td>
+        <td>
+          
+            <span class="badge badge-outline">GA</span>
+          
+        </td>
+      </tr>
+      
+      <tr>
+        <td>
+          
+        </td>
+        <td>
+          <a href="#" class="table-link">Amendments </a>
+          
+            <div class="meta-row">Sponsor: UNITED STATES OF AMERICA</div>
+          
+        </td>
+        <td>
+          
+            Item 72
+          
+        </td>
+        <td>
+          
+            <span class="badge badge-outline">GA</span>
+          
+        </td>
+      </tr>
+      
+      <tr>
+        <td>
+          
+        </td>
+        <td>
+          <a href="#" class="table-link">Amendment to A/80/L.18 Strengthening of the coordination of humanitarian and disaster relief assistance of the United Nations, including special economic assistance</a>
+          
+            <div class="meta-row">Sponsor: UNITED STATES OF AMERICA</div>
+          
+        </td>
+        <td>
+          
+            Item 72
+          
+        </td>
+        <td>
+          
+            <span class="badge badge-outline">GA</span>
+          
+        </td>
+      </tr>
+      
+      <tr>
+        <td>
+          
+        </td>
+        <td>
+          <a href="#" class="table-link">Amendment to A/80/L.18 Strengthening of the coordination of humanitarian and disaster relief assistance of the United Nations, including special economic assistance</a>
+          
+            <div class="meta-row">Sponsor: UNITED STATES OF AMERICA</div>
+          
+        </td>
+        <td>
+          
+            Item 72
+          
+        </td>
+        <td>
+          
+            <span class="badge badge-outline">GA</span>
+          
+        </td>
+      </tr>
+      
+      <tr>
+        <td>
+          
+        </td>
+        <td>
+          <a href="#" class="table-link">Amendment to draft proposal A/80/L.25 on Strengthening of the coordination of emergency humanitarian assistance of the United Nations. </a>
+          
+            <div class="meta-row">Sponsor: UNITED STATES OF AMERICA</div>
+          
+        </td>
+        <td>
+          
+            Item 72
+          
+        </td>
+        <td>
+          
+            <span class="badge badge-outline">GA</span>
+          
+        </td>
+      </tr>
+      
+      <tr>
+        <td>
+          
+        </td>
+        <td>
+          <a href="#" class="table-link">Amendment to draft proposal A/80/L.25 on Strengthening of the coordination of emergency humanitarian assistance of the United Nations. </a>
+          
+            <div class="meta-row">Sponsor: UNITED STATES OF AMERICA</div>
+          
+        </td>
+        <td>
+          
+            Item 72(a)
+          
+        </td>
+        <td>
+          
+            <span class="badge badge-outline">GA</span>
+          
+        </td>
+      </tr>
+      
+      <tr>
+        <td>
+          
+        </td>
+        <td>
+          <a href="#" class="table-link">Amendment to draft proposal A/80/L.25 on Strengthening of the coordination of emergency humanitarian assistance of the United Nations</a>
+          
+            <div class="meta-row">Sponsor: UNITED STATES OF AMERICA</div>
+          
+        </td>
+        <td>
+          
+            Item 72(a)
+          
+        </td>
+        <td>
+          
+            <span class="badge badge-outline">GA</span>
+          
+        </td>
+      </tr>
+      
+      <tr>
+        <td>
+          
+        </td>
+        <td>
+          <a href="#" class="table-link">Amendment to draft proposal A/80/L.25 on Strengthening of the coordination of emergency humanitarian assistance of the United Nations</a>
+          
+            <div class="meta-row">Sponsor: UNITED STATES OF AMERICA</div>
+          
+        </td>
+        <td>
+          
+            Item 72(a)
+          
+        </td>
+        <td>
+          
+            <span class="badge badge-outline">GA</span>
+          
+        </td>
+      </tr>
+      
+      <tr>
+        <td>
+          
+        </td>
+        <td>
+          <a href="#" class="table-link">Amendment to draft resolution A/80/L.27 &#34;Strengthening of international cooperation and coordination of efforts to study, mitigate and minimize the consequences of the Chornobyl disaster&#34;</a>
+          
+            <div class="meta-row">Sponsor: BELARUS</div>
+          
+        </td>
+        <td>
+          
+            Item 72(d)
+          
+        </td>
+        <td>
+          
+            <span class="badge badge-outline">GA</span>
+          
+        </td>
+      </tr>
+      
+      <tr>
+        <td>
+          
+            <span class="mono">A/80/L.34</span>
+            <br><span class="meta-row">Submission</span>
+          
+        </td>
+        <td>
+          <a href="#" class="table-link">Political declaration of the fourth high-level meeting of the General Assembly on the prevention and control of noncommunicable diseases and the promotion of mental health and well-being</a>
+          
+        </td>
+        <td>
+          
+            Item 127
+          
+        </td>
+        <td>
+          
+            <span class="badge badge-outline">GA</span>
+          
+        </td>
+      </tr>
+      
+      <tr>
+        <td>
+          
+        </td>
+        <td>
+          <a href="#" class="table-link">Amendment to draft resolution  A/80/L.25 on Strengthening of the coordination of emergency humanitarian assistance of the United Nations</a>
+          
+            <div class="meta-row">Sponsor: RUSSIAN FEDERATION</div>
+          
+        </td>
+        <td>
+          
+            Item 72(a)
+          
+        </td>
+        <td>
+          
+            <span class="badge badge-outline">GA</span>
+          
+        </td>
+      </tr>
+      
+      <tr>
+        <td>
+          
+            <span class="mono">A/80/L.37</span>
+            <br><span class="meta-row">Submission</span>
+          
+        </td>
+        <td>
+          <a href="#" class="table-link">United Nations Pledging Conference for Development Activities</a>
+          
+        </td>
+        <td>
+          
+            Item 23
+          
+        </td>
+        <td>
+          
+            <span class="badge badge-outline">GA</span>
+          
+        </td>
+      </tr>
+      
+      <tr>
+        <td>
+          
+        </td>
+        <td>
+          <a href="#" class="table-link">Amendment to draft resolution 4 contained in document A/80/555</a>
+          
+            <div class="meta-row">Sponsor: DENMARK, AUSTRIA, BELGIUM, BULGARIA, CROATIA, CYPRUS, CZECHIA, ESTONIA, FINLAND, FRANCE, GERMANY, GREECE, HUNGARY, IRELAND, ITALY, LATVIA, LITHUANIA, LUXEMBOURG, MALTA, NETHERLANDS (KINGDOM OF THE), POLAND, PORTUGAL, ROMANIA, SLOVAKIA, SLOVENIA, SPAIN, SWEDEN</div>
+          
+        </td>
+        <td>
+          
+            Item 16(a)
+          
+        </td>
+        <td>
+          
+            <span class="badge badge-outline">GA</span>
+          
+        </td>
+      </tr>
+      
+      <tr>
+        <td>
+          
+        </td>
+        <td>
+          <a href="#" class="table-link">Amendment to draft resolution 6 contained in document A/80/555</a>
+          
+            <div class="meta-row">Sponsor: DENMARK, AUSTRIA, BELGIUM, BULGARIA, CROATIA, CYPRUS, CZECHIA, ESTONIA, FINLAND, FRANCE, GERMANY, GREECE, HUNGARY, IRELAND, ITALY, LATVIA, LITHUANIA, LUXEMBOURG, MALTA, NETHERLANDS (KINGDOM OF THE), POLAND, PORTUGAL, ROMANIA, SLOVAKIA, SLOVENIA, SPAIN, SWEDEN</div>
+          
+        </td>
+        <td>
+          
+            Item 16(c)
+          
+        </td>
+        <td>
+          
+            <span class="badge badge-outline">GA</span>
+          
+        </td>
+      </tr>
+      
+      <tr>
+        <td>
+          
+        </td>
+        <td>
+          <a href="#" class="table-link">Amendment to draft resolution 23 as contained in document A/80/545</a>
+          
+            <div class="meta-row">Sponsor: EGYPT, AFGHANISTAN, ALGERIA, AZERBAIJAN, BAHRAIN, BANGLADESH, BENIN, BRUNEI DARUSSALAM, BURKINA FASO, CAMEROON, CHAD, COMOROS, CÔTE D&#39;IVOIRE, DJIBOUTI, GABON, GAMBIA, GUINEA, GUINEA-BISSAU, INDONESIA, IRAN (ISLAMIC REPUBLIC OF), IRAQ, JORDAN, KAZAKHSTAN, KUWAIT, KYRGYZSTAN, LIBYA, MALAYSIA, MALDIVES, MALI, MAURITANIA, MOROCCO, MOZAMBIQUE, NIGER, NIGERIA, OMAN, PAKISTAN, QATAR, SAUDI ARABIA, SENEGAL, SIERRA LEONE, SOMALIA, SUDAN, SYRIAN ARAB REPUBLIC, TAJIKISTAN, TOGO, TUNISIA, TURKMENISTAN, TÜRKİYE, UGANDA, UNITED ARAB EMIRATES, UZBEKISTAN, YEMEN, STATE OF PALESTINE</div>
+          
+        </td>
+        <td>
+          
+            Item 71(a)
+          
+        </td>
+        <td>
+          
+            <span class="badge badge-outline">GA</span>
+          
+        </td>
+      </tr>
+      
+      <tr>
+        <td>
+          
+            <span class="mono">A/80/547 DR</span>
+            <br><span class="meta-row">Submission</span>
+          
+        </td>
+        <td>
+          <a href="#" class="table-link">Report of the Credentials Committee</a>
+          
+        </td>
+        <td>
+          
+            Item 3(b)
+          
+        </td>
+        <td>
+          
+            <span class="badge badge-outline">GA</span>
+          
+        </td>
+      </tr>
+      
+      <tr>
+        <td>
+          
+        </td>
+        <td>
+          <a href="#" class="table-link">Education for Peace</a>
+          
+            <div class="meta-row">Sponsor: ARMENIA, CHILE, FRANCE, KAZAKHSTAN, MONGOLIA, NEPAL</div>
+          
+        </td>
+        <td>
+          
+            Item 13
+          
+        </td>
+        <td>
+          
+            <span class="badge badge-outline">GA</span>
+          
+        </td>
+      </tr>
+      
+      <tr>
+        <td>
+          
+            <span class="mono">A/80/L.41</span>
+            <br><span class="meta-row">Submission</span>
+          
+        </td>
+        <td>
+          <a href="#" class="table-link">Outcome document of the high-level meeting of the General Assembly on the overall review of the implementation of the outcomes of the World Summit on the Information Society</a>
+          
+        </td>
+        <td>
+          
+            Item 15
+          
+        </td>
+        <td>
+          
+            <span class="badge badge-outline">GA</span>
+          
+        </td>
+      </tr>
+      
+      <tr>
+        <td>
+          
+        </td>
+        <td>
+          <a href="#" class="table-link">Global health and foreign policy: accelerating the fight against socially determined diseases and addressing Social Determinants of Health</a>
+          
+            <div class="meta-row">Sponsor: BRAZIL, FRANCE, INDONESIA, NORWAY, SENEGAL, SOUTH AFRICA, THAILAND</div>
+          
+        </td>
+        <td>
+          
+            Item 127
+          
+        </td>
+        <td>
+          
+            <span class="badge badge-outline">GA</span>
+          
+        </td>
+      </tr>
+      
+      <tr>
+        <td>
+          
+        </td>
+        <td>
+          <a href="#" class="table-link">Global health and foreign policy: accelerating the fight against socially determined diseases and addressing Social Determinants of Health</a>
+          
+            <div class="meta-row">Sponsor: BRAZIL, FRANCE, INDONESIA, NORWAY, SENEGAL, SOUTH AFRICA, THAILAND</div>
+          
+        </td>
+        <td>
+          
+            Item 127
+          
+        </td>
+        <td>
+          
+            <span class="badge badge-outline">GA</span>
+          
+        </td>
+      </tr>
+      
+      <tr>
+        <td>
+          
+        </td>
+        <td>
+          <a href="#" class="table-link">Postponement of the consideration of the modalities of the 2028 United Nations Water Conference to the eighty-first session of the General Assembly</a>
+          
+            <div class="meta-row">Sponsor: TAJIKISTAN</div>
+          
+        </td>
+        <td>
+          
+            Item 18
+          
+        </td>
+        <td>
+          
+            <span class="badge badge-outline">GA</span>
+          
+        </td>
+      </tr>
+      
+      <tr>
+        <td>
+          
+        </td>
+        <td>
+          <a href="#" class="table-link">Draft Resolution on International Wellness Day</a>
+          
+            <div class="meta-row">Sponsor: NEPAL</div>
+          
+        </td>
+        <td>
+          
+            Item 127
+          
+        </td>
+        <td>
+          
+            <span class="badge badge-outline">GA</span>
+          
+        </td>
+      </tr>
+      
+      <tr>
+        <td>
+          
+        </td>
+        <td>
+          <a href="#" class="table-link">Promotion of interreligious and intercultural dialogue, understanding and cooperation for peace</a>
+          
+            <div class="meta-row">Sponsor: PHILIPPINES, PAKISTAN</div>
+          
+        </td>
+        <td>
+          
+            Item 14
+          
+        </td>
+        <td>
+          
+            <span class="badge badge-outline">GA</span>
+          
+        </td>
+      </tr>
+      
+      <tr>
+        <td>
+          
+        </td>
+        <td>
+          <a href="#" class="table-link">International Coffee Day</a>
+          
+            <div class="meta-row">Sponsor: BRAZIL</div>
+          
+        </td>
+        <td>
+          
+            Item 13
+          
+        </td>
+        <td>
+          
+            <span class="badge badge-outline">GA</span>
+          
+        </td>
+      </tr>
+      
+      <tr>
+        <td>
+          
+        </td>
+        <td>
+          <a href="#" class="table-link">International Coffee Day</a>
+          
+            <div class="meta-row">Sponsor: BRAZIL, ANGOLA, COLOMBIA, DOMINICAN REPUBLIC, ETHIOPIA, FINLAND, INDIA, INDONESIA, ITALY, JAMAICA, JAPAN, KENYA, PERU, PORTUGAL, SAO TOME AND PRINCIPE, TÜRKİYE, VIET NAM, YEMEN</div>
+          
+        </td>
+        <td>
+          
+            Item 13
+          
+        </td>
+        <td>
+          
+            <span class="badge badge-outline">GA</span>
+          
+        </td>
+      </tr>
+      
+    </tbody>
+  </table>
+</div>
+
 
     </main>
-    <footer class="border-t border-slate-200 bg-white">
-  <div class="mx-auto flex w-full max-w-6xl flex-col gap-2 px-6 py-6 text-sm text-slate-500 md:flex-row md:items-center md:justify-between">
-    <p>Department for General Assembly and Conference Management (DGACM)</p>
-    <div class="flex gap-4">
-      <a class="nav-link" href="https://www.un.org/en/about-us/copyright">Copyright</a>
-      <a class="nav-link" href="https://www.un.org/en/about-us/fraud-alert">Fraud Alert</a>
-      <a class="nav-link" href="https://www.un.org/en/about-us/privacy-notice">Privacy Notice</a>
-    </div>
-  </div>
-</footer>
+
+    <footer class="site-footer">
+      <div class="site-footer-inner">
+        <div class="footer-brand">
+          <a href="https://www.un.org/en/">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <circle cx="12" cy="12" r="10"/>
+              <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" fill="none" stroke="currentColor" stroke-width="1"/>
+              <path d="M2 12h20" stroke="currentColor" stroke-width="1"/>
+            </svg>
+            United Nations
+          </a>
+        </div>
+        <div class="footer-links">
+          <a href="https://www.un.org/en/about-us/copyright">Copyright</a>
+          <a href="https://www.un.org/en/about-us/fraud-alert">Fraud Alert</a>
+          <a href="https://www.un.org/en/about-us/privacy-notice">Privacy Notice</a>
+          <a href="https://www.un.org/en/about-us/terms-of-use">Terms of Use</a>
+        </div>
+        <div class="footer-bottom">
+          <p>Department for General Assembly and Conference Management (DGACM)</p>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      (function() {
+        var lastBuild = 1769366182;
+        var pollInterval = 2000;
+        function checkUpdate() {
+          fetch('/__build__').then(function(r) { return r.json(); }).then(function(data) {
+            if (data.timestamp > lastBuild) {
+              lastBuild = data.timestamp;
+              location.reload();
+            }
+          }).catch(function() {});
+        }
+        setInterval(checkUpdate, pollInterval);
+      })();
+    </script>
   </body>
 </html>

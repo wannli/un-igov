@@ -74,153 +74,27 @@
 </div>
 {% endif %}
 
-{% if meeting.MT_segment %}
+{% if meeting.MT_segment or rendered_procedure_steps %}
 <div class="section-header mt-4">
-  <h2>Agenda Items</h2>
+  <h2>Proceedings</h2>
 </div>
-<div class="card-list">
-  {% for segment in meeting.MT_segment %}
-  <article class="card">
-    <div class="card-body">
-      {% if segment.MTS_agenda %}
-        {% for agenda in segment.MTS_agenda %}
-          <span class="badge mb-2" style="display: inline-block; margin-bottom: 8px;">Item {{ agenda.item }}</span>
-        {% endfor %}
-      {% endif %}
-      {% if segment.MTS_segmentTitle %}
-        <h3 style="font-size: 1.2rem; margin-bottom: 12px;">{{ segment.MTS_segmentTitle }}</h3>
-      {% endif %}
-      {% if segment.MTS_segmentInfo %}
-        <p style="margin: 0;">{{ segment.MTS_segmentInfo }}</p>
-      {% endif %}
-    </div>
-  </article>
-  {% endfor %}
-</div>
-{% endif %}
-
-{% set voting_steps = [] %}
-{% set statements = [] %}
-{% set adopted_resolutions = [] %}
-{% set adopted_decisions = [] %}
-
-{% for step in meeting.procedureStep | default([]) %}
-  {% if step.PS_type_label == 'Statements in explanation of vote before the vote' %}
-    {% set statements = (statements.append(step), statements) %}
-  {% elif step.PS_voting == 'Yes' or step.PS_voting == 'No' %}
-    {% set voting_steps = (voting_steps.append(step), voting_steps) %}
-  {% elif step.PS_type_label and 'adopted' in step.PS_type_label|lower %}
-    {% if step.PS_recordResolutionNumber %}
-      {% set adopted_resolutions = (adopted_resolutions.append(step), adopted_resolutions) %}
-    {% elif step.PS_recordDecisionNumber %}
-      {% set adopted_decisions = (adopted_decisions.append(step), adopted_decisions) %}
-    {% endif %}
-  {% endif %}
-{% endfor %}
-
-{% if statements %}
-<div class="section-header mt-4">
-  <h2>Explanation of Vote</h2>
-</div>
-<div class="card-list">
-  {% for step in statements %}
-    {% for speaker in step.PS_ListOfSpeakers | default([]) %}
-      <div class="card">
-        <div class="card-body" style="padding: 16px 20px;">
-          <div class="card-list-item" style="padding: 0; border: none; margin: 0;">
-            <div class="card-list-main">
-              <h3 style="font-size: 1rem; margin: 0;">{{ speaker.SP_entity.SP_entity | default('Unknown') }}</h3>
-            </div>
-          </div>
-        </div>
-      </div>
-    {% endfor %}
-  {% endfor %}
-</div>
-{% endif %}
-
-{% if voting_steps %}
-<div class="section-header mt-4">
-  <h2>Voting Records</h2>
-</div>
-<div class="card-list">
-  {% for step in voting_steps %}
-    {% set resolution_symbol = resolution_map.get(step.PS_recordResolutionNumber, '') %}
-    <div class="card">
-      <div class="card-body" style="padding: 16px 20px;">
-        <div class="card-list-item" style="padding: 0; border: none; margin: 0;">
-          <div class="card-list-main">
-            {% if resolution_symbol %}
-              <h3 style="font-size: 1rem; margin: 0 0 8px 0;">Draft resolution {{ resolution_symbol }}</h3>
+<div class="card mb-4">
+  <div class="card-body" style="line-height: 1.8;">
+    {% for segment in meeting.MT_segment | default([]) %}
+      {% set segment_id = loop.index0 + 1 %}
+      <p><strong>{{ segment.MTS_segmentTitle or segment.MTS_segmentInfo or 'Agenda Item' }}</strong></p>
+      {% if steps_by_segment[segment_id] %}
+        {% for step in steps_by_segment[segment_id] %}
+          <p>
+            {{ step.text | safe }}
+            {% if step.speakers %}
+              {% for speaker in step.speakers %}{{ speaker.name }}{% if not loop.last %}, {% endif %}{% endfor %}.
             {% endif %}
-            <p style="margin: 0; color: var(--un-gray-dark);">
-              {% if step.PS_voting == 'Yes' and (step.PS_InFavor or step.PS_against or step.PS_abstention) %}
-                Adopted by {{ step.PS_InFavor }} to {{ step.PS_against }}{% if step.PS_abstention %}, {{ step.PS_abstention }} abstentions{% endif %}
-              {% elif step.PS_voting == 'No' %}
-                Rejected
-              {% endif %}
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  {% endfor %}
-</div>
-{% endif %}
-
-{% if adopted_resolutions or adopted_decisions %}
-<div class="section-header mt-4">
-  <h2>Adopted Documents</h2>
-</div>
-<div class="card-list">
-  {% for step in adopted_resolutions %}
-    {% set resolution_symbol = resolution_map.get(step.PS_recordResolutionNumber, '') %}
-    <div class="card">
-      <div class="card-body" style="padding: 16px 20px;">
-        <div class="card-list-item" style="padding: 0; border: none; margin: 0;">
-          <div class="card-list-main">
-            <span class="badge badge-outline" style="margin-bottom: 4px;">Resolution</span>
-            <h3 style="font-size: 1rem; margin: 0;">{{ resolution_symbol or step.PS_recordResolutionNumber }}</h3>
-          </div>
-        </div>
-      </div>
-    </div>
-  {% endfor %}
-  {% for step in adopted_decisions %}
-    <div class="card">
-      <div class="card-body" style="padding: 16px 20px;">
-        <div class="card-list-item" style="padding: 0; border: none; margin: 0;">
-          <div class="card-list-main">
-            <span class="badge badge-outline" style="margin-bottom: 4px;">Decision</span>
-            <h3 style="font-size: 1rem; margin: 0;">{{ step.PS_recordDecisionNumber }}</h3>
-          </div>
-        </div>
-      </div>
-    </div>
-  {% endfor %}
-</div>
-{% endif %}
-
-{% if rendered_procedure_steps %}
-<div class="section-header mt-4">
-  <h2>Procedure Steps</h2>
-</div>
-<div class="card-list">
-  {% for step in rendered_procedure_steps %}
-  <div class="card">
-    <div class="card-body" style="padding: 16px 20px;">
-      <span class="badge badge-outline" style="margin-bottom: 4px;">{{ step.type_label }}</span>
-      <p style="margin: 8px 0 0 0;">{{ step.text | safe }}</p>
-      {% if step.speakers %}
-      <ul style="margin: 12px 0 0 0; padding-left: 20px; color: var(--un-gray-dark);">
-        {% for speaker in step.speakers %}
-        <li style="margin-bottom: 4px;">{{ speaker.name }}</li>
+          </p>
         {% endfor %}
-      </ul>
       {% endif %}
-    </div>
+    {% endfor %}
   </div>
-  {% endfor %}
 </div>
 {% endif %}
 

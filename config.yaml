@@ -1,11 +1,12 @@
 site:
-  title: "UN iGov Static"
-  base_url: "/un-igov/"
+  title: "iGov: portal to the work of intergovernmental bodies"
+  base_url: "/"
   output_dir: "output"
   data_dir: "data"
 
 ga:
   body_code: "GA"
+  label: "General Assembly"
   sessions:
     "80":
       label: "EIGHTIETH"
@@ -17,9 +18,40 @@ ga:
       label: "SEVENTY-EIGHTH"
       decision_label: "78th session of the General Assembly"
   committees:
+    plenary: "Plenary"
     c1: "First Committee"
     c2: "Second Committee"
     c3: "Third Committee"
     c4: "Fourth Committee"
     c5: "Fifth Committee"
     c6: "Sixth Committee"
+
+ecosoc:
+  body_code: "ECOSOC"
+  label: "Economic and Social Council"
+  sessions:
+    "2026":
+      label: "2026"
+      decision_label: "2026 session of the Economic and Social Council"
+    "2025":
+      label: "2025"
+      decision_label: "2025 session of the Economic and Social Council"
+  bodies:
+    plenary: "Plenary"
+    hlpf: "High-level political forum on sustainable development"
+    csw: "Commission on the Status of Women"
+    ggim: "Committee of Experts on Global Geospatial Information Management"
+    unff: "United Nations Forum on Forests"
+    ungegn: "United Nations Group of Experts on Geographical Names"
+
+conferences:
+  label: "Conferences"
+  events:
+    ffd4:
+      code: "ffd4"
+      label: "Fourth International Conference on Financing for Development"
+      session: "2025"
+    ffd4pc:
+      code: "ffd4pc"
+      label: "FFD4 PrepCom"
+      session: "3"

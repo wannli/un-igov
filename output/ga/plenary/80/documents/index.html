@@ -3,66 +3,240 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>UN iGov Static | Documents</title>
+    <title>iGov: portal to the work of intergovernmental bodies | Documents</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;600;700&family=Noto+Serif:wght@500;600&display=swap"
-      rel="stylesheet"
-    />
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="/static/css/style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Roboto+Condensed:wght@400;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/static/css/un-design-system.css" />
+    <style>
+      .dropdown-menu {
+        display: none;
+        position: absolute;
+        background: white;
+        border: 1px solid var(--un-gray-light);
+        box-shadow: var(--shadow-md);
+        min-width: 280px;
+        z-index: 1000;
+        padding: 8px 0;
+      }
+      .dropdown:hover .dropdown-menu,
+      .dropdown-menu:hover {
+        display: block;
+      }
+      .dropdown-item {
+        display: block;
+        padding: 10px 16px;
+        color: var(--un-black);
+        text-decoration: none;
+        font-size: 14px;
+        transition: background var(--transition-fast);
+      }
+      .dropdown-item:hover {
+        background: var(--un-blue-light);
+        color: var(--un-blue);
+      }
+      .dropdown-divider {
+        height: 1px;
+        background: var(--un-gray-light);
+        margin: 8px 0;
+      }
+      .dropdown-header {
+        padding: 8px 16px;
+        font-size: 11px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        color: var(--un-gray);
+      }
+      .site-nav .nav-item {
+        position: relative;
+      }
+      .site-nav .nav-link {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        padding: 12px 16px;
+        font-size: 14px;
+        font-weight: 500;
+        color: var(--un-dark);
+        text-decoration: none;
+        cursor: pointer;
+      }
+      .site-nav .nav-link:hover,
+      .site-nav .nav-link.active {
+        color: var(--un-blue);
+      }
+      .site-nav .nav-link::after {
+        content: '';
+        display: inline-block;
+        width: 0;
+        height: 0;
+        margin-left: 4px;
+        border-left: 4px solid transparent;
+        border-right: 4px solid transparent;
+        border-top: 4px solid var(--un-gray);
+      }
+      .site-nav .nav-link:hover::after,
+      .site-nav .nav-item:hover .nav-link::after {
+        border-top-color: var(--un-blue);
+      }
+    </style>
   </head>
-  <body class="min-h-screen bg-slate-50 text-slate-900">
-    <header class="border-b border-slate-200 bg-white">
-  <div class="mx-auto flex w-full max-w-6xl items-center gap-6 px-6 py-4">
-    <a class="flex items-center gap-3" href="/index.html">
-      <img
-        src="https://www.un.org/sites/un2.un.org/files/un_emblem_blue.svg"
-        alt="United Nations"
-        class="h-10 w-10"
-      />
-      <div>
-        <p class="font-serif text-xl text-slate-900">United Nations</p>
-        <p class="text-sm uppercase tracking-wide text-slate-500">Intergovernmental Data</p>
+  <body>
+    <header class="site-header">
+      <div class="site-header-top">
+        <div class="site-header-top-inner">
+          <div class="language-switcher">
+            <a href="/en" class="active">English</a>
+            <a href="/ar">العربية</a>
+            <a href="/zh">中文</a>
+            <a href="/fr">Français</a>
+            <a href="/ru">Русский</a>
+            <a href="/es">Español</a>
+          </div>
+          <div class="header-tools">
+            <a href="https://www.un.org/en/site-index">A-Z Index</a>
+            <a href="https://www.un.org/en/contact-us-0">Contact</a>
+          </div>
+        </div>
       </div>
-    </a>
-    <nav class="ml-auto flex items-center gap-4 text-sm font-semibold text-slate-600">
-      <a class="nav-link" href="/ga/plenary/80/meetings/index.html">Meetings</a>
-      <a class="nav-link" href="/ga/plenary/80/agenda/index.html">Agenda</a>
-      <a class="nav-link" href="/ga/plenary/80/documents/index.html">Documents</a>
-      <a class="nav-link" href="/ga/plenary/80/decisions/index.html">Decisions</a>
-      <a class="nav-link" href="/ga/plenary/80/proposals/index.html">Proposals</a>
-    </nav>
-  </div>
-</header>
-    <main class="min-h-[70vh]">
-      
-<section class="page-hero">
-  <div class="mx-auto w-full max-w-6xl px-6 py-10">
-    <p class="eyebrow">General Assembly · Session 80</p>
-    <h1 class="page-title">Documents</h1>
-  </div>
-</section>
+      <div class="site-header-main">
+        <div class="site-header-inner">
+          <a href="/index.html" class="site-logo">
+            <div class="site-logo-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"/>
+                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                <path d="M2 12h20"/>
+              </svg>
+            </div>
+            <div class="site-logo-text">
+              <span class="site-logo-title">United Nations</span>
+              <span class="site-logo-subtitle">iGov: portal to the work of intergovernmental bodies</span>
+            </div>
+          </a>
+          <nav class="site-nav">
+            <div class="nav-item dropdown">
+              <a href="/ga/plenary/80/index.html" class="nav-link ">General Assembly</a>
+              <div class="dropdown-menu">
+                <div class="dropdown-header">80th Session</div>
+                <a href="/ga/plenary/80/index.html" class="dropdown-item">Plenary</a>
+                <a href="/ga/c1/80/index.html" class="dropdown-item">First Committee</a>
+                <a href="/ga/c2/80/index.html" class="dropdown-item">Second Committee</a>
+                <a href="/ga/c3/80/index.html" class="dropdown-item">Third Committee</a>
+                <a href="/ga/c4/80/index.html" class="dropdown-item">Fourth Committee</a>
+                <a href="/ga/c5/80/index.html" class="dropdown-item">Fifth Committee</a>
+                <div class="dropdown-divider"></div>
+                <div class="dropdown-header">Previous Sessions</div>
+                <a href="/ga/plenary/79/index.html" class="dropdown-item">79th Session</a>
+                <a href="/ga/plenary/78/index.html" class="dropdown-item">78th Session</a>
+              </div>
+            </div>
+            <div class="nav-item dropdown">
+              <a href="/ecosoc/plenary/2026/index.html" class="nav-link ">Economic and Social Council</a>
+              <div class="dropdown-menu">
+                <div class="dropdown-header">2026 Session</div>
+                <a href="/ecosoc/plenary/2026/index.html" class="dropdown-item">Plenary</a>
+                <div class="dropdown-divider"></div>
+                <div class="dropdown-header">Bodies</div>
+                <a href="/ecosoc/hlpf/2025/index.html" class="dropdown-item">High-level Political Forum</a>
+                <a href="/ecosoc/csw/70/index.html" class="dropdown-item">Commission on the Status of Women</a>
+                <a href="/ecosoc/ggim/15/index.html" class="dropdown-item">Committee of Experts on GGIM</a>
+                <a href="/ecosoc/unff/20/index.html" class="dropdown-item">UN Forum on Forests</a>
+                <a href="/ecosoc/ungegn/2025/index.html" class="dropdown-item">UNGEGN</a>
+              </div>
+            </div>
+            <div class="nav-item dropdown">
+              <a href="#" class="nav-link ">Conferences</a>
+              <div class="dropdown-menu">
+                <a href="/conferences/ffd4/2025/index.html" class="dropdown-item">FFD4 - Financing for Development</a>
+                <a href="/conferences/ffd4pc/3/index.html" class="dropdown-item">FFD4 PrepCom</a>
+              </div>
+            </div>
+          </nav>
+        </div>
+      </div>
+    </header>
 
-<section class="mx-auto w-full max-w-6xl px-6 py-10">
-  <div class="space-y-4">
-    
-      <p class="text-slate-500">No documents data available yet.</p>
-    
-  </div>
-</section>
+    <main class="main-container">
+      
+<div class="sdg-banner">
+  <div class="sdg-color sdg-1"></div>
+  <div class="sdg-color sdg-2"></div>
+  <div class="sdg-color sdg-3"></div>
+  <div class="sdg-color sdg-4"></div>
+  <div class="sdg-color sdg-5"></div>
+  <div class="sdg-color sdg-6"></div>
+  <div class="sdg-color sdg-7"></div>
+  <div class="sdg-color sdg-8"></div>
+  <div class="sdg-color sdg-9"></div>
+  <div class="sdg-color sdg-10"></div>
+  <div class="sdg-color sdg-11"></div>
+  <div class="sdg-color sdg-12"></div>
+  <div class="sdg-color sdg-13"></div>
+  <div class="sdg-color sdg-14"></div>
+  <div class="sdg-color sdg-15"></div>
+  <div class="sdg-color sdg-16"></div>
+  <div class="sdg-color sdg-17"></div>
+</div>
+
+<div class="breadcrumbs">
+  <a href="/index.html">Home</a>
+  <span>/</span>
+  <span>Documents</span>
+</div>
+
+<div class="page-header">
+  <h1>Documents — 80th Session</h1>
+  <p class="lead">Official documents, resolutions, and reports</p>
+</div>
+
+
+<div class="empty-state">
+  <p>No documents data available yet.</p>
+</div>
+
 
     </main>
-    <footer class="border-t border-slate-200 bg-white">
-  <div class="mx-auto flex w-full max-w-6xl flex-col gap-2 px-6 py-6 text-sm text-slate-500 md:flex-row md:items-center md:justify-between">
-    <p>Department for General Assembly and Conference Management (DGACM)</p>
-    <div class="flex gap-4">
-      <a class="nav-link" href="https://www.un.org/en/about-us/copyright">Copyright</a>
-      <a class="nav-link" href="https://www.un.org/en/about-us/fraud-alert">Fraud Alert</a>
-      <a class="nav-link" href="https://www.un.org/en/about-us/privacy-notice">Privacy Notice</a>
-    </div>
-  </div>
-</footer>
+
+    <footer class="site-footer">
+      <div class="site-footer-inner">
+        <div class="footer-brand">
+          <a href="https://www.un.org/en/">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <circle cx="12" cy="12" r="10"/>
+              <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" fill="none" stroke="currentColor" stroke-width="1"/>
+              <path d="M2 12h20" stroke="currentColor" stroke-width="1"/>
+            </svg>
+            United Nations
+          </a>
+        </div>
+        <div class="footer-links">
+          <a href="https://www.un.org/en/about-us/copyright">Copyright</a>
+          <a href="https://www.un.org/en/about-us/fraud-alert">Fraud Alert</a>
+          <a href="https://www.un.org/en/about-us/privacy-notice">Privacy Notice</a>
+          <a href="https://www.un.org/en/about-us/terms-of-use">Terms of Use</a>
+        </div>
+        <div class="footer-bottom">
+          <p>Department for General Assembly and Conference Management (DGACM)</p>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      (function() {
+        var lastBuild = 1769366182;
+        var pollInterval = 2000;
+        function checkUpdate() {
+          fetch('/__build__').then(function(r) { return r.json(); }).then(function(data) {
+            if (data.timestamp > lastBuild) {
+              lastBuild = data.timestamp;
+              location.reload();
+            }
+          }).catch(function() {});
+        }
+        setInterval(checkUpdate, pollInterval);
+      })();
+    </script>
   </body>
 </html>

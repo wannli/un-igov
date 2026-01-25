@@ -1,6 +1,6 @@
 {% extends "base.html" %}
-{% set page_title = "General Assembly" %}
-{% set active_page = "home" %}
+{% set page_title = "Home" %}
+{% set body = "IGOV" %}
 {% block content %}
 <div class="sdg-banner">
   <div class="sdg-color sdg-1"></div>
@@ -23,96 +23,198 @@
 </div>
 
 <div class="page-header">
-  <h1>General Assembly — {{ session }}th Session</h1>
-  <p class="lead">Portal to the work of intergovernmental bodies</p>
-</div>
-
-<div class="stats-grid">
-  <a href="{{ site.base_url }}ga/plenary/{{ session }}/meetings/index.html" class="stat-card">
-    <span class="stat-label">Meetings</span>
-    <span class="stat-number">{{ stats.meetings }}</span>
-  </a>
-  <a href="{{ site.base_url }}ga/plenary/{{ session }}/agenda/index.html" class="stat-card">
-    <span class="stat-label">Agenda Items</span>
-    <span class="stat-number">{{ stats.agenda }}</span>
-  </a>
-  <a href="{{ site.base_url }}ga/plenary/{{ session }}/documents/index.html" class="stat-card">
-    <span class="stat-label">Documents</span>
-    <span class="stat-number">{{ stats.documents }}</span>
-  </a>
-  <a href="{{ site.base_url }}ga/plenary/{{ session }}/decisions/index.html" class="stat-card">
-    <span class="stat-label">Decisions</span>
-    <span class="stat-number">{{ stats.decisions }}</span>
-  </a>
-  <a href="{{ site.base_url }}ga/plenary/{{ session }}/proposals/index.html" class="stat-card">
-    <span class="stat-label">Proposals</span>
-    <span class="stat-number">{{ stats.proposals }}</span>
-  </a>
+  <h1>Portal to the work of intergovernmental bodies</h1>
+  <p class="lead">Access official documents, meetings, and decisions from United Nations intergovernmental bodies</p>
 </div>
 
 <div class="section-header">
-  <h2>Quick Navigation</h2>
+  <h2>General Assembly</h2>
+  <p class="lead">The General Assembly is the main deliberative, policymaking and representative organ of the UN.</p>
 </div>
 
 <div class="card-list">
   <div class="card-list-item">
     <div class="card-list-main">
-      <h3><a href="{{ site.base_url }}ga/plenary/{{ session }}/meetings/index.html">Meeting Records</a></h3>
+      <h3><a href="{{ site.base_url }}ga/plenary/80/index.html">Plenary — 80th Session</a></h3>
       <div class="card-list-meta">
-        <span class="badge badge-outline">{{ stats.meetings }} meetings</span>
-        <span>Official records and verbatims</span>
+        <span class="badge">Active</span>
+        <span>Meetings, agenda items, documents, resolutions, decisions, and proposals</span>
       </div>
     </div>
     <div class="card-list-date">
-      <span>Browse all</span>
+      <span>2025-2026</span>
     </div>
   </div>
   <div class="card-list-item">
     <div class="card-list-main">
-      <h3><a href="{{ site.base_url }}ga/plenary/{{ session }}/agenda/index.html">Agenda Items</a></h3>
+      <h3><a href="{{ site.base_url }}ga/c1/80/index.html">First Committee</a></h3>
       <div class="card-list-meta">
-        <span class="badge badge-outline">{{ stats.agenda }} items</span>
-        <span>Complete list of agenda items</span>
+        <span class="badge badge-outline">80th Session</span>
+        <span>Disarmament and international security</span>
       </div>
     </div>
     <div class="card-list-date">
-      <span>Browse all</span>
+      <span>Coming soon</span>
     </div>
   </div>
   <div class="card-list-item">
     <div class="card-list-main">
-      <h3><a href="{{ site.base_url }}ga/plenary/{{ session }}/documents/index.html">Documents</a></h3>
+      <h3><a href="{{ site.base_url }}ga/c2/80/index.html">Second Committee</a></h3>
       <div class="card-list-meta">
-        <span class="badge badge-outline">{{ stats.documents }} documents</span>
-        <span>Resolutions, reports, and papers</span>
+        <span class="badge badge-outline">80th Session</span>
+        <span>Economic and financial matters</span>
       </div>
     </div>
     <div class="card-list-date">
-      <span>Browse all</span>
+      <span>Coming soon</span>
     </div>
   </div>
   <div class="card-list-item">
     <div class="card-list-main">
-      <h3><a href="{{ site.base_url }}ga/plenary/{{ session }}/decisions/index.html">Decisions</a></h3>
+      <h3><a href="{{ site.base_url }}ga/c3/80/index.html">Third Committee</a></h3>
       <div class="card-list-meta">
-        <span class="badge badge-outline">{{ stats.decisions }} decisions</span>
-        <span>Adopted by the General Assembly</span>
+        <span class="badge badge-outline">80th Session</span>
+        <span>Social, humanitarian and cultural affairs</span>
       </div>
     </div>
     <div class="card-list-date">
-      <span>Browse all</span>
+      <span>Coming soon</span>
     </div>
   </div>
   <div class="card-list-item">
     <div class="card-list-main">
-      <h3><a href="{{ site.base_url }}ga/plenary/{{ session }}/proposals/index.html">Proposals</a></h3>
+      <h3><a href="{{ site.base_url }}ga/c4/80/index.html">Fourth Committee</a></h3>
       <div class="card-list-meta">
-        <span class="badge badge-outline">{{ stats.proposals }} proposals</span>
-        <span>Draft resolutions and amendments</span>
+        <span class="badge badge-outline">80th Session</span>
+        <span>Special political and decolonization matters</span>
       </div>
     </div>
     <div class="card-list-date">
-      <span>Browse all</span>
+      <span>Coming soon</span>
+    </div>
+  </div>
+  <div class="card-list-item">
+    <div class="card-list-main">
+      <h3><a href="{{ site.base_url }}ga/c5/80/index.html">Fifth Committee</a></h3>
+      <div class="card-list-meta">
+        <span class="badge badge-outline">80th Session</span>
+        <span>Administrative and budgetary matters</span>
+      </div>
+    </div>
+    <div class="card-list-date">
+      <span>Coming soon</span>
+    </div>
+  </div>
+</div>
+
+<div class="section-header mt-4">
+  <h2>Economic and Social Council</h2>
+  <p class="lead">The Economic and Social Council is the principal body for coordination and policy review on economic, social and environmental issues.</p>
+</div>
+
+<div class="card-list">
+  <div class="card-list-item">
+    <div class="card-list-main">
+      <h3><a href="{{ site.base_url }}ecosoc/plenary/2026/index.html">Plenary — 2026 Session</a></h3>
+      <div class="card-list-meta">
+        <span class="badge">2026</span>
+        <span>Official meetings and documentation</span>
+      </div>
+    </div>
+    <div class="card-list-date">
+      <span>Coming soon</span>
+    </div>
+  </div>
+  <div class="card-list-item">
+    <div class="card-list-main">
+      <h3><a href="{{ site.base_url }}ecosoc/hlpf/2025/index.html">High-level Political Forum on Sustainable Development</a></h3>
+      <div class="card-list-meta">
+        <span class="badge badge-outline">2025</span>
+        <span>Convened under the auspices of the Council</span>
+      </div>
+    </div>
+    <div class="card-list-date">
+      <span>Coming soon</span>
+    </div>
+  </div>
+  <div class="card-list-item">
+    <div class="card-list-main">
+      <h3><a href="{{ site.base_url }}ecosoc/csw/70/index.html">Commission on the Status of Women</a></h3>
+      <div class="card-list-meta">
+        <span class="badge badge-outline">70th</span>
+        <span>Promoting women's rights and gender equality</span>
+      </div>
+    </div>
+    <div class="card-list-date">
+      <span>Coming soon</span>
+    </div>
+  </div>
+  <div class="card-list-item">
+    <div class="card-list-main">
+      <h3><a href="{{ site.base_url }}ecosoc/ggim/15/index.html">Committee of Experts on GGIM</a></h3>
+      <div class="card-list-meta">
+        <span class="badge badge-outline">15th</span>
+        <span>Global Geospatial Information Management</span>
+      </div>
+    </div>
+    <div class="card-list-date">
+      <span>Coming soon</span>
+    </div>
+  </div>
+  <div class="card-list-item">
+    <div class="card-list-main">
+      <h3><a href="{{ site.base_url }}ecosoc/unff/20/index.html">United Nations Forum on Forests</a></h3>
+      <div class="card-list-meta">
+        <span class="badge badge-outline">20th</span>
+        <span>International arrangement on forests</span>
+      </div>
+    </div>
+    <div class="card-list-date">
+      <span>Coming soon</span>
+    </div>
+  </div>
+  <div class="card-list-item">
+    <div class="card-list-main">
+      <h3><a href="{{ site.base_url }}ecosoc/ungegn/2025/index.html">United Nations Group of Experts on Geographical Names</a></h3>
+      <div class="card-list-meta">
+        <span class="badge badge-outline">2025</span>
+        <span>Standardization of geographical names</span>
+      </div>
+    </div>
+    <div class="card-list-date">
+      <span>Coming soon</span>
+    </div>
+  </div>
+</div>
+
+<div class="section-header mt-4">
+  <h2>Conferences</h2>
+  <p class="lead">Special conferences and preparatory committees</p>
+</div>
+
+<div class="card-list">
+  <div class="card-list-item">
+    <div class="card-list-main">
+      <h3><a href="{{ site.base_url }}conferences/ffd4/2025/index.html">Fourth International Conference on Financing for Development</a></h3>
+      <div class="card-list-meta">
+        <span class="badge badge-outline">2025</span>
+        <span>Accelerating implementation of the Addis Ababa Action Agenda</span>
+      </div>
+    </div>
+    <div class="card-list-date">
+      <span>Coming soon</span>
+    </div>
+  </div>
+  <div class="card-list-item">
+    <div class="card-list-main">
+      <h3><a href="{{ site.base_url }}conferences/ffd4pc/3/index.html">FFD4 PrepCom</a></h3>
+      <div class="card-list-meta">
+        <span class="badge badge-outline">PrepCom 3</span>
+        <span>Third preparatory committee session</span>
+      </div>
+    </div>
+    <div class="card-list-date">
+      <span>Coming soon</span>
     </div>
   </div>
 </div>

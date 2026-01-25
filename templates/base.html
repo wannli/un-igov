@@ -8,6 +8,79 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Roboto+Condensed:wght@400;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="{{ site.base_url }}static/css/un-design-system.css" />
+    <style>
+      .dropdown-menu {
+        display: none;
+        position: absolute;
+        background: white;
+        border: 1px solid var(--un-gray-light);
+        box-shadow: var(--shadow-md);
+        min-width: 280px;
+        z-index: 1000;
+        padding: 8px 0;
+      }
+      .dropdown:hover .dropdown-menu,
+      .dropdown-menu:hover {
+        display: block;
+      }
+      .dropdown-item {
+        display: block;
+        padding: 10px 16px;
+        color: var(--un-black);
+        text-decoration: none;
+        font-size: 14px;
+        transition: background var(--transition-fast);
+      }
+      .dropdown-item:hover {
+        background: var(--un-blue-light);
+        color: var(--un-blue);
+      }
+      .dropdown-divider {
+        height: 1px;
+        background: var(--un-gray-light);
+        margin: 8px 0;
+      }
+      .dropdown-header {
+        padding: 8px 16px;
+        font-size: 11px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        color: var(--un-gray);
+      }
+      .site-nav .nav-item {
+        position: relative;
+      }
+      .site-nav .nav-link {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        padding: 12px 16px;
+        font-size: 14px;
+        font-weight: 500;
+        color: var(--un-dark);
+        text-decoration: none;
+        cursor: pointer;
+      }
+      .site-nav .nav-link:hover,
+      .site-nav .nav-link.active {
+        color: var(--un-blue);
+      }
+      .site-nav .nav-link::after {
+        content: '';
+        display: inline-block;
+        width: 0;
+        height: 0;
+        margin-left: 4px;
+        border-left: 4px solid transparent;
+        border-right: 4px solid transparent;
+        border-top: 4px solid var(--un-gray);
+      }
+      .site-nav .nav-link:hover::after,
+      .site-nav .nav-item:hover .nav-link::after {
+        border-top-color: var(--un-blue);
+      }
+    </style>
   </head>
   <body>
     <header class="site-header">
@@ -15,11 +88,11 @@
         <div class="site-header-top-inner">
           <div class="language-switcher">
             <a href="/en" class="active">English</a>
-            <a href="/fr">Français</a>
-            <a href="/es">Español</a>
             <a href="/ar">العربية</a>
             <a href="/zh">中文</a>
+            <a href="/fr">Français</a>
             <a href="/ru">Русский</a>
+            <a href="/es">Español</a>
           </div>
           <div class="header-tools">
             <a href="https://www.un.org/en/site-index">A-Z Index</a>
@@ -43,11 +116,43 @@
             </div>
           </a>
           <nav class="site-nav">
-            <a href="{{ site.base_url }}ga/plenary/{{ session }}/meetings/index.html" {% if active_page == 'meetings' %}class="active"{% endif %}>Meetings</a>
-            <a href="{{ site.base_url }}ga/plenary/{{ session }}/agenda/index.html" {% if active_page == 'agenda' %}class="active"{% endif %}>Agenda</a>
-            <a href="{{ site.base_url }}ga/plenary/{{ session }}/documents/index.html" {% if active_page == 'documents' %}class="active"{% endif %}>Documents</a>
-            <a href="{{ site.base_url }}ga/plenary/{{ session }}/decisions/index.html" {% if active_page == 'decisions' %}class="active"{% endif %}>Decisions</a>
-            <a href="{{ site.base_url }}ga/plenary/{{ session }}/proposals/index.html" {% if active_page == 'proposals' %}class="active"{% endif %}>Proposals</a>
+            <div class="nav-item dropdown">
+              <a href="{{ site.base_url }}ga/plenary/80/index.html" class="nav-link {% if body == 'GA' %}active{% endif %}">General Assembly</a>
+              <div class="dropdown-menu">
+                <div class="dropdown-header">80th Session</div>
+                <a href="{{ site.base_url }}ga/plenary/80/index.html" class="dropdown-item">Plenary</a>
+                <a href="{{ site.base_url }}ga/c1/80/index.html" class="dropdown-item">First Committee</a>
+                <a href="{{ site.base_url }}ga/c2/80/index.html" class="dropdown-item">Second Committee</a>
+                <a href="{{ site.base_url }}ga/c3/80/index.html" class="dropdown-item">Third Committee</a>
+                <a href="{{ site.base_url }}ga/c4/80/index.html" class="dropdown-item">Fourth Committee</a>
+                <a href="{{ site.base_url }}ga/c5/80/index.html" class="dropdown-item">Fifth Committee</a>
+                <div class="dropdown-divider"></div>
+                <div class="dropdown-header">Previous Sessions</div>
+                <a href="{{ site.base_url }}ga/plenary/79/index.html" class="dropdown-item">79th Session</a>
+                <a href="{{ site.base_url }}ga/plenary/78/index.html" class="dropdown-item">78th Session</a>
+              </div>
+            </div>
+            <div class="nav-item dropdown">
+              <a href="{{ site.base_url }}ecosoc/plenary/2026/index.html" class="nav-link {% if body == 'ECOSOC' %}active{% endif %}">Economic and Social Council</a>
+              <div class="dropdown-menu">
+                <div class="dropdown-header">2026 Session</div>
+                <a href="{{ site.base_url }}ecosoc/plenary/2026/index.html" class="dropdown-item">Plenary</a>
+                <div class="dropdown-divider"></div>
+                <div class="dropdown-header">Bodies</div>
+                <a href="{{ site.base_url }}ecosoc/hlpf/2025/index.html" class="dropdown-item">High-level Political Forum</a>
+                <a href="{{ site.base_url }}ecosoc/csw/70/index.html" class="dropdown-item">Commission on the Status of Women</a>
+                <a href="{{ site.base_url }}ecosoc/ggim/15/index.html" class="dropdown-item">Committee of Experts on GGIM</a>
+                <a href="{{ site.base_url }}ecosoc/unff/20/index.html" class="dropdown-item">UN Forum on Forests</a>
+                <a href="{{ site.base_url }}ecosoc/ungegn/2025/index.html" class="dropdown-item">UNGEGN</a>
+              </div>
+            </div>
+            <div class="nav-item dropdown">
+              <a href="#" class="nav-link {% if body == 'Conferences' %}active{% endif %}">Conferences</a>
+              <div class="dropdown-menu">
+                <a href="{{ site.base_url }}conferences/ffd4/2025/index.html" class="dropdown-item">FFD4 - Financing for Development</a>
+                <a href="{{ site.base_url }}conferences/ffd4pc/3/index.html" class="dropdown-item">FFD4 PrepCom</a>
+              </div>
+            </div>
           </nav>
         </div>
       </div>

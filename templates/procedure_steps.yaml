@@ -1,0 +1,117 @@
+"Action (numbered resolution)":
+  - condition:
+      PS_voting: "Yes"
+      PS_abstention: present
+    template: "Draft resolution {symbol} was adopted by {in_favor} to {against}, with {abstentions} abstentions (decision {resolution})."
+    fields:
+      symbol:
+        path: "PS_selectDocumentFromWorkPackage.0.DD_symbol1"
+        transform: ["strip_prefix:A/80/", "strip_prefix:DR "]
+      in_favor: "PS_InFavor"
+      against: "PS_against"
+      abstentions: "PS_abstention"
+      resolution: "PS_recordResolutionNumber"
+
+  - condition:
+      PS_voting: "Yes"
+    template: "Draft resolution {symbol} was adopted by {in_favor} to {against} (decision {resolution})."
+    fields:
+      symbol:
+        path: "PS_selectDocumentFromWorkPackage.0.DD_symbol1"
+        transform: ["strip_prefix:A/80/", "strip_prefix:DR "]
+      in_favor: "PS_InFavor"
+      against: "PS_against"
+      resolution: "PS_recordResolutionNumber"
+
+  - condition:
+      PS_voting: "No"
+      PS_outcome: "NOT-ADOPTED"
+    template: "Draft resolution {symbol} was not adopted."
+    fields:
+      symbol:
+        path: "PS_selectDocumentFromWorkPackage.0.DD_symbol1"
+        transform: ["strip_prefix:A/80/", "strip_prefix:DR "]
+
+  - condition:
+      PS_voting: "No"
+    template: "Draft resolution {symbol} was rejected."
+    fields:
+      symbol:
+        path: "PS_selectDocumentFromWorkPackage.0.DD_symbol1"
+        transform: ["strip_prefix:A/80/", "strip_prefix:DR "]
+
+  - condition:
+      PS_voting: "No"
+      PS_outcome: "ADOPTED"
+    template: "Draft resolution {symbol} was adopted without a vote."
+    fields:
+      symbol:
+        path: "PS_selectDocumentFromWorkPackage.0.DD_symbol1"
+        transform: ["strip_prefix:A/80/", "strip_prefix:DR "]
+
+"Action (numbered decision)":
+  - condition:
+      PS_outcome: "ADOPTED"
+    template: "Decision {decision} was adopted."
+    fields:
+      decision: "PS_recordDecisionNumber"
+
+  - template: "Decision {decision} was taken."
+    fields:
+      decision: "PS_recordDecisionNumber"
+
+"Action (unnumbered decision)":
+  - condition:
+      PS_voting: "No"
+      PS_outcome: "ADOPTED"
+    template: "The Assembly proceeded to adopt without a vote: {PS_title}."
+    fields:
+      PS_title: "PS_title"
+  - condition:
+      PS_title: present
+    template: "{PS_title}"
+    fields:
+      PS_title: "PS_title"
+  - template: "Decision taken."
+    fields: {}
+
+"Action on amendment":
+  - condition:
+      PS_outcome: "NOT-ADOPTED"
+    template: "The amendment to {symbol} was not adopted."
+    fields:
+      symbol:
+        path: "PS_selectDocumentFromWorkPackage.0.DD_symbol1"
+        transform: ["strip_prefix:A/80/", "strip_prefix:DR "]
+  - template: "Amendment to {symbol} was considered."
+    fields:
+      symbol:
+        path: "PS_selectDocumentFromWorkPackage.0.DD_symbol1"
+        transform: ["strip_prefix:A/80/", "strip_prefix:DR "]
+
+"Introduction of report":
+  template: "{PS_title}"
+  fields:
+    PS_title: "PS_title"
+
+"Statement by the presiding officer":
+  template: "{PS_title}"
+  fields:
+    PS_title: "PS_title"
+
+"Statements in explanation of vote before the vote":
+  template: "Statements in explanation of vote before the vote:"
+  speakers:
+    path: "PS_ListOfSpeakers"
+    name_field: "SP_entity.SP_entity"
+
+"Statements in explanation of vote after the vote":
+  template: "Statements in explanation of vote after the vote:"
+  speakers:
+    path: "PS_ListOfSpeakers"
+    name_field: "SP_entity.SP_entity"
+
+"Agenda item status":
+  template: "{PS_title}"
+  fields:
+    PS_title: "PS_title"

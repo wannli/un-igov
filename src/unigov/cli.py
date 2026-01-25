@@ -8,7 +8,7 @@ import click
 from rich.console import Console
 
 from unigov.config import load_config
-from unigov.generator.builder import build_all, build_category, build_environment, BuildContext
+from unigov.generator.builder import build_all, build_environment, BuildContext
 from unigov.scraper.igov import scrape_ga_session
 
 
@@ -65,7 +65,7 @@ def scrape(config_path: str | None, session_number: str, category: str | None, a
 @click.option("--category", type=str)
 @click.option("--all", "all_categories", is_flag=True, help="Build all categories")
 def build(config_path: str | None, session_number: str, category: str | None, all_categories: bool) -> None:
-    """Build static HTML for GA."""
+    """Build static HTML for GA and other bodies."""
     config = load_config(resolve_config_path(config_path))
     if session_number not in config.ga.sessions:
         raise click.ClickException(f"Unknown session {session_number}")
@@ -73,12 +73,8 @@ def build(config_path: str | None, session_number: str, category: str | None, al
     templates = build_environment(Path(__file__).resolve().parents[2] / "templates")
     ctx = BuildContext(config=config, templates=templates)
 
-    if all_categories or not category:
-        build_all(ctx, session_number)
-        console.print(f"Built all categories for GA session {session_number}.")
-    else:
-        build_category(ctx, session_number, category)
-        console.print(f"Built {category} for GA session {session_number}.")
+    build_all(ctx, session_number)
+    console.print(f"Built all pages for GA session {session_number}.")
 
 
 @cli.command()

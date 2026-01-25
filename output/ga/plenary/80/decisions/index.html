@@ -3,623 +3,1413 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>UN iGov Static | Decisions</title>
+    <title>iGov: portal to the work of intergovernmental bodies | Decisions</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;600;700&family=Noto+Serif:wght@500;600&display=swap"
-      rel="stylesheet"
-    />
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="/static/css/style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Roboto+Condensed:wght@400;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/static/css/un-design-system.css" />
+    <style>
+      .dropdown-menu {
+        display: none;
+        position: absolute;
+        background: white;
+        border: 1px solid var(--un-gray-light);
+        box-shadow: var(--shadow-md);
+        min-width: 280px;
+        z-index: 1000;
+        padding: 8px 0;
+      }
+      .dropdown:hover .dropdown-menu,
+      .dropdown-menu:hover {
+        display: block;
+      }
+      .dropdown-item {
+        display: block;
+        padding: 10px 16px;
+        color: var(--un-black);
+        text-decoration: none;
+        font-size: 14px;
+        transition: background var(--transition-fast);
+      }
+      .dropdown-item:hover {
+        background: var(--un-blue-light);
+        color: var(--un-blue);
+      }
+      .dropdown-divider {
+        height: 1px;
+        background: var(--un-gray-light);
+        margin: 8px 0;
+      }
+      .dropdown-header {
+        padding: 8px 16px;
+        font-size: 11px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        color: var(--un-gray);
+      }
+      .site-nav .nav-item {
+        position: relative;
+      }
+      .site-nav .nav-link {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        padding: 12px 16px;
+        font-size: 14px;
+        font-weight: 500;
+        color: var(--un-dark);
+        text-decoration: none;
+        cursor: pointer;
+      }
+      .site-nav .nav-link:hover,
+      .site-nav .nav-link.active {
+        color: var(--un-blue);
+      }
+      .site-nav .nav-link::after {
+        content: '';
+        display: inline-block;
+        width: 0;
+        height: 0;
+        margin-left: 4px;
+        border-left: 4px solid transparent;
+        border-right: 4px solid transparent;
+        border-top: 4px solid var(--un-gray);
+      }
+      .site-nav .nav-link:hover::after,
+      .site-nav .nav-item:hover .nav-link::after {
+        border-top-color: var(--un-blue);
+      }
+    </style>
   </head>
-  <body class="min-h-screen bg-slate-50 text-slate-900">
-    <header class="border-b border-slate-200 bg-white">
-  <div class="mx-auto flex w-full max-w-6xl items-center gap-6 px-6 py-4">
-    <a class="flex items-center gap-3" href="/index.html">
-      <img
-        src="https://www.un.org/sites/un2.un.org/files/un_emblem_blue.svg"
-        alt="United Nations"
-        class="h-10 w-10"
-      />
-      <div>
-        <p class="font-serif text-xl text-slate-900">United Nations</p>
-        <p class="text-sm uppercase tracking-wide text-slate-500">Intergovernmental Data</p>
+  <body>
+    <header class="site-header">
+      <div class="site-header-top">
+        <div class="site-header-top-inner">
+          <div class="language-switcher">
+            <a href="/en" class="active">English</a>
+            <a href="/ar">العربية</a>
+            <a href="/zh">中文</a>
+            <a href="/fr">Français</a>
+            <a href="/ru">Русский</a>
+            <a href="/es">Español</a>
+          </div>
+          <div class="header-tools">
+            <a href="https://www.un.org/en/site-index">A-Z Index</a>
+            <a href="https://www.un.org/en/contact-us-0">Contact</a>
+          </div>
+        </div>
       </div>
-    </a>
-    <nav class="ml-auto flex items-center gap-4 text-sm font-semibold text-slate-600">
-      <a class="nav-link" href="/ga/plenary/80/meetings/index.html">Meetings</a>
-      <a class="nav-link" href="/ga/plenary/80/agenda/index.html">Agenda</a>
-      <a class="nav-link" href="/ga/plenary/80/documents/index.html">Documents</a>
-      <a class="nav-link" href="/ga/plenary/80/decisions/index.html">Decisions</a>
-      <a class="nav-link" href="/ga/plenary/80/proposals/index.html">Proposals</a>
-    </nav>
-  </div>
-</header>
-    <main class="min-h-[70vh]">
-      
-<section class="page-hero">
-  <div class="mx-auto w-full max-w-6xl px-6 py-10">
-    <p class="eyebrow">General Assembly · Session 80</p>
-    <h1 class="page-title">Decisions</h1>
-  </div>
-</section>
+      <div class="site-header-main">
+        <div class="site-header-inner">
+          <a href="/index.html" class="site-logo">
+            <div class="site-logo-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"/>
+                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                <path d="M2 12h20"/>
+              </svg>
+            </div>
+            <div class="site-logo-text">
+              <span class="site-logo-title">United Nations</span>
+              <span class="site-logo-subtitle">iGov: portal to the work of intergovernmental bodies</span>
+            </div>
+          </a>
+          <nav class="site-nav">
+            <div class="nav-item dropdown">
+              <a href="/ga/plenary/80/index.html" class="nav-link ">General Assembly</a>
+              <div class="dropdown-menu">
+                <div class="dropdown-header">80th Session</div>
+                <a href="/ga/plenary/80/index.html" class="dropdown-item">Plenary</a>
+                <a href="/ga/c1/80/index.html" class="dropdown-item">First Committee</a>
+                <a href="/ga/c2/80/index.html" class="dropdown-item">Second Committee</a>
+                <a href="/ga/c3/80/index.html" class="dropdown-item">Third Committee</a>
+                <a href="/ga/c4/80/index.html" class="dropdown-item">Fourth Committee</a>
+                <a href="/ga/c5/80/index.html" class="dropdown-item">Fifth Committee</a>
+                <div class="dropdown-divider"></div>
+                <div class="dropdown-header">Previous Sessions</div>
+                <a href="/ga/plenary/79/index.html" class="dropdown-item">79th Session</a>
+                <a href="/ga/plenary/78/index.html" class="dropdown-item">78th Session</a>
+              </div>
+            </div>
+            <div class="nav-item dropdown">
+              <a href="/ecosoc/plenary/2026/index.html" class="nav-link ">Economic and Social Council</a>
+              <div class="dropdown-menu">
+                <div class="dropdown-header">2026 Session</div>
+                <a href="/ecosoc/plenary/2026/index.html" class="dropdown-item">Plenary</a>
+                <div class="dropdown-divider"></div>
+                <div class="dropdown-header">Bodies</div>
+                <a href="/ecosoc/hlpf/2025/index.html" class="dropdown-item">High-level Political Forum</a>
+                <a href="/ecosoc/csw/70/index.html" class="dropdown-item">Commission on the Status of Women</a>
+                <a href="/ecosoc/ggim/15/index.html" class="dropdown-item">Committee of Experts on GGIM</a>
+                <a href="/ecosoc/unff/20/index.html" class="dropdown-item">UN Forum on Forests</a>
+                <a href="/ecosoc/ungegn/2025/index.html" class="dropdown-item">UNGEGN</a>
+              </div>
+            </div>
+            <div class="nav-item dropdown">
+              <a href="#" class="nav-link ">Conferences</a>
+              <div class="dropdown-menu">
+                <a href="/conferences/ffd4/2025/index.html" class="dropdown-item">FFD4 - Financing for Development</a>
+                <a href="/conferences/ffd4pc/3/index.html" class="dropdown-item">FFD4 PrepCom</a>
+              </div>
+            </div>
+          </nav>
+        </div>
+      </div>
+    </header>
 
-<section class="mx-auto w-full max-w-6xl px-6 py-10">
-  <div class="space-y-4">
-    
-      <article class="content-card">
-        <div class="flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
-          <div>
-            <p class="text-xs uppercase tracking-widest text-slate-500">80/401</p>
-            <h2 class="mt-1 text-lg font-semibold text-slate-900">Appointment of the members of the Credentials Committee </h2>
-            <p class="mt-1 text-sm text-slate-600">Elections and Appointments · Agenda 3 (a)</p>
-          </div>
-          
-            <div class="text-sm text-slate-500">2025-09-09</div>
-          
-        </div>
-      </article>
-    
-      <article class="content-card">
-        <div class="flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
-          <div>
-            <p class="text-xs uppercase tracking-widest text-slate-500">80/501</p>
-            <h2 class="mt-1 text-lg font-semibold text-slate-900">Meetings of subsidiary organs and entities during the main part of the eightieth session  </h2>
-            <p class="mt-1 text-sm text-slate-600">Other Decisions · Agenda 7</p>
-          </div>
-          
-            <div class="text-sm text-slate-500">2025-09-02</div>
-          
-        </div>
-      </article>
-    
-      <article class="content-card">
-        <div class="flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
-          <div>
-            <p class="text-xs uppercase tracking-widest text-slate-500">80/502</p>
-            <h2 class="mt-1 text-lg font-semibold text-slate-900">General debate of the eightieth session of the General Assembly	  </h2>
-            <p class="mt-1 text-sm text-slate-600">Other Decisions · Agenda 7</p>
-          </div>
-          
-            <div class="text-sm text-slate-500">2025-09-12</div>
-          
-        </div>
-      </article>
-    
-      <article class="content-card">
-        <div class="flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
-          <div>
-            <p class="text-xs uppercase tracking-widest text-slate-500">80/503</p>
-            <h2 class="mt-1 text-lg font-semibold text-slate-900">Rights of reply to addresses by Heads of State </h2>
-            <p class="mt-1 text-sm text-slate-600">Other Decisions · Agenda 7</p>
-          </div>
-          
-            <div class="text-sm text-slate-500">2025-09-12</div>
-          
-        </div>
-      </article>
-    
-      <article class="content-card">
-        <div class="flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
-          <div>
-            <p class="text-xs uppercase tracking-widest text-slate-500">80/504</p>
-            <h2 class="mt-1 text-lg font-semibold text-slate-900">Organization of the eightieth session </h2>
-            <p class="mt-1 text-sm text-slate-600">Other Decisions · Agenda 7</p>
-          </div>
-          
-            <div class="text-sm text-slate-500">2025-09-12</div>
-          
-        </div>
-      </article>
-    
-      <article class="content-card">
-        <div class="flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
-          <div>
-            <p class="text-xs uppercase tracking-widest text-slate-500">80/505</p>
-            <h2 class="mt-1 text-lg font-semibold text-slate-900">Adoption of the agenda and allocation of agenda items </h2>
-            <p class="mt-1 text-sm text-slate-600">Other Decisions · Agenda 7</p>
-          </div>
-          
-            <div class="text-sm text-slate-500">2025-09-12</div>
-          
-        </div>
-      </article>
-    
-      <article class="content-card">
-        <div class="flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
-          <div>
-            <p class="text-xs uppercase tracking-widest text-slate-500">80/506</p>
-            <h2 class="mt-1 text-lg font-semibold text-slate-900">Endorsement of the New York Declaration on the Peaceful Settlement of the Question of Palestine and the Implementation of the Two-State Solution </h2>
-            <p class="mt-1 text-sm text-slate-600">Other Decisions · Agenda 35</p>
-          </div>
-          
-            <div class="text-sm text-slate-500">2025-09-12</div>
-          
-        </div>
-      </article>
-    
-      <article class="content-card">
-        <div class="flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
-          <div>
-            <p class="text-xs uppercase tracking-widest text-slate-500">80/507</p>
-            <h2 class="mt-1 text-lg font-semibold text-slate-900">High-level International Conference for the Peaceful Settlement of the Question of Palestine and the Implementation of the Two-State Solution </h2>
-            <p class="mt-1 text-sm text-slate-600">Other Decisions · Agenda 35</p>
-          </div>
-          
-            <div class="text-sm text-slate-500">2025-09-19</div>
-          
-        </div>
-      </article>
-    
-      <article class="content-card">
-        <div class="flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
-          <div>
-            <p class="text-xs uppercase tracking-widest text-slate-500">80/402</p>
-            <h2 class="mt-1 text-lg font-semibold text-slate-900">Election of members of the Human Rights Council</h2>
-            <p class="mt-1 text-sm text-slate-600">Elections and Appointments · Agenda 114 (c)</p>
-          </div>
-          
-            <div class="text-sm text-slate-500">2025-10-14</div>
-          
-        </div>
-      </article>
-    
-      <article class="content-card">
-        <div class="flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
-          <div>
-            <p class="text-xs uppercase tracking-widest text-slate-500">80/508</p>
-            <h2 class="mt-1 text-lg font-semibold text-slate-900">Report of the International Residual Mechanism for Criminal Tribunals</h2>
-            <p class="mt-1 text-sm text-slate-600">Other Decisions · Agenda 128</p>
-          </div>
-          
-            <div class="text-sm text-slate-500">2025-10-22</div>
-          
-        </div>
-      </article>
-    
-      <article class="content-card">
-        <div class="flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
-          <div>
-            <p class="text-xs uppercase tracking-widest text-slate-500">80/509</p>
-            <h2 class="mt-1 text-lg font-semibold text-slate-900">World Social Summit</h2>
-            <p class="mt-1 text-sm text-slate-600">Other Decisions · Agenda 25 (b)</p>
-          </div>
-          
-            <div class="text-sm text-slate-500">2025-10-31</div>
-          
-        </div>
-      </article>
-    
-      <article class="content-card">
-        <div class="flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
-          <div>
-            <p class="text-xs uppercase tracking-widest text-slate-500">80/403</p>
-            <h2 class="mt-1 text-lg font-semibold text-slate-900">Election of a member of the International Court of Justice</h2>
-            <p class="mt-1 text-sm text-slate-600">Elections and Appointments · Agenda 113 (c)</p>
-          </div>
-          
-            <div class="text-sm text-slate-500">2025-11-12</div>
-          
-        </div>
-      </article>
-    
-      <article class="content-card">
-        <div class="flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
-          <div>
-            <p class="text-xs uppercase tracking-widest text-slate-500">80/510</p>
-            <h2 class="mt-1 text-lg font-semibold text-slate-900">Report  of the Economic and Social Council</h2>
-            <p class="mt-1 text-sm text-slate-600">Other Decisions · Agenda 9</p>
-          </div>
-          
-            <div class="text-sm text-slate-500">2025-11-13</div>
-          
-        </div>
-      </article>
-    
-      <article class="content-card">
-        <div class="flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
-          <div>
-            <p class="text-xs uppercase tracking-widest text-slate-500">80/404</p>
-            <h2 class="mt-1 text-lg font-semibold text-slate-900">Election of members of the Committee for Programme and Coordination</h2>
-            <p class="mt-1 text-sm text-slate-600">Elections and Appointments · Agenda 114 (a)</p>
-          </div>
-          
-            <div class="text-sm text-slate-500">2025-11-17</div>
-          
-        </div>
-      </article>
-    
-      <article class="content-card">
-        <div class="flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
-          <div>
-            <p class="text-xs uppercase tracking-widest text-slate-500">80/405</p>
-            <h2 class="mt-1 text-lg font-semibold text-slate-900">Appointment of members of the Committee on Conferences</h2>
-            <p class="mt-1 text-sm text-slate-600">Elections and Appointments · Agenda 115 (g)</p>
-          </div>
-          
-            <div class="text-sm text-slate-500">2025-11-17</div>
-          
-        </div>
-      </article>
-    
-      <article class="content-card">
-        <div class="flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
-          <div>
-            <p class="text-xs uppercase tracking-widest text-slate-500">80/406</p>
-            <h2 class="mt-1 text-lg font-semibold text-slate-900">Confirmation of the appointment of the Administrator of the United Nations Development Programme</h2>
-            <p class="mt-1 text-sm text-slate-600">Elections and Appointments · Agenda 115 (h)</p>
-          </div>
-          
-            <div class="text-sm text-slate-500">2025-11-17</div>
-          
-        </div>
-      </article>
-    
-      <article class="content-card">
-        <div class="flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
-          <div>
-            <p class="text-xs uppercase tracking-widest text-slate-500">80/407</p>
-            <h2 class="mt-1 text-lg font-semibold text-slate-900">Appointment of the judges of the United Nations Appeals Tribunal</h2>
-            <p class="mt-1 text-sm text-slate-600">Elections and Appointments · Agenda 115 (j)</p>
-          </div>
-          
-            <div class="text-sm text-slate-500">2025-11-17</div>
-          
-        </div>
-      </article>
-    
-      <article class="content-card">
-        <div class="flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
-          <div>
-            <p class="text-xs uppercase tracking-widest text-slate-500">80/409</p>
-            <h2 class="mt-1 text-lg font-semibold text-slate-900">Appointment of members of the Advisory Committee on Administrative and Budgetary Questions</h2>
-            <p class="mt-1 text-sm text-slate-600">Elections and Appointments · Agenda 115 (a)</p>
-          </div>
-          
-            <div class="text-sm text-slate-500">2025-11-17</div>
-          
-        </div>
-      </article>
-    
-      <article class="content-card">
-        <div class="flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
-          <div>
-            <p class="text-xs uppercase tracking-widest text-slate-500">80/410</p>
-            <h2 class="mt-1 text-lg font-semibold text-slate-900">Appointment of members of the Committee on Contributions</h2>
-            <p class="mt-1 text-sm text-slate-600">Elections and Appointments · Agenda 115 (b)</p>
-          </div>
-          
-            <div class="text-sm text-slate-500">2025-11-17</div>
-          
-        </div>
-      </article>
-    
-      <article class="content-card">
-        <div class="flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
-          <div>
-            <p class="text-xs uppercase tracking-widest text-slate-500">80/411</p>
-            <h2 class="mt-1 text-lg font-semibold text-slate-900">Confirmation of the appointment of members of the Investments Committee</h2>
-            <p class="mt-1 text-sm text-slate-600">Elections and Appointments · Agenda 115 (c)</p>
-          </div>
-          
-            <div class="text-sm text-slate-500">2025-11-17</div>
-          
-        </div>
-      </article>
-    
-      <article class="content-card">
-        <div class="flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
-          <div>
-            <p class="text-xs uppercase tracking-widest text-slate-500">80/412</p>
-            <h2 class="mt-1 text-lg font-semibold text-slate-900">Appointment of a member of the Board of Auditors</h2>
-            <p class="mt-1 text-sm text-slate-600">Elections and Appointments · Agenda 115 (d)</p>
-          </div>
-          
-            <div class="text-sm text-slate-500">2025-11-17</div>
-          
-        </div>
-      </article>
-    
-      <article class="content-card">
-        <div class="flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
-          <div>
-            <p class="text-xs uppercase tracking-widest text-slate-500">80/413</p>
-            <h2 class="mt-1 text-lg font-semibold text-slate-900">Appointment of members of the International Civil Service Commission</h2>
-            <p class="mt-1 text-sm text-slate-600">Elections and Appointments · Agenda 115 (e)</p>
-          </div>
-          
-            <div class="text-sm text-slate-500">2025-11-17</div>
-          
-        </div>
-      </article>
-    
-      <article class="content-card">
-        <div class="flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
-          <div>
-            <p class="text-xs uppercase tracking-widest text-slate-500">80/414</p>
-            <h2 class="mt-1 text-lg font-semibold text-slate-900">Appointment of members of the Independent Audit Advisory Committee</h2>
-            <p class="mt-1 text-sm text-slate-600">Elections and Appointments · Agenda 115 (f)</p>
-          </div>
-          
-            <div class="text-sm text-slate-500">2025-11-17</div>
-          
-        </div>
-      </article>
-    
-      <article class="content-card">
-        <div class="flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
-          <div>
-            <p class="text-xs uppercase tracking-widest text-slate-500">80/408 A and B</p>
-            <h2 class="mt-1 text-lg font-semibold text-slate-900">Appointment of the judges of the United Nations Dispute Tribunal</h2>
-            <p class="mt-1 text-sm text-slate-600">Elections and Appointments · Agenda 115 (k)</p>
-          </div>
-          
-            <div class="text-sm text-slate-500">2025-11-17</div>
-          
-        </div>
-      </article>
-    
-      <article class="content-card">
-        <div class="flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
-          <div>
-            <p class="text-xs uppercase tracking-widest text-slate-500">80/511</p>
-            <h2 class="mt-1 text-lg font-semibold text-slate-900">High-level meeting on the appraisal of the United Nations Global Plan of Action to Combat Trafficking in Persons</h2>
-            <p class="mt-1 text-sm text-slate-600">Other Decisions · Agenda 107</p>
-          </div>
-          
-            <div class="text-sm text-slate-500">2025-11-24</div>
-          
-        </div>
-      </article>
-    
-      <article class="content-card">
-        <div class="flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
-          <div>
-            <p class="text-xs uppercase tracking-widest text-slate-500">80/512</p>
-            <h2 class="mt-1 text-lg font-semibold text-slate-900">Reducing space threats through norms, rules and principles of responsible behaviour</h2>
-            <p class="mt-1 text-sm text-slate-600">Other Decisions · Agenda 97 (d)</p>
-          </div>
-          
-            <div class="text-sm text-slate-500">2025-12-01</div>
-          
-        </div>
-      </article>
-    
-      <article class="content-card">
-        <div class="flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
-          <div>
-            <p class="text-xs uppercase tracking-widest text-slate-500">80/513</p>
-            <h2 class="mt-1 text-lg font-semibold text-slate-900">Treaty banning the production of fissile material for nuclear weapons or other nuclear explosive devices</h2>
-            <p class="mt-1 text-sm text-slate-600">Other Decisions · Agenda 99 (a)</p>
-          </div>
-          
-            <div class="text-sm text-slate-500">2025-12-01</div>
-          
-        </div>
-      </article>
-    
-      <article class="content-card">
-        <div class="flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
-          <div>
-            <p class="text-xs uppercase tracking-widest text-slate-500">80/514</p>
-            <h2 class="mt-1 text-lg font-semibold text-slate-900">Compliance with non-proliferation, arms limitation and disarmament agreements and commitments</h2>
-            <p class="mt-1 text-sm text-slate-600">Other Decisions · Agenda 99 (aa)</p>
-          </div>
-          
-            <div class="text-sm text-slate-500">2025-12-01</div>
-          
-        </div>
-      </article>
-    
-      <article class="content-card">
-        <div class="flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
-          <div>
-            <p class="text-xs uppercase tracking-widest text-slate-500">80/515</p>
-            <h2 class="mt-1 text-lg font-semibold text-slate-900">Provisional programme of work and timetable of the First Committee for 2026</h2>
-            <p class="mt-1 text-sm text-slate-600">Other Decisions · Agenda 121</p>
-          </div>
-          
-            <div class="text-sm text-slate-500">2025-12-01</div>
-          
-        </div>
-      </article>
-    
-      <article class="content-card">
-        <div class="flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
-          <div>
-            <p class="text-xs uppercase tracking-widest text-slate-500">80/516 A, B, C and D</p>
-            <h2 class="mt-1 text-lg font-semibold text-slate-900">Increase in the membership of the Committee on the Peaceful Uses of Outer Space</h2>
-            <p class="mt-1 text-sm text-slate-600">Other Decisions · Agenda 48</p>
-          </div>
-          
-            <div class="text-sm text-slate-500">2025-12-05</div>
-          
-        </div>
-      </article>
-    
-      <article class="content-card">
-        <div class="flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
-          <div>
-            <p class="text-xs uppercase tracking-widest text-slate-500">80/517</p>
-            <h2 class="mt-1 text-lg font-semibold text-slate-900">Question of Gibraltar</h2>
-            <p class="mt-1 text-sm text-slate-600">Other Decisions · Agenda 58</p>
-          </div>
-          
-            <div class="text-sm text-slate-500">2025-12-05</div>
-          
-        </div>
-      </article>
-    
-      <article class="content-card">
-        <div class="flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
-          <div>
-            <p class="text-xs uppercase tracking-widest text-slate-500">80/518</p>
-            <h2 class="mt-1 text-lg font-semibold text-slate-900">Proposed programme of work and timetable of the Special Political and Decolonization Committee (Fourth Committee) for the eighty-first session of the General Assembly</h2>
-            <p class="mt-1 text-sm text-slate-600">Other Decisions · Agenda 121</p>
-          </div>
-          
-            <div class="text-sm text-slate-500">2025-12-05</div>
-          
-        </div>
-      </article>
-    
-      <article class="content-card">
-        <div class="flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
-          <div>
-            <p class="text-xs uppercase tracking-widest text-slate-500">80/519</p>
-            <h2 class="mt-1 text-lg font-semibold text-slate-900">Draft programme of work of the Second Committee for the eighty-first session of the General Assembly</h2>
-            <p class="mt-1 text-sm text-slate-600">Other Decisions · Agenda 121</p>
-          </div>
-          
-            <div class="text-sm text-slate-500">2025-12-15</div>
-          
-        </div>
-      </article>
-    
-      <article class="content-card">
-        <div class="flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
-          <div>
-            <p class="text-xs uppercase tracking-widest text-slate-500">80/520</p>
-            <h2 class="mt-1 text-lg font-semibold text-slate-900">Revitalization of the work of the Second Committee</h2>
-            <p class="mt-1 text-sm text-slate-600">Other Decisions · Agenda 121</p>
-          </div>
-          
-            <div class="text-sm text-slate-500">2025-12-15</div>
-          
-        </div>
-      </article>
-    
-      <article class="content-card">
-        <div class="flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
-          <div>
-            <p class="text-xs uppercase tracking-widest text-slate-500">80/521</p>
-            <h2 class="mt-1 text-lg font-semibold text-slate-900">Preparatory Committee for the United Nations Conference of Plenipotentiaries on Prevention and Punishment of Crimes against Humanity </h2>
-            <p class="mt-1 text-sm text-slate-600">Other Decisions · Agenda 81</p>
-          </div>
-          
-            <div class="text-sm text-slate-500">2025-12-15</div>
-          
-        </div>
-      </article>
-    
-      <article class="content-card">
-        <div class="flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
-          <div>
-            <p class="text-xs uppercase tracking-widest text-slate-500">80/522</p>
-            <h2 class="mt-1 text-lg font-semibold text-slate-900">Provisional programme of work of the Sixth Committee for the eighty-first session </h2>
-            <p class="mt-1 text-sm text-slate-600">Other Decisions · Agenda 121</p>
-          </div>
-          
-            <div class="text-sm text-slate-500">2025-12-15</div>
-          
-        </div>
-      </article>
-    
-      <article class="content-card">
-        <div class="flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
-          <div>
-            <p class="text-xs uppercase tracking-widest text-slate-500">80/523</p>
-            <h2 class="mt-1 text-lg font-semibold text-slate-900">Requests for observer status in the General Assembly deferred to the eighty-first session </h2>
-            <p class="mt-1 text-sm text-slate-600">Other Decisions · Agenda 161, 162, 164–169, 171–173 and 176</p>
-          </div>
-          
-            <div class="text-sm text-slate-500">2025-12-15</div>
-          
-        </div>
-      </article>
-    
-      <article class="content-card">
-        <div class="flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
-          <div>
-            <p class="text-xs uppercase tracking-widest text-slate-500">80/524</p>
-            <h2 class="mt-1 text-lg font-semibold text-slate-900">High-level meeting on the overall review of the implementation of the outcomes of the World Summit on the Information Society</h2>
-            <p class="mt-1 text-sm text-slate-600">Other Decisions · Agenda 15</p>
-          </div>
-          
-            <div class="text-sm text-slate-500">2025-12-16</div>
-          
-        </div>
-      </article>
-    
-      <article class="content-card">
-        <div class="flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
-          <div>
-            <p class="text-xs uppercase tracking-widest text-slate-500">80/525</p>
-            <h2 class="mt-1 text-lg font-semibold text-slate-900">Draft programme of work of the Third Committee for the eighty-first session of the General Assembly</h2>
-            <p class="mt-1 text-sm text-slate-600">Other Decisions · Agenda 121</p>
-          </div>
-          
-            <div class="text-sm text-slate-500">2025-12-18</div>
-          
-        </div>
-      </article>
-    
-      <article class="content-card">
-        <div class="flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
-          <div>
-            <p class="text-xs uppercase tracking-widest text-slate-500">80/526</p>
-            <h2 class="mt-1 text-lg font-semibold text-slate-900">Questions deferred for future consideration</h2>
-            <p class="mt-1 text-sm text-slate-600">Other Decisions · Agenda 134</p>
-          </div>
-          
-            <div class="text-sm text-slate-500">2025-12-30</div>
-          
-        </div>
-      </article>
-    
-      <article class="content-card">
-        <div class="flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
-          <div>
-            <p class="text-xs uppercase tracking-widest text-slate-500">80/527</p>
-            <h2 class="mt-1 text-lg font-semibold text-slate-900">Agenda items remaining for consideration by the General Assembly at its eightieth session</h2>
-            <p class="mt-1 text-sm text-slate-600">Other Decisions · Agenda 7</p>
-          </div>
-          
-            <div class="text-sm text-slate-500">2025-12-30</div>
-          
-        </div>
-      </article>
-    
-      <article class="content-card">
-        <div class="flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
-          <div>
-            <p class="text-xs uppercase tracking-widest text-slate-500">80/415</p>
-            <h2 class="mt-1 text-lg font-semibold text-slate-900">Election  of members of the Organizational Committee of the Peacebuilding Commission</h2>
-            <p class="mt-1 text-sm text-slate-600">Elections and Appointments · Agenda 114 (b)</p>
-          </div>
-          
-            <div class="text-sm text-slate-500">2025-12-12</div>
-          
-        </div>
-      </article>
-    
-      <article class="content-card">
-        <div class="flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
-          <div>
-            <p class="text-xs uppercase tracking-widest text-slate-500">80/416</p>
-            <h2 class="mt-1 text-lg font-semibold text-slate-900">Election  of the United Nations High Commissioner for Refugees</h2>
-            <p class="mt-1 text-sm text-slate-600">Elections and Appointments · Agenda 114 (e)</p>
-          </div>
-          
-            <div class="text-sm text-slate-500">2025-12-18</div>
-          
-        </div>
-      </article>
-    
-  </div>
-</section>
+    <main class="main-container">
+      
+<div class="sdg-banner">
+  <div class="sdg-color sdg-1"></div>
+  <div class="sdg-color sdg-2"></div>
+  <div class="sdg-color sdg-3"></div>
+  <div class="sdg-color sdg-4"></div>
+  <div class="sdg-color sdg-5"></div>
+  <div class="sdg-color sdg-6"></div>
+  <div class="sdg-color sdg-7"></div>
+  <div class="sdg-color sdg-8"></div>
+  <div class="sdg-color sdg-9"></div>
+  <div class="sdg-color sdg-10"></div>
+  <div class="sdg-color sdg-11"></div>
+  <div class="sdg-color sdg-12"></div>
+  <div class="sdg-color sdg-13"></div>
+  <div class="sdg-color sdg-14"></div>
+  <div class="sdg-color sdg-15"></div>
+  <div class="sdg-color sdg-16"></div>
+  <div class="sdg-color sdg-17"></div>
+</div>
+
+<div class="breadcrumbs">
+  <a href="/index.html">Home</a>
+  <span>/</span>
+  <span>Decisions</span>
+</div>
+
+<div class="page-header">
+  <h1>Decisions — 80th Session</h1>
+  <p class="lead">Decisions adopted by the General Assembly</p>
+</div>
+
+
+<div class="data-table-container">
+  <table>
+    <thead>
+      <tr>
+        <th style="width: 120px;">Decision</th>
+        <th>Title</th>
+        <th style="width: 100px;">Agenda</th>
+        <th style="width: 140px;">Meeting</th>
+      </tr>
+    </thead>
+    <tbody>
+      
+      <tr>
+        <td>
+          <span class="mono">80/401</span>
+          
+            <br><span class="badge badge-outline" style="margin-top: 4px;">Elections and Appointments</span>
+          
+        </td>
+        <td>
+          <a href="#" class="table-link">Appointment of the members of the Credentials Committee </a>
+        </td>
+        <td>
+          
+            Item 3 (a)
+          
+        </td>
+        <td>
+          
+            
+              2025-09-09
+            
+            
+              <div class="meta-row">Meeting 1 plenary meeting</div>
+            
+          
+        </td>
+      </tr>
+      
+      <tr>
+        <td>
+          <span class="mono">80/501</span>
+          
+            <br><span class="badge badge-outline" style="margin-top: 4px;">Other Decisions</span>
+          
+        </td>
+        <td>
+          <a href="#" class="table-link">Meetings of subsidiary organs and entities during the main part of the eightieth session  </a>
+        </td>
+        <td>
+          
+            Item 7
+          
+        </td>
+        <td>
+          
+            
+              2025-09-02
+            
+            
+              <div class="meta-row">Meeting 1 plenary meeting</div>
+            
+          
+        </td>
+      </tr>
+      
+      <tr>
+        <td>
+          <span class="mono">80/502</span>
+          
+            <br><span class="badge badge-outline" style="margin-top: 4px;">Other Decisions</span>
+          
+        </td>
+        <td>
+          <a href="#" class="table-link">General debate of the eightieth session of the General Assembly	  </a>
+        </td>
+        <td>
+          
+            Item 7
+          
+        </td>
+        <td>
+          
+            
+              2025-09-12
+            
+            
+              <div class="meta-row">Meeting 2 plenary meeting</div>
+            
+          
+        </td>
+      </tr>
+      
+      <tr>
+        <td>
+          <span class="mono">80/503</span>
+          
+            <br><span class="badge badge-outline" style="margin-top: 4px;">Other Decisions</span>
+          
+        </td>
+        <td>
+          <a href="#" class="table-link">Rights of reply to addresses by Heads of State </a>
+        </td>
+        <td>
+          
+            Item 7
+          
+        </td>
+        <td>
+          
+            
+              2025-09-12
+            
+            
+              <div class="meta-row">Meeting 2 plenary meeting</div>
+            
+          
+        </td>
+      </tr>
+      
+      <tr>
+        <td>
+          <span class="mono">80/504</span>
+          
+            <br><span class="badge badge-outline" style="margin-top: 4px;">Other Decisions</span>
+          
+        </td>
+        <td>
+          <a href="#" class="table-link">Organization of the eightieth session </a>
+        </td>
+        <td>
+          
+            Item 7
+          
+        </td>
+        <td>
+          
+            
+              2025-09-12
+            
+            
+              <div class="meta-row">Meeting 2nd plenary meeting</div>
+            
+          
+        </td>
+      </tr>
+      
+      <tr>
+        <td>
+          <span class="mono">80/505</span>
+          
+            <br><span class="badge badge-outline" style="margin-top: 4px;">Other Decisions</span>
+          
+        </td>
+        <td>
+          <a href="#" class="table-link">Adoption of the agenda and allocation of agenda items </a>
+        </td>
+        <td>
+          
+            Item 7
+          
+        </td>
+        <td>
+          
+            
+              2025-09-12
+            
+            
+              <div class="meta-row">Meeting 2 plenary meeting</div>
+            
+          
+        </td>
+      </tr>
+      
+      <tr>
+        <td>
+          <span class="mono">80/506</span>
+          
+            <br><span class="badge badge-outline" style="margin-top: 4px;">Other Decisions</span>
+          
+        </td>
+        <td>
+          <a href="#" class="table-link">Endorsement of the New York Declaration on the Peaceful Settlement of the Question of Palestine and the Implementation of the Two-State Solution </a>
+        </td>
+        <td>
+          
+            Item 35
+          
+        </td>
+        <td>
+          
+            
+              2025-09-12
+            
+            
+              <div class="meta-row">Meeting 2 plenary meeting</div>
+            
+          
+        </td>
+      </tr>
+      
+      <tr>
+        <td>
+          <span class="mono">80/507</span>
+          
+            <br><span class="badge badge-outline" style="margin-top: 4px;">Other Decisions</span>
+          
+        </td>
+        <td>
+          <a href="#" class="table-link">High-level International Conference for the Peaceful Settlement of the Question of Palestine and the Implementation of the Two-State Solution </a>
+        </td>
+        <td>
+          
+            Item 35
+          
+        </td>
+        <td>
+          
+            
+              2025-09-19
+            
+            
+              <div class="meta-row">Meeting 3 plenary meeting</div>
+            
+          
+        </td>
+      </tr>
+      
+      <tr>
+        <td>
+          <span class="mono">80/402</span>
+          
+            <br><span class="badge badge-outline" style="margin-top: 4px;">Elections and Appointments</span>
+          
+        </td>
+        <td>
+          <a href="#" class="table-link">Election of members of the Human Rights Council</a>
+        </td>
+        <td>
+          
+            Item 114 (c)
+          
+        </td>
+        <td>
+          
+            
+              2025-10-14
+            
+            
+              <div class="meta-row">Meeting 18th plenary meeting</div>
+            
+          
+        </td>
+      </tr>
+      
+      <tr>
+        <td>
+          <span class="mono">80/508</span>
+          
+            <br><span class="badge badge-outline" style="margin-top: 4px;">Other Decisions</span>
+          
+        </td>
+        <td>
+          <a href="#" class="table-link">Report of the International Residual Mechanism for Criminal Tribunals</a>
+        </td>
+        <td>
+          
+            Item 128
+          
+        </td>
+        <td>
+          
+            
+              2025-10-22
+            
+            
+              <div class="meta-row">Meeting 20th plenary meeting</div>
+            
+          
+        </td>
+      </tr>
+      
+      <tr>
+        <td>
+          <span class="mono">80/509</span>
+          
+            <br><span class="badge badge-outline" style="margin-top: 4px;">Other Decisions</span>
+          
+        </td>
+        <td>
+          <a href="#" class="table-link">World Social Summit</a>
+        </td>
+        <td>
+          
+            Item 25 (b)
+          
+        </td>
+        <td>
+          
+            
+              2025-10-31
+            
+            
+              <div class="meta-row">Meeting 26th plenary meeting</div>
+            
+          
+        </td>
+      </tr>
+      
+      <tr>
+        <td>
+          <span class="mono">80/403</span>
+          
+            <br><span class="badge badge-outline" style="margin-top: 4px;">Elections and Appointments</span>
+          
+        </td>
+        <td>
+          <a href="#" class="table-link">Election of a member of the International Court of Justice</a>
+        </td>
+        <td>
+          
+            Item 113 (c)
+          
+        </td>
+        <td>
+          
+            
+              2025-11-12
+            
+            
+              <div class="meta-row">Meeting 37th plenary meeting</div>
+            
+          
+        </td>
+      </tr>
+      
+      <tr>
+        <td>
+          <span class="mono">80/510</span>
+          
+            <br><span class="badge badge-outline" style="margin-top: 4px;">Other Decisions</span>
+          
+        </td>
+        <td>
+          <a href="#" class="table-link">Report  of the Economic and Social Council</a>
+        </td>
+        <td>
+          
+            Item 9
+          
+        </td>
+        <td>
+          
+            
+              2025-11-13
+            
+            
+              <div class="meta-row">Meeting 38th plenary meeting</div>
+            
+          
+        </td>
+      </tr>
+      
+      <tr>
+        <td>
+          <span class="mono">80/404</span>
+          
+            <br><span class="badge badge-outline" style="margin-top: 4px;">Elections and Appointments</span>
+          
+        </td>
+        <td>
+          <a href="#" class="table-link">Election of members of the Committee for Programme and Coordination</a>
+        </td>
+        <td>
+          
+            Item 114 (a)
+          
+        </td>
+        <td>
+          
+            
+              2025-11-17
+            
+            
+              <div class="meta-row">Meeting 42nd plenary meeting</div>
+            
+          
+        </td>
+      </tr>
+      
+      <tr>
+        <td>
+          <span class="mono">80/405</span>
+          
+            <br><span class="badge badge-outline" style="margin-top: 4px;">Elections and Appointments</span>
+          
+        </td>
+        <td>
+          <a href="#" class="table-link">Appointment of members of the Committee on Conferences</a>
+        </td>
+        <td>
+          
+            Item 115 (g)
+          
+        </td>
+        <td>
+          
+            
+              2025-11-17
+            
+            
+              <div class="meta-row">Meeting 42nd plenary meeting</div>
+            
+          
+        </td>
+      </tr>
+      
+      <tr>
+        <td>
+          <span class="mono">80/406</span>
+          
+            <br><span class="badge badge-outline" style="margin-top: 4px;">Elections and Appointments</span>
+          
+        </td>
+        <td>
+          <a href="#" class="table-link">Confirmation of the appointment of the Administrator of the United Nations Development Programme</a>
+        </td>
+        <td>
+          
+            Item 115 (h)
+          
+        </td>
+        <td>
+          
+            
+              2025-11-17
+            
+            
+              <div class="meta-row">Meeting 42nd plenary meeting</div>
+            
+          
+        </td>
+      </tr>
+      
+      <tr>
+        <td>
+          <span class="mono">80/407</span>
+          
+            <br><span class="badge badge-outline" style="margin-top: 4px;">Elections and Appointments</span>
+          
+        </td>
+        <td>
+          <a href="#" class="table-link">Appointment of the judges of the United Nations Appeals Tribunal</a>
+        </td>
+        <td>
+          
+            Item 115 (j)
+          
+        </td>
+        <td>
+          
+            
+              2025-11-17
+            
+            
+              <div class="meta-row">Meeting 42nd plenary meeting</div>
+            
+          
+        </td>
+      </tr>
+      
+      <tr>
+        <td>
+          <span class="mono">80/409</span>
+          
+            <br><span class="badge badge-outline" style="margin-top: 4px;">Elections and Appointments</span>
+          
+        </td>
+        <td>
+          <a href="#" class="table-link">Appointment of members of the Advisory Committee on Administrative and Budgetary Questions</a>
+        </td>
+        <td>
+          
+            Item 115 (a)
+          
+        </td>
+        <td>
+          
+            
+              2025-11-17
+            
+            
+              <div class="meta-row">Meeting 42nd plenary meeting</div>
+            
+          
+        </td>
+      </tr>
+      
+      <tr>
+        <td>
+          <span class="mono">80/410</span>
+          
+            <br><span class="badge badge-outline" style="margin-top: 4px;">Elections and Appointments</span>
+          
+        </td>
+        <td>
+          <a href="#" class="table-link">Appointment of members of the Committee on Contributions</a>
+        </td>
+        <td>
+          
+            Item 115 (b)
+          
+        </td>
+        <td>
+          
+            
+              2025-11-17
+            
+            
+              <div class="meta-row">Meeting 42nd plenary meeting</div>
+            
+          
+        </td>
+      </tr>
+      
+      <tr>
+        <td>
+          <span class="mono">80/411</span>
+          
+            <br><span class="badge badge-outline" style="margin-top: 4px;">Elections and Appointments</span>
+          
+        </td>
+        <td>
+          <a href="#" class="table-link">Confirmation of the appointment of members of the Investments Committee</a>
+        </td>
+        <td>
+          
+            Item 115 (c)
+          
+        </td>
+        <td>
+          
+            
+              2025-11-17
+            
+            
+              <div class="meta-row">Meeting 42nd plenary meeting</div>
+            
+          
+        </td>
+      </tr>
+      
+      <tr>
+        <td>
+          <span class="mono">80/412</span>
+          
+            <br><span class="badge badge-outline" style="margin-top: 4px;">Elections and Appointments</span>
+          
+        </td>
+        <td>
+          <a href="#" class="table-link">Appointment of a member of the Board of Auditors</a>
+        </td>
+        <td>
+          
+            Item 115 (d)
+          
+        </td>
+        <td>
+          
+            
+              2025-11-17
+            
+            
+              <div class="meta-row">Meeting 42nd plenary meeting</div>
+            
+          
+        </td>
+      </tr>
+      
+      <tr>
+        <td>
+          <span class="mono">80/413</span>
+          
+            <br><span class="badge badge-outline" style="margin-top: 4px;">Elections and Appointments</span>
+          
+        </td>
+        <td>
+          <a href="#" class="table-link">Appointment of members of the International Civil Service Commission</a>
+        </td>
+        <td>
+          
+            Item 115 (e)
+          
+        </td>
+        <td>
+          
+            
+              2025-11-17
+            
+            
+              <div class="meta-row">Meeting 42nd plenary meeting</div>
+            
+          
+        </td>
+      </tr>
+      
+      <tr>
+        <td>
+          <span class="mono">80/414</span>
+          
+            <br><span class="badge badge-outline" style="margin-top: 4px;">Elections and Appointments</span>
+          
+        </td>
+        <td>
+          <a href="#" class="table-link">Appointment of members of the Independent Audit Advisory Committee</a>
+        </td>
+        <td>
+          
+            Item 115 (f)
+          
+        </td>
+        <td>
+          
+            
+              2025-11-17
+            
+            
+              <div class="meta-row">Meeting 42nd plenary meeting</div>
+            
+          
+        </td>
+      </tr>
+      
+      <tr>
+        <td>
+          <span class="mono">80/408 A and B</span>
+          
+            <br><span class="badge badge-outline" style="margin-top: 4px;">Elections and Appointments</span>
+          
+        </td>
+        <td>
+          <a href="#" class="table-link">Appointment of the judges of the United Nations Dispute Tribunal</a>
+        </td>
+        <td>
+          
+            Item 115 (k)
+          
+        </td>
+        <td>
+          
+            
+              2025-11-17
+            
+            
+              <div class="meta-row">Meeting 42nd plenary meeting</div>
+            
+          
+        </td>
+      </tr>
+      
+      <tr>
+        <td>
+          <span class="mono">80/511</span>
+          
+            <br><span class="badge badge-outline" style="margin-top: 4px;">Other Decisions</span>
+          
+        </td>
+        <td>
+          <a href="#" class="table-link">High-level meeting on the appraisal of the United Nations Global Plan of Action to Combat Trafficking in Persons</a>
+        </td>
+        <td>
+          
+            Item 107
+          
+        </td>
+        <td>
+          
+            
+              2025-11-24
+            
+            
+              <div class="meta-row">Meeting 48th plenary meeting</div>
+            
+          
+        </td>
+      </tr>
+      
+      <tr>
+        <td>
+          <span class="mono">80/512</span>
+          
+            <br><span class="badge badge-outline" style="margin-top: 4px;">Other Decisions</span>
+          
+        </td>
+        <td>
+          <a href="#" class="table-link">Reducing space threats through norms, rules and principles of responsible behaviour</a>
+        </td>
+        <td>
+          
+            Item 97 (d)
+          
+        </td>
+        <td>
+          
+            
+              2025-12-01
+            
+            
+              <div class="meta-row">Meeting 52nd plenary meeting</div>
+            
+          
+        </td>
+      </tr>
+      
+      <tr>
+        <td>
+          <span class="mono">80/513</span>
+          
+            <br><span class="badge badge-outline" style="margin-top: 4px;">Other Decisions</span>
+          
+        </td>
+        <td>
+          <a href="#" class="table-link">Treaty banning the production of fissile material for nuclear weapons or other nuclear explosive devices</a>
+        </td>
+        <td>
+          
+            Item 99 (a)
+          
+        </td>
+        <td>
+          
+            
+              2025-12-01
+            
+            
+              <div class="meta-row">Meeting 52nd plenary meeting</div>
+            
+          
+        </td>
+      </tr>
+      
+      <tr>
+        <td>
+          <span class="mono">80/514</span>
+          
+            <br><span class="badge badge-outline" style="margin-top: 4px;">Other Decisions</span>
+          
+        </td>
+        <td>
+          <a href="#" class="table-link">Compliance with non-proliferation, arms limitation and disarmament agreements and commitments</a>
+        </td>
+        <td>
+          
+            Item 99 (aa)
+          
+        </td>
+        <td>
+          
+            
+              2025-12-01
+            
+            
+              <div class="meta-row">Meeting 52nd plenary meeting</div>
+            
+          
+        </td>
+      </tr>
+      
+      <tr>
+        <td>
+          <span class="mono">80/515</span>
+          
+            <br><span class="badge badge-outline" style="margin-top: 4px;">Other Decisions</span>
+          
+        </td>
+        <td>
+          <a href="#" class="table-link">Provisional programme of work and timetable of the First Committee for 2026</a>
+        </td>
+        <td>
+          
+            Item 121
+          
+        </td>
+        <td>
+          
+            
+              2025-12-01
+            
+            
+              <div class="meta-row">Meeting 52nd plenary meeting</div>
+            
+          
+        </td>
+      </tr>
+      
+      <tr>
+        <td>
+          <span class="mono">80/516 A, B, C and D</span>
+          
+            <br><span class="badge badge-outline" style="margin-top: 4px;">Other Decisions</span>
+          
+        </td>
+        <td>
+          <a href="#" class="table-link">Increase in the membership of the Committee on the Peaceful Uses of Outer Space</a>
+        </td>
+        <td>
+          
+            Item 48
+          
+        </td>
+        <td>
+          
+            
+              2025-12-05
+            
+            
+              <div class="meta-row">Meeting 55th plenary meeting</div>
+            
+          
+        </td>
+      </tr>
+      
+      <tr>
+        <td>
+          <span class="mono">80/517</span>
+          
+            <br><span class="badge badge-outline" style="margin-top: 4px;">Other Decisions</span>
+          
+        </td>
+        <td>
+          <a href="#" class="table-link">Question of Gibraltar</a>
+        </td>
+        <td>
+          
+            Item 58
+          
+        </td>
+        <td>
+          
+            
+              2025-12-05
+            
+            
+              <div class="meta-row">Meeting 55th plenary meeting</div>
+            
+          
+        </td>
+      </tr>
+      
+      <tr>
+        <td>
+          <span class="mono">80/518</span>
+          
+            <br><span class="badge badge-outline" style="margin-top: 4px;">Other Decisions</span>
+          
+        </td>
+        <td>
+          <a href="#" class="table-link">Proposed programme of work and timetable of the Special Political and Decolonization Committee (Fourth Committee) for the eighty-first session of the General Assembly</a>
+        </td>
+        <td>
+          
+            Item 121
+          
+        </td>
+        <td>
+          
+            
+              2025-12-05
+            
+            
+              <div class="meta-row">Meeting 55th plenary meeting</div>
+            
+          
+        </td>
+      </tr>
+      
+      <tr>
+        <td>
+          <span class="mono">80/519</span>
+          
+            <br><span class="badge badge-outline" style="margin-top: 4px;">Other Decisions</span>
+          
+        </td>
+        <td>
+          <a href="#" class="table-link">Draft programme of work of the Second Committee for the eighty-first session of the General Assembly</a>
+        </td>
+        <td>
+          
+            Item 121
+          
+        </td>
+        <td>
+          
+            
+              2025-12-15
+            
+            
+              <div class="meta-row">Meeting 64th plenary meeting</div>
+            
+          
+        </td>
+      </tr>
+      
+      <tr>
+        <td>
+          <span class="mono">80/520</span>
+          
+            <br><span class="badge badge-outline" style="margin-top: 4px;">Other Decisions</span>
+          
+        </td>
+        <td>
+          <a href="#" class="table-link">Revitalization of the work of the Second Committee</a>
+        </td>
+        <td>
+          
+            Item 121
+          
+        </td>
+        <td>
+          
+            
+              2025-12-15
+            
+            
+              <div class="meta-row">Meeting 64th plenary meeting</div>
+            
+          
+        </td>
+      </tr>
+      
+      <tr>
+        <td>
+          <span class="mono">80/521</span>
+          
+            <br><span class="badge badge-outline" style="margin-top: 4px;">Other Decisions</span>
+          
+        </td>
+        <td>
+          <a href="#" class="table-link">Preparatory Committee for the United Nations Conference of Plenipotentiaries on Prevention and Punishment of Crimes against Humanity </a>
+        </td>
+        <td>
+          
+            Item 81
+          
+        </td>
+        <td>
+          
+            
+              2025-12-15
+            
+            
+              <div class="meta-row">Meeting 64th plenary meeting</div>
+            
+          
+        </td>
+      </tr>
+      
+      <tr>
+        <td>
+          <span class="mono">80/522</span>
+          
+            <br><span class="badge badge-outline" style="margin-top: 4px;">Other Decisions</span>
+          
+        </td>
+        <td>
+          <a href="#" class="table-link">Provisional programme of work of the Sixth Committee for the eighty-first session </a>
+        </td>
+        <td>
+          
+            Item 121
+          
+        </td>
+        <td>
+          
+            
+              2025-12-15
+            
+            
+              <div class="meta-row">Meeting 64th plenary meeting</div>
+            
+          
+        </td>
+      </tr>
+      
+      <tr>
+        <td>
+          <span class="mono">80/523</span>
+          
+            <br><span class="badge badge-outline" style="margin-top: 4px;">Other Decisions</span>
+          
+        </td>
+        <td>
+          <a href="#" class="table-link">Requests for observer status in the General Assembly deferred to the eighty-first session </a>
+        </td>
+        <td>
+          
+            Item 161, 162, 164–169, 171–173 and 176
+          
+        </td>
+        <td>
+          
+            
+              2025-12-15
+            
+            
+              <div class="meta-row">Meeting 64th plenary meeting</div>
+            
+          
+        </td>
+      </tr>
+      
+      <tr>
+        <td>
+          <span class="mono">80/524</span>
+          
+            <br><span class="badge badge-outline" style="margin-top: 4px;">Other Decisions</span>
+          
+        </td>
+        <td>
+          <a href="#" class="table-link">High-level meeting on the overall review of the implementation of the outcomes of the World Summit on the Information Society</a>
+        </td>
+        <td>
+          
+            Item 15
+          
+        </td>
+        <td>
+          
+            
+              2025-12-16
+            
+            
+              <div class="meta-row">Meeting 65th plenary meeting</div>
+            
+          
+        </td>
+      </tr>
+      
+      <tr>
+        <td>
+          <span class="mono">80/525</span>
+          
+            <br><span class="badge badge-outline" style="margin-top: 4px;">Other Decisions</span>
+          
+        </td>
+        <td>
+          <a href="#" class="table-link">Draft programme of work of the Third Committee for the eighty-first session of the General Assembly</a>
+        </td>
+        <td>
+          
+            Item 121
+          
+        </td>
+        <td>
+          
+            
+              2025-12-18
+            
+            
+              <div class="meta-row">Meeting 69th plenary meeting</div>
+            
+          
+        </td>
+      </tr>
+      
+      <tr>
+        <td>
+          <span class="mono">80/526</span>
+          
+            <br><span class="badge badge-outline" style="margin-top: 4px;">Other Decisions</span>
+          
+        </td>
+        <td>
+          <a href="#" class="table-link">Questions deferred for future consideration</a>
+        </td>
+        <td>
+          
+            Item 134
+          
+        </td>
+        <td>
+          
+            
+              2025-12-30
+            
+            
+              <div class="meta-row">Meeting 69th (resumed) plenary meeting</div>
+            
+          
+        </td>
+      </tr>
+      
+      <tr>
+        <td>
+          <span class="mono">80/527</span>
+          
+            <br><span class="badge badge-outline" style="margin-top: 4px;">Other Decisions</span>
+          
+        </td>
+        <td>
+          <a href="#" class="table-link">Agenda items remaining for consideration by the General Assembly at its eightieth session</a>
+        </td>
+        <td>
+          
+            Item 7
+          
+        </td>
+        <td>
+          
+            
+              2025-12-30
+            
+            
+              <div class="meta-row">Meeting 69th (resumed) plenary meeting</div>
+            
+          
+        </td>
+      </tr>
+      
+      <tr>
+        <td>
+          <span class="mono">80/415</span>
+          
+            <br><span class="badge badge-outline" style="margin-top: 4px;">Elections and Appointments</span>
+          
+        </td>
+        <td>
+          <a href="#" class="table-link">Election  of members of the Organizational Committee of the Peacebuilding Commission</a>
+        </td>
+        <td>
+          
+            Item 114 (b)
+          
+        </td>
+        <td>
+          
+            
+              2025-12-12
+            
+            
+              <div class="meta-row">Meeting 61st plenary meeting</div>
+            
+          
+        </td>
+      </tr>
+      
+      <tr>
+        <td>
+          <span class="mono">80/416</span>
+          
+            <br><span class="badge badge-outline" style="margin-top: 4px;">Elections and Appointments</span>
+          
+        </td>
+        <td>
+          <a href="#" class="table-link">Election  of the United Nations High Commissioner for Refugees</a>
+        </td>
+        <td>
+          
+            Item 114 (e)
+          
+        </td>
+        <td>
+          
+            
+              2025-12-18
+            
+            
+              <div class="meta-row">Meeting 69th plenary meeting</div>
+            
+          
+        </td>
+      </tr>
+      
+    </tbody>
+  </table>
+</div>
+
 
     </main>
-    <footer class="border-t border-slate-200 bg-white">
-  <div class="mx-auto flex w-full max-w-6xl flex-col gap-2 px-6 py-6 text-sm text-slate-500 md:flex-row md:items-center md:justify-between">
-    <p>Department for General Assembly and Conference Management (DGACM)</p>
-    <div class="flex gap-4">
-      <a class="nav-link" href="https://www.un.org/en/about-us/copyright">Copyright</a>
-      <a class="nav-link" href="https://www.un.org/en/about-us/fraud-alert">Fraud Alert</a>
-      <a class="nav-link" href="https://www.un.org/en/about-us/privacy-notice">Privacy Notice</a>
-    </div>
-  </div>
-</footer>
+
+    <footer class="site-footer">
+      <div class="site-footer-inner">
+        <div class="footer-brand">
+          <a href="https://www.un.org/en/">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <circle cx="12" cy="12" r="10"/>
+              <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" fill="none" stroke="currentColor" stroke-width="1"/>
+              <path d="M2 12h20" stroke="currentColor" stroke-width="1"/>
+            </svg>
+            United Nations
+          </a>
+        </div>
+        <div class="footer-links">
+          <a href="https://www.un.org/en/about-us/copyright">Copyright</a>
+          <a href="https://www.un.org/en/about-us/fraud-alert">Fraud Alert</a>
+          <a href="https://www.un.org/en/about-us/privacy-notice">Privacy Notice</a>
+          <a href="https://www.un.org/en/about-us/terms-of-use">Terms of Use</a>
+        </div>
+        <div class="footer-bottom">
+          <p>Department for General Assembly and Conference Management (DGACM)</p>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      (function() {
+        var lastBuild = 1769366182;
+        var pollInterval = 2000;
+        function checkUpdate() {
+          fetch('/__build__').then(function(r) { return r.json(); }).then(function(data) {
+            if (data.timestamp > lastBuild) {
+              lastBuild = data.timestamp;
+              location.reload();
+            }
+          }).catch(function() {});
+        }
+        setInterval(checkUpdate, pollInterval);
+      })();
+    </script>
   </body>
 </html>
