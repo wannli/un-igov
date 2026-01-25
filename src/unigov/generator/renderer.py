@@ -63,6 +63,7 @@ UN_OFFICIAL_COUNTRY_NAMES = {
     "UNITED STATES ": "United States",
     "VENEZUELA": "Venezuela",
     "VENEZUELA (BOLIVARIAN REPUBLIC OF)": "Venezuela (Bolivarian Republic of)",
+    "VIET NAM": "Viet Nam",
 }
 
 
