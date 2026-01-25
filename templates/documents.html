@@ -25,6 +25,8 @@
 <div class="breadcrumbs">
   <a href="{{ site.base_url }}index.html">Home</a>
   <span>/</span>
+  <a href="{{ site.base_url }}ga/plenary/{{ session }}/index.html">General Assembly</a>
+  <span>/</span>
   <span>Documents</span>
 </div>
 
@@ -34,36 +36,32 @@
 </div>
 
 {% if documents %}
-<div class="card-list">
+<div class="grid grid-cols-1 gap-4">
   {% for doc in documents %}
-    <article class="card">
-      <div class="card-body" style="padding: 20px;">
-        <div class="card-list-item" style="padding: 0; border: none; margin: 0;">
-          <div class="card-list-main">
-            <div class="flex items-center gap-3 mb-2">
-              <span class="mono" style="font-size: 0.8rem; font-weight: 600; text-transform: uppercase; color: var(--un-blue);">{{ doc.symbol }}</span>
-              {% if doc.doc_type %}
-                <span class="badge badge-outline">{{ doc.doc_type }}</span>
-              {% endif %}
-            </div>
-            <h3 style="font-size: 1.05rem; margin: 0 0 8px 0;">
-              <a href="#" class="table-link">{{ doc.title or "Untitled document" }}</a>
-            </h3>
-            {% if doc.agenda_title %}
-              <div class="card-list-meta">
-                <span>Agenda {{ doc.agenda_item }}</span>
-                <span>{{ doc.agenda_title }}</span>
-              </div>
-            {% endif %}
-          </div>
-          <div class="card-list-date">
-            {% if doc.date %}
-              <span>{{ doc.date }}</span>
-            {% endif %}
-          </div>
+  <article class="card hover:-translate-y-1 hover:shadow-lg">
+    <a href="#" class="card-link">
+      <div class="card-body">
+        <div class="flex items-center gap-3 mb-2">
+          <span style="font-size: var(--text-xs); font-weight: var(--font-semibold); text-transform: uppercase; color: var(--color-primary-600);">{{ doc.symbol }}</span>
+          {% if doc.doc_type %}
+            <span class="badge badge-outline">{{ doc.doc_type }}</span>
+          {% endif %}
         </div>
+        <h3 style="font-size: var(--text-base); margin: 0 0 var(--space-2) 0;">
+          {{ doc.title or "Untitled document" }}
+        </h3>
+        {% if doc.agenda_title %}
+          <div class="card-list-meta">
+            <span>Agenda {{ doc.agenda_item }}</span>
+            <span>{{ doc.agenda_title }}</span>
+          </div>
+        {% endif %}
+        {% if doc.date %}
+          <div class="text-sm text-gray-500 mt-3">{{ doc.date }}</div>
+        {% endif %}
       </div>
-    </article>
+    </a>
+  </article>
   {% endfor %}
 </div>
 {% else %}

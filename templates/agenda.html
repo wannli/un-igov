@@ -25,6 +25,8 @@
 <div class="breadcrumbs">
   <a href="{{ site.base_url }}index.html">Home</a>
   <span>/</span>
+  <a href="{{ site.base_url }}ga/plenary/{{ session }}/index.html">General Assembly</a>
+  <span>/</span>
   <span>Agenda Items</span>
 </div>
 
@@ -52,12 +54,12 @@
         <td>
           <div style="font-weight: 500;">{{ item.AG_Title }}</div>
           {% if item.AG_Heading %}
-            <div class="meta-row">{{ item.AG_Heading }}</div>
+            <div class="meta-row text-gray-500 text-sm mt-1">{{ item.AG_Heading }}</div>
           {% endif %}
         </td>
         <td>
           {% if item.AG_Body %}
-            <span class="badge">{{ item.AG_Body }}</span>
+            <span class="badge badge-secondary">{{ item.AG_Body }}</span>
           {% endif %}
         </td>
       </tr>

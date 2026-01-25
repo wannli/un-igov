@@ -25,6 +25,8 @@
 <div class="breadcrumbs">
   <a href="{{ site.base_url }}index.html">Home</a>
   <span>/</span>
+  <a href="{{ site.base_url }}ga/plenary/{{ session }}/index.html">General Assembly</a>
+  <span>/</span>
   <span>Proposals</span>
 </div>
 
@@ -49,14 +51,14 @@
       <tr>
         <td>
           {% if proposal.PR_Stage and proposal.PR_Stage[0].DocSymbol %}
-            <span class="mono">{{ proposal.PR_Stage[0].DocSymbol }}</span>
-            <br><span class="meta-row">{{ proposal.PR_Stage[0].StageName }}</span>
+            <span style="font-family: monospace; font-weight: 600;">{{ proposal.PR_Stage[0].DocSymbol }}</span>
+            <br><span class="text-sm text-gray-500 mt-1">{{ proposal.PR_Stage[0].StageName }}</span>
           {% endif %}
         </td>
         <td>
           <a href="#" class="table-link">{{ proposal.PR_Title }}</a>
           {% if proposal.PR_MainSponsors %}
-            <div class="meta-row">Sponsor: {{ proposal.PR_MainSponsors }}</div>
+            <div class="text-sm text-gray-500 mt-1">Sponsor: {{ proposal.PR_MainSponsors }}</div>
           {% endif %}
         </td>
         <td>

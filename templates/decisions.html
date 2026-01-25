@@ -25,6 +25,8 @@
 <div class="breadcrumbs">
   <a href="{{ site.base_url }}index.html">Home</a>
   <span>/</span>
+  <a href="{{ site.base_url }}ga/plenary/{{ session }}/index.html">General Assembly</a>
+  <span>/</span>
   <span>Decisions</span>
 </div>
 
@@ -48,9 +50,9 @@
       {% for decision in decisions %}
       <tr>
         <td>
-          <span class="mono">{{ decision.ED_DecisionNumber }}</span>
+          <span style="font-family: monospace; font-weight: 600;">{{ decision.ED_DecisionNumber }}</span>
           {% if decision.ED_Type %}
-            <br><span class="badge badge-outline" style="margin-top: 4px;">{{ decision.ED_Type }}</span>
+            <br><span class="badge badge-outline mt-2">{{ decision.ED_Type }}</span>
           {% endif %}
         </td>
         <td>
@@ -67,7 +69,7 @@
               {{ decision.ED_Meeting[0].ED_Date[:10] }}
             {% endif %}
             {% if decision.ED_Meeting[0].ED_Number %}
-              <div class="meta-row">Meeting {{ decision.ED_Meeting[0].ED_Number }}</div>
+              <div class="text-sm text-gray-500 mt-1">Meeting {{ decision.ED_Meeting[0].ED_Number }}</div>
             {% endif %}
           {% endif %}
         </td>
