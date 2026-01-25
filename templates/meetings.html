@@ -36,7 +36,6 @@
   <div class="space-y-4">
     {% set upcoming_meetings = [] %}
     {% set past_meetings = [] %}
-    {% set current_date = "now" | date("yyyy-MM-dd") %}
 
     {% for meeting in meetings %}
       {% set meeting_date = meeting.MT_dateTimeScheduleStart[:10] %}

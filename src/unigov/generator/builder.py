@@ -90,7 +90,8 @@ def build_meetings(ctx: BuildContext, session_number: str) -> None:
     template = ctx.templates.get_template("meetings.html")
     data_dir = ctx.config.site.data_dir / "ga" / "plenary" / session_number
     meetings = load_json(data_dir / "meetings.json") or []
-    output = template.render(site=ctx.config.site, session=session_number, meetings=meetings)
+    current_date = datetime.now().strftime("%Y-%m-%d")
+    output = template.render(site=ctx.config.site, session=session_number, meetings=meetings, current_date=current_date)
 
     output_dir = ctx.config.site.output_dir / "ga" / "plenary" / session_number / "meetings"
     ensure_dir(output_dir)
