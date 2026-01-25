@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>iGov: portal to the work of intergovernmental bodies | 48th Plenary meeting - CANCELLED</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/static/css/un-design-system.css" />
+    <style>
+      .dropdown-menu {
+        display: none;
+        position: absolute;
+        background: white;
+        border: 1px solid var(--un-gray-light);
+        box-shadow: var(--shadow-md);
+        min-width: 280px;
+        z-index: 1000;
+        padding: 8px 0;
+      }
+      .dropdown:hover .dropdown-menu,
+      .dropdown-menu:hover {
+        display: block;
+      }
+      .dropdown-item {
+        display: block;
+        padding: 10px 16px;
+        color: var(--un-black);
+        text-decoration: none;
+        font-size: 14px;
+        transition: background var(--transition-fast);
+      }
+      .dropdown-item:hover {
+        background: var(--un-blue-light);
+        color: var(--un-blue);
+      }
+      .dropdown-divider {
+        height: 1px;
+        background: var(--un-gray-light);
+        margin: 8px 0;
+      }
+      .dropdown-header {
+        padding: 8px 16px;
+        font-size: 11px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        color: var(--un-gray);
+      }
+      .site-nav .nav-item {
+        position: relative;
+      }
+      .site-nav .nav-link {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        padding: 12px 16px;
+        font-size: 14px;
+        font-weight: 500;
+        color: var(--un-dark);
+        text-decoration: none;
+        cursor: pointer;
+      }
+      .site-nav .nav-link:hover,
+      .site-nav .nav-link.active {
+        color: var(--un-blue);
+      }
+      .site-nav .nav-link::after {
+        content: '';
+        display: inline-block;
+        width: 0;
+        height: 0;
+        margin-left: 4px;
+        border-left: 4px solid transparent;
+        border-right: 4px solid transparent;
+        border-top: 4px solid var(--un-gray);
+      }
+      .site-nav .nav-link:hover::after,
+      .site-nav .nav-item:hover .nav-link::after {
+        border-top-color: var(--un-blue);
+      }
+    </style>
+    <svg style="display: none;">
+      <symbol id="icon-document" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+        <polyline points="14 2 14 8 20 8"/>
+        <line x1="16" y1="13" x2="8" y2="13"/>
+        <line x1="16" y1="17" x2="8" y2="17"/>
+        <polyline points="10 9 9 9 8 9"/>
+      </symbol>
+      <symbol id="icon-meeting" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+        <line x1="16" y1="2" x2="16" y2="6"/>
+        <line x1="8" y1="2" x2="8" y2="6"/>
+        <line x1="3" y1="10" x2="21" y2="10"/>
+      </symbol>
+      <symbol id="icon-agenda" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <line x1="8" y1="6" x2="21" y2="6"/>
+        <line x1="8" y1="12" x2="21" y2="12"/>
+        <line x1="8" y1="18" x2="21" y2="18"/>
+        <line x1="3" y1="6" x2="3.01" y2="6"/>
+        <line x1="3" y1="12" x2="3.01" y2="12"/>
+        <line x1="3" y1="18" x2="3.01" y2="18"/>
+      </symbol>
+      <symbol id="icon-resolution" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
+        <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
+      </symbol>
+      <symbol id="icon-decision" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <polyline points="9 11 12 14 22 4"/>
+        <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>
+      </symbol>
+      <symbol id="icon-proposal" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/>
+        <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/>
+      </symbol>
+      <symbol id="icon-external" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+        <polyline points="15 3 21 3 21 9"/>
+        <line x1="10" y1="14" x2="21" y2="3"/>
+      </symbol>
+      <symbol id="icon-download" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+        <polyline points="7 10 12 15 17 10"/>
+        <line x1="12" y1="15" x2="12" y2="3"/>
+      </symbol>
+    </svg>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="site-header-top">
+        <div class="site-header-top-inner">
+          <div class="language-switcher">
+            <a href="/en" class="active">English</a>
+            <a href="/ar">العربية</a>
+            <a href="/zh">中文</a>
+            <a href="/fr">Français</a>
+            <a href="/ru">Русский</a>
+            <a href="/es">Español</a>
+          </div>
+          <div class="header-tools">
+            <a href="https://www.un.org/en/site-index">A-Z Index</a>
+            <a href="https://www.un.org/en/contact-us-0">Contact</a>
+          </div>
+        </div>
+      </div>
+      <div class="site-header-main">
+        <div class="site-header-inner">
+          <a href="/index.html" class="site-logo">
+            <div class="site-logo-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"/>
+                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                <path d="M2 12h20"/>
+              </svg>
+            </div>
+            <div class="site-logo-text">
+              <span class="site-logo-title">United Nations</span>
+              <span class="site-logo-subtitle">iGov: portal to the work of intergovernmental bodies</span>
+            </div>
+          </a>
+          <nav class="site-nav">
+            <div class="nav-item dropdown">
+              <a href="/ga/plenary/80/index.html" class="nav-link ">General Assembly</a>
+              <div class="dropdown-menu">
+                <div class="dropdown-header">80th Session</div>
+                <a href="/ga/plenary/80/index.html" class="dropdown-item">Plenary</a>
+                <a href="/ga/c1/80/index.html" class="dropdown-item">First Committee</a>
+                <a href="/ga/c2/80/index.html" class="dropdown-item">Second Committee</a>
+                <a href="/ga/c3/80/index.html" class="dropdown-item">Third Committee</a>
+                <a href="/ga/c4/80/index.html" class="dropdown-item">Fourth Committee</a>
+                <a href="/ga/c5/80/index.html" class="dropdown-item">Fifth Committee</a>
+                <div class="dropdown-divider"></div>
+                <div class="dropdown-header">Previous Sessions</div>
+                <a href="/ga/plenary/79/index.html" class="dropdown-item">79th Session</a>
+                <a href="/ga/plenary/78/index.html" class="dropdown-item">78th Session</a>
+              </div>
+            </div>
+            <div class="nav-item dropdown">
+              <a href="/ecosoc/plenary/2026/index.html" class="nav-link ">Economic and Social Council</a>
+              <div class="dropdown-menu">
+                <div class="dropdown-header">2026 Session</div>
+                <a href="/ecosoc/plenary/2026/index.html" class="dropdown-item">Plenary</a>
+                <div class="dropdown-divider"></div>
+                <div class="dropdown-header">Bodies</div>
+                <a href="/ecosoc/hlpf/2025/index.html" class="dropdown-item">High-level Political Forum</a>
+                <a href="/ecosoc/csw/70/index.html" class="dropdown-item">Commission on the Status of Women</a>
+                <a href="/ecosoc/ggim/15/index.html" class="dropdown-item">Committee of Experts on GGIM</a>
+                <a href="/ecosoc/unff/20/index.html" class="dropdown-item">UN Forum on Forests</a>
+                <a href="/ecosoc/ungegn/2025/index.html" class="dropdown-item">UNGEGN</a>
+              </div>
+            </div>
+            <div class="nav-item dropdown">
+              <a href="#" class="nav-link ">Conferences</a>
+              <div class="dropdown-menu">
+                <a href="/conferences/ffd4/2025/index.html" class="dropdown-item">FFD4 - Financing for Development</a>
+                <a href="/conferences/ffd4pc/3/index.html" class="dropdown-item">FFD4 PrepCom</a>
+              </div>
+            </div>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <main class="main-container">
+      
+<div class="sdg-banner">
+  <div class="sdg-color sdg-1"></div>
+  <div class="sdg-color sdg-2"></div>
+  <div class="sdg-color sdg-3"></div>
+  <div class="sdg-color sdg-4"></div>
+  <div class="sdg-color sdg-5"></div>
+  <div class="sdg-color sdg-6"></div>
+  <div class="sdg-color sdg-7"></div>
+  <div class="sdg-color sdg-8"></div>
+  <div class="sdg-color sdg-9"></div>
+  <div class="sdg-color sdg-10"></div>
+  <div class="sdg-color sdg-11"></div>
+  <div class="sdg-color sdg-12"></div>
+  <div class="sdg-color sdg-13"></div>
+  <div class="sdg-color sdg-14"></div>
+  <div class="sdg-color sdg-15"></div>
+  <div class="sdg-color sdg-16"></div>
+  <div class="sdg-color sdg-17"></div>
+</div>
+
+<div class="breadcrumbs">
+  <a href="/index.html">Home</a>
+  <span>/</span>
+  <a href="/ga/plenary/80/meetings/index.html">Meetings</a>
+  <span>/</span>
+  <span>48th Plenary meeting - CANCELLED</span>
+</div>
+
+<div class="page-header">
+  <h1>48th Plenary meeting - CANCELLED</h1>
+  
+    <span class="badge">Formal meeting</span>
+  
+</div>
+
+<div class="card mb-4">
+  <div class="card-body">
+    <div class="filter-bar" style="margin-bottom: 0; border: none; padding: 0;">
+      <div class="meta-item" style="display: flex; flex-direction: column; gap: 4px;">
+        <span class="filter-bar-label">Date</span>
+        <span style="font-size: 1rem; color: var(--un-black);">Thursday, 20 November 2025</span>
+      </div>
+      <div class="meta-item" style="display: flex; flex-direction: column; gap: 4px;">
+        <span class="filter-bar-label">Time</span>
+        <span style="font-size: 1rem; color: var(--un-black);">15:00 - 18:00</span>
+      </div>
+      
+      
+      <div class="meta-item" style="display: flex; flex-direction: column; gap: 4px;">
+        <span class="filter-bar-label">Session</span>
+        <span style="font-size: 1rem; color: var(--un-black);">EIGHTIETH</span>
+      </div>
+      
+    </div>
+  </div>
+</div>
+
+
+
+
+<div class="section-header mt-4">
+  <h2>Proceedings</h2>
+</div>
+<div class="card mb-4">
+  <div class="card-body" style="line-height: 1.8;">
+    
+      
+      
+      
+      <p><strong>Use of the veto - Item 64</strong></p>
+      
+      
+    
+  </div>
+</div>
+
+
+<div class="mt-4 text-center">
+  <a href="https://igov.un.org/ga/plenary/80/meeting/2025-11-20-48th-plenary-meeting-cancelled" target="_blank" rel="noopener" class="btn btn-outline">
+    View on igov.un.org →
+  </a>
+</div>
+
+    </main>
+
+    <footer class="site-footer">
+      <div class="site-footer-inner">
+        <div class="footer-brand">
+          <a href="https://www.un.org/en/">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <circle cx="12" cy="12" r="10"/>
+              <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" fill="none" stroke="currentColor" stroke-width="1"/>
+              <path d="M2 12h20" stroke="currentColor" stroke-width="1"/>
+            </svg>
+            United Nations
+          </a>
+        </div>
+        <div class="footer-links">
+          <a href="https://www.un.org/en/about-us/copyright">Copyright</a>
+          <a href="https://www.un.org/en/about-us/fraud-alert">Fraud Alert</a>
+          <a href="https://www.un.org/en/about-us/privacy-notice">Privacy Notice</a>
+          <a href="https://www.un.org/en/about-us/terms-of-use">Terms of Use</a>
+        </div>
+        <div class="footer-bottom">
+          <p>Department for General Assembly and Conference Management (DGACM)</p>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      (function() {
+        var lastBuild = 1769367381;
+        var pollInterval = 2000;
+        function checkUpdate() {
+          fetch('/__build__').then(function(r) { return r.json(); }).then(function(data) {
+            if (data.timestamp > lastBuild) {
+              lastBuild = data.timestamp;
+              location.reload();
+            }
+          }).catch(function() {});
+        }
+        setInterval(checkUpdate, pollInterval);
+      })();
+    </script>
+  </body>
+</html>
