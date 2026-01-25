@@ -1,16 +1,5 @@
 :root {
   --un-blue: #009edb;
-  --un-navy: #0b2239;
-  --un-gray: #5b6770;
-  --un-sand: #f2f4f7;
-}
-
-body {
-  font-family: "Noto Sans", "Helvetica Neue", Arial, sans-serif;
-}
-
-.font-serif {
-  font-family: "Noto Serif", Georgia, serif;
 }
 
 .nav-link {
@@ -20,52 +9,4 @@ body {
 
 .nav-link:hover {
   color: var(--un-blue);
-}
-
-.page-hero {
-  background: linear-gradient(135deg, #e8f2f7, #ffffff);
-  border-bottom: 1px solid #e2e8f0;
-}
-
-.page-title {
-  font-family: "Noto Serif", Georgia, serif;
-  font-size: 2rem;
-  color: var(--un-navy);
-}
-
-.eyebrow {
-  text-transform: uppercase;
-  letter-spacing: 0.25em;
-  font-size: 0.7rem;
-  color: var(--un-gray);
-}
-
-.content-card {
-  background: #ffffff;
-  border: 1px solid #e2e8f0;
-  border-radius: 0.75rem;
-  padding: 1.5rem;
-  box-shadow: 0 12px 24px rgba(11, 34, 57, 0.06);
-}
-
-.stat-card {
-  background: #ffffff;
-  border: 1px solid #e2e8f0;
-  border-radius: 0.75rem;
-  padding: 1.5rem;
-  box-shadow: 0 12px 24px rgba(11, 34, 57, 0.06);
-}
-
-.stat-label {
-  font-size: 0.75rem;
-  text-transform: uppercase;
-  letter-spacing: 0.2em;
-  color: var(--un-gray);
-}
-
-.stat-value {
-  margin-top: 0.5rem;
-  font-size: 2rem;
-  font-weight: 600;
-  color: var(--un-navy);
 }

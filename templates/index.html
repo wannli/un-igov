@@ -1,38 +1,31 @@
 {% extends "base.html" %}
 {% set page_title = "General Assembly" %}
 {% block content %}
-<section class="bg-slate-900">
-  <div class="mx-auto w-full max-w-6xl px-6 py-16 text-white">
-    <p class="text-sm uppercase tracking-[0.25em] text-slate-300">General Assembly</p>
-    <h1 class="mt-4 font-serif text-4xl md:text-5xl">Session {{ session }} overview</h1>
-    <p class="mt-4 max-w-2xl text-lg text-slate-200">
-      A consolidated, static view of intergovernmental data for the General Assembly session.
-    </p>
-  </div>
-</section>
+<div class="mb-6">
+  <h1 class="text-3xl font-bold text-gray-900 tracking-tight">Session {{ session }} overview</h1>
+  <p class="mt-2 text-muted">A consolidated, static view of intergovernmental data for the General Assembly session.</p>
+</div>
 
-<section class="mx-auto w-full max-w-6xl px-6 py-12">
-  <div class="grid gap-6 md:grid-cols-3">
-    <div class="stat-card">
-      <p class="stat-label">Meetings</p>
-      <p class="stat-value">{{ stats.meetings }}</p>
-    </div>
-    <div class="stat-card">
-      <p class="stat-label">Agenda Items</p>
-      <p class="stat-value">{{ stats.agenda }}</p>
-    </div>
-    <div class="stat-card">
-      <p class="stat-label">Documents</p>
-      <p class="stat-value">{{ stats.documents }}</p>
-    </div>
-    <div class="stat-card">
-      <p class="stat-label">Decisions</p>
-      <p class="stat-value">{{ stats.decisions }}</p>
-    </div>
-    <div class="stat-card">
-      <p class="stat-label">Proposals</p>
-      <p class="stat-value">{{ stats.proposals }}</p>
-    </div>
-  </div>
-</section>
+<div class="grid gap-4 md:grid-cols-3 lg:grid-cols-5">
+  <a href="{{ site.base_url }}ga/plenary/{{ session }}/meetings/index.html" class="border border-gray-200 rounded-lg p-4 hover:border-gray-300 hover:shadow-md transition-all hover-lift bg-white block">
+    <p class="text-[11px] font-semibold uppercase tracking-wide text-muted">Meetings</p>
+    <p class="mt-2 text-2xl font-bold text-gray-900">{{ stats.meetings }}</p>
+  </a>
+  <a href="{{ site.base_url }}ga/plenary/{{ session }}/agenda/index.html" class="border border-gray-200 rounded-lg p-4 hover:border-gray-300 hover:shadow-md transition-all hover-lift bg-white block">
+    <p class="text-[11px] font-semibold uppercase tracking-wide text-muted">Agenda Items</p>
+    <p class="mt-2 text-2xl font-bold text-gray-900">{{ stats.agenda }}</p>
+  </a>
+  <a href="{{ site.base_url }}ga/plenary/{{ session }}/documents/index.html" class="border border-gray-200 rounded-lg p-4 hover:border-gray-300 hover:shadow-md transition-all hover-lift bg-white block">
+    <p class="text-[11px] font-semibold uppercase tracking-wide text-muted">Documents</p>
+    <p class="mt-2 text-2xl font-bold text-gray-900">{{ stats.documents }}</p>
+  </a>
+  <a href="{{ site.base_url }}ga/plenary/{{ session }}/decisions/index.html" class="border border-gray-200 rounded-lg p-4 hover:border-gray-300 hover:shadow-md transition-all hover-lift bg-white block">
+    <p class="text-[11px] font-semibold uppercase tracking-wide text-muted">Decisions</p>
+    <p class="mt-2 text-2xl font-bold text-gray-900">{{ stats.decisions }}</p>
+  </a>
+  <a href="{{ site.base_url }}ga/plenary/{{ session }}/proposals/index.html" class="border border-gray-200 rounded-lg p-4 hover:border-gray-300 hover:shadow-md transition-all hover-lift bg-white block">
+    <p class="text-[11px] font-semibold uppercase tracking-wide text-muted">Proposals</p>
+    <p class="mt-2 text-2xl font-bold text-gray-900">{{ stats.proposals }}</p>
+  </a>
+</div>
 {% endblock %}
