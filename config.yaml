@@ -1,6 +1,6 @@
 site:
   title: "UN iGov Static"
-  base_url: "/"
+  base_url: "/un-igov/"
   output_dir: "output"
   data_dir: "data"
 
