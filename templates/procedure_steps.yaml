@@ -115,3 +115,29 @@
   template: "{PS_title}"
   fields:
     PS_title: "PS_title"
+
+"Introduction of proposal":
+  - condition:
+      PS_ListOfSpeakers.0.SP_entity.SP_entity: present
+    template: "{speaker} introduced draft resolution {symbol}."
+    speakers:
+      path: "PS_ListOfSpeakers"
+      name_field: "SP_entity.SP_entity"
+      intro_mode: true
+    fields:
+      symbol:
+        path: "PS_selectDocumentFromWorkPackage.0.DD_symbol1"
+        transform: ["strip_prefix:A/79/", "strip_prefix:A/80/"]
+
+  - condition:
+      PS_selectDocumentFromWorkPackage.0.DD_symbol1: present
+    template: "Introduction of draft resolution {symbol}: {title}"
+    fields:
+      symbol:
+        path: "PS_selectDocumentFromWorkPackage.0.DD_symbol1"
+        transform: ["strip_prefix:A/79/", "strip_prefix:A/80/", "strip_prefix:L. ", "strip_prefix:DR "]
+      title:
+        path: "PS_selectDocumentFromWorkPackage.0.DD_workingTitle"
+
+  - template: "Introduction of proposal"
+    fields: {}

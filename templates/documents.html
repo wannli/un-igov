@@ -41,15 +41,15 @@
   <article class="card hover:-translate-y-1 hover:shadow-lg">
     <a href="#" class="card-link">
       <div class="card-body">
-        <div class="flex items-center gap-3 mb-2">
-          <span style="font-size: var(--text-xs); font-weight: var(--font-semibold); text-transform: uppercase; color: var(--color-primary-600);">{{ doc.symbol }}</span>
-          {% if doc.doc_type %}
-            <span class="badge badge-outline">{{ doc.doc_type }}</span>
-          {% endif %}
-        </div>
-        <h3 style="font-size: var(--text-base); margin: 0 0 var(--space-2) 0;">
-          {{ doc.title or "Untitled document" }}
-        </h3>
+          <div class="flex items-center gap-3 mb-2">
+            <span class="text-xs font-semibold uppercase text-primary-600">{{ doc.symbol }}</span>
+            {% if doc.doc_type %}
+              <span class="badge badge-outline">{{ doc.doc_type }}</span>
+            {% endif %}
+          </div>
+          <h3 class="text-base mb-2">
+            {{ doc.title or "Untitled document" }}
+          </h3>
         {% if doc.agenda_title %}
           <div class="card-list-meta">
             <span>Agenda {{ doc.agenda_item }}</span>

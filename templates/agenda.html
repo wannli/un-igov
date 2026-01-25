@@ -40,9 +40,9 @@
   <table>
     <thead>
       <tr>
-        <th style="width: 100px;">Item</th>
+        <th class="w-100">Item</th>
         <th>Title</th>
-        <th style="width: 180px;">Committee</th>
+        <th class="w-180">Committee</th>
       </tr>
     </thead>
     <tbody>
@@ -52,7 +52,7 @@
           <a href="#" class="table-link">Item {{ item.AG_Item }}</a>
         </td>
         <td>
-          <div style="font-weight: 500;">{{ item.AG_Title }}</div>
+          <div class="font-medium">{{ item.AG_Title }}</div>
           {% if item.AG_Heading %}
             <div class="meta-row text-gray-500 text-sm mt-1">{{ item.AG_Heading }}</div>
           {% endif %}

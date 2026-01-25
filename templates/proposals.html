@@ -40,10 +40,10 @@
   <table>
     <thead>
       <tr>
-        <th style="width: 140px;">Document</th>
+        <th class="w-140">Document</th>
         <th>Title</th>
-        <th style="width: 100px;">Agenda</th>
-        <th style="width: 160px;">Originating Body</th>
+        <th class="w-100">Agenda</th>
+        <th class="w-160">Originating Body</th>
       </tr>
     </thead>
     <tbody>
@@ -51,7 +51,7 @@
       <tr>
         <td>
           {% if proposal.PR_Stage and proposal.PR_Stage[0].DocSymbol %}
-            <span style="font-family: monospace; font-weight: 600;">{{ proposal.PR_Stage[0].DocSymbol }}</span>
+            <span class="font-mono font-semibold">{{ proposal.PR_Stage[0].DocSymbol }}</span>
             <br><span class="text-sm text-gray-500 mt-1">{{ proposal.PR_Stage[0].StageName }}</span>
           {% endif %}
         </td>

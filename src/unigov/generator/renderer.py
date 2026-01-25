@@ -215,7 +215,7 @@ UN_OFFICIAL_COUNTRY_NAMES = {
 }
 
 
-def normalize_country_name(name: str) -> str:
+def normalize_country_name(name: str, strip_parenthesized: bool = False) -> str:
     name = name.strip()
 
     parenthesized = ""
@@ -228,7 +228,7 @@ def normalize_country_name(name: str) -> str:
     if name_upper in UN_OFFICIAL_COUNTRY_NAMES:
         name = UN_OFFICIAL_COUNTRY_NAMES[name_upper]
 
-    if parenthesized:
+    if parenthesized and not strip_parenthesized:
         normalized_paren = parenthesized
         for upper_name, official in UN_OFFICIAL_COUNTRY_NAMES.items():
             if upper_name in parenthesized.upper():
@@ -323,13 +323,14 @@ def render_step_speakers(step: dict, speakers_config: dict) -> list[dict]:
     speakers = []
     path = speakers_config.get("path", "")
     name_field = speakers_config.get("name_field", "SP_entity.SP_entity")
+    intro_mode = speakers_config.get("intro_mode", False)
     raw_speakers = get_field(step, path)
     if isinstance(raw_speakers, list):
         for sp in raw_speakers:
             name = get_field(sp, name_field)
             if name and not name.startswith("------"):
-                name = normalize_country_name(name)
-                speakers.append({"name": name})
+                name = normalize_country_name(name, strip_parenthesized=True)
+                speakers.append({"name": name, "is_intro": intro_mode})
     return speakers
 
 
@@ -365,6 +366,11 @@ def render_step(step: dict, templates: dict) -> dict:
 
         text = render_step_text(step, template, fields)
         speakers = render_step_speakers(step, speakers_config) if speakers_config else []
+
+        if speakers and "{speaker}" in text:
+            first_speaker = speakers[0]
+            speaker_name = first_speaker.get("name", "")
+            text = text.replace("{speaker}", f"The representative of {speaker_name}")
 
         text = text.strip()
         if not text:

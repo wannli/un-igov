@@ -81,9 +81,9 @@
     {% if segment_steps or segment.MTS_segmentTitle or segment.MTS_segmentInfo %}
       <div class="segment-title">{{ segment.MTS_segmentTitle or segment.MTS_segmentInfo or 'Agenda Item' }}</div>
       <div class="card">
-        <div class="card-body p-0">
+        <div class="card-body">
           {% for step in segment_steps %}
-          <div class="step-item" style="padding-left: var(--space-6); padding-right: var(--space-6);">
+          <div class="step-item">
             <span class="step-badge">{{ step.type_label }}</span>
             <div class="step-content">
               {{ step.text | safe }}

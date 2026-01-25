@@ -40,17 +40,17 @@
   <table>
     <thead>
       <tr>
-        <th style="width: 120px;">Decision</th>
+        <th class="w-120">Decision</th>
         <th>Title</th>
-        <th style="width: 100px;">Agenda</th>
-        <th style="width: 140px;">Meeting</th>
+        <th class="w-100">Agenda</th>
+        <th class="w-140">Meeting</th>
       </tr>
     </thead>
     <tbody>
       {% for decision in decisions %}
       <tr>
         <td>
-          <span style="font-family: monospace; font-weight: 600;">{{ decision.ED_DecisionNumber }}</span>
+          <span class="font-mono font-semibold">{{ decision.ED_DecisionNumber }}</span>
           {% if decision.ED_Type %}
             <br><span class="badge badge-outline mt-2">{{ decision.ED_Type }}</span>
           {% endif %}
