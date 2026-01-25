@@ -87,13 +87,9 @@ cd output && python3 -m http.server 8000
 
 ## Branch Management
 
-- **Always create/move to an `opencode-XX` branch before committing** - This is critical for managing multiple opencode windows that may be open simultaneously.
-- Before starting any work, check the current branch and create a new opencode branch if needed:
-  ```bash
-  git branch | grep 'opencode'  # Check existing opencode branches
-  git checkout -b opencode-XX   # Create new branch if needed
-  ```
-- After committing, push the branch to origin: `git push -u origin opencode-XX`
+- **Commit directly to main** - No need to create branches for each session.
+- When done, commit changes with a clear message describing what was done.
+- Before pushing, run `git pull --rebase` to avoid merge conflicts.
 
 ## Collaboration Flow
 
