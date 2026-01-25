@@ -498,7 +498,7 @@
 
     <script>
       (function() {
-        var lastBuild = 1769368090;
+        var lastBuild = 1769368396;
         var pollInterval = 2000;
         function checkUpdate() {
           fetch('/__build__').then(function(r) { return r.json(); }).then(function(data) {
@@ -509,6 +509,24 @@
           }).catch(function() {});
         }
         setInterval(checkUpdate, pollInterval);
+      })();
+
+      (function() {
+        var filterSelect = document.getElementById('meeting-type-filter');
+        if (filterSelect) {
+          filterSelect.addEventListener('change', function() {
+            var filterValue = this.value;
+            var cards = document.querySelectorAll('.meeting-list .card');
+            cards.forEach(function(card) {
+              var type = card.getAttribute('data-type') || '';
+              if (filterValue === 'all' || type.indexOf(filterValue) !== -1) {
+                card.style.display = '';
+              } else {
+                card.style.display = 'none';
+              }
+            });
+          });
+        }
       })();
     </script>
   </body>

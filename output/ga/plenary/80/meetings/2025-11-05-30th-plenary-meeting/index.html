@@ -236,74 +236,80 @@
 <div class="page-header">
   <h1>30th Plenary meeting</h1>
   
-    <span class="badge">Formal meeting</span>
+    <span class="badge badge-primary">Formal meeting</span>
   
 </div>
 
-<div class="card mb-4">
-  <div class="card-body">
-    <div class="filter-bar" style="margin-bottom: 0; border: none; padding: 0;">
-      <div class="meta-item" style="display: flex; flex-direction: column; gap: 4px;">
-        <span class="filter-bar-label">Date</span>
-        <span style="font-size: 1rem; color: var(--un-black);">Wednesday, 05 November 2025</span>
-      </div>
-      <div class="meta-item" style="display: flex; flex-direction: column; gap: 4px;">
-        <span class="filter-bar-label">Time</span>
-        <span style="font-size: 1rem; color: var(--un-black);">09:00 - 13:00</span>
-      </div>
-      
-      <div class="meta-item" style="display: flex; flex-direction: column; gap: 4px;">
-        <span class="filter-bar-label">Location</span>
-        <span style="font-size: 1rem; color: var(--un-black);">Doha, Qatar</span>
-      </div>
-      
-      
-      <div class="meta-item" style="display: flex; flex-direction: column; gap: 4px;">
-        <span class="filter-bar-label">Session</span>
-        <span style="font-size: 1rem; color: var(--un-black);">EIGHTIETH</span>
-      </div>
-      
+<div class="meta-card">
+  <div class="meta-grid">
+    <div class="meta-item">
+      <span class="meta-label">Date</span>
+      <span class="meta-value">Wednesday, 05 November 2025</span>
+    </div>
+    <div class="meta-item">
+      <span class="meta-label">Time</span>
+      <span class="meta-value">09:00 - 13:00</span>
+    </div>
+    
+    <div class="meta-item">
+      <span class="meta-label">Location</span>
+      <span class="meta-value">Doha, Qatar</span>
+    </div>
+    
+    
+    <div class="meta-item">
+      <span class="meta-label">Session</span>
+      <span class="meta-value">EIGHTIETH</span>
+    </div>
+    
+  </div>
+</div>
+
+
+<div class="mt-8">
+  <h2>Overview</h2>
+  <div class="card mt-4">
+    <div class="card-body">
+      <p>[A letter from the President of the General Assembly, dated <a href="https://www.un.org/pga/wp-content/uploads/sites/110/2025/10/PGA-Letter_World-Social-Summit_The-Second-World-Summit-for-Social-Development_Concept-note_Speakers-list_EoV.pdf" rel="noopener noreferrer" target="_blank">28 October 2025</a>, was sent to all permanent representatives and permanent observers.]</p>
     </div>
   </div>
 </div>
 
 
-<div class="section-header mt-4">
-  <h2>Overview</h2>
-</div>
-<div class="card mb-4">
-  <div class="card-body">
-    <p>[A letter from the President of the General Assembly, dated <a href="https://www.un.org/pga/wp-content/uploads/sites/110/2025/10/PGA-Letter_World-Social-Summit_The-Second-World-Summit-for-Social-Development_Concept-note_Speakers-list_EoV.pdf" rel="noopener noreferrer" target="_blank">28 October 2025</a>, was sent to all permanent representatives and permanent observers.]</p>
-  </div>
-</div>
 
-
-
-<div class="section-header mt-4">
+<div class="proceedings-section">
   <h2>Proceedings</h2>
-</div>
-<div class="card mb-4">
-  <div class="card-body" style="line-height: 1.8;">
+  
     
-      
-      
-      
-      <p><strong>Social development, including questions relating to the world social situation and to youth, ageing, persons with disabilities and the family - Item 25(b): “World Social Summit” under the title “the Second World Summit for Social Development” (resolution 78/318)</strong></p>
-      
-        <p>
-          Statements
+    
+    
+      <div class="segment-title">Social development, including questions relating to the world social situation and to youth, ageing, persons with disabilities and the family - Item 25(b): “World Social Summit” under the title “the Second World Summit for Social Development” (resolution 78/318)</div>
+      <div class="card">
+        <div class="card-body p-0">
           
-        </p>
-      
-      
+          <div class="step-item" style="padding-left: var(--space-6); padding-right: var(--space-6);">
+            <span class="step-badge">Statements</span>
+            <div class="step-content">
+              Statements
+              
+            </div>
+          </div>
+          
+        </div>
+      </div>
     
-  </div>
+  
 </div>
 
 
-<div class="mt-4 text-center">
+<div class="mt-8 text-center">
   <a href="https://igov.un.org/ga/plenary/80/meeting/2025-11-05-30th-plenary-meeting" target="_blank" rel="noopener" class="btn btn-outline">
-    View on igov.un.org →
+    View on igov.un.org
+    <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+      <polyline points="15 3 21 3 21 9"/>
+      <line x1="10" y1="14" x2="21" y2="3"/>
+    </svg>
   </a>
 </div>
 
@@ -335,7 +341,7 @@
 
     <script>
       (function() {
-        var lastBuild = 1769368090;
+        var lastBuild = 1769368395;
         var pollInterval = 2000;
         function checkUpdate() {
           fetch('/__build__').then(function(r) { return r.json(); }).then(function(data) {
@@ -346,6 +352,24 @@
           }).catch(function() {});
         }
         setInterval(checkUpdate, pollInterval);
+      })();
+
+      (function() {
+        var filterSelect = document.getElementById('meeting-type-filter');
+        if (filterSelect) {
+          filterSelect.addEventListener('change', function() {
+            var filterValue = this.value;
+            var cards = document.querySelectorAll('.meeting-list .card');
+            cards.forEach(function(card) {
+              var type = card.getAttribute('data-type') || '';
+              if (filterValue === 'all' || type.indexOf(filterValue) !== -1) {
+                card.style.display = '';
+              } else {
+                card.style.display = 'none';
+              }
+            });
+          });
+        }
       })();
     </script>
   </body>

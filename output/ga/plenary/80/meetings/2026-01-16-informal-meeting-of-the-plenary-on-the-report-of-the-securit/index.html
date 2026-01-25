@@ -236,53 +236,56 @@
 <div class="page-header">
   <h1>Informal meeting of the plenary on the report of the Security Council</h1>
   
-    <span class="badge">Informal meeting</span>
+    <span class="badge badge-primary">Informal meeting</span>
   
 </div>
 
-<div class="card mb-4">
-  <div class="card-body">
-    <div class="filter-bar" style="margin-bottom: 0; border: none; padding: 0;">
-      <div class="meta-item" style="display: flex; flex-direction: column; gap: 4px;">
-        <span class="filter-bar-label">Date</span>
-        <span style="font-size: 1rem; color: var(--un-black);">Friday, 16 January 2026</span>
-      </div>
-      <div class="meta-item" style="display: flex; flex-direction: column; gap: 4px;">
-        <span class="filter-bar-label">Time</span>
-        <span style="font-size: 1rem; color: var(--un-black);">10:00 - 13:00</span>
-      </div>
-      
-      <div class="meta-item" style="display: flex; flex-direction: column; gap: 4px;">
-        <span class="filter-bar-label">Location</span>
-        <span style="font-size: 1rem; color: var(--un-black);">Conference Room 1</span>
-      </div>
-      
-      
-      <div class="meta-item" style="display: flex; flex-direction: column; gap: 4px;">
-        <span class="filter-bar-label">Session</span>
-        <span style="font-size: 1rem; color: var(--un-black);">EIGHTIETH</span>
-      </div>
-      
+<div class="meta-card">
+  <div class="meta-grid">
+    <div class="meta-item">
+      <span class="meta-label">Date</span>
+      <span class="meta-value">Friday, 16 January 2026</span>
+    </div>
+    <div class="meta-item">
+      <span class="meta-label">Time</span>
+      <span class="meta-value">10:00 - 13:00</span>
+    </div>
+    
+    <div class="meta-item">
+      <span class="meta-label">Location</span>
+      <span class="meta-value">Conference Room 1</span>
+    </div>
+    
+    
+    <div class="meta-item">
+      <span class="meta-label">Session</span>
+      <span class="meta-value">EIGHTIETH</span>
+    </div>
+    
+  </div>
+</div>
+
+
+<div class="mt-8">
+  <h2>Overview</h2>
+  <div class="card mt-4">
+    <div class="card-body">
+      <p>[Letters from the President of the General Assembly, dated <a href="https://www.un.org/pga/80/2026/01/06/letter-from-the-president-of-the-general-assembly-on-the-convening-of-a-general-assembly-informal-meeting-on-united-nations-security-council-report-2025/" rel="noopener noreferrer" target="_blank">6 January 2026</a> and <a href="https://www.un.org/pga/80/2026/01/12/letter-from-the-president-of-the-general-assembly-on-the-general-assembly-informal-meeting-on-united-nations-security-council-report-2025-programme/" rel="noopener noreferrer" target="_blank">12 January 2026</a>, were sent to all permanent representatives and permanent observers.]</p>
     </div>
   </div>
 </div>
 
 
-<div class="section-header mt-4">
-  <h2>Overview</h2>
-</div>
-<div class="card mb-4">
-  <div class="card-body">
-    <p>[Letters from the President of the General Assembly, dated <a href="https://www.un.org/pga/80/2026/01/06/letter-from-the-president-of-the-general-assembly-on-the-convening-of-a-general-assembly-informal-meeting-on-united-nations-security-council-report-2025/" rel="noopener noreferrer" target="_blank">6 January 2026</a> and <a href="https://www.un.org/pga/80/2026/01/12/letter-from-the-president-of-the-general-assembly-on-the-general-assembly-informal-meeting-on-united-nations-security-council-report-2025-programme/" rel="noopener noreferrer" target="_blank">12 January 2026</a>, were sent to all permanent representatives and permanent observers.]</p>
-  </div>
-</div>
 
 
-
-
-<div class="mt-4 text-center">
+<div class="mt-8 text-center">
   <a href="https://igov.un.org/ga/plenary/80/meeting/2026-01-16-informal-meeting-of-the-plenary-on-the-report-of-the-securit" target="_blank" rel="noopener" class="btn btn-outline">
-    View on igov.un.org →
+    View on igov.un.org
+    <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+      <polyline points="15 3 21 3 21 9"/>
+      <line x1="10" y1="14" x2="21" y2="3"/>
+    </svg>
   </a>
 </div>
 
@@ -314,7 +317,7 @@
 
     <script>
       (function() {
-        var lastBuild = 1769368090;
+        var lastBuild = 1769368395;
         var pollInterval = 2000;
         function checkUpdate() {
           fetch('/__build__').then(function(r) { return r.json(); }).then(function(data) {
@@ -325,6 +328,24 @@
           }).catch(function() {});
         }
         setInterval(checkUpdate, pollInterval);
+      })();
+
+      (function() {
+        var filterSelect = document.getElementById('meeting-type-filter');
+        if (filterSelect) {
+          filterSelect.addEventListener('change', function() {
+            var filterValue = this.value;
+            var cards = document.querySelectorAll('.meeting-list .card');
+            cards.forEach(function(card) {
+              var type = card.getAttribute('data-type') || '';
+              if (filterValue === 'all' || type.indexOf(filterValue) !== -1) {
+                card.style.display = '';
+              } else {
+                card.style.display = 'none';
+              }
+            });
+          });
+        }
       })();
     </script>
   </body>

@@ -58,7 +58,7 @@ def slugify(text: str) -> str:
 def meeting_url(meeting: dict) -> str:
     date = meeting.get("MT_dateTimeScheduleStart", "")[:10]
     name = slugify(meeting.get("MT_name", ""))
-    return f"meetings/{date}-{name}/index.html"
+    return f"{date}-{name}/index.html"
 
 
 def build_environment(template_root: Path) -> Environment:

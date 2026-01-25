@@ -32,76 +32,84 @@
 <div class="page-header">
   <h1>{{ meeting.MT_name or "Meeting" }}</h1>
   {% if meeting.MT_type %}
-    <span class="badge">{{ meeting.MT_type }}</span>
+    <span class="badge badge-primary">{{ meeting.MT_type }}</span>
   {% endif %}
 </div>
 
-<div class="card mb-4">
-  <div class="card-body">
-    <div class="filter-bar" style="margin-bottom: 0; border: none; padding: 0;">
-      <div class="meta-item" style="display: flex; flex-direction: column; gap: 4px;">
-        <span class="filter-bar-label">Date</span>
-        <span style="font-size: 1rem; color: var(--un-black);">{{ meeting.MT_dateTimeScheduleStart | datetime_format("%A, %d %B %Y") }}</span>
-      </div>
-      <div class="meta-item" style="display: flex; flex-direction: column; gap: 4px;">
-        <span class="filter-bar-label">Time</span>
-        <span style="font-size: 1rem; color: var(--un-black);">{{ meeting.MT_dateTimeScheduleStart[11:16] }} - {{ meeting.MT_dateTimeScheduleEnd[11:16] }}</span>
-      </div>
-      {% if meeting.MT_room %}
-      <div class="meta-item" style="display: flex; flex-direction: column; gap: 4px;">
-        <span class="filter-bar-label">Location</span>
-        <span style="font-size: 1rem; color: var(--un-black);">{{ meeting.MT_room }}</span>
-      </div>
-      {% endif %}
-      {% if meeting.MT_session %}
-      <div class="meta-item" style="display: flex; flex-direction: column; gap: 4px;">
-        <span class="filter-bar-label">Session</span>
-        <span style="font-size: 1rem; color: var(--un-black);">{{ meeting.MT_session }}</span>
-      </div>
-      {% endif %}
+<div class="meta-card">
+  <div class="meta-grid">
+    <div class="meta-item">
+      <span class="meta-label">Date</span>
+      <span class="meta-value">{{ meeting.MT_dateTimeScheduleStart | datetime_format("%A, %d %B %Y") }}</span>
     </div>
+    <div class="meta-item">
+      <span class="meta-label">Time</span>
+      <span class="meta-value">{{ meeting.MT_dateTimeScheduleStart[11:16] }} - {{ meeting.MT_dateTimeScheduleEnd[11:16] }}</span>
+    </div>
+    {% if meeting.MT_room %}
+    <div class="meta-item">
+      <span class="meta-label">Location</span>
+      <span class="meta-value">{{ meeting.MT_room }}</span>
+    </div>
+    {% endif %}
+    {% if meeting.MT_session %}
+    <div class="meta-item">
+      <span class="meta-label">Session</span>
+      <span class="meta-value">{{ meeting.MT_session }}</span>
+    </div>
+    {% endif %}
   </div>
 </div>
 
 {% if meeting.MT_commentary %}
-<div class="section-header mt-4">
+<div class="mt-8">
   <h2>Overview</h2>
-</div>
-<div class="card mb-4">
-  <div class="card-body">
-    {{ meeting.MT_commentary | safe }}
+  <div class="card mt-4">
+    <div class="card-body">
+      {{ meeting.MT_commentary | safe }}
+    </div>
   </div>
 </div>
 {% endif %}
 
 {% if meeting.MT_segment or rendered_procedure_steps %}
-<div class="section-header mt-4">
+<div class="proceedings-section">
   <h2>Proceedings</h2>
-</div>
-<div class="card mb-4">
-  <div class="card-body" style="line-height: 1.8;">
-    {% for segment in meeting.MT_segment | default([]) %}
-      {% set segment_id = loop.index0 + 1 %}
-      {% set segment_steps = steps_by_segment[segment_id] | selectattr("text") | list %}
-      {% if segment_steps or segment.MTS_segmentTitle or segment.MTS_segmentInfo %}
-      <p><strong>{{ segment.MTS_segmentTitle or segment.MTS_segmentInfo or 'Agenda Item' }}</strong></p>
-      {% for step in segment_steps %}
-        <p>
-          {{ step.text | safe }}
-          {% if step.speakers %}
-            {% for speaker in step.speakers %}{{ speaker.name }}{% if not loop.last %}, {% endif %}{% endfor %}.
-          {% endif %}
-        </p>
-      {% endfor %}
-      {% endif %}
-    {% endfor %}
-  </div>
+  {% for segment in meeting.MT_segment | default([]) %}
+    {% set segment_id = loop.index0 + 1 %}
+    {% set segment_steps = steps_by_segment[segment_id] | selectattr("text") | list %}
+    {% if segment_steps or segment.MTS_segmentTitle or segment.MTS_segmentInfo %}
+      <div class="segment-title">{{ segment.MTS_segmentTitle or segment.MTS_segmentInfo or 'Agenda Item' }}</div>
+      <div class="card">
+        <div class="card-body p-0">
+          {% for step in segment_steps %}
+          <div class="step-item" style="padding-left: var(--space-6); padding-right: var(--space-6);">
+            <span class="step-badge">{{ step.type_label }}</span>
+            <div class="step-content">
+              {{ step.text | safe }}
+              {% if step.speakers %}
+                <span class="text-gray-500">
+                  {% for speaker in step.speakers %}{{ speaker.name }}{% if not loop.last %}, {% endif %}{% endfor %}.
+                </span>
+              {% endif %}
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    {% endif %}
+  {% endfor %}
 </div>
 {% endif %}
 
-<div class="mt-4 text-center">
+<div class="mt-8 text-center">
   <a href="https://igov.un.org/ga/plenary/{{ session }}/meeting/{{ meeting_id }}" target="_blank" rel="noopener" class="btn btn-outline">
-    View on igov.un.org →
+    View on igov.un.org
+    <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+      <polyline points="15 3 21 3 21 9"/>
+      <line x1="10" y1="14" x2="21" y2="3"/>
+    </svg>
   </a>
 </div>
 {% endblock %}
