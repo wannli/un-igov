@@ -110,9 +110,9 @@
 {% endmacro %}
 
 {# --------------------------------------------------------------------------
-   Preview Item (for recent items lists)
-   Usage: {{ preview_item('/url', 'Item title', 'Jan 15, 2026', 'Optional meta') }}
-   -------------------------------------------------------------------------- #}
+    Preview Item (for recent items lists)
+    Usage: {{ preview_item('/url', 'Item title', 'Jan 15, 2026', 'Optional meta') }}
+    -------------------------------------------------------------------------- #}
 {% macro preview_item(href, title, date=None, meta=None) %}
 <div class="preview-item">
   <div>
@@ -120,7 +120,7 @@
       <a href="{{ href }}">{{ title }}</a>
     </p>
     {% if meta %}
-    <p class="preview-item-meta">{{ meta }}</p>
+    <p class="preview-item-meta text-muted">{{ meta }}</p>
     {% endif %}
   </div>
   {% if date %}

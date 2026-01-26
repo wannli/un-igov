@@ -409,19 +409,24 @@ small { font-size: 0.875rem; }
 /* Mega Menu */
 .mega-menu {
   display: none;
-  position: absolute;
-  top: calc(100% - 4px);
+  position: fixed;
+  top: var(--header-height);
   left: 0;
+  right: 0;
   background: white;
-  border: 1px solid var(--gray-200);
-  border-radius: var(--radius-lg);
+  border-bottom: 1px solid var(--gray-200);
   box-shadow: var(--shadow-lg);
-  padding: var(--space-6);
-  min-width: 480px;
+  padding: var(--space-6) 0;
   z-index: 200;
   opacity: 0;
   transform: translateY(-8px);
   transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.mega-menu-container {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 var(--space-8);
 }
 
 .nav-item:hover .mega-menu,
@@ -433,8 +438,8 @@ small { font-size: 0.875rem; }
 
 .mega-menu-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: var(--space-6);
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-8);
 }
 
 .mega-menu-section h4 {

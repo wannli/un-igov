@@ -8,54 +8,9 @@
   "Access official documents, meetings, and decisions from United Nations intergovernmental bodies."
 ) }}
 
-{{ section_header("Active Sessions") }}
-<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-  {{ session_card(site.base_url ~ "ga/plenary/80/index.html", "General Assembly", "80th Session", true) }}
-  {{ session_card(site.base_url ~ "ecosoc/plenary/2026/index.html", "Economic and Social Council", "2026 Session", true) }}
-</div>
-
-<div class="mt-10">
-  {{ section_header("Quick Access") }}
-  <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-    {{ nav_card(site.base_url ~ "ga/plenary/80/index.html", "calendar", "General Assembly", none, "Plenary and committees") }}
-    {{ nav_card(site.base_url ~ "ecosoc/plenary/2026/index.html", "un-emblem", "ECOSOC", none, "Plenary and subsidiary bodies") }}
-    {{ nav_card(site.base_url ~ "conferences/ffd4/2025/index.html", "document", "Conferences", none, "Major UN conferences") }}
-  </div>
-</div>
-
-<div class="mt-10">
-  {{ section_header("General Assembly Committees") }}
-  <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-    <div class="link-list">
-      <a class="link-item" href="{{ site.base_url }}ga/c1/80/index.html">
-        <span>First Committee</span>
-        <span class="text-muted text-sm">Disarmament</span>
-      </a>
-      <a class="link-item" href="{{ site.base_url }}ga/c2/80/index.html">
-        <span>Second Committee</span>
-        <span class="text-muted text-sm">Economic</span>
-      </a>
-      <a class="link-item" href="{{ site.base_url }}ga/c3/80/index.html">
-        <span>Third Committee</span>
-        <span class="text-muted text-sm">Social</span>
-      </a>
-    </div>
-    <div class="link-list">
-      <a class="link-item" href="{{ site.base_url }}ga/c4/80/index.html">
-        <span>Fourth Committee</span>
-        <span class="text-muted text-sm">Political</span>
-      </a>
-      <a class="link-item" href="{{ site.base_url }}ga/c5/80/index.html">
-        <span>Fifth Committee</span>
-        <span class="text-muted text-sm">Budget</span>
-      </a>
-    </div>
-  </div>
-</div>
-
 <div class="mt-10">
   {{ section_header("Recent Activity") }}
-  <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
     <div>
       {{ next_meeting_preview(next_meeting, ga_session_path, site) }}
     </div>
@@ -68,7 +23,7 @@
               site.base_url ~ ga_session_path ~ "/meetings/" ~ (meeting | meeting_url),
               meeting.MT_name or "Meeting",
               meeting.MT_dateTimeScheduleStart | datetime_format("%b %d, %Y"),
-              meeting.MT_commentary | striptags | truncate(70)
+              meeting.MT_body
             ) }}
           {% endfor %}
         </div>
@@ -77,25 +32,15 @@
         {{ empty_state("No recent meetings available yet.") }}
       {% endif %}
     </div>
+  </div>
+</div>
 
-    <div>
-      <h3 class="text-xl mb-3">Latest Decisions</h3>
-      {% if recent_decisions %}
-        <div class="preview-list">
-          {% for decision in recent_decisions %}
-            {{ preview_item(
-              site.base_url ~ ga_session_path ~ "/decisions/index.html",
-              decision.ED_Title or "Decision",
-              decision.ED_Meeting[0].ED_Date | datetime_format("%b %d, %Y") if decision.ED_Meeting and decision.ED_Meeting[0].ED_Date else None,
-              decision.ED_DecisionNumber
-            ) }}
-          {% endfor %}
-        </div>
-        {{ view_all_link(site.base_url ~ ga_session_path ~ "/decisions/index.html", "View all decisions") }}
-      {% else %}
-        {{ empty_state("No recent decisions available yet.") }}
-      {% endif %}
-    </div>
+<div class="mt-10">
+  {{ section_header("Quick Access") }}
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+    {{ nav_card(site.base_url ~ "ga/plenary/80/index.html", "calendar", "General Assembly", none, "Plenary and committees") }}
+    {{ nav_card(site.base_url ~ "ecosoc/plenary/2026/index.html", "un-emblem", "ECOSOC", none, "Plenary and subsidiary bodies") }}
+    {{ nav_card(site.base_url ~ "conferences/ffd4/2025/index.html", "document", "Conferences", none, "Major UN conferences") }}
   </div>
 </div>
 {% endblock %}
