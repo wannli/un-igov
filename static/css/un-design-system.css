@@ -353,8 +353,8 @@ small { font-size: 0.875rem; }
 }
 
 .site-logo-emblem {
-  width: 44px;
-  height: 44px;
+  height: 54px;
+  width: auto;
   color: var(--un-blue);
 }
 
