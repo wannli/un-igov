@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% from "macros.html" import page_header, section_header, session_card, nav_card, preview_item, view_all_link, empty_state %}
+{% from "macros.html" import page_header, section_header, session_card, nav_card, preview_item, view_all_link, empty_state, next_meeting_preview %}
 {% set page_title = "Home" %}
 
 {% block content %}
@@ -55,7 +55,10 @@
 
 <div class="mt-10">
   {{ section_header("Recent Activity") }}
-  <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+    <div>
+      {{ next_meeting_preview(next_meeting, ga_session_path) }}
+    </div>
     <div>
       <h3 class="text-xl mb-3">Latest Meetings</h3>
       {% if recent_meetings %}

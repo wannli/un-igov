@@ -233,3 +233,26 @@
   {% endif %}
 </a>
 {% endmacro %}
+
+{# --------------------------------------------------------------------------
+   Next Meeting Preview (prominent upcoming meeting display)
+   Usage: {{ next_meeting_preview(meeting, base_path) }}
+   -------------------------------------------------------------------------- #}
+{% macro next_meeting_preview(meeting, base_path) %}
+{% if meeting %}
+<div class="next-meeting-card">
+  <div class="flex items-center gap-2 mb-3">
+    {{ icon('calendar', 'lg') }}
+    <span class="badge badge-primary">Next Meeting</span>
+  </div>
+  <h3 class="text-xl mb-2">{{ meeting.MT_name }}</h3>
+  <p class="text-lg mb-3">{{ meeting.MT_dateTimeScheduleStart | datetime_format("%A, %d %B %Y at %H:%M") }}</p>
+  <a href="{{ base_path }}/meetings/{{ meeting | meeting_url }}" class="view-all-link">
+    View details
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <polyline points="9 18 15 12 9 6"/>
+    </svg>
+  </a>
+</div>
+{% endif %}
+{% endmacro %}

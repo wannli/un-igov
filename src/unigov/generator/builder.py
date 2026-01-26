@@ -105,6 +105,15 @@ def get_recent_decisions(data_dir: Path, limit: int = 3) -> list[dict]:
     return sorted(decisions, key=decision_date, reverse=True)[:limit]
 
 
+def get_next_meeting(data_dir: Path) -> dict | None:
+    meetings = load_json(data_dir / "meetings.json") or []
+    today = datetime.now().strftime("%Y-%m-%d")
+    upcoming = [m for m in meetings if m.get("MT_dateTimeScheduleStart", "")[:10] > today]
+    if upcoming:
+        return sorted(upcoming, key=lambda m: m["MT_dateTimeScheduleStart"])[0]
+    return None
+
+
 def build_environment(template_root: Path) -> Environment:
     env = Environment(
         loader=FileSystemLoader(str(template_root)),
@@ -125,6 +134,7 @@ def build_home(ctx: BuildContext, session_number: str) -> None:
         ga_session_path=ga_session_path,
         recent_meetings=get_recent_meetings(data_dir),
         recent_decisions=get_recent_decisions(data_dir),
+        next_meeting=get_next_meeting(data_dir),
         last_build_timestamp=int(datetime.now().timestamp()),
     )
 
@@ -398,6 +408,7 @@ def build_ga_plenary(ctx: BuildContext, session_number: str) -> None:
         stats=get_stats(data_dir),
         recent_meetings=get_recent_meetings(data_dir),
         recent_decisions=get_recent_decisions(data_dir),
+        next_meeting=get_next_meeting(data_dir),
         tabs=[
             {"label": "Plenary", "url": f"{ctx.config.site.base_url}ga/plenary/{session_number}/index.html", "active": True},
             {"label": "C1", "url": f"{ctx.config.site.base_url}ga/c1/{session_number}/index.html"},
@@ -453,6 +464,7 @@ def build_ga_committee(ctx: BuildContext, committee: str, session_number: str) -
         stats=get_stats(data_dir),
         recent_meetings=get_recent_meetings(data_dir),
         recent_decisions=get_recent_decisions(data_dir),
+        next_meeting=get_next_meeting(data_dir),
         tabs=[
             {"label": "Plenary", "url": f"{ctx.config.site.base_url}ga/plenary/{session_number}/index.html"},
             {"label": "C1", "url": f"{ctx.config.site.base_url}ga/c1/{session_number}/index.html", "active": committee == "c1"},
@@ -490,6 +502,7 @@ def build_ecosoc_plenary(ctx: BuildContext, session: str) -> None:
         stats=get_stats(data_dir),
         recent_meetings=get_recent_meetings(data_dir),
         recent_decisions=get_recent_decisions(data_dir),
+        next_meeting=get_next_meeting(data_dir),
         last_build_timestamp=int(datetime.now().timestamp()),
     )
 
@@ -529,6 +542,7 @@ def build_ecosoc_body(ctx: BuildContext, body_code: str, session: str) -> None:
         stats=get_stats(data_dir),
         recent_meetings=get_recent_meetings(data_dir),
         recent_decisions=get_recent_decisions(data_dir),
+        next_meeting=get_next_meeting(data_dir),
         last_build_timestamp=int(datetime.now().timestamp()),
     )
 
@@ -569,6 +583,7 @@ def build_conference(ctx: BuildContext, code: str, session: str) -> None:
         stats=get_stats(data_dir),
         recent_meetings=get_recent_meetings(data_dir),
         recent_decisions=get_recent_decisions(data_dir),
+        next_meeting=get_next_meeting(data_dir),
         last_build_timestamp=int(datetime.now().timestamp()),
     )
 

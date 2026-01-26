@@ -1081,6 +1081,25 @@ tbody tr:hover {
 }
 
 /* ==========================================================================
+   Next Meeting Card
+   ========================================================================== */
+.next-meeting-card {
+  background: var(--un-blue-light);
+  border: 2px solid var(--un-blue);
+  border-radius: var(--radius-lg);
+  padding: var(--space-5);
+  color: var(--gray-900);
+}
+
+.next-meeting-card .icon {
+  color: var(--un-blue);
+}
+
+.next-meeting-card h3 {
+  margin-bottom: var(--space-2);
+}
+
+/* ==========================================================================
    Meeting Detail Layout
    ========================================================================== */
 .meeting-layout {
