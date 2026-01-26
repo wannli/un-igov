@@ -10,21 +10,24 @@
 
 <div class="mt-10">
   {{ section_header("Recent Activity") }}
-  <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
     <div>
       {{ next_meeting_preview(next_meeting, ga_session_path, site) }}
     </div>
-    <div>
+    <div class="md:col-span-2">
       <h3 class="text-xl mb-3">Latest Meetings</h3>
       {% if recent_meetings %}
-        <div class="preview-list">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
           {% for meeting in recent_meetings %}
-            {{ preview_item(
-              site.base_url ~ ga_session_path ~ "/meetings/" ~ (meeting | meeting_url),
-              meeting.MT_name or "Meeting",
-              meeting.MT_dateTimeScheduleStart | datetime_format("%b %d, %Y"),
-              meeting.MT_body
-            ) }}
+            <div class="preview-item">
+              <div>
+                <p class="preview-item-title">
+                  <a href="{{ site.base_url ~ ga_session_path ~ '/meetings/' ~ (meeting | meeting_url) }}">{{ meeting.MT_name or "Meeting" }}</a>
+                </p>
+                <p class="preview-item-meta text-muted">{{ meeting.MT_body }}</p>
+              </div>
+              <span class="preview-item-date">{{ meeting.MT_dateTimeScheduleStart | datetime_format("%b %d, %Y") }}</span>
+            </div>
           {% endfor %}
         </div>
         {{ view_all_link(site.base_url ~ ga_session_path ~ "/meetings/index.html", "View all meetings") }}

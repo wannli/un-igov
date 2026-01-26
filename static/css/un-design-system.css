@@ -424,9 +424,9 @@ small { font-size: 0.875rem; }
 }
 
 .mega-menu-container {
-  max-width: var(--container-max);
+  max-width: 960px;
   margin: 0 auto;
-  padding: 0 var(--space-8);
+  padding: 0 var(--space-4);
 }
 
 .nav-item:hover .mega-menu,
@@ -439,7 +439,7 @@ small { font-size: 0.875rem; }
 .mega-menu-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: var(--space-8);
+  gap: var(--space-6);
 }
 
 .mega-menu-section h4 {
