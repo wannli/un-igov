@@ -208,227 +208,6 @@ def page_breadcrumb(label: str) -> dict[str, str]:
     return {"label": label}
 
 
-def build_ga_breadcrumbs(session: str, page: str | None, config: Config) -> list[dict[str, str]]:
-    """Build breadcrumbs for GA plenary pages."""
-    base = get_base_url(config)
-    breadcrumbs = [
-        home_breadcrumb(config),
-        ga_plenary_breadcrumb(session, config),
-        session_breadcrumb(f"{session} Session", f"{base}ga/plenary/{session}/index.html"),
-    ]
-    if page:
-        breadcrumbs.append(page_breadcrumb(page))
-    return breadcrumbs
-
-
-def build_ga_committee_breadcrumbs(committee: str, session: str, page: str | None, config: Config) -> list[dict[str, str]]:
-    """Build breadcrumbs for GA committee pages."""
-    base = get_base_url(config)
-    breadcrumbs = [
-        home_breadcrumb(config),
-        ga_plenary_breadcrumb(session, config),
-        ga_committee_breadcrumb(committee, session, config),
-    ]
-    if page:
-        breadcrumbs.append(page_breadcrumb(page))
-    return breadcrumbs
-
-
-def build_ecosoc_breadcrumbs(session: str, body_code: str | None, page: str | None, config: Config) -> list[dict[str, str]]:
-    """Build breadcrumbs for ECOSOC pages."""
-    base = get_base_url(config)
-    breadcrumbs = [
-        home_breadcrumb(config),
-        ecosoc_plenary_breadcrumb(session, config),
-    ]
-    if body_code:
-        breadcrumbs.append(ecosoc_body_breadcrumb(body_code, session, config))
-    if page:
-        breadcrumbs.append(page_breadcrumb(page))
-    return breadcrumbs
-
-
-def build_conference_breadcrumbs(code: str, session: str, page: str | None, config: Config) -> list[dict[str, str]]:
-    """Build breadcrumbs for conference pages."""
-    base = get_base_url(config)
-    breadcrumbs = [
-        home_breadcrumb(config),
-        conference_breadcrumb(code, session, config),
-    ]
-    if page:
-        breadcrumbs.append(page_breadcrumb(page))
-    return breadcrumbs
-
-
-def meeting_url(meeting: dict) -> str:
-    date = meeting.get("MT_dateTimeScheduleStart", "")[:10]
-    name = slugify(meeting.get("MT_name", ""))
-    return f"{date}-{name}/index.html"
-
-
-def count_documents(items: list[dict[str, Any]]) -> int:
-    total = 0
-    for item in items:
-        docs = item.get("documents") or []
-        total += len(docs)
-    return total
-
-
-def get_stats(data_dir: Path) -> dict[str, int]:
-    meetings = load_json(data_dir / "meetings.json") or []
-    agenda = load_json(data_dir / "agenda.json") or []
-    documents = load_json(data_dir / "documents.json") or []
-    decisions = load_json(data_dir / "decisions.json") or []
-    proposals = load_json(data_dir / "proposals.json") or {"result": []}
-    return {
-        "meetings": len(meetings),
-        "agenda": len(agenda),
-        "documents": count_documents(documents),
-        "decisions": len(decisions),
-        "proposals": len(proposals.get("result", [])),
-    }
-
-
-def group_agenda_items(agenda: list[dict]) -> list[dict]:
-    """Group agenda items by section (AG_Heading) and nest sub-items.
-
-    Structure:
-    - Sections (A, B, C...) group multiple items
-    - Items like '16(a)', '72(b)' are sub-items under parent item
-    - Some items have no section (standalone procedural items)
-    """
-    # Separate items by section and identify sub-items
-    sections: dict[str, list[dict]] = {}
-    standalone_items: list[dict] = []
-
-    for item in agenda:
-        item_num = item.get("AG_Item", "").strip()
-        title = item.get("AG_Title", "")
-        heading = item.get("AG_Heading", "")
-
-        item_data = {
-            "item_number": item_num,
-            "title": title,
-            "subitems": [],
-        }
-
-        if heading:
-            # Group by section heading
-            if heading not in sections:
-                sections[heading] = []
-            sections[heading].append(item_data)
-        else:
-            # Standalone item (no section)
-            standalone_items.append(item_data)
-
-    # Identify sub-items and nest them under parents
-    def process_items(items: list[dict]) -> list[dict]:
-        result: list[dict] = []
-        item_map: dict[str, dict] = {}
-
-        # First pass: create map of all items
-        for item in items:
-            item_map[item["item_number"]] = item
-            result.append(item)
-
-        # Second pass: find sub-items and link to parents
-        subitems_to_move: list[tuple[str, dict]] = []
-        for item_num, item in item_map.items():
-            # Check if this is a sub-item (contains parentheses)
-            if "(" in item_num and ")" in item_num:
-                # Find parent item (part before parentheses)
-                parent_num = item_num.split("(")[0].strip()
-                if parent_num in item_map:
-                    subitems_to_move.append((item_num, item_map[parent_num]))
-
-        # Move sub-items to their parents
-        for subitem_num, parent in subitems_to_move:
-            parent["subitems"].append(item_map[subitem_num])
-            if parent in result:
-                result.remove(item_map[subitem_num])
-
-        # Sort items within group
-        def sort_key(item: dict) -> tuple[float, str]:
-            num = item["item_number"]
-            # Extract numeric part for sorting
-            numeric_part = ""
-            for c in num:
-                if c.isdigit():
-                    numeric_part += c
-                else:
-                    break
-            try:
-                return (float(numeric_part) if numeric_part else float("inf"), num)
-            except ValueError:
-                return (float("inf"), num)
-
-        return sorted(result, key=sort_key)
-
-    # Process all groups
-    result: list[dict] = []
-
-    # Add sections in order (A, B, C...)
-    section_order = ["A", "B", "C", "D", "E", "F", "G", "H", "I"]
-    for section_letter in section_order:
-        for heading in sections.keys():
-            if heading.startswith(section_letter + "."):
-                result.append({
-                    "is_section": True,
-                    "section_name": heading,
-                    "agenda_items": process_items(sections[heading]),
-                })
-                break
-
-    # Add any remaining sections not in order
-    for heading in sorted(sections.keys()):
-        if not any(g.get("section_name") == heading for g in result):
-            result.append({
-                "is_section": True,
-                "section_name": heading,
-                "agenda_items": process_items(sections[heading]),
-            })
-
-    # Add standalone items (no section)
-    if standalone_items:
-        result.append({
-            "is_section": False,
-            "section_name": None,
-            "agenda_items": process_items(standalone_items),
-        })
-
-    return result
-
-
-def get_recent_meetings(data_dir: Path, limit: int = 3) -> list[dict]:
-    meetings = load_json(data_dir / "meetings.json") or []
-    return sorted(
-        meetings,
-        key=lambda m: m.get("MT_dateTimeScheduleStart", ""),
-        reverse=True,
-    )[:limit]
-
-
-def get_recent_decisions(data_dir: Path, limit: int = 3) -> list[dict]:
-    decisions = load_json(data_dir / "decisions.json") or []
-
-    def decision_date(item: dict) -> str:
-        meetings = item.get("ED_Meeting") or []
-        if meetings:
-            return meetings[0].get("ED_Date", "")
-        return ""
-
-    return sorted(decisions, key=decision_date, reverse=True)[:limit]
-
-
-def get_next_meeting(data_dir: Path) -> dict | None:
-    meetings = load_json(data_dir / "meetings.json") or []
-    today = datetime.now().strftime("%Y-%m-%d")
-    upcoming = [m for m in meetings if m.get("MT_dateTimeScheduleStart", "")[:10] > today]
-    if upcoming:
-        return sorted(upcoming, key=lambda m: m["MT_dateTimeScheduleStart"])[0]
-    return None
-
-
 def build_environment(template_root: Path) -> Environment:
     env = Environment(
         loader=FileSystemLoader(str(template_root)),
@@ -442,29 +221,211 @@ def build_environment(template_root: Path) -> Environment:
     return env
 
 
-def build_home(ctx: BuildContext, session_number: str) -> None:
-    template = ctx.templates.get_template("index.html")
-    data_dir = ctx.config.site.data_dir / "ga" / "plenary" / session_number
-    ga_session_path = f"ga/plenary/{session_number}"
+def build_ga_breadcrumbs(
+    session: str,
+    page_class: str,
+    config: Config,
+    specific: str | None = None,
+) -> list[dict[str, str]]:
+    """Build breadcrumbs for GA plenary pages.
 
-    output = template.render(
-        site=ctx.config.site,
-        ga_session_path=ga_session_path,
-        recent_meetings=get_recent_meetings(data_dir),
-        recent_decisions=get_recent_decisions(data_dir),
-        next_meeting=get_next_meeting(data_dir),
-        last_build_timestamp=int(datetime.now().timestamp()),
-    )
+    Pattern: Home → General Assembly → 80 → Class → Specific
+    """
+    base = get_base_url(config)
+    breadcrumbs = [
+        make_breadcrumb("Home", f"{base}index.html"),
+        make_breadcrumb("General Assembly", f"{base}ga/plenary/{session}/index.html"),
+        make_breadcrumb(session, f"{base}ga/plenary/{session}/index.html"),
+        make_breadcrumb(page_class.title(), f"{base}ga/plenary/{session}/{page_class}/index.html"),
+    ]
+    if specific:
+        breadcrumbs.append({"label": specific})
+    return breadcrumbs
 
-    output_dir = ctx.config.site.output_dir
-    ensure_dir(output_dir)
-    (output_dir / "index.html").write_text(output, encoding="utf-8")
+
+def build_ga_committee_breadcrumbs(
+    committee: str,
+    session: str,
+    page_class: str | None,
+    config: Config,
+    specific: str | None = None,
+) -> list[dict[str, str]]:
+    """Build breadcrumbs for GA committee pages.
+
+    Pattern: Home → General Assembly → 80 → Committee → Class → Specific
+    """
+    base = get_base_url(config)
+    committee_names = {
+        "c1": "First Committee",
+        "c2": "Second Committee",
+        "c3": "Third Committee",
+        "c4": "Fourth Committee",
+        "c5": "Fifth Committee",
+    }
+    committee_name = committee_names.get(committee, committee.upper())
+    breadcrumbs = [
+        make_breadcrumb("Home", f"{base}index.html"),
+        make_breadcrumb("General Assembly", f"{base}ga/plenary/{session}/index.html"),
+        make_breadcrumb(session, f"{base}ga/plenary/{session}/index.html"),
+        make_breadcrumb(committee_name, f"{base}ga/{committee}/{session}/index.html"),
+    ]
+    if page_class:
+        breadcrumbs.append(
+            make_breadcrumb(page_class.title(), f"{base}ga/{committee}/{session}/{page_class}/index.html")
+        )
+    if specific:
+        breadcrumbs.append({"label": specific})
+    return breadcrumbs
+
+
+def build_ecosoc_breadcrumbs(
+    session: str,
+    body_code: str | None,
+    page_class: str | None,
+    config: Config,
+    specific: str | None = None,
+) -> list[dict[str, str]]:
+    """Build breadcrumbs for ECOSOC pages.
+
+    Pattern: Home → Economic and Social Council → 2025 → Body → Class → Specific
+    """
+    base = get_base_url(config)
+    breadcrumbs = [
+        make_breadcrumb("Home", f"{base}index.html"),
+        make_breadcrumb("Economic and Social Council", f"{base}ecosoc/plenary/{session}/index.html"),
+        make_breadcrumb(session, f"{base}ecosoc/plenary/{session}/index.html"),
+    ]
+    if body_code:
+        body_names = {
+            "hlpf": "High-level Political Forum",
+            "csw": "Commission on the Status of Women",
+            "ggim": "Committee of Experts on GGIM",
+            "unff": "UN Forum on Forests",
+            "ungegn": "Group of Experts on Geographical Names",
+        }
+        body_name = body_names.get(body_code, body_code.upper())
+        breadcrumbs.append(
+            make_breadcrumb(body_name, f"{base}ecosoc/{body_code}/{session}/index.html")
+        )
+        if page_class:
+            breadcrumbs.append(
+                make_breadcrumb(page_class.title(), f"{base}ecosoc/{body_code}/{session}/{page_class}/index.html")
+            )
+    elif page_class:
+        breadcrumbs.append(
+            make_breadcrumb(page_class.title(), f"{base}ecosoc/plenary/{session}/{page_class}/index.html")
+        )
+    if specific:
+        breadcrumbs.append({"label": specific})
+    return breadcrumbs
+
+
+def build_conference_breadcrumbs(
+    code: str,
+    session: str,
+    page_class: str | None,
+    config: Config,
+    specific: str | None = None,
+) -> list[dict[str, str]]:
+    """Build breadcrumbs for conference pages.
+
+    Pattern: Home → Conference Name → 2025 → Class → Specific
+    """
+    base = get_base_url(config)
+    conference_names = {
+        "ffd4": "Fourth International Conference on Financing for Development",
+        "ffd4pc": "FFD4 PrepCom",
+    }
+    conference_name = conference_names.get(code, code.upper())
+    breadcrumbs = [
+        make_breadcrumb("Home", f"{base}index.html"),
+        make_breadcrumb(conference_name, f"{base}conferences/{code}/{session}/index.html"),
+        make_breadcrumb(session, f"{base}conferences/{code}/{session}/index.html"),
+    ]
+    if page_class:
+        breadcrumbs.append(
+            make_breadcrumb(page_class.title(), f"{base}conferences/{code}/{session}/{page_class}/index.html")
+        )
+    if specific:
+        breadcrumbs.append({"label": specific})
+    return breadcrumbs
+
+
+def build_meeting_detail_breadcrumbs(
+    meeting: dict,
+    session: str,
+    config: Config,
+) -> list[dict[str, str]]:
+    """Build breadcrumbs for individual meeting page.
+
+    Pattern: Home → General Assembly → 80 → Meetings → Meeting Name
+    """
+    base = get_base_url(config)
+    meeting_name = meeting.get("MT_name", "Meeting")
+    breadcrumbs = [
+        make_breadcrumb("Home", f"{base}index.html"),
+        make_breadcrumb("General Assembly", f"{base}ga/plenary/{session}/index.html"),
+        make_breadcrumb(session, f"{base}ga/plenary/{session}/index.html"),
+        make_breadcrumb("Meetings", f"{base}ga/plenary/{session}/meetings/index.html"),
+        {"label": meeting_name},
+    ]
+    return breadcrumbs
+
+
+def _extract_date_parts(dt_str: str) -> tuple[str, str]:
+    """Extract YYMMDD and HH from datetime string.
+
+    Handles formats like:
+    - '2025-09-09T10:00:00' (ISO format)
+    - '2026-06-04 10:00' (space separator)
+
+    Returns:
+        date_part: YYMMDD format (e.g., '250909')
+        time_part: HH format (e.g., '09')
+    """
+    if not dt_str:
+        return "000000", "00"
+
+    # Handle space-separated format: '2026-06-04 10:00'
+    if " " in dt_str:
+        date_part_raw, time_part = dt_str.split(" ")
+        parts = date_part_raw.split("-")
+        if len(parts) >= 3:
+            year = parts[0][2:]  # Get YY from YYYY
+            month = parts[1]  # MM
+            day = parts[2]  # DD
+            date_part = f"{year}{month}{day}"  # YYMMDD
+        else:
+            date_part = "000000"
+        return date_part, time_part.split(":")[0] if ":" in time_part else time_part
+
+    # Handle ISO format: '2025-09-09T10:00:00'
+    if "T" in dt_str:
+        parts = dt_str.split("T")[0].split("-")
+        if len(parts) >= 3:
+            year = parts[0][2:]
+            month = parts[1]
+            day = parts[2]
+            date_part = f"{year}{month}{day}"
+        else:
+            date_part = "000000"
+        time_part = dt_str.split("T")[1].split(":")[0]
+        return date_part, time_part
+
+    return "000000", "00"
+
+
+def meeting_url(meeting: dict) -> str:
+    """Generate flat meeting URL like '25090910-informal-meeting-on-un80-initiative'."""
+    dt_str = meeting.get("MT_dateTimeScheduleStart", "")
+    date_part, time_part = _extract_date_parts(dt_str)
+    name = slugify(meeting.get("MT_name", ""))[:50]
+    return f"{date_part}{time_part}-{name}"
 
 
 def meeting_id(meeting: dict) -> str:
-    date = meeting.get("MT_dateTimeScheduleStart", "")[:10]
-    name = slugify(meeting.get("MT_name", ""))
-    return f"{date}-{name}"
+    """Generate meeting folder ID like '25090910-informal-meeting-on-un80-initiative'."""
+    return meeting_url(meeting)
 
 
 def load_proposals_map(data_dir: Path):
@@ -523,7 +484,7 @@ def build_meeting_detail(ctx: BuildContext, base_path: str, session: str, meetin
         last_build_timestamp=int(datetime.now().timestamp()),
     )
 
-    output_dir = ctx.config.site.output_dir / base_path / "meetings" / meeting_id_str
+    output_dir = ctx.config.site.output_dir / base_path / meeting_id_str
     ensure_dir(output_dir)
     (output_dir / "index.html").write_text(output, encoding="utf-8")
 
@@ -547,11 +508,7 @@ def build_meetings_page(
         session=session,
         meetings=meetings,
         current_date=current_date,
-        breadcrumb_items=[
-            {"label": "Home", "url": f"{ctx.config.site.base_url}index.html"},
-            {"label": parent_label, "url": f"{ctx.config.site.base_url}{base_path}/index.html"},
-            {"label": "Meetings"},
-        ],
+        breadcrumb_items=build_ga_breadcrumbs(session, "meetings", ctx.config),
         page_heading=f"Meetings — {session} Session",
         page_subtitle="Official meeting records and proceedings",
         last_build_timestamp=int(datetime.now().timestamp()),
@@ -582,11 +539,7 @@ def build_agenda_page(
         table_type="agenda",
         items=agenda,
         empty_message="No agenda data available yet.",
-        breadcrumb_items=[
-            {"label": "Home", "url": f"{ctx.config.site.base_url}index.html"},
-            {"label": parent_label, "url": f"{ctx.config.site.base_url}{base_path}/index.html"},
-            {"label": "Agenda"},
-        ],
+        breadcrumb_items=build_ga_breadcrumbs(session, "agenda", ctx.config),
         page_heading=f"Agenda — {session} Session",
         page_subtitle="Complete list of agenda items for the session",
         last_build_timestamp=int(datetime.now().timestamp()),
@@ -617,11 +570,7 @@ def build_consolidated_agenda_page(
         session=session,
         grouped_items=grouped_items,
         empty_message="No agenda data available yet.",
-        breadcrumb_items=[
-            {"label": "Home", "url": f"{ctx.config.site.base_url}index.html"},
-            {"label": parent_label, "url": f"{ctx.config.site.base_url}ga/plenary/{session}/index.html"},
-            {"label": "Agenda"},
-        ],
+        breadcrumb_items=build_ga_breadcrumbs(session, "agenda", ctx.config),
         page_heading=f"Agenda — {session} Session",
         page_subtitle="Complete list of agenda items for the session",
         last_build_timestamp=int(datetime.now().timestamp()),
@@ -663,11 +612,7 @@ def build_documents_page(
         table_type="documents",
         items=flattened,
         empty_message="No documents data available yet.",
-        breadcrumb_items=[
-            {"label": "Home", "url": f"{ctx.config.site.base_url}index.html"},
-            {"label": parent_label, "url": f"{ctx.config.site.base_url}{base_path}/index.html"},
-            {"label": "Documents"},
-        ],
+        breadcrumb_items=build_ga_breadcrumbs(session, "documents", ctx.config),
         page_heading=f"Documents — {session} Session",
         page_subtitle="Official documents, resolutions, and reports",
         last_build_timestamp=int(datetime.now().timestamp()),
@@ -693,11 +638,7 @@ def build_decisions_page(
         session=session,
         items=decisions,
         empty_message="No decisions data available yet.",
-        breadcrumb_items=[
-            {"label": "Home", "url": f"{ctx.config.site.base_url}index.html"},
-            {"label": parent_label, "url": f"{ctx.config.site.base_url}{base_path}/index.html"},
-            {"label": "Decisions"},
-        ],
+        breadcrumb_items=build_ga_breadcrumbs(session, "decisions", ctx.config),
         page_heading=f"Decisions — {session} Session",
         page_subtitle="Decisions adopted by the body",
         last_build_timestamp=int(datetime.now().timestamp()),
@@ -724,11 +665,7 @@ def build_proposals_page(
         table_type="proposals",
         items=proposals.get("result", []),
         empty_message="No proposals data available yet.",
-        breadcrumb_items=[
-            {"label": "Home", "url": f"{ctx.config.site.base_url}index.html"},
-            {"label": parent_label, "url": f"{ctx.config.site.base_url}{base_path}/index.html"},
-            {"label": "Proposals"},
-        ],
+        breadcrumb_items=build_ga_breadcrumbs(session, "proposals", ctx.config),
         page_heading=f"Proposals — {session} Session",
         page_subtitle="Draft resolutions and amendments",
         last_build_timestamp=int(datetime.now().timestamp()),
@@ -753,9 +690,9 @@ def build_ga_plenary(ctx: BuildContext, session_number: str) -> None:
         body_about="The General Assembly is the main deliberative, policymaking and representative organ of the United Nations.",
         base_path=base_path,
         breadcrumb_items=[
-            {"label": "Home", "url": f"{ctx.config.site.base_url}index.html"},
-            {"label": "General Assembly", "url": f"{ctx.config.site.base_url}ga/plenary/{session_number}/index.html"},
-            {"label": f"{session_number} Session"},
+            make_breadcrumb("Home", f"{ctx.config.site.base_url}index.html"),
+            make_breadcrumb("General Assembly", f"{ctx.config.site.base_url}ga/plenary/{session_number}/index.html"),
+            make_breadcrumb(session_number, f"{ctx.config.site.base_url}ga/plenary/{session_number}/index.html"),
         ],
         stats=get_stats(data_dir),
         recent_meetings=get_recent_meetings(data_dir),
@@ -808,11 +745,7 @@ def build_ga_committee(ctx: BuildContext, committee: str, session_number: str) -
         body_about=body_about,
         session=session_number,
         base_path=base_path,
-        breadcrumb_items=[
-            {"label": "Home", "url": f"{ctx.config.site.base_url}index.html"},
-            {"label": "General Assembly", "url": f"{ctx.config.site.base_url}ga/plenary/{session_number}/index.html"},
-            {"label": body_name},
-        ],
+        breadcrumb_items=build_ga_committee_breadcrumbs(committee, session_number, None, ctx.config),
         stats=get_stats(data_dir),
         recent_meetings=get_recent_meetings(data_dir),
         recent_decisions=get_recent_decisions(data_dir),
@@ -846,11 +779,7 @@ def build_ecosoc_plenary(ctx: BuildContext, session: str) -> None:
         body_about="The Economic and Social Council is the principal body for coordination, policy review, policy dialogue and recommendations on economic, social and environmental issues.",
         session=session,
         base_path=base_path,
-        breadcrumb_items=[
-            {"label": "Home", "url": f"{ctx.config.site.base_url}index.html"},
-            {"label": "ECOSOC", "url": f"{ctx.config.site.base_url}ecosoc/plenary/{session}/index.html"},
-            {"label": "Plenary"},
-        ],
+        breadcrumb_items=build_ecosoc_breadcrumbs(session, None, None, ctx.config),
         stats=get_stats(data_dir),
         recent_meetings=get_recent_meetings(data_dir),
         recent_decisions=get_recent_decisions(data_dir),
@@ -886,11 +815,7 @@ def build_ecosoc_body(ctx: BuildContext, body_code: str, session: str) -> None:
         body_about=f"The {body_name} is a body of the Economic and Social Council.",
         session=session,
         base_path=base_path,
-        breadcrumb_items=[
-            {"label": "Home", "url": f"{ctx.config.site.base_url}index.html"},
-            {"label": "ECOSOC", "url": f"{ctx.config.site.base_url}ecosoc/plenary/{session}/index.html"},
-            {"label": body_name},
-        ],
+        breadcrumb_items=build_ecosoc_breadcrumbs(session, body_code, None, ctx.config),
         stats=get_stats(data_dir),
         recent_meetings=get_recent_meetings(data_dir),
         recent_decisions=get_recent_decisions(data_dir),
@@ -927,11 +852,7 @@ def build_conference(ctx: BuildContext, code: str, session: str) -> None:
         body_description=conference_description,
         body_about=conference_about,
         base_path=base_path,
-        breadcrumb_items=[
-            {"label": "Home", "url": f"{ctx.config.site.base_url}index.html"},
-            {"label": "Conferences", "url": f"{ctx.config.site.base_url}conferences/{code}/{session}/index.html"},
-            {"label": conference_name},
-        ],
+        breadcrumb_items=build_conference_breadcrumbs(code, session, None, ctx.config),
         stats=get_stats(data_dir),
         recent_meetings=get_recent_meetings(data_dir),
         recent_decisions=get_recent_decisions(data_dir),
@@ -940,6 +861,137 @@ def build_conference(ctx: BuildContext, code: str, session: str) -> None:
     )
 
     output_dir = ctx.config.site.output_dir / base_path
+    ensure_dir(output_dir)
+    (output_dir / "index.html").write_text(output, encoding="utf-8")
+
+
+def count_documents(items: list[dict[str, Any]]) -> int:
+    total = 0
+    for item in items:
+        docs = item.get("documents") or []
+        total += len(docs)
+    return total
+
+
+def get_stats(data_dir: Path) -> dict[str, int]:
+    meetings = load_json(data_dir / "meetings.json") or []
+    agenda = load_json(data_dir / "agenda.json") or []
+    documents = load_json(data_dir / "documents.json") or []
+    decisions = load_json(data_dir / "decisions.json") or []
+    proposals = load_json(data_dir / "proposals.json") or {"result": []}
+    return {
+        "meetings": len(meetings),
+        "agenda": len(agenda),
+        "documents": count_documents(documents),
+        "decisions": len(decisions),
+        "proposals": len(proposals.get("result", [])),
+    }
+
+
+def group_agenda_items(agenda: list[dict]) -> list[dict]:
+    """Group agenda items by section (AG_Heading) and nest sub-items.
+
+    Structure:
+    - Sections (A, B, C...) group multiple items
+    - Items like '16(a)', '72(b)' are sub-items under parent item
+    - Some items have no section (standalone procedural items)
+    """
+    sections: dict[str, list[dict]] = {}
+    standalone_items: list[dict] = []
+
+    for item in agenda:
+        item_num = item.get("AG_Item", "").strip()
+        title = item.get("AG_Title", "")
+        heading = item.get("AG_Heading", "")
+
+        item_data = {
+            "item_number": item_num,
+            "title": title,
+            "subitems": [],
+        }
+
+        if heading:
+            if heading not in sections:
+                sections[heading] = []
+            sections[heading].append(item_data)
+        else:
+            standalone_items.append(item_data)
+
+    def process_items(items: list[dict]) -> list[dict]:
+        result: list[dict] = []
+        item_map: dict[str, dict] = {}
+
+        for item in items:
+            item_map[item["item_number"]] = item
+            result.append(item)
+
+        subitems_to_move: list[tuple[str, dict]] = []
+        for item_num, item in item_map.items():
+            if "(" in item_num and ")" in item_num:
+                parent_num = item_num.split("(")[0].strip()
+                if parent_num in item_map:
+                    subitems_to_move.append((item_num, item_map[parent_num]))
+
+        for subitem_num, parent in subitems_to_move:
+            parent["subitems"].append(item_map[subitem_num])
+            if parent in result:
+                result.remove(item_map[subitem_num])
+
+        return sorted(result, key=lambda x: float(x["item_number"]) if x["item_number"].replace(".", "", 1).isdigit() else float("inf"))
+
+    result = []
+    for heading, items in sections.items():
+        result.extend(process_items(items))
+    result.extend(process_items(standalone_items))
+
+    return result
+
+
+def get_recent_meetings(data_dir: Path, limit: int = 3) -> list[dict]:
+    meetings = load_json(data_dir / "meetings.json") or []
+    return sorted(
+        meetings,
+        key=lambda m: m.get("MT_dateTimeScheduleStart", ""),
+        reverse=True,
+    )[:limit]
+
+
+def get_recent_decisions(data_dir: Path, limit: int = 3) -> list[dict]:
+    decisions = load_json(data_dir / "decisions.json") or []
+
+    def decision_date(item: dict) -> str:
+        meetings = item.get("ED_Meeting") or []
+        if meetings:
+            return meetings[0].get("ED_Date", "")
+        return ""
+
+    return sorted(decisions, key=decision_date, reverse=True)[:limit]
+
+
+def get_next_meeting(data_dir: Path) -> dict | None:
+    meetings = load_json(data_dir / "meetings.json") or []
+    today = datetime.now().strftime("%Y-%m-%d")
+    upcoming = [m for m in meetings if m.get("MT_dateTimeScheduleStart", "")[:10] > today]
+    if upcoming:
+        return sorted(upcoming, key=lambda m: m["MT_dateTimeScheduleStart"])[0]
+    return None
+
+
+def build_home(ctx: BuildContext, session_number: str) -> None:
+    template = ctx.templates.get_template("index.html")
+    data_dir = ctx.config.site.data_dir / "ga" / "plenary" / session_number
+    ga_session_path = f"ga/plenary/{session_number}"
+
+    output = template.render(
+        site=ctx.config.site,
+        ga_session_path=ga_session_path,
+        recent_meetings=get_recent_meetings(data_dir),
+        recent_decisions=get_recent_decisions(data_dir),
+        next_meeting=get_next_meeting(data_dir),
+        last_build_timestamp=int(datetime.now().timestamp()),
+    )
+
+    output_dir = ctx.config.site.output_dir
     ensure_dir(output_dir)
     (output_dir / "index.html").write_text(output, encoding="utf-8")
 

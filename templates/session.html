@@ -40,7 +40,7 @@
         <div class="preview-list">
           {% for meeting in recent_meetings %}
             {{ preview_item(
-              site.base_url ~ base_path ~ "/meetings/" ~ (meeting | meeting_url),
+              site.base_url ~ base_path ~ "/" ~ (meeting | meeting_url),
               meeting.MT_name or "Meeting",
               meeting.MT_dateTimeScheduleStart | datetime_format("%b %d, %Y"),
               meeting.MT_commentary | striptags | truncate(70)

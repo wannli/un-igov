@@ -52,6 +52,13 @@ Example:
 <a href="{{ site.base_url }}ga/plenary/{{ session }}/meetings/index.html">Meetings</a>
 ```
 
+## Browser Verification
+
+When debugging issues that aren't clear from code analysis alone, check the browser to see the actual rendered output and identify visual or functional issues. Use the browser tools to:
+- Navigate to the page in question
+- Take a snapshot to see the accessibility tree
+- Look for rendering issues that aren't visible in the code
+
 ## Local Development
 
 **Keep the HTTP server running** - Always maintain the localhost server during development so the user can see changes in real-time.
@@ -98,3 +105,29 @@ cd output && python3 -m http.server 8000
 - Review `git status`, `git diff`, and recent `git log` before committing.
 - Pull before push: always run `git pull --rebase` before `git push`.
 - When the user says "remember", add the instruction to this `AGENTS.md`.
+
+## Landing the Plane (Session Completion)
+
+**When ending a work session**, you MUST complete ALL steps below. Work is NOT complete until `git push` succeeds.
+
+**MANDATORY WORKFLOW:**
+
+1. **File issues for remaining work** - Create issues for anything that needs follow-up
+2. **Run quality gates** (if code changed) - Tests, linters, builds
+3. **Update issue status** - Close finished work, update in-progress items
+4. **PUSH TO REMOTE** - This is MANDATORY:
+   ```bash
+   git pull --rebase
+   bd sync
+   git push
+   git status  # MUST show "up to date with origin"
+   ```
+5. **Clean up** - Clear stashes, prune remote branches
+6. **Verify** - All changes committed AND pushed
+7. **Hand off** - Provide context for next session
+
+**CRITICAL RULES:**
+- Work is NOT complete until `git push` succeeds
+- NEVER stop before pushing - that leaves work stranded locally
+- NEVER say "ready to push when you are" - YOU must push
+- If push fails, resolve and retry until it succeeds

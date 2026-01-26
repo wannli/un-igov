@@ -5,6 +5,8 @@
 {% block content %}
 {{ breadcrumbs([
   {'label': 'Home', 'url': site.base_url ~ 'index.html'},
+  {'label': 'General Assembly', 'url': site.base_url ~ 'ga/plenary/' ~ session ~ '/index.html'},
+  {'label': session, 'url': site.base_url ~ 'ga/plenary/' ~ session ~ '/index.html'},
   {'label': 'Meetings', 'url': site.base_url ~ 'ga/plenary/' ~ session ~ '/meetings/index.html'},
   {'label': meeting.MT_name or 'Meeting'}
 ]) }}

@@ -353,40 +353,20 @@ small { font-size: 0.875rem; }
 }
 
 .site-logo-emblem {
-  height: 48px;
+  height: 40px;
   width: auto;
-  color: var(--un-blue);
   flex-shrink: 0;
 }
 
-.site-logo-text {
-  display: flex;
-  flex-direction: column;
-  line-height: 1.2;
-}
-
-.site-logo-title {
+.site-brand {
   font-family: var(--font-condensed);
-  font-size: 1rem;
+  font-size: 1.125rem;
+  font-weight: 400;
+  color: var(--gray-800);
+}
+
+.site-brand strong {
   font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.02em;
-  color: var(--gray-900);
-}
-
-.site-logo-tagline {
-  font-size: 0.625rem;
-  color: var(--gray-600);
-  font-weight: 400;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  margin-top: 2px;
-}
-
-.site-logo-subtitle {
-  font-size: 0.75rem;
-  color: var(--gray-500);
-  font-weight: 400;
 }
 
 .header-actions {
@@ -396,28 +376,12 @@ small { font-size: 0.875rem; }
   gap: var(--space-4);
 }
 
-.header-action-link {
-  display: flex;
-  align-items: center;
-  gap: var(--space-2);
-  font-size: 0.875rem;
-  color: var(--gray-700);
-  text-decoration: none;
-  padding: var(--space-2) var(--space-3);
-  border-radius: var(--radius-md);
-  transition: background-color 0.2s;
-}
-
-.header-action-link:hover {
-  background-color: var(--gray-100);
-  color: var(--un-blue);
-}
-
 /* Navigation */
 .main-nav {
   display: flex;
   align-items: center;
-  gap: var(--space-1);
+  gap: var(--space-2);
+  margin-left: auto;
 }
 
 .nav-item {
@@ -425,48 +389,21 @@ small { font-size: 0.875rem; }
 }
 
 .nav-link {
-  display: flex;
-  align-items: center;
-  gap: var(--space-1);
-  padding: var(--space-3) var(--space-4);
+  display: block;
+  padding: var(--space-2) var(--space-4);
   font-family: var(--font-condensed);
-  font-size: 0.9375rem;
+  font-size: 0.875rem;
   font-weight: 600;
   color: var(--gray-700);
   text-decoration: none;
   border-radius: var(--radius-md);
   transition: all 0.2s ease;
-  cursor: pointer;
 }
 
 .nav-link:hover,
-.nav-link.active,
-.nav-link:focus {
+.nav-link.active {
   color: var(--un-blue-dark);
   background: var(--un-blue-light);
-  text-decoration: none;
-  outline: none;
-}
-
-.nav-link:focus-visible {
-  outline: 2px solid var(--un-blue);
-  outline-offset: 2px;
-}
-
-.nav-link::after {
-  content: '';
-  width: 0;
-  height: 0;
-  border-left: 4px solid transparent;
-  border-right: 4px solid transparent;
-  border-top: 4px solid currentColor;
-  opacity: 0.5;
-  transition: transform 0.2s ease;
-}
-
-.nav-item:hover .nav-link::after,
-.nav-item:focus-within .nav-link::after {
-  transform: rotate(180deg);
 }
 
 /* Mega Menu */
@@ -987,7 +924,24 @@ small { font-size: 0.875rem; }
 .agenda-list {
   display: flex;
   flex-direction: column;
-  gap: var(--space-4);
+  gap: var(--space-6);
+}
+
+.agenda-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.agenda-section-header {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--un-blue-dark);
+  padding: var(--space-3) var(--space-4);
+  background: var(--un-blue-light);
+  border-radius: var(--radius-md);
+  margin: 0;
+  border-left: 4px solid var(--un-blue);
 }
 
 .agenda-item {
@@ -1002,36 +956,34 @@ small { font-size: 0.875rem; }
   align-items: flex-start;
   gap: var(--space-3);
   padding: var(--space-4) var(--space-5);
-  background: var(--gray-50);
-  border-bottom: 1px solid var(--gray-200);
 }
 
 .agenda-item-number {
   flex-shrink: 0;
   font-size: 0.875rem;
   font-weight: 600;
-  color: var(--un-blue-dark);
-  background: white;
-  padding: var(--space-1) var(--space-2);
-  border-radius: var(--radius-md);
-  border: 1px solid var(--gray-200);
+  color: var(--gray-600);
+  min-width: 3rem;
 }
 
 .agenda-item-title {
   font-size: 1rem;
-  font-weight: 600;
+  font-weight: 500;
   color: var(--gray-900);
   line-height: 1.4;
 }
 
 .agenda-subitems {
-  display: flex;
-  flex-direction: column;
+  background: var(--gray-50);
+  border-top: 1px solid var(--gray-100);
 }
 
 .agenda-subitem {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
   padding: var(--space-3) var(--space-5);
-  padding-left: calc(var(--space-5) + var(--space-8));
+  padding-left: calc(var(--space-5) + 3rem);
   border-bottom: 1px solid var(--gray-100);
 }
 
@@ -1040,7 +992,15 @@ small { font-size: 0.875rem; }
 }
 
 .agenda-subitem:hover {
-  background: var(--gray-50);
+  background: var(--gray-100);
+}
+
+.agenda-subitem-number {
+  flex-shrink: 0;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: var(--gray-500);
+  min-width: 2.5rem;
 }
 
 .agenda-subitem-text {

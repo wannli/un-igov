@@ -3,4 +3,6 @@
 __pycache__/
 *.pyc
 output/
-.beads/
+*.log
+.DS_Store
+output/

@@ -247,7 +247,7 @@
   </div>
   <h3 class="text-xl mb-2">{{ meeting.MT_name }}</h3>
   <p class="text-lg mb-3">{{ meeting.MT_dateTimeScheduleStart | datetime_format("%A, %d %B %Y at %H:%M") }}</p>
-  <a href="{{ site.base_url }}{{ base_path }}/meetings/{{ meeting | meeting_url }}" class="view-all-link">
+  <a href="{{ site.base_url }}{{ base_path }}/{{ meeting | meeting_url }}" class="view-all-link">
     View details
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
       <polyline points="9 18 15 12 9 6"/>

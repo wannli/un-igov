@@ -41,7 +41,7 @@
       {% endif %}
 
       {{ timeline_item(
-        meeting | meeting_url,
+        "../" ~ (meeting | meeting_url),
         meeting.MT_dateTimeScheduleStart[8:10],
         meeting.MT_dateTimeScheduleStart | datetime_format("%b"),
         meeting.MT_name or "Meeting",
@@ -78,7 +78,7 @@
       {% endif %}
 
       {{ timeline_item(
-        meeting | meeting_url,
+        "../" ~ (meeting | meeting_url),
         meeting.MT_dateTimeScheduleStart[8:10],
         meeting.MT_dateTimeScheduleStart | datetime_format("%b"),
         meeting.MT_name or "Meeting",
