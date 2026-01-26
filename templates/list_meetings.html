@@ -1,15 +1,31 @@
 {% extends "base.html" %}
-{% from "macros.html" import breadcrumbs, page_header, timeline_item, empty_state %}
+{% from "macros.html" import breadcrumbs, page_header, timeline_item, empty_state, section_header %}
 {% set page_title = page_heading %}
 
 {% block content %}
 {{ breadcrumbs(breadcrumb_items) }}
 {{ page_header(page_heading, page_subtitle) }}
 
-{% if meetings %}
-  <div class="timeline">
+{% set today = current_date %}
+
+{% set forthcoming = [] %}
+{% set past = [] %}
+
+{% for meeting in meetings %}
+  {% set meeting_date = meeting.MT_dateTimeScheduleStart[:10] %}
+  {% if meeting_date >= today %}
+    {% set _ = forthcoming.append(meeting) %}
+  {% else %}
+    {% set _ = past.append(meeting) %}
+  {% endif %}
+{% endfor %}
+
+{# Forthcoming Meetings #}
+{% if forthcoming %}
+  {{ section_header("Forthcoming Meetings") }}
+  <div class="timeline mb-8">
     {% set current_month = '' %}
-    {% for meeting in meetings %}
+    {% for meeting in forthcoming | sort(attribute='MT_dateTimeScheduleStart') %}
       {% set meeting_date = meeting.MT_dateTimeScheduleStart[:10] %}
       {% set month_key = meeting_date[:7] %}
       {% set month_name = meeting.MT_dateTimeScheduleStart | datetime_format("%B %Y") %}
@@ -39,7 +55,46 @@
     </div>
     {% endif %}
   </div>
-{% else %}
+{% endif %}
+
+{# Past Meetings #}
+{% if past %}
+  {{ section_header("Past Meetings") }}
+  <div class="timeline">
+    {% set current_month = '' %}
+    {% for meeting in past | sort(attribute='MT_dateTimeScheduleStart', reverse=True) %}
+      {% set meeting_date = meeting.MT_dateTimeScheduleStart[:10] %}
+      {% set month_key = meeting_date[:7] %}
+      {% set month_name = meeting.MT_dateTimeScheduleStart | datetime_format("%B %Y") %}
+
+      {% if month_key != current_month %}
+        {% if current_month != '' %}
+          </div>
+        {% endif %}
+        <div class="timeline-group">
+          <div class="timeline-header">{{ month_name }}</div>
+          <div class="timeline-list">
+        {% set current_month = month_key %}
+      {% endif %}
+
+      {{ timeline_item(
+        meeting | meeting_url,
+        meeting.MT_dateTimeScheduleStart[8:10],
+        meeting.MT_dateTimeScheduleStart | datetime_format("%b"),
+        meeting.MT_name or "Meeting",
+        meeting.MT_dateTimeScheduleStart[11:16],
+        meeting.MT_commentary | striptags
+      ) }}
+    {% endfor %}
+
+    {% if current_month != '' %}
+      </div>
+    </div>
+    {% endif %}
+  </div>
+{% endif %}
+
+{% if not forthcoming and not past %}
   {{ empty_state("No meetings data available yet.") }}
 {% endif %}
 {% endblock %}

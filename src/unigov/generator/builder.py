@@ -121,6 +121,7 @@ def build_environment(template_root: Path) -> Environment:
     )
     env.filters["datetime_format"] = datetime_format
     env.filters["meeting_url"] = meeting_url
+    env.globals["datetime"] = datetime
     return env
 
 
@@ -329,7 +330,7 @@ def build_decisions_page(
     ctx: BuildContext,
     base_path: str,
     session: str,
-    template_name: str = "list_table.html",
+    template_name: str = "decisions.html",
     parent_label: str = "General Assembly",
 ) -> None:
     template = ctx.templates.get_template(template_name)
@@ -338,7 +339,6 @@ def build_decisions_page(
     output = template.render(
         site=ctx.config.site,
         session=session,
-        table_type="decisions",
         items=decisions,
         empty_message="No decisions data available yet.",
         breadcrumb_items=[

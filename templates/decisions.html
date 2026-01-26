@@ -1,0 +1,156 @@
+{% extends "base.html" %}
+{% from "macros.html" import breadcrumbs, page_header, section_header, badge, empty_state %}
+{% set page_title = page_heading %}
+
+{% block content %}
+{{ breadcrumbs(breadcrumb_items) }}
+{{ page_header(page_heading, page_subtitle) }}
+
+{# Tab Navigation #}
+<div class="tab-bar mb-6">
+  <a href="#" class="tab-link active" data-tab="all">All Decisions</a>
+  <a href="#" class="tab-link" data-tab="elections">Elections and Appointments</a>
+  <a href="#" class="tab-link" data-tab="other">Other Decisions</a>
+</div>
+
+{% if items %}
+  {% set elections = items | selectattr("ED_Type", "equalto", "Elections and Appointments") | list %}
+  {% set other = items | selectattr("ED_Type", "equalto", "Other Decisions") | list %}
+  {% set all_sorted = items | sort(attribute="ED_DecisionNumber") %}
+  {% set elections_sorted = elections | sort(attribute="ED_DecisionNumber") %}
+  {% set other_sorted = other | sort(attribute="ED_DecisionNumber") %}
+
+  {# All Decisions Tab #}
+  <div class="decisions-tab active" data-tab="all">
+    {% for decision in all_sorted %}
+      <details class="decision-card mb-4">
+        <summary class="decision-summary">
+          <div class="decision-summary-main">
+            <span class="decision-number">{{ decision.ED_DecisionNumber }}</span>
+            <span class="decision-title">{{ decision.ED_Title }}</span>
+          </div>
+          <div class="decision-summary-meta">
+            {% if decision.ED_Type %}
+              {{ badge(decision.ED_Type, 'primary' if decision.ED_Type == 'Elections and Appointments' else 'secondary') }}
+            {% endif %}
+            <span class="decision-date">
+              {% if decision.ED_Meeting and decision.ED_Meeting[0] and decision.ED_Meeting[0].ED_Date %}
+                {{ decision.ED_Meeting[0].ED_Date[:10] }}
+              {% endif %}
+            </span>
+          </div>
+        </summary>
+        <div class="decision-content">
+          {% if decision.ED_DecisionText %}
+            <div class="decision-text mb-4">
+              {{ decision.ED_DecisionText | safe }}
+            </div>
+          {% endif %}
+          {% if decision.ED_AgendaItem %}
+            <div class="decision-meta text-sm text-muted">
+              Agenda item: {{ decision.ED_AgendaItem }}
+            </div>
+          {% endif %}
+        </div>
+      </details>
+    {% endfor %}
+  </div>
+
+  {# Elections and Appointments Tab #}
+  <div class="decisions-tab" data-tab="elections">
+    {% if elections_sorted %}
+      {% for decision in elections_sorted %}
+        <details class="decision-card mb-4">
+          <summary class="decision-summary">
+            <div class="decision-summary-main">
+              <span class="decision-number">{{ decision.ED_DecisionNumber }}</span>
+              <span class="decision-title">{{ decision.ED_Title }}</span>
+            </div>
+            <div class="decision-summary-meta">
+              <span class="decision-date">
+                {% if decision.ED_Meeting and decision.ED_Meeting[0] and decision.ED_Meeting[0].ED_Date %}
+                  {{ decision.ED_Meeting[0].ED_Date[:10] }}
+                {% endif %}
+              </span>
+            </div>
+          </summary>
+          <div class="decision-content">
+            {% if decision.ED_DecisionText %}
+              <div class="decision-text mb-4">
+                {{ decision.ED_DecisionText | safe }}
+              </div>
+            {% endif %}
+            {% if decision.ED_AgendaItem %}
+              <div class="decision-meta text-sm text-muted">
+                Agenda item: {{ decision.ED_AgendaItem }}
+              </div>
+            {% endif %}
+          </div>
+        </details>
+      {% endfor %}
+    {% else %}
+      {{ empty_state("No elections and appointments decisions available yet.") }}
+    {% endif %}
+  </div>
+
+  {# Other Decisions Tab #}
+  <div class="decisions-tab" data-tab="other">
+    {% if other_sorted %}
+      {% for decision in other_sorted %}
+        <details class="decision-card mb-4">
+          <summary class="decision-summary">
+            <div class="decision-summary-main">
+              <span class="decision-number">{{ decision.ED_DecisionNumber }}</span>
+              <span class="decision-title">{{ decision.ED_Title }}</span>
+            </div>
+            <div class="decision-summary-meta">
+              <span class="decision-date">
+                {% if decision.ED_Meeting and decision.ED_Meeting[0] and decision.ED_Meeting[0].ED_Date %}
+                  {{ decision.ED_Meeting[0].ED_Date[:10] }}
+                {% endif %}
+              </span>
+            </div>
+          </summary>
+          <div class="decision-content">
+            {% if decision.ED_DecisionText %}
+              <div class="decision-text mb-4">
+                {{ decision.ED_DecisionText | safe }}
+              </div>
+            {% endif %}
+            {% if decision.ED_AgendaItem %}
+              <div class="decision-meta text-sm text-muted">
+                Agenda item: {{ decision.ED_AgendaItem }}
+              </div>
+            {% endif %}
+          </div>
+        </details>
+      {% endfor %}
+    {% else %}
+      {{ empty_state("No other decisions available yet.") }}
+    {% endif %}
+  </div>
+{% else %}
+  {{ empty_state(empty_message) }}
+{% endif %}
+
+<script>
+(function() {
+  const tabs = document.querySelectorAll('.tab-link');
+  const tabContents = document.querySelectorAll('.decisions-tab');
+  
+  tabs.forEach(function(tab) {
+    tab.addEventListener('click', function(e) {
+      e.preventDefault();
+      var tabId = this.getAttribute('data-tab');
+      
+      tabs.forEach(function(t) { t.classList.remove('active'); });
+      tabContents.forEach(function(c) { c.classList.remove('active'); });
+      
+      this.classList.add('active');
+      var content = document.querySelector('.decisions-tab[data-tab="' + tabId + '"]');
+      if (content) { content.classList.add('active'); }
+    });
+  });
+})();
+</script>
+{% endblock %}
