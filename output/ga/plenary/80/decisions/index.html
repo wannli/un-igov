@@ -1,1407 +1,1360 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>iGov: portal to the work of intergovernmental bodies | Decisions</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="/static/css/un-design-system.css" />
-    <svg style="display: none;">
-      <symbol id="icon-document" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-        <polyline points="14 2 14 8 20 8"/>
-        <line x1="16" y1="13" x2="8" y2="13"/>
-        <line x1="16" y1="17" x2="8" y2="17"/>
-        <polyline points="10 9 9 9 8 9"/>
-      </symbol>
-      <symbol id="icon-meeting" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-        <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
-        <line x1="16" y1="2" x2="16" y2="6"/>
-        <line x1="8" y1="2" x2="8" y2="6"/>
-        <line x1="3" y1="10" x2="21" y2="10"/>
-      </symbol>
-      <symbol id="icon-agenda" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-        <line x1="8" y1="6" x2="21" y2="6"/>
-        <line x1="8" y1="12" x2="21" y2="12"/>
-        <line x1="8" y1="18" x2="21" y2="18"/>
-        <line x1="3" y1="6" x2="3.01" y2="6"/>
-        <line x1="3" y1="12" x2="3.01" y2="12"/>
-        <line x1="3" y1="18" x2="3.01" y2="18"/>
-      </symbol>
-      <symbol id="icon-resolution" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-        <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
-        <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
-      </symbol>
-      <symbol id="icon-decision" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-        <polyline points="9 11 12 14 22 4"/>
-        <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>
-      </symbol>
-      <symbol id="icon-proposal" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-        <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/>
-        <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/>
-      </symbol>
-      <symbol id="icon-external" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
-        <polyline points="15 3 21 3 21 9"/>
-        <line x1="10" y1="14" x2="21" y2="3"/>
-      </symbol>
-      <symbol id="icon-download" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
-        <polyline points="7 10 12 15 17 10"/>
-        <line x1="12" y1="15" x2="12" y2="3"/>
-      </symbol>
-    </svg>
-  </head>
-  <body>
-    <header class="site-header">
-      <div class="site-header-top">
-        <div class="site-header-top-inner">
-          <div class="language-switcher">
-            <a href="/en" class="active">English</a>
-            <a href="/ar">العربية</a>
-            <a href="/zh">中文</a>
-            <a href="/fr">Français</a>
-            <a href="/ru">Русский</a>
-            <a href="/es">Español</a>
-          </div>
-          <div class="header-tools">
-            <a href="https://www.un.org/en/site-index">A-Z Index</a>
-            <a href="https://www.un.org/en/contact-us-0">Contact</a>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>iGov: portal to the work of intergovernmental bodies | Decisions — 80 Session</title>
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  
+  <!-- Styles -->
+  <link rel="stylesheet" href="/static/css/un-design-system.css">
+  
+  <!-- Icon Sprite -->
+  <svg style="display: none;">
+    <symbol id="icon-calendar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+      <line x1="16" y1="2" x2="16" y2="6"/>
+      <line x1="8" y1="2" x2="8" y2="6"/>
+      <line x1="3" y1="10" x2="21" y2="10"/>
+    </symbol>
+    <symbol id="icon-document" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+      <polyline points="14 2 14 8 20 8"/>
+      <line x1="16" y1="13" x2="8" y2="13"/>
+      <line x1="16" y1="17" x2="8" y2="17"/>
+    </symbol>
+    <symbol id="icon-list" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <line x1="8" y1="6" x2="21" y2="6"/>
+      <line x1="8" y1="12" x2="21" y2="12"/>
+      <line x1="8" y1="18" x2="21" y2="18"/>
+      <line x1="3" y1="6" x2="3.01" y2="6"/>
+      <line x1="3" y1="12" x2="3.01" y2="12"/>
+      <line x1="3" y1="18" x2="3.01" y2="18"/>
+    </symbol>
+    <symbol id="icon-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <polyline points="9 11 12 14 22 4"/>
+      <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>
+    </symbol>
+    <symbol id="icon-edit" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/>
+      <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/>
+    </symbol>
+    <symbol id="icon-external" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+      <polyline points="15 3 21 3 21 9"/>
+      <line x1="10" y1="14" x2="21" y2="3"/>
+    </symbol>
+    <symbol id="icon-un-emblem" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+      <circle cx="12" cy="11.5" r="5" fill="none"/>
+      <ellipse cx="12" cy="11.5" rx="2.5" ry="5" fill="none"/>
+      <line x1="12" y1="4" x2="12" y2="6.5" stroke-linecap="round"/>
+      <path d="M5 13c0-1.5 1.5-2.5 3.5-3" stroke-linecap="round"/>
+      <path d="M19 13c0-1.5-1.5-2.5-3.5-3" stroke-linecap="round"/>
+      <path d="M5 15c.5.5 2 .8 7 .8s6.5-.3 7-.8" stroke-linecap="round"/>
+      <ellipse cx="12" cy="11.5" rx="5" ry="2" fill="none"/>
+    </symbol>
+    <symbol id="icon-shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+    </symbol>
+    <symbol id="icon-dollar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <line x1="12" y1="1" x2="12" y2="23"/>
+      <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+    </symbol>
+    <symbol id="icon-users" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+      <circle cx="9" cy="7" r="4"/>
+      <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+      <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+    </symbol>
+    <symbol id="icon-briefcase" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <rect x="2" y="7" width="20" height="14" rx="2" ry="2"/>
+      <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>
+    </symbol>
+    <symbol id="icon-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <line x1="3" y1="12" x2="21" y2="12"/>
+      <line x1="3" y1="6" x2="21" y2="6"/>
+      <line x1="3" y1="18" x2="21" y2="18"/>
+    </symbol>
+    <symbol id="icon-x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <line x1="18" y1="6" x2="6" y2="18"/>
+      <line x1="6" y1="6" x2="18" y2="18"/>
+    </symbol>
+  </svg>
+</head>
+
+<body>
+  
+  <div class="header-utility">
+    <div class="container">
+      <div class="language-switcher">
+        <a href="#" class="active">English</a>
+        <a href="#">العربية</a>
+        <a href="#">中文</a>
+        <a href="#">Français</a>
+        <a href="#">Русский</a>
+        <a href="#">Español</a>
+      </div>
+      <div class="utility-links">
+        <a href="https://www.un.org/en/site-index">A-Z Site Index</a>
+        <a href="https://www.un.org/en/contact-us-0">Contact</a>
+      </div>
+    </div>
+  </div>
+
+  
+  <header class="header-main">
+    <div class="container">
+      
+      <a href="/index.html" class="site-logo">
+        <svg class="site-logo-emblem" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <circle cx="12" cy="12" r="10"/>
+          <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+          <path d="M2 12h20"/>
+        </svg>
+        <div class="site-logo-text">
+          <span class="site-logo-title">United Nations</span>
+          <span class="site-logo-subtitle">iGov — Portal to the work of intergovernmental bodies</span>
+        </div>
+      </a>
+
+      
+      <button class="nav-toggle" aria-label="Toggle navigation">
+        <svg class="icon icon-lg"><use href="#icon-menu"/></svg>
+      </button>
+
+      
+      <nav class="main-nav" role="navigation">
+        
+        <div class="nav-item">
+          <a href="/ga/plenary/80/index.html" class="nav-link">
+            General Assembly
+          </a>
+          <div class="mega-menu">
+            <div class="mega-menu-grid">
+              <div class="mega-menu-section">
+                <h4>80th Session (Current)</h4>
+                <div class="mega-menu-links">
+                  <a href="/ga/plenary/80/index.html" class="mega-menu-link primary">Plenary</a>
+                  <a href="/ga/c1/80/index.html" class="mega-menu-link">First Committee <span class="text-muted">— Disarmament</span></a>
+                  <a href="/ga/c2/80/index.html" class="mega-menu-link">Second Committee <span class="text-muted">— Economic</span></a>
+                  <a href="/ga/c3/80/index.html" class="mega-menu-link">Third Committee <span class="text-muted">— Social</span></a>
+                  <a href="/ga/c4/80/index.html" class="mega-menu-link">Fourth Committee <span class="text-muted">— Political</span></a>
+                  <a href="/ga/c5/80/index.html" class="mega-menu-link">Fifth Committee <span class="text-muted">— Budget</span></a>
+                </div>
+              </div>
+              <div class="mega-menu-section">
+                <h4>Previous Sessions</h4>
+                <div class="mega-menu-links">
+                  <a href="/ga/plenary/79/index.html" class="mega-menu-link">79th Session</a>
+                  <a href="/ga/plenary/78/index.html" class="mega-menu-link">78th Session</a>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="site-header-main">
-        <div class="site-header-inner">
-          <a href="/index.html" class="site-logo">
-            <div class="site-logo-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+
+        
+        <div class="nav-item">
+          <a href="/ecosoc/plenary/2026/index.html" class="nav-link">
+            ECOSOC
+          </a>
+          <div class="mega-menu">
+            <div class="mega-menu-grid">
+              <div class="mega-menu-section">
+                <h4>2026 Session</h4>
+                <div class="mega-menu-links">
+                  <a href="/ecosoc/plenary/2026/index.html" class="mega-menu-link primary">Plenary</a>
+                </div>
+              </div>
+              <div class="mega-menu-section">
+                <h4>Subsidiary Bodies</h4>
+                <div class="mega-menu-links">
+                  <a href="/ecosoc/hlpf/2025/index.html" class="mega-menu-link">HLPF</a>
+                  <a href="/ecosoc/csw/70/index.html" class="mega-menu-link">CSW</a>
+                  <a href="/ecosoc/ggim/15/index.html" class="mega-menu-link">GGIM</a>
+                  <a href="/ecosoc/unff/20/index.html" class="mega-menu-link">UNFF</a>
+                  <a href="/ecosoc/ungegn/2025/index.html" class="mega-menu-link">UNGEGN</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        
+        <div class="nav-item">
+          <a href="#" class="nav-link">
+            Conferences
+          </a>
+          <div class="mega-menu" style="min-width: 320px;">
+            <div class="mega-menu-section">
+              <h4>Upcoming & Active</h4>
+              <div class="mega-menu-links">
+                <a href="/conferences/ffd4/2025/index.html" class="mega-menu-link">FFD4 — Financing for Development</a>
+                <a href="/conferences/ffd4pc/3/index.html" class="mega-menu-link">FFD4 PrepCom</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  
+  <main class="main-content">
+    <div class="container">
+      
+
+<nav class="breadcrumbs" aria-label="Breadcrumb">
+  
+    
+      <a href="/index.html">Home</a>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <polyline points="9 18 15 12 9 6"/>
+      </svg>
+    
+  
+    
+      <a href="/ga/plenary/80/index.html">General Assembly</a>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <polyline points="9 18 15 12 9 6"/>
+      </svg>
+    
+  
+    
+      <span aria-current="page">Decisions</span>
+    
+  
+</nav>
+
+
+<header class="page-header">
+  <h1>Decisions — 80 Session</h1>
+  
+  <p class="lead">Decisions adopted by the body</p>
+  
+</header>
+
+
+
+  <div class="table-container">
+    <table>
+      <thead>
+        <tr>
+          
+            <th class="w-140">Decision</th>
+            <th>Title</th>
+            <th class="w-120">Agenda</th>
+            <th class="w-160">Meeting</th>
+          
+        </tr>
+      </thead>
+      <tbody>
+        
+          
+            <tr>
+              <td>
+                <span class="font-semibold">80/401</span>
+                
+                  <div class="text-xs text-muted mt-1">Elections and Appointments</div>
+                
+              </td>
+              <td>
+                <div class="font-medium">Appointment of the members of the Credentials Committee </div>
+              </td>
+              <td>
+                Item 3 (a)
+              </td>
+              <td>
+                
+                  2025-09-09
+                  
+                    <div class="text-xs text-muted mt-1">Meeting 1 plenary meeting</div>
+                  
+                
+              </td>
+            </tr>
+          
+            <tr>
+              <td>
+                <span class="font-semibold">80/501</span>
+                
+                  <div class="text-xs text-muted mt-1">Other Decisions</div>
+                
+              </td>
+              <td>
+                <div class="font-medium">Meetings of subsidiary organs and entities during the main part of the eightieth session  </div>
+              </td>
+              <td>
+                Item 7
+              </td>
+              <td>
+                
+                  2025-09-02
+                  
+                    <div class="text-xs text-muted mt-1">Meeting 1 plenary meeting</div>
+                  
+                
+              </td>
+            </tr>
+          
+            <tr>
+              <td>
+                <span class="font-semibold">80/502</span>
+                
+                  <div class="text-xs text-muted mt-1">Other Decisions</div>
+                
+              </td>
+              <td>
+                <div class="font-medium">General debate of the eightieth session of the General Assembly	  </div>
+              </td>
+              <td>
+                Item 7
+              </td>
+              <td>
+                
+                  2025-09-12
+                  
+                    <div class="text-xs text-muted mt-1">Meeting 2 plenary meeting</div>
+                  
+                
+              </td>
+            </tr>
+          
+            <tr>
+              <td>
+                <span class="font-semibold">80/503</span>
+                
+                  <div class="text-xs text-muted mt-1">Other Decisions</div>
+                
+              </td>
+              <td>
+                <div class="font-medium">Rights of reply to addresses by Heads of State </div>
+              </td>
+              <td>
+                Item 7
+              </td>
+              <td>
+                
+                  2025-09-12
+                  
+                    <div class="text-xs text-muted mt-1">Meeting 2 plenary meeting</div>
+                  
+                
+              </td>
+            </tr>
+          
+            <tr>
+              <td>
+                <span class="font-semibold">80/504</span>
+                
+                  <div class="text-xs text-muted mt-1">Other Decisions</div>
+                
+              </td>
+              <td>
+                <div class="font-medium">Organization of the eightieth session </div>
+              </td>
+              <td>
+                Item 7
+              </td>
+              <td>
+                
+                  2025-09-12
+                  
+                    <div class="text-xs text-muted mt-1">Meeting 2nd plenary meeting</div>
+                  
+                
+              </td>
+            </tr>
+          
+            <tr>
+              <td>
+                <span class="font-semibold">80/505</span>
+                
+                  <div class="text-xs text-muted mt-1">Other Decisions</div>
+                
+              </td>
+              <td>
+                <div class="font-medium">Adoption of the agenda and allocation of agenda items </div>
+              </td>
+              <td>
+                Item 7
+              </td>
+              <td>
+                
+                  2025-09-12
+                  
+                    <div class="text-xs text-muted mt-1">Meeting 2 plenary meeting</div>
+                  
+                
+              </td>
+            </tr>
+          
+            <tr>
+              <td>
+                <span class="font-semibold">80/506</span>
+                
+                  <div class="text-xs text-muted mt-1">Other Decisions</div>
+                
+              </td>
+              <td>
+                <div class="font-medium">Endorsement of the New York Declaration on the Peaceful Settlement of the Question of Palestine and the Implementation of the Two-State Solution </div>
+              </td>
+              <td>
+                Item 35
+              </td>
+              <td>
+                
+                  2025-09-12
+                  
+                    <div class="text-xs text-muted mt-1">Meeting 2 plenary meeting</div>
+                  
+                
+              </td>
+            </tr>
+          
+            <tr>
+              <td>
+                <span class="font-semibold">80/507</span>
+                
+                  <div class="text-xs text-muted mt-1">Other Decisions</div>
+                
+              </td>
+              <td>
+                <div class="font-medium">High-level International Conference for the Peaceful Settlement of the Question of Palestine and the Implementation of the Two-State Solution </div>
+              </td>
+              <td>
+                Item 35
+              </td>
+              <td>
+                
+                  2025-09-19
+                  
+                    <div class="text-xs text-muted mt-1">Meeting 3 plenary meeting</div>
+                  
+                
+              </td>
+            </tr>
+          
+            <tr>
+              <td>
+                <span class="font-semibold">80/402</span>
+                
+                  <div class="text-xs text-muted mt-1">Elections and Appointments</div>
+                
+              </td>
+              <td>
+                <div class="font-medium">Election of members of the Human Rights Council</div>
+              </td>
+              <td>
+                Item 114 (c)
+              </td>
+              <td>
+                
+                  2025-10-14
+                  
+                    <div class="text-xs text-muted mt-1">Meeting 18th plenary meeting</div>
+                  
+                
+              </td>
+            </tr>
+          
+            <tr>
+              <td>
+                <span class="font-semibold">80/508</span>
+                
+                  <div class="text-xs text-muted mt-1">Other Decisions</div>
+                
+              </td>
+              <td>
+                <div class="font-medium">Report of the International Residual Mechanism for Criminal Tribunals</div>
+              </td>
+              <td>
+                Item 128
+              </td>
+              <td>
+                
+                  2025-10-22
+                  
+                    <div class="text-xs text-muted mt-1">Meeting 20th plenary meeting</div>
+                  
+                
+              </td>
+            </tr>
+          
+            <tr>
+              <td>
+                <span class="font-semibold">80/509</span>
+                
+                  <div class="text-xs text-muted mt-1">Other Decisions</div>
+                
+              </td>
+              <td>
+                <div class="font-medium">World Social Summit</div>
+              </td>
+              <td>
+                Item 25 (b)
+              </td>
+              <td>
+                
+                  2025-10-31
+                  
+                    <div class="text-xs text-muted mt-1">Meeting 26th plenary meeting</div>
+                  
+                
+              </td>
+            </tr>
+          
+            <tr>
+              <td>
+                <span class="font-semibold">80/403</span>
+                
+                  <div class="text-xs text-muted mt-1">Elections and Appointments</div>
+                
+              </td>
+              <td>
+                <div class="font-medium">Election of a member of the International Court of Justice</div>
+              </td>
+              <td>
+                Item 113 (c)
+              </td>
+              <td>
+                
+                  2025-11-12
+                  
+                    <div class="text-xs text-muted mt-1">Meeting 37th plenary meeting</div>
+                  
+                
+              </td>
+            </tr>
+          
+            <tr>
+              <td>
+                <span class="font-semibold">80/510</span>
+                
+                  <div class="text-xs text-muted mt-1">Other Decisions</div>
+                
+              </td>
+              <td>
+                <div class="font-medium">Report  of the Economic and Social Council</div>
+              </td>
+              <td>
+                Item 9
+              </td>
+              <td>
+                
+                  2025-11-13
+                  
+                    <div class="text-xs text-muted mt-1">Meeting 38th plenary meeting</div>
+                  
+                
+              </td>
+            </tr>
+          
+            <tr>
+              <td>
+                <span class="font-semibold">80/404</span>
+                
+                  <div class="text-xs text-muted mt-1">Elections and Appointments</div>
+                
+              </td>
+              <td>
+                <div class="font-medium">Election of members of the Committee for Programme and Coordination</div>
+              </td>
+              <td>
+                Item 114 (a)
+              </td>
+              <td>
+                
+                  2025-11-17
+                  
+                    <div class="text-xs text-muted mt-1">Meeting 42nd plenary meeting</div>
+                  
+                
+              </td>
+            </tr>
+          
+            <tr>
+              <td>
+                <span class="font-semibold">80/405</span>
+                
+                  <div class="text-xs text-muted mt-1">Elections and Appointments</div>
+                
+              </td>
+              <td>
+                <div class="font-medium">Appointment of members of the Committee on Conferences</div>
+              </td>
+              <td>
+                Item 115 (g)
+              </td>
+              <td>
+                
+                  2025-11-17
+                  
+                    <div class="text-xs text-muted mt-1">Meeting 42nd plenary meeting</div>
+                  
+                
+              </td>
+            </tr>
+          
+            <tr>
+              <td>
+                <span class="font-semibold">80/406</span>
+                
+                  <div class="text-xs text-muted mt-1">Elections and Appointments</div>
+                
+              </td>
+              <td>
+                <div class="font-medium">Confirmation of the appointment of the Administrator of the United Nations Development Programme</div>
+              </td>
+              <td>
+                Item 115 (h)
+              </td>
+              <td>
+                
+                  2025-11-17
+                  
+                    <div class="text-xs text-muted mt-1">Meeting 42nd plenary meeting</div>
+                  
+                
+              </td>
+            </tr>
+          
+            <tr>
+              <td>
+                <span class="font-semibold">80/407</span>
+                
+                  <div class="text-xs text-muted mt-1">Elections and Appointments</div>
+                
+              </td>
+              <td>
+                <div class="font-medium">Appointment of the judges of the United Nations Appeals Tribunal</div>
+              </td>
+              <td>
+                Item 115 (j)
+              </td>
+              <td>
+                
+                  2025-11-17
+                  
+                    <div class="text-xs text-muted mt-1">Meeting 42nd plenary meeting</div>
+                  
+                
+              </td>
+            </tr>
+          
+            <tr>
+              <td>
+                <span class="font-semibold">80/409</span>
+                
+                  <div class="text-xs text-muted mt-1">Elections and Appointments</div>
+                
+              </td>
+              <td>
+                <div class="font-medium">Appointment of members of the Advisory Committee on Administrative and Budgetary Questions</div>
+              </td>
+              <td>
+                Item 115 (a)
+              </td>
+              <td>
+                
+                  2025-11-17
+                  
+                    <div class="text-xs text-muted mt-1">Meeting 42nd plenary meeting</div>
+                  
+                
+              </td>
+            </tr>
+          
+            <tr>
+              <td>
+                <span class="font-semibold">80/410</span>
+                
+                  <div class="text-xs text-muted mt-1">Elections and Appointments</div>
+                
+              </td>
+              <td>
+                <div class="font-medium">Appointment of members of the Committee on Contributions</div>
+              </td>
+              <td>
+                Item 115 (b)
+              </td>
+              <td>
+                
+                  2025-11-17
+                  
+                    <div class="text-xs text-muted mt-1">Meeting 42nd plenary meeting</div>
+                  
+                
+              </td>
+            </tr>
+          
+            <tr>
+              <td>
+                <span class="font-semibold">80/411</span>
+                
+                  <div class="text-xs text-muted mt-1">Elections and Appointments</div>
+                
+              </td>
+              <td>
+                <div class="font-medium">Confirmation of the appointment of members of the Investments Committee</div>
+              </td>
+              <td>
+                Item 115 (c)
+              </td>
+              <td>
+                
+                  2025-11-17
+                  
+                    <div class="text-xs text-muted mt-1">Meeting 42nd plenary meeting</div>
+                  
+                
+              </td>
+            </tr>
+          
+            <tr>
+              <td>
+                <span class="font-semibold">80/412</span>
+                
+                  <div class="text-xs text-muted mt-1">Elections and Appointments</div>
+                
+              </td>
+              <td>
+                <div class="font-medium">Appointment of a member of the Board of Auditors</div>
+              </td>
+              <td>
+                Item 115 (d)
+              </td>
+              <td>
+                
+                  2025-11-17
+                  
+                    <div class="text-xs text-muted mt-1">Meeting 42nd plenary meeting</div>
+                  
+                
+              </td>
+            </tr>
+          
+            <tr>
+              <td>
+                <span class="font-semibold">80/413</span>
+                
+                  <div class="text-xs text-muted mt-1">Elections and Appointments</div>
+                
+              </td>
+              <td>
+                <div class="font-medium">Appointment of members of the International Civil Service Commission</div>
+              </td>
+              <td>
+                Item 115 (e)
+              </td>
+              <td>
+                
+                  2025-11-17
+                  
+                    <div class="text-xs text-muted mt-1">Meeting 42nd plenary meeting</div>
+                  
+                
+              </td>
+            </tr>
+          
+            <tr>
+              <td>
+                <span class="font-semibold">80/414</span>
+                
+                  <div class="text-xs text-muted mt-1">Elections and Appointments</div>
+                
+              </td>
+              <td>
+                <div class="font-medium">Appointment of members of the Independent Audit Advisory Committee</div>
+              </td>
+              <td>
+                Item 115 (f)
+              </td>
+              <td>
+                
+                  2025-11-17
+                  
+                    <div class="text-xs text-muted mt-1">Meeting 42nd plenary meeting</div>
+                  
+                
+              </td>
+            </tr>
+          
+            <tr>
+              <td>
+                <span class="font-semibold">80/408 A and B</span>
+                
+                  <div class="text-xs text-muted mt-1">Elections and Appointments</div>
+                
+              </td>
+              <td>
+                <div class="font-medium">Appointment of the judges of the United Nations Dispute Tribunal</div>
+              </td>
+              <td>
+                Item 115 (k)
+              </td>
+              <td>
+                
+                  2025-11-17
+                  
+                    <div class="text-xs text-muted mt-1">Meeting 42nd plenary meeting</div>
+                  
+                
+              </td>
+            </tr>
+          
+            <tr>
+              <td>
+                <span class="font-semibold">80/511</span>
+                
+                  <div class="text-xs text-muted mt-1">Other Decisions</div>
+                
+              </td>
+              <td>
+                <div class="font-medium">High-level meeting on the appraisal of the United Nations Global Plan of Action to Combat Trafficking in Persons</div>
+              </td>
+              <td>
+                Item 107
+              </td>
+              <td>
+                
+                  2025-11-24
+                  
+                    <div class="text-xs text-muted mt-1">Meeting 48th plenary meeting</div>
+                  
+                
+              </td>
+            </tr>
+          
+            <tr>
+              <td>
+                <span class="font-semibold">80/512</span>
+                
+                  <div class="text-xs text-muted mt-1">Other Decisions</div>
+                
+              </td>
+              <td>
+                <div class="font-medium">Reducing space threats through norms, rules and principles of responsible behaviour</div>
+              </td>
+              <td>
+                Item 97 (d)
+              </td>
+              <td>
+                
+                  2025-12-01
+                  
+                    <div class="text-xs text-muted mt-1">Meeting 52nd plenary meeting</div>
+                  
+                
+              </td>
+            </tr>
+          
+            <tr>
+              <td>
+                <span class="font-semibold">80/513</span>
+                
+                  <div class="text-xs text-muted mt-1">Other Decisions</div>
+                
+              </td>
+              <td>
+                <div class="font-medium">Treaty banning the production of fissile material for nuclear weapons or other nuclear explosive devices</div>
+              </td>
+              <td>
+                Item 99 (a)
+              </td>
+              <td>
+                
+                  2025-12-01
+                  
+                    <div class="text-xs text-muted mt-1">Meeting 52nd plenary meeting</div>
+                  
+                
+              </td>
+            </tr>
+          
+            <tr>
+              <td>
+                <span class="font-semibold">80/514</span>
+                
+                  <div class="text-xs text-muted mt-1">Other Decisions</div>
+                
+              </td>
+              <td>
+                <div class="font-medium">Compliance with non-proliferation, arms limitation and disarmament agreements and commitments</div>
+              </td>
+              <td>
+                Item 99 (aa)
+              </td>
+              <td>
+                
+                  2025-12-01
+                  
+                    <div class="text-xs text-muted mt-1">Meeting 52nd plenary meeting</div>
+                  
+                
+              </td>
+            </tr>
+          
+            <tr>
+              <td>
+                <span class="font-semibold">80/515</span>
+                
+                  <div class="text-xs text-muted mt-1">Other Decisions</div>
+                
+              </td>
+              <td>
+                <div class="font-medium">Provisional programme of work and timetable of the First Committee for 2026</div>
+              </td>
+              <td>
+                Item 121
+              </td>
+              <td>
+                
+                  2025-12-01
+                  
+                    <div class="text-xs text-muted mt-1">Meeting 52nd plenary meeting</div>
+                  
+                
+              </td>
+            </tr>
+          
+            <tr>
+              <td>
+                <span class="font-semibold">80/516 A, B, C and D</span>
+                
+                  <div class="text-xs text-muted mt-1">Other Decisions</div>
+                
+              </td>
+              <td>
+                <div class="font-medium">Increase in the membership of the Committee on the Peaceful Uses of Outer Space</div>
+              </td>
+              <td>
+                Item 48
+              </td>
+              <td>
+                
+                  2025-12-05
+                  
+                    <div class="text-xs text-muted mt-1">Meeting 55th plenary meeting</div>
+                  
+                
+              </td>
+            </tr>
+          
+            <tr>
+              <td>
+                <span class="font-semibold">80/517</span>
+                
+                  <div class="text-xs text-muted mt-1">Other Decisions</div>
+                
+              </td>
+              <td>
+                <div class="font-medium">Question of Gibraltar</div>
+              </td>
+              <td>
+                Item 58
+              </td>
+              <td>
+                
+                  2025-12-05
+                  
+                    <div class="text-xs text-muted mt-1">Meeting 55th plenary meeting</div>
+                  
+                
+              </td>
+            </tr>
+          
+            <tr>
+              <td>
+                <span class="font-semibold">80/518</span>
+                
+                  <div class="text-xs text-muted mt-1">Other Decisions</div>
+                
+              </td>
+              <td>
+                <div class="font-medium">Proposed programme of work and timetable of the Special Political and Decolonization Committee (Fourth Committee) for the eighty-first session of the General Assembly</div>
+              </td>
+              <td>
+                Item 121
+              </td>
+              <td>
+                
+                  2025-12-05
+                  
+                    <div class="text-xs text-muted mt-1">Meeting 55th plenary meeting</div>
+                  
+                
+              </td>
+            </tr>
+          
+            <tr>
+              <td>
+                <span class="font-semibold">80/519</span>
+                
+                  <div class="text-xs text-muted mt-1">Other Decisions</div>
+                
+              </td>
+              <td>
+                <div class="font-medium">Draft programme of work of the Second Committee for the eighty-first session of the General Assembly</div>
+              </td>
+              <td>
+                Item 121
+              </td>
+              <td>
+                
+                  2025-12-15
+                  
+                    <div class="text-xs text-muted mt-1">Meeting 64th plenary meeting</div>
+                  
+                
+              </td>
+            </tr>
+          
+            <tr>
+              <td>
+                <span class="font-semibold">80/520</span>
+                
+                  <div class="text-xs text-muted mt-1">Other Decisions</div>
+                
+              </td>
+              <td>
+                <div class="font-medium">Revitalization of the work of the Second Committee</div>
+              </td>
+              <td>
+                Item 121
+              </td>
+              <td>
+                
+                  2025-12-15
+                  
+                    <div class="text-xs text-muted mt-1">Meeting 64th plenary meeting</div>
+                  
+                
+              </td>
+            </tr>
+          
+            <tr>
+              <td>
+                <span class="font-semibold">80/521</span>
+                
+                  <div class="text-xs text-muted mt-1">Other Decisions</div>
+                
+              </td>
+              <td>
+                <div class="font-medium">Preparatory Committee for the United Nations Conference of Plenipotentiaries on Prevention and Punishment of Crimes against Humanity </div>
+              </td>
+              <td>
+                Item 81
+              </td>
+              <td>
+                
+                  2025-12-15
+                  
+                    <div class="text-xs text-muted mt-1">Meeting 64th plenary meeting</div>
+                  
+                
+              </td>
+            </tr>
+          
+            <tr>
+              <td>
+                <span class="font-semibold">80/522</span>
+                
+                  <div class="text-xs text-muted mt-1">Other Decisions</div>
+                
+              </td>
+              <td>
+                <div class="font-medium">Provisional programme of work of the Sixth Committee for the eighty-first session </div>
+              </td>
+              <td>
+                Item 121
+              </td>
+              <td>
+                
+                  2025-12-15
+                  
+                    <div class="text-xs text-muted mt-1">Meeting 64th plenary meeting</div>
+                  
+                
+              </td>
+            </tr>
+          
+            <tr>
+              <td>
+                <span class="font-semibold">80/523</span>
+                
+                  <div class="text-xs text-muted mt-1">Other Decisions</div>
+                
+              </td>
+              <td>
+                <div class="font-medium">Requests for observer status in the General Assembly deferred to the eighty-first session </div>
+              </td>
+              <td>
+                Item 161, 162, 164–169, 171–173 and 176
+              </td>
+              <td>
+                
+                  2025-12-15
+                  
+                    <div class="text-xs text-muted mt-1">Meeting 64th plenary meeting</div>
+                  
+                
+              </td>
+            </tr>
+          
+            <tr>
+              <td>
+                <span class="font-semibold">80/524</span>
+                
+                  <div class="text-xs text-muted mt-1">Other Decisions</div>
+                
+              </td>
+              <td>
+                <div class="font-medium">High-level meeting on the overall review of the implementation of the outcomes of the World Summit on the Information Society</div>
+              </td>
+              <td>
+                Item 15
+              </td>
+              <td>
+                
+                  2025-12-16
+                  
+                    <div class="text-xs text-muted mt-1">Meeting 65th plenary meeting</div>
+                  
+                
+              </td>
+            </tr>
+          
+            <tr>
+              <td>
+                <span class="font-semibold">80/525</span>
+                
+                  <div class="text-xs text-muted mt-1">Other Decisions</div>
+                
+              </td>
+              <td>
+                <div class="font-medium">Draft programme of work of the Third Committee for the eighty-first session of the General Assembly</div>
+              </td>
+              <td>
+                Item 121
+              </td>
+              <td>
+                
+                  2025-12-18
+                  
+                    <div class="text-xs text-muted mt-1">Meeting 69th plenary meeting</div>
+                  
+                
+              </td>
+            </tr>
+          
+            <tr>
+              <td>
+                <span class="font-semibold">80/526</span>
+                
+                  <div class="text-xs text-muted mt-1">Other Decisions</div>
+                
+              </td>
+              <td>
+                <div class="font-medium">Questions deferred for future consideration</div>
+              </td>
+              <td>
+                Item 134
+              </td>
+              <td>
+                
+                  2025-12-30
+                  
+                    <div class="text-xs text-muted mt-1">Meeting 69th (resumed) plenary meeting</div>
+                  
+                
+              </td>
+            </tr>
+          
+            <tr>
+              <td>
+                <span class="font-semibold">80/527</span>
+                
+                  <div class="text-xs text-muted mt-1">Other Decisions</div>
+                
+              </td>
+              <td>
+                <div class="font-medium">Agenda items remaining for consideration by the General Assembly at its eightieth session</div>
+              </td>
+              <td>
+                Item 7
+              </td>
+              <td>
+                
+                  2025-12-30
+                  
+                    <div class="text-xs text-muted mt-1">Meeting 69th (resumed) plenary meeting</div>
+                  
+                
+              </td>
+            </tr>
+          
+            <tr>
+              <td>
+                <span class="font-semibold">80/415</span>
+                
+                  <div class="text-xs text-muted mt-1">Elections and Appointments</div>
+                
+              </td>
+              <td>
+                <div class="font-medium">Election  of members of the Organizational Committee of the Peacebuilding Commission</div>
+              </td>
+              <td>
+                Item 114 (b)
+              </td>
+              <td>
+                
+                  2025-12-12
+                  
+                    <div class="text-xs text-muted mt-1">Meeting 61st plenary meeting</div>
+                  
+                
+              </td>
+            </tr>
+          
+            <tr>
+              <td>
+                <span class="font-semibold">80/416</span>
+                
+                  <div class="text-xs text-muted mt-1">Elections and Appointments</div>
+                
+              </td>
+              <td>
+                <div class="font-medium">Election  of the United Nations High Commissioner for Refugees</div>
+              </td>
+              <td>
+                Item 114 (e)
+              </td>
+              <td>
+                
+                  2025-12-18
+                  
+                    <div class="text-xs text-muted mt-1">Meeting 69th plenary meeting</div>
+                  
+                
+              </td>
+            </tr>
+          
+        
+      </tbody>
+    </table>
+  </div>
+
+
+    </div>
+  </main>
+
+  
+  <footer class="site-footer">
+    <div class="footer-main">
+      <div class="container">
+        <div class="footer-grid">
+          
+          <div>
+            <a href="https://www.un.org/en/" class="footer-brand">
+              <svg viewBox="0 0 24 24" fill="currentColor">
                 <circle cx="12" cy="12" r="10"/>
-                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
-                <path d="M2 12h20"/>
               </svg>
+              <span>United Nations</span>
+            </a>
+            <p class="footer-description">
+              Portal to the work of intergovernmental bodies. Access official documents, meetings, and decisions.
+            </p>
+          </div>
+
+          
+          <div class="footer-section">
+            <h4>General Assembly</h4>
+            <div class="footer-links">
+              <a href="/ga/plenary/80/index.html">80th Session Plenary</a>
+              <a href="/ga/c1/80/index.html">First Committee</a>
+              <a href="/ga/c2/80/index.html">Second Committee</a>
+              <a href="/ga/c3/80/index.html">Third Committee</a>
             </div>
-            <div class="site-logo-text">
-              <span class="site-logo-title">United Nations</span>
-              <span class="site-logo-subtitle">iGov: portal to the work of intergovernmental bodies</span>
+          </div>
+
+          
+          <div class="footer-section">
+            <h4>ECOSOC</h4>
+            <div class="footer-links">
+              <a href="/ecosoc/plenary/2026/index.html">2026 Session</a>
+              <a href="/ecosoc/hlpf/2025/index.html">HLPF</a>
+              <a href="/ecosoc/csw/70/index.html">CSW</a>
             </div>
-          </a>
-          <nav class="site-nav">
-            <div class="nav-item dropdown">
-              <a href="/ga/plenary/80/index.html" class="nav-link ">General Assembly</a>
-              <div class="dropdown-menu">
-                <div class="dropdown-header">80th Session</div>
-                <a href="/ga/plenary/80/index.html" class="dropdown-item">Plenary</a>
-                <a href="/ga/c1/80/index.html" class="dropdown-item">First Committee</a>
-                <a href="/ga/c2/80/index.html" class="dropdown-item">Second Committee</a>
-                <a href="/ga/c3/80/index.html" class="dropdown-item">Third Committee</a>
-                <a href="/ga/c4/80/index.html" class="dropdown-item">Fourth Committee</a>
-                <a href="/ga/c5/80/index.html" class="dropdown-item">Fifth Committee</a>
-                <div class="dropdown-divider"></div>
-                <div class="dropdown-header">Previous Sessions</div>
-                <a href="/ga/plenary/79/index.html" class="dropdown-item">79th Session</a>
-                <a href="/ga/plenary/78/index.html" class="dropdown-item">78th Session</a>
-              </div>
+          </div>
+
+          
+          <div class="footer-section">
+            <h4>Resources</h4>
+            <div class="footer-links">
+              <a href="https://www.un.org/en/">UN Homepage</a>
+              <a href="https://documents.un.org/">UN Documents</a>
+              <a href="https://webtv.un.org/">UN Web TV</a>
             </div>
-            <div class="nav-item dropdown">
-              <a href="/ecosoc/plenary/2026/index.html" class="nav-link ">Economic and Social Council</a>
-              <div class="dropdown-menu">
-                <div class="dropdown-header">2026 Session</div>
-                <a href="/ecosoc/plenary/2026/index.html" class="dropdown-item">Plenary</a>
-                <div class="dropdown-divider"></div>
-                <div class="dropdown-header">Bodies</div>
-                <a href="/ecosoc/hlpf/2025/index.html" class="dropdown-item">High-level Political Forum</a>
-                <a href="/ecosoc/csw/70/index.html" class="dropdown-item">Commission on the Status of Women</a>
-                <a href="/ecosoc/ggim/15/index.html" class="dropdown-item">Committee of Experts on GGIM</a>
-                <a href="/ecosoc/unff/20/index.html" class="dropdown-item">UN Forum on Forests</a>
-                <a href="/ecosoc/ungegn/2025/index.html" class="dropdown-item">UNGEGN</a>
-              </div>
-            </div>
-            <div class="nav-item dropdown">
-              <a href="#" class="nav-link ">Conferences</a>
-              <div class="dropdown-menu">
-                <a href="/conferences/ffd4/2025/index.html" class="dropdown-item">FFD4 - Financing for Development</a>
-                <a href="/conferences/ffd4pc/3/index.html" class="dropdown-item">FFD4 PrepCom</a>
-              </div>
-            </div>
-          </nav>
+          </div>
         </div>
       </div>
-    </header>
+    </div>
 
-    <main class="main-container">
-      
-<div class="sdg-banner">
-  <div class="sdg-color sdg-1"></div>
-  <div class="sdg-color sdg-2"></div>
-  <div class="sdg-color sdg-3"></div>
-  <div class="sdg-color sdg-4"></div>
-  <div class="sdg-color sdg-5"></div>
-  <div class="sdg-color sdg-6"></div>
-  <div class="sdg-color sdg-7"></div>
-  <div class="sdg-color sdg-8"></div>
-  <div class="sdg-color sdg-9"></div>
-  <div class="sdg-color sdg-10"></div>
-  <div class="sdg-color sdg-11"></div>
-  <div class="sdg-color sdg-12"></div>
-  <div class="sdg-color sdg-13"></div>
-  <div class="sdg-color sdg-14"></div>
-  <div class="sdg-color sdg-15"></div>
-  <div class="sdg-color sdg-16"></div>
-  <div class="sdg-color sdg-17"></div>
-</div>
-
-<div class="breadcrumbs">
-  <a href="/index.html">Home</a>
-  <span>/</span>
-  <a href="/ga/plenary/80/index.html">General Assembly</a>
-  <span>/</span>
-  <span>Decisions</span>
-</div>
-
-<div class="page-header">
-  <h1>Decisions — 80th Session</h1>
-  <p class="lead">Decisions adopted by the General Assembly</p>
-</div>
-
-
-<div class="data-table-container">
-  <table>
-    <thead>
-      <tr>
-        <th class="w-120">Decision</th>
-        <th>Title</th>
-        <th class="w-100">Agenda</th>
-        <th class="w-140">Meeting</th>
-      </tr>
-    </thead>
-    <tbody>
-      
-      <tr>
-        <td>
-          <span class="font-mono font-semibold">80/401</span>
-          
-            <br><span class="badge badge-outline mt-2">Elections and Appointments</span>
-          
-        </td>
-        <td>
-          <a href="#" class="table-link">Appointment of the members of the Credentials Committee </a>
-        </td>
-        <td>
-          
-            Item 3 (a)
-          
-        </td>
-        <td>
-          
-            
-              2025-09-09
-            
-            
-              <div class="text-sm text-gray-500 mt-1">Meeting 1 plenary meeting</div>
-            
-          
-        </td>
-      </tr>
-      
-      <tr>
-        <td>
-          <span class="font-mono font-semibold">80/501</span>
-          
-            <br><span class="badge badge-outline mt-2">Other Decisions</span>
-          
-        </td>
-        <td>
-          <a href="#" class="table-link">Meetings of subsidiary organs and entities during the main part of the eightieth session  </a>
-        </td>
-        <td>
-          
-            Item 7
-          
-        </td>
-        <td>
-          
-            
-              2025-09-02
-            
-            
-              <div class="text-sm text-gray-500 mt-1">Meeting 1 plenary meeting</div>
-            
-          
-        </td>
-      </tr>
-      
-      <tr>
-        <td>
-          <span class="font-mono font-semibold">80/502</span>
-          
-            <br><span class="badge badge-outline mt-2">Other Decisions</span>
-          
-        </td>
-        <td>
-          <a href="#" class="table-link">General debate of the eightieth session of the General Assembly	  </a>
-        </td>
-        <td>
-          
-            Item 7
-          
-        </td>
-        <td>
-          
-            
-              2025-09-12
-            
-            
-              <div class="text-sm text-gray-500 mt-1">Meeting 2 plenary meeting</div>
-            
-          
-        </td>
-      </tr>
-      
-      <tr>
-        <td>
-          <span class="font-mono font-semibold">80/503</span>
-          
-            <br><span class="badge badge-outline mt-2">Other Decisions</span>
-          
-        </td>
-        <td>
-          <a href="#" class="table-link">Rights of reply to addresses by Heads of State </a>
-        </td>
-        <td>
-          
-            Item 7
-          
-        </td>
-        <td>
-          
-            
-              2025-09-12
-            
-            
-              <div class="text-sm text-gray-500 mt-1">Meeting 2 plenary meeting</div>
-            
-          
-        </td>
-      </tr>
-      
-      <tr>
-        <td>
-          <span class="font-mono font-semibold">80/504</span>
-          
-            <br><span class="badge badge-outline mt-2">Other Decisions</span>
-          
-        </td>
-        <td>
-          <a href="#" class="table-link">Organization of the eightieth session </a>
-        </td>
-        <td>
-          
-            Item 7
-          
-        </td>
-        <td>
-          
-            
-              2025-09-12
-            
-            
-              <div class="text-sm text-gray-500 mt-1">Meeting 2nd plenary meeting</div>
-            
-          
-        </td>
-      </tr>
-      
-      <tr>
-        <td>
-          <span class="font-mono font-semibold">80/505</span>
-          
-            <br><span class="badge badge-outline mt-2">Other Decisions</span>
-          
-        </td>
-        <td>
-          <a href="#" class="table-link">Adoption of the agenda and allocation of agenda items </a>
-        </td>
-        <td>
-          
-            Item 7
-          
-        </td>
-        <td>
-          
-            
-              2025-09-12
-            
-            
-              <div class="text-sm text-gray-500 mt-1">Meeting 2 plenary meeting</div>
-            
-          
-        </td>
-      </tr>
-      
-      <tr>
-        <td>
-          <span class="font-mono font-semibold">80/506</span>
-          
-            <br><span class="badge badge-outline mt-2">Other Decisions</span>
-          
-        </td>
-        <td>
-          <a href="#" class="table-link">Endorsement of the New York Declaration on the Peaceful Settlement of the Question of Palestine and the Implementation of the Two-State Solution </a>
-        </td>
-        <td>
-          
-            Item 35
-          
-        </td>
-        <td>
-          
-            
-              2025-09-12
-            
-            
-              <div class="text-sm text-gray-500 mt-1">Meeting 2 plenary meeting</div>
-            
-          
-        </td>
-      </tr>
-      
-      <tr>
-        <td>
-          <span class="font-mono font-semibold">80/507</span>
-          
-            <br><span class="badge badge-outline mt-2">Other Decisions</span>
-          
-        </td>
-        <td>
-          <a href="#" class="table-link">High-level International Conference for the Peaceful Settlement of the Question of Palestine and the Implementation of the Two-State Solution </a>
-        </td>
-        <td>
-          
-            Item 35
-          
-        </td>
-        <td>
-          
-            
-              2025-09-19
-            
-            
-              <div class="text-sm text-gray-500 mt-1">Meeting 3 plenary meeting</div>
-            
-          
-        </td>
-      </tr>
-      
-      <tr>
-        <td>
-          <span class="font-mono font-semibold">80/402</span>
-          
-            <br><span class="badge badge-outline mt-2">Elections and Appointments</span>
-          
-        </td>
-        <td>
-          <a href="#" class="table-link">Election of members of the Human Rights Council</a>
-        </td>
-        <td>
-          
-            Item 114 (c)
-          
-        </td>
-        <td>
-          
-            
-              2025-10-14
-            
-            
-              <div class="text-sm text-gray-500 mt-1">Meeting 18th plenary meeting</div>
-            
-          
-        </td>
-      </tr>
-      
-      <tr>
-        <td>
-          <span class="font-mono font-semibold">80/508</span>
-          
-            <br><span class="badge badge-outline mt-2">Other Decisions</span>
-          
-        </td>
-        <td>
-          <a href="#" class="table-link">Report of the International Residual Mechanism for Criminal Tribunals</a>
-        </td>
-        <td>
-          
-            Item 128
-          
-        </td>
-        <td>
-          
-            
-              2025-10-22
-            
-            
-              <div class="text-sm text-gray-500 mt-1">Meeting 20th plenary meeting</div>
-            
-          
-        </td>
-      </tr>
-      
-      <tr>
-        <td>
-          <span class="font-mono font-semibold">80/509</span>
-          
-            <br><span class="badge badge-outline mt-2">Other Decisions</span>
-          
-        </td>
-        <td>
-          <a href="#" class="table-link">World Social Summit</a>
-        </td>
-        <td>
-          
-            Item 25 (b)
-          
-        </td>
-        <td>
-          
-            
-              2025-10-31
-            
-            
-              <div class="text-sm text-gray-500 mt-1">Meeting 26th plenary meeting</div>
-            
-          
-        </td>
-      </tr>
-      
-      <tr>
-        <td>
-          <span class="font-mono font-semibold">80/403</span>
-          
-            <br><span class="badge badge-outline mt-2">Elections and Appointments</span>
-          
-        </td>
-        <td>
-          <a href="#" class="table-link">Election of a member of the International Court of Justice</a>
-        </td>
-        <td>
-          
-            Item 113 (c)
-          
-        </td>
-        <td>
-          
-            
-              2025-11-12
-            
-            
-              <div class="text-sm text-gray-500 mt-1">Meeting 37th plenary meeting</div>
-            
-          
-        </td>
-      </tr>
-      
-      <tr>
-        <td>
-          <span class="font-mono font-semibold">80/510</span>
-          
-            <br><span class="badge badge-outline mt-2">Other Decisions</span>
-          
-        </td>
-        <td>
-          <a href="#" class="table-link">Report  of the Economic and Social Council</a>
-        </td>
-        <td>
-          
-            Item 9
-          
-        </td>
-        <td>
-          
-            
-              2025-11-13
-            
-            
-              <div class="text-sm text-gray-500 mt-1">Meeting 38th plenary meeting</div>
-            
-          
-        </td>
-      </tr>
-      
-      <tr>
-        <td>
-          <span class="font-mono font-semibold">80/404</span>
-          
-            <br><span class="badge badge-outline mt-2">Elections and Appointments</span>
-          
-        </td>
-        <td>
-          <a href="#" class="table-link">Election of members of the Committee for Programme and Coordination</a>
-        </td>
-        <td>
-          
-            Item 114 (a)
-          
-        </td>
-        <td>
-          
-            
-              2025-11-17
-            
-            
-              <div class="text-sm text-gray-500 mt-1">Meeting 42nd plenary meeting</div>
-            
-          
-        </td>
-      </tr>
-      
-      <tr>
-        <td>
-          <span class="font-mono font-semibold">80/405</span>
-          
-            <br><span class="badge badge-outline mt-2">Elections and Appointments</span>
-          
-        </td>
-        <td>
-          <a href="#" class="table-link">Appointment of members of the Committee on Conferences</a>
-        </td>
-        <td>
-          
-            Item 115 (g)
-          
-        </td>
-        <td>
-          
-            
-              2025-11-17
-            
-            
-              <div class="text-sm text-gray-500 mt-1">Meeting 42nd plenary meeting</div>
-            
-          
-        </td>
-      </tr>
-      
-      <tr>
-        <td>
-          <span class="font-mono font-semibold">80/406</span>
-          
-            <br><span class="badge badge-outline mt-2">Elections and Appointments</span>
-          
-        </td>
-        <td>
-          <a href="#" class="table-link">Confirmation of the appointment of the Administrator of the United Nations Development Programme</a>
-        </td>
-        <td>
-          
-            Item 115 (h)
-          
-        </td>
-        <td>
-          
-            
-              2025-11-17
-            
-            
-              <div class="text-sm text-gray-500 mt-1">Meeting 42nd plenary meeting</div>
-            
-          
-        </td>
-      </tr>
-      
-      <tr>
-        <td>
-          <span class="font-mono font-semibold">80/407</span>
-          
-            <br><span class="badge badge-outline mt-2">Elections and Appointments</span>
-          
-        </td>
-        <td>
-          <a href="#" class="table-link">Appointment of the judges of the United Nations Appeals Tribunal</a>
-        </td>
-        <td>
-          
-            Item 115 (j)
-          
-        </td>
-        <td>
-          
-            
-              2025-11-17
-            
-            
-              <div class="text-sm text-gray-500 mt-1">Meeting 42nd plenary meeting</div>
-            
-          
-        </td>
-      </tr>
-      
-      <tr>
-        <td>
-          <span class="font-mono font-semibold">80/409</span>
-          
-            <br><span class="badge badge-outline mt-2">Elections and Appointments</span>
-          
-        </td>
-        <td>
-          <a href="#" class="table-link">Appointment of members of the Advisory Committee on Administrative and Budgetary Questions</a>
-        </td>
-        <td>
-          
-            Item 115 (a)
-          
-        </td>
-        <td>
-          
-            
-              2025-11-17
-            
-            
-              <div class="text-sm text-gray-500 mt-1">Meeting 42nd plenary meeting</div>
-            
-          
-        </td>
-      </tr>
-      
-      <tr>
-        <td>
-          <span class="font-mono font-semibold">80/410</span>
-          
-            <br><span class="badge badge-outline mt-2">Elections and Appointments</span>
-          
-        </td>
-        <td>
-          <a href="#" class="table-link">Appointment of members of the Committee on Contributions</a>
-        </td>
-        <td>
-          
-            Item 115 (b)
-          
-        </td>
-        <td>
-          
-            
-              2025-11-17
-            
-            
-              <div class="text-sm text-gray-500 mt-1">Meeting 42nd plenary meeting</div>
-            
-          
-        </td>
-      </tr>
-      
-      <tr>
-        <td>
-          <span class="font-mono font-semibold">80/411</span>
-          
-            <br><span class="badge badge-outline mt-2">Elections and Appointments</span>
-          
-        </td>
-        <td>
-          <a href="#" class="table-link">Confirmation of the appointment of members of the Investments Committee</a>
-        </td>
-        <td>
-          
-            Item 115 (c)
-          
-        </td>
-        <td>
-          
-            
-              2025-11-17
-            
-            
-              <div class="text-sm text-gray-500 mt-1">Meeting 42nd plenary meeting</div>
-            
-          
-        </td>
-      </tr>
-      
-      <tr>
-        <td>
-          <span class="font-mono font-semibold">80/412</span>
-          
-            <br><span class="badge badge-outline mt-2">Elections and Appointments</span>
-          
-        </td>
-        <td>
-          <a href="#" class="table-link">Appointment of a member of the Board of Auditors</a>
-        </td>
-        <td>
-          
-            Item 115 (d)
-          
-        </td>
-        <td>
-          
-            
-              2025-11-17
-            
-            
-              <div class="text-sm text-gray-500 mt-1">Meeting 42nd plenary meeting</div>
-            
-          
-        </td>
-      </tr>
-      
-      <tr>
-        <td>
-          <span class="font-mono font-semibold">80/413</span>
-          
-            <br><span class="badge badge-outline mt-2">Elections and Appointments</span>
-          
-        </td>
-        <td>
-          <a href="#" class="table-link">Appointment of members of the International Civil Service Commission</a>
-        </td>
-        <td>
-          
-            Item 115 (e)
-          
-        </td>
-        <td>
-          
-            
-              2025-11-17
-            
-            
-              <div class="text-sm text-gray-500 mt-1">Meeting 42nd plenary meeting</div>
-            
-          
-        </td>
-      </tr>
-      
-      <tr>
-        <td>
-          <span class="font-mono font-semibold">80/414</span>
-          
-            <br><span class="badge badge-outline mt-2">Elections and Appointments</span>
-          
-        </td>
-        <td>
-          <a href="#" class="table-link">Appointment of members of the Independent Audit Advisory Committee</a>
-        </td>
-        <td>
-          
-            Item 115 (f)
-          
-        </td>
-        <td>
-          
-            
-              2025-11-17
-            
-            
-              <div class="text-sm text-gray-500 mt-1">Meeting 42nd plenary meeting</div>
-            
-          
-        </td>
-      </tr>
-      
-      <tr>
-        <td>
-          <span class="font-mono font-semibold">80/408 A and B</span>
-          
-            <br><span class="badge badge-outline mt-2">Elections and Appointments</span>
-          
-        </td>
-        <td>
-          <a href="#" class="table-link">Appointment of the judges of the United Nations Dispute Tribunal</a>
-        </td>
-        <td>
-          
-            Item 115 (k)
-          
-        </td>
-        <td>
-          
-            
-              2025-11-17
-            
-            
-              <div class="text-sm text-gray-500 mt-1">Meeting 42nd plenary meeting</div>
-            
-          
-        </td>
-      </tr>
-      
-      <tr>
-        <td>
-          <span class="font-mono font-semibold">80/511</span>
-          
-            <br><span class="badge badge-outline mt-2">Other Decisions</span>
-          
-        </td>
-        <td>
-          <a href="#" class="table-link">High-level meeting on the appraisal of the United Nations Global Plan of Action to Combat Trafficking in Persons</a>
-        </td>
-        <td>
-          
-            Item 107
-          
-        </td>
-        <td>
-          
-            
-              2025-11-24
-            
-            
-              <div class="text-sm text-gray-500 mt-1">Meeting 48th plenary meeting</div>
-            
-          
-        </td>
-      </tr>
-      
-      <tr>
-        <td>
-          <span class="font-mono font-semibold">80/512</span>
-          
-            <br><span class="badge badge-outline mt-2">Other Decisions</span>
-          
-        </td>
-        <td>
-          <a href="#" class="table-link">Reducing space threats through norms, rules and principles of responsible behaviour</a>
-        </td>
-        <td>
-          
-            Item 97 (d)
-          
-        </td>
-        <td>
-          
-            
-              2025-12-01
-            
-            
-              <div class="text-sm text-gray-500 mt-1">Meeting 52nd plenary meeting</div>
-            
-          
-        </td>
-      </tr>
-      
-      <tr>
-        <td>
-          <span class="font-mono font-semibold">80/513</span>
-          
-            <br><span class="badge badge-outline mt-2">Other Decisions</span>
-          
-        </td>
-        <td>
-          <a href="#" class="table-link">Treaty banning the production of fissile material for nuclear weapons or other nuclear explosive devices</a>
-        </td>
-        <td>
-          
-            Item 99 (a)
-          
-        </td>
-        <td>
-          
-            
-              2025-12-01
-            
-            
-              <div class="text-sm text-gray-500 mt-1">Meeting 52nd plenary meeting</div>
-            
-          
-        </td>
-      </tr>
-      
-      <tr>
-        <td>
-          <span class="font-mono font-semibold">80/514</span>
-          
-            <br><span class="badge badge-outline mt-2">Other Decisions</span>
-          
-        </td>
-        <td>
-          <a href="#" class="table-link">Compliance with non-proliferation, arms limitation and disarmament agreements and commitments</a>
-        </td>
-        <td>
-          
-            Item 99 (aa)
-          
-        </td>
-        <td>
-          
-            
-              2025-12-01
-            
-            
-              <div class="text-sm text-gray-500 mt-1">Meeting 52nd plenary meeting</div>
-            
-          
-        </td>
-      </tr>
-      
-      <tr>
-        <td>
-          <span class="font-mono font-semibold">80/515</span>
-          
-            <br><span class="badge badge-outline mt-2">Other Decisions</span>
-          
-        </td>
-        <td>
-          <a href="#" class="table-link">Provisional programme of work and timetable of the First Committee for 2026</a>
-        </td>
-        <td>
-          
-            Item 121
-          
-        </td>
-        <td>
-          
-            
-              2025-12-01
-            
-            
-              <div class="text-sm text-gray-500 mt-1">Meeting 52nd plenary meeting</div>
-            
-          
-        </td>
-      </tr>
-      
-      <tr>
-        <td>
-          <span class="font-mono font-semibold">80/516 A, B, C and D</span>
-          
-            <br><span class="badge badge-outline mt-2">Other Decisions</span>
-          
-        </td>
-        <td>
-          <a href="#" class="table-link">Increase in the membership of the Committee on the Peaceful Uses of Outer Space</a>
-        </td>
-        <td>
-          
-            Item 48
-          
-        </td>
-        <td>
-          
-            
-              2025-12-05
-            
-            
-              <div class="text-sm text-gray-500 mt-1">Meeting 55th plenary meeting</div>
-            
-          
-        </td>
-      </tr>
-      
-      <tr>
-        <td>
-          <span class="font-mono font-semibold">80/517</span>
-          
-            <br><span class="badge badge-outline mt-2">Other Decisions</span>
-          
-        </td>
-        <td>
-          <a href="#" class="table-link">Question of Gibraltar</a>
-        </td>
-        <td>
-          
-            Item 58
-          
-        </td>
-        <td>
-          
-            
-              2025-12-05
-            
-            
-              <div class="text-sm text-gray-500 mt-1">Meeting 55th plenary meeting</div>
-            
-          
-        </td>
-      </tr>
-      
-      <tr>
-        <td>
-          <span class="font-mono font-semibold">80/518</span>
-          
-            <br><span class="badge badge-outline mt-2">Other Decisions</span>
-          
-        </td>
-        <td>
-          <a href="#" class="table-link">Proposed programme of work and timetable of the Special Political and Decolonization Committee (Fourth Committee) for the eighty-first session of the General Assembly</a>
-        </td>
-        <td>
-          
-            Item 121
-          
-        </td>
-        <td>
-          
-            
-              2025-12-05
-            
-            
-              <div class="text-sm text-gray-500 mt-1">Meeting 55th plenary meeting</div>
-            
-          
-        </td>
-      </tr>
-      
-      <tr>
-        <td>
-          <span class="font-mono font-semibold">80/519</span>
-          
-            <br><span class="badge badge-outline mt-2">Other Decisions</span>
-          
-        </td>
-        <td>
-          <a href="#" class="table-link">Draft programme of work of the Second Committee for the eighty-first session of the General Assembly</a>
-        </td>
-        <td>
-          
-            Item 121
-          
-        </td>
-        <td>
-          
-            
-              2025-12-15
-            
-            
-              <div class="text-sm text-gray-500 mt-1">Meeting 64th plenary meeting</div>
-            
-          
-        </td>
-      </tr>
-      
-      <tr>
-        <td>
-          <span class="font-mono font-semibold">80/520</span>
-          
-            <br><span class="badge badge-outline mt-2">Other Decisions</span>
-          
-        </td>
-        <td>
-          <a href="#" class="table-link">Revitalization of the work of the Second Committee</a>
-        </td>
-        <td>
-          
-            Item 121
-          
-        </td>
-        <td>
-          
-            
-              2025-12-15
-            
-            
-              <div class="text-sm text-gray-500 mt-1">Meeting 64th plenary meeting</div>
-            
-          
-        </td>
-      </tr>
-      
-      <tr>
-        <td>
-          <span class="font-mono font-semibold">80/521</span>
-          
-            <br><span class="badge badge-outline mt-2">Other Decisions</span>
-          
-        </td>
-        <td>
-          <a href="#" class="table-link">Preparatory Committee for the United Nations Conference of Plenipotentiaries on Prevention and Punishment of Crimes against Humanity </a>
-        </td>
-        <td>
-          
-            Item 81
-          
-        </td>
-        <td>
-          
-            
-              2025-12-15
-            
-            
-              <div class="text-sm text-gray-500 mt-1">Meeting 64th plenary meeting</div>
-            
-          
-        </td>
-      </tr>
-      
-      <tr>
-        <td>
-          <span class="font-mono font-semibold">80/522</span>
-          
-            <br><span class="badge badge-outline mt-2">Other Decisions</span>
-          
-        </td>
-        <td>
-          <a href="#" class="table-link">Provisional programme of work of the Sixth Committee for the eighty-first session </a>
-        </td>
-        <td>
-          
-            Item 121
-          
-        </td>
-        <td>
-          
-            
-              2025-12-15
-            
-            
-              <div class="text-sm text-gray-500 mt-1">Meeting 64th plenary meeting</div>
-            
-          
-        </td>
-      </tr>
-      
-      <tr>
-        <td>
-          <span class="font-mono font-semibold">80/523</span>
-          
-            <br><span class="badge badge-outline mt-2">Other Decisions</span>
-          
-        </td>
-        <td>
-          <a href="#" class="table-link">Requests for observer status in the General Assembly deferred to the eighty-first session </a>
-        </td>
-        <td>
-          
-            Item 161, 162, 164–169, 171–173 and 176
-          
-        </td>
-        <td>
-          
-            
-              2025-12-15
-            
-            
-              <div class="text-sm text-gray-500 mt-1">Meeting 64th plenary meeting</div>
-            
-          
-        </td>
-      </tr>
-      
-      <tr>
-        <td>
-          <span class="font-mono font-semibold">80/524</span>
-          
-            <br><span class="badge badge-outline mt-2">Other Decisions</span>
-          
-        </td>
-        <td>
-          <a href="#" class="table-link">High-level meeting on the overall review of the implementation of the outcomes of the World Summit on the Information Society</a>
-        </td>
-        <td>
-          
-            Item 15
-          
-        </td>
-        <td>
-          
-            
-              2025-12-16
-            
-            
-              <div class="text-sm text-gray-500 mt-1">Meeting 65th plenary meeting</div>
-            
-          
-        </td>
-      </tr>
-      
-      <tr>
-        <td>
-          <span class="font-mono font-semibold">80/525</span>
-          
-            <br><span class="badge badge-outline mt-2">Other Decisions</span>
-          
-        </td>
-        <td>
-          <a href="#" class="table-link">Draft programme of work of the Third Committee for the eighty-first session of the General Assembly</a>
-        </td>
-        <td>
-          
-            Item 121
-          
-        </td>
-        <td>
-          
-            
-              2025-12-18
-            
-            
-              <div class="text-sm text-gray-500 mt-1">Meeting 69th plenary meeting</div>
-            
-          
-        </td>
-      </tr>
-      
-      <tr>
-        <td>
-          <span class="font-mono font-semibold">80/526</span>
-          
-            <br><span class="badge badge-outline mt-2">Other Decisions</span>
-          
-        </td>
-        <td>
-          <a href="#" class="table-link">Questions deferred for future consideration</a>
-        </td>
-        <td>
-          
-            Item 134
-          
-        </td>
-        <td>
-          
-            
-              2025-12-30
-            
-            
-              <div class="text-sm text-gray-500 mt-1">Meeting 69th (resumed) plenary meeting</div>
-            
-          
-        </td>
-      </tr>
-      
-      <tr>
-        <td>
-          <span class="font-mono font-semibold">80/527</span>
-          
-            <br><span class="badge badge-outline mt-2">Other Decisions</span>
-          
-        </td>
-        <td>
-          <a href="#" class="table-link">Agenda items remaining for consideration by the General Assembly at its eightieth session</a>
-        </td>
-        <td>
-          
-            Item 7
-          
-        </td>
-        <td>
-          
-            
-              2025-12-30
-            
-            
-              <div class="text-sm text-gray-500 mt-1">Meeting 69th (resumed) plenary meeting</div>
-            
-          
-        </td>
-      </tr>
-      
-      <tr>
-        <td>
-          <span class="font-mono font-semibold">80/415</span>
-          
-            <br><span class="badge badge-outline mt-2">Elections and Appointments</span>
-          
-        </td>
-        <td>
-          <a href="#" class="table-link">Election  of members of the Organizational Committee of the Peacebuilding Commission</a>
-        </td>
-        <td>
-          
-            Item 114 (b)
-          
-        </td>
-        <td>
-          
-            
-              2025-12-12
-            
-            
-              <div class="text-sm text-gray-500 mt-1">Meeting 61st plenary meeting</div>
-            
-          
-        </td>
-      </tr>
-      
-      <tr>
-        <td>
-          <span class="font-mono font-semibold">80/416</span>
-          
-            <br><span class="badge badge-outline mt-2">Elections and Appointments</span>
-          
-        </td>
-        <td>
-          <a href="#" class="table-link">Election  of the United Nations High Commissioner for Refugees</a>
-        </td>
-        <td>
-          
-            Item 114 (e)
-          
-        </td>
-        <td>
-          
-            
-              2025-12-18
-            
-            
-              <div class="text-sm text-gray-500 mt-1">Meeting 69th plenary meeting</div>
-            
-          
-        </td>
-      </tr>
-      
-    </tbody>
-  </table>
-</div>
-
-
-    </main>
-
-    <footer class="site-footer">
-      <div class="site-footer-inner">
-        <div class="footer-brand">
-          <a href="https://www.un.org/en/">
-            <svg viewBox="0 0 24 24" fill="currentColor">
-              <circle cx="12" cy="12" r="10"/>
-              <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" fill="none" stroke="currentColor" stroke-width="1"/>
-              <path d="M2 12h20" stroke="currentColor" stroke-width="1"/>
-            </svg>
-            United Nations
-          </a>
-        </div>
-        <div class="footer-links">
+    <div class="footer-bottom">
+      <div class="container">
+        <div class="footer-legal">
           <a href="https://www.un.org/en/about-us/copyright">Copyright</a>
           <a href="https://www.un.org/en/about-us/fraud-alert">Fraud Alert</a>
           <a href="https://www.un.org/en/about-us/privacy-notice">Privacy Notice</a>
           <a href="https://www.un.org/en/about-us/terms-of-use">Terms of Use</a>
         </div>
-        <div class="footer-bottom">
-          <p>Department for General Assembly and Conference Management (DGACM)</p>
-        </div>
+        <p class="footer-copyright">
+          Department for General Assembly and Conference Management (DGACM)
+        </p>
       </div>
-    </footer>
+    </div>
+  </footer>
 
-    <script>
-      (function() {
-        var lastBuild = 1769368951;
-        var pollInterval = 2000;
-        function checkUpdate() {
-          fetch('/__build__').then(function(r) { return r.json(); }).then(function(data) {
+  <script>
+    // Mobile nav toggle
+    (function() {
+      var toggle = document.querySelector('.nav-toggle');
+      var nav = document.querySelector('.main-nav');
+      if (toggle && nav) {
+        toggle.addEventListener('click', function() {
+          nav.classList.toggle('open');
+          var icon = toggle.querySelector('use');
+          if (nav.classList.contains('open')) {
+            icon.setAttribute('href', '#icon-x');
+          } else {
+            icon.setAttribute('href', '#icon-menu');
+          }
+        });
+      }
+    })();
+
+    // Live reload for development
+    (function() {
+      var lastBuild = 1769391829;
+      var pollInterval = 2000;
+      function checkUpdate() {
+        fetch('/__build__')
+          .then(function(r) { return r.json(); })
+          .then(function(data) {
             if (data.timestamp > lastBuild) {
               lastBuild = data.timestamp;
               location.reload();
             }
-          }).catch(function() {});
-        }
-        setInterval(checkUpdate, pollInterval);
-      })();
-
-      (function() {
-        var filterSelect = document.getElementById('meeting-type-filter');
-        if (filterSelect) {
-          filterSelect.addEventListener('change', function() {
-            var filterValue = this.value;
-            var cards = document.querySelectorAll('.meeting-list .card');
-            cards.forEach(function(card) {
-              var type = (card.getAttribute('data-type') || '').toLowerCase();
-              if (filterValue === 'all' || type.indexOf(filterValue) !== -1) {
-                card.style.display = '';
-              } else {
-                card.style.display = 'none';
-              }
-            });
-          });
-        }
-      })();
-    </script>
-  </body>
+          })
+          .catch(function() {});
+      }
+      setInterval(checkUpdate, pollInterval);
+    })();
+  </script>
+</body>
 </html>
