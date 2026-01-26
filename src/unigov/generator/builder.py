@@ -55,6 +55,35 @@ def slugify(text: str) -> str:
     return text[:60]
 
 
+def process_footnotes(text: str) -> tuple[str, list[str]]:
+    import re
+    if not text:
+        return "", []
+    
+    footnotes: list[str] = []
+    
+    def replace_footnote(match):
+        footnote_content = match.group(1)
+        footnote_num = len(footnotes) + 1
+        footnotes.append(footnote_content)
+        return f'<sup><a href="#fn{footnote_num}" id="fnref{footnote_num}">{footnote_num}</a></sup>'
+    
+    processed = re.sub(r"\(?[Ff]ootnote:\s*(.+?)\)?\s*", replace_footnote, text)
+    
+    return processed, footnotes
+
+
+def get_footnotes(text: str) -> list[str]:
+    """Extract footnotes from text without processing."""
+    import re
+    if not text:
+        return []
+    footnotes: list[str] = []
+    for match in re.finditer(r"\(?[Ff]ootnote:\s*(.+?)\)?", text):
+        footnotes.append(match.group(1).strip())
+    return footnotes
+
+
 def meeting_url(meeting: dict) -> str:
     date = meeting.get("MT_dateTimeScheduleStart", "")[:10]
     name = slugify(meeting.get("MT_name", ""))
@@ -82,6 +111,33 @@ def get_stats(data_dir: Path) -> dict[str, int]:
         "decisions": len(decisions),
         "proposals": len(proposals.get("result", [])),
     }
+
+
+def group_agenda_items(agenda: list[dict]) -> list[dict]:
+    """Group agenda items by item number and collect headings as subitems."""
+    grouped = {}
+    for item in agenda:
+        item_num = item.get("AG_Item", "")
+        title = item.get("AG_Title", "")
+        heading = item.get("AG_Heading", "")
+
+        if item_num not in grouped:
+            grouped[item_num] = {
+                "item_number": item_num,
+                "title": title,
+                "headings": set(),
+            }
+        if heading:
+            grouped[item_num]["headings"].add(heading)
+
+    result = []
+    for item_num, data in sorted(grouped.items(), key=lambda x: float(x[0]) if x[0].replace(".", "", 1).isdigit() else float("inf")):
+        result.append({
+            "item_number": data["item_number"],
+            "title": data["title"],
+            "headings": sorted(data["headings"]),
+        })
+    return result
 
 
 def get_recent_meetings(data_dir: Path, limit: int = 3) -> list[dict]:
@@ -121,7 +177,9 @@ def build_environment(template_root: Path) -> Environment:
     )
     env.filters["datetime_format"] = datetime_format
     env.filters["meeting_url"] = meeting_url
+    env.filters["process_footnotes"] = lambda text: process_footnotes(text)[0]
     env.globals["datetime"] = datetime
+    env.globals["get_footnotes"] = get_footnotes
     return env
 
 
@@ -280,6 +338,41 @@ def build_agenda_page(
     (output_dir / "index.html").write_text(output, encoding="utf-8")
 
 
+def build_consolidated_agenda_page(
+    ctx: BuildContext,
+    session: str,
+    parent_label: str = "General Assembly",
+) -> None:
+    """Build a consolidated agenda page for the entire GA session.
+
+    UNGA has one agenda for the session covering all Main Committees.
+    Items show with their subheadings (AG_Heading) displayed as sub-items.
+    """
+    template = ctx.templates.get_template("agenda.html")
+    data_path = ctx.config.site.data_dir / "ga" / "plenary" / session
+    agenda = load_json(data_path / "agenda.json") or []
+    grouped_items = group_agenda_items(agenda)
+
+    output = template.render(
+        site=ctx.config.site,
+        session=session,
+        grouped_items=grouped_items,
+        empty_message="No agenda data available yet.",
+        breadcrumb_items=[
+            {"label": "Home", "url": f"{ctx.config.site.base_url}index.html"},
+            {"label": parent_label, "url": f"{ctx.config.site.base_url}ga/plenary/{session}/index.html"},
+            {"label": "Agenda"},
+        ],
+        page_heading=f"Agenda — {session} Session",
+        page_subtitle="Complete list of agenda items for the session",
+        last_build_timestamp=int(datetime.now().timestamp()),
+    )
+
+    output_dir = ctx.config.site.output_dir / "ga" / "plenary" / session / "agenda"
+    ensure_dir(output_dir)
+    (output_dir / "index.html").write_text(output, encoding="utf-8")
+
+
 def build_documents_page(
     ctx: BuildContext,
     base_path: str,
@@ -425,7 +518,7 @@ def build_ga_plenary(ctx: BuildContext, session_number: str) -> None:
     (output_dir / "index.html").write_text(output, encoding="utf-8")
 
     build_meetings_page(ctx, base_path, session_number, parent_label="General Assembly")
-    build_agenda_page(ctx, base_path, session_number, parent_label="General Assembly")
+    build_consolidated_agenda_page(ctx, session_number, parent_label="General Assembly")
     build_documents_page(ctx, base_path, session_number, parent_label="General Assembly")
     build_decisions_page(ctx, base_path, session_number, parent_label="General Assembly")
     build_proposals_page(ctx, base_path, session_number, parent_label="General Assembly")

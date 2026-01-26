@@ -20,39 +20,57 @@
   {% set elections_sorted = elections | sort(attribute="ED_DecisionNumber") %}
   {% set other_sorted = other | sort(attribute="ED_DecisionNumber") %}
 
+  {# Macro to render decision card #}
+  {% macro decision_card(decision) %}
+    {% set processed_text = decision.ED_DecisionText | process_footnotes | safe %}
+    {% set footnotes = get_footnotes(decision.ED_DecisionText) %}
+    <details class="decision-card mb-4">
+      <summary class="decision-summary">
+        <div class="decision-summary-main">
+          <span class="decision-number">{{ decision.ED_DecisionNumber }}</span>
+          <span class="decision-title">{{ decision.ED_Title }}</span>
+        </div>
+        <div class="decision-summary-meta">
+          {% if decision.ED_Type %}
+            {{ badge(decision.ED_Type, 'primary' if decision.ED_Type == 'Elections and Appointments' else 'secondary') }}
+          {% endif %}
+          <span class="decision-date">
+            {% if decision.ED_Meeting and decision.ED_Meeting[0] and decision.ED_Meeting[0].ED_Date %}
+              {{ decision.ED_Meeting[0].ED_Date[:10] }}
+            {% endif %}
+          </span>
+        </div>
+      </summary>
+      <div class="decision-content">
+        {% if decision.ED_DecisionText %}
+          <div class="decision-text mb-4">
+            {{ processed_text }}
+          </div>
+          {% if footnotes %}
+            <div class="footnotes">
+              {% for footnote in footnotes %}
+                <div class="footnote" id="fn{{ loop.index }}">
+                  <a href="#fnref{{ loop.index }}" class="footnote-back">↩</a>
+                  <span class="footnote-num">{{ loop.index }}.</span>
+                  <span class="footnote-content">{{ footnote }}</span>
+                </div>
+              {% endfor %}
+            </div>
+          {% endif %}
+        {% endif %}
+        {% if decision.ED_AgendaItem %}
+          <div class="decision-meta text-sm text-muted">
+            Agenda item: {{ decision.ED_AgendaItem }}
+          </div>
+        {% endif %}
+      </div>
+    </details>
+  {% endmacro %}
+
   {# All Decisions Tab #}
   <div class="decisions-tab active" data-tab="all">
     {% for decision in all_sorted %}
-      <details class="decision-card mb-4">
-        <summary class="decision-summary">
-          <div class="decision-summary-main">
-            <span class="decision-number">{{ decision.ED_DecisionNumber }}</span>
-            <span class="decision-title">{{ decision.ED_Title }}</span>
-          </div>
-          <div class="decision-summary-meta">
-            {% if decision.ED_Type %}
-              {{ badge(decision.ED_Type, 'primary' if decision.ED_Type == 'Elections and Appointments' else 'secondary') }}
-            {% endif %}
-            <span class="decision-date">
-              {% if decision.ED_Meeting and decision.ED_Meeting[0] and decision.ED_Meeting[0].ED_Date %}
-                {{ decision.ED_Meeting[0].ED_Date[:10] }}
-              {% endif %}
-            </span>
-          </div>
-        </summary>
-        <div class="decision-content">
-          {% if decision.ED_DecisionText %}
-            <div class="decision-text mb-4">
-              {{ decision.ED_DecisionText | safe }}
-            </div>
-          {% endif %}
-          {% if decision.ED_AgendaItem %}
-            <div class="decision-meta text-sm text-muted">
-              Agenda item: {{ decision.ED_AgendaItem }}
-            </div>
-          {% endif %}
-        </div>
-      </details>
+      {{ decision_card(decision) }}
     {% endfor %}
   </div>
 
@@ -60,33 +78,7 @@
   <div class="decisions-tab" data-tab="elections">
     {% if elections_sorted %}
       {% for decision in elections_sorted %}
-        <details class="decision-card mb-4">
-          <summary class="decision-summary">
-            <div class="decision-summary-main">
-              <span class="decision-number">{{ decision.ED_DecisionNumber }}</span>
-              <span class="decision-title">{{ decision.ED_Title }}</span>
-            </div>
-            <div class="decision-summary-meta">
-              <span class="decision-date">
-                {% if decision.ED_Meeting and decision.ED_Meeting[0] and decision.ED_Meeting[0].ED_Date %}
-                  {{ decision.ED_Meeting[0].ED_Date[:10] }}
-                {% endif %}
-              </span>
-            </div>
-          </summary>
-          <div class="decision-content">
-            {% if decision.ED_DecisionText %}
-              <div class="decision-text mb-4">
-                {{ decision.ED_DecisionText | safe }}
-              </div>
-            {% endif %}
-            {% if decision.ED_AgendaItem %}
-              <div class="decision-meta text-sm text-muted">
-                Agenda item: {{ decision.ED_AgendaItem }}
-              </div>
-            {% endif %}
-          </div>
-        </details>
+        {{ decision_card(decision) }}
       {% endfor %}
     {% else %}
       {{ empty_state("No elections and appointments decisions available yet.") }}
@@ -97,33 +89,7 @@
   <div class="decisions-tab" data-tab="other">
     {% if other_sorted %}
       {% for decision in other_sorted %}
-        <details class="decision-card mb-4">
-          <summary class="decision-summary">
-            <div class="decision-summary-main">
-              <span class="decision-number">{{ decision.ED_DecisionNumber }}</span>
-              <span class="decision-title">{{ decision.ED_Title }}</span>
-            </div>
-            <div class="decision-summary-meta">
-              <span class="decision-date">
-                {% if decision.ED_Meeting and decision.ED_Meeting[0] and decision.ED_Meeting[0].ED_Date %}
-                  {{ decision.ED_Meeting[0].ED_Date[:10] }}
-                {% endif %}
-              </span>
-            </div>
-          </summary>
-          <div class="decision-content">
-            {% if decision.ED_DecisionText %}
-              <div class="decision-text mb-4">
-                {{ decision.ED_DecisionText | safe }}
-              </div>
-            {% endif %}
-            {% if decision.ED_AgendaItem %}
-              <div class="decision-meta text-sm text-muted">
-                Agenda item: {{ decision.ED_AgendaItem }}
-              </div>
-            {% endif %}
-          </div>
-        </details>
+        {{ decision_card(decision) }}
       {% endfor %}
     {% else %}
       {{ empty_state("No other decisions available yet.") }}

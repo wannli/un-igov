@@ -982,6 +982,74 @@ small { font-size: 0.875rem; }
 }
 
 /* ==========================================================================
+   Agenda List - Consolidated GA Agenda
+   ========================================================================== */
+.agenda-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.agenda-item {
+  background: white;
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+.agenda-item-header {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+  padding: var(--space-4) var(--space-5);
+  background: var(--gray-50);
+  border-bottom: 1px solid var(--gray-200);
+}
+
+.agenda-item-number {
+  flex-shrink: 0;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--un-blue-dark);
+  background: white;
+  padding: var(--space-1) var(--space-2);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--gray-200);
+}
+
+.agenda-item-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--gray-900);
+  line-height: 1.4;
+}
+
+.agenda-subitems {
+  display: flex;
+  flex-direction: column;
+}
+
+.agenda-subitem {
+  padding: var(--space-3) var(--space-5);
+  padding-left: calc(var(--space-5) + var(--space-8));
+  border-bottom: 1px solid var(--gray-100);
+}
+
+.agenda-subitem:last-child {
+  border-bottom: none;
+}
+
+.agenda-subitem:hover {
+  background: var(--gray-50);
+}
+
+.agenda-subitem-text {
+  font-size: 0.875rem;
+  color: var(--gray-700);
+  line-height: 1.5;
+}
+
+/* ==========================================================================
    Tables
    ========================================================================== */
 .table-container {
@@ -1289,6 +1357,44 @@ tbody tr:hover {
 .decision-meta {
   padding-top: var(--space-3);
   border-top: 1px solid var(--gray-100);
+}
+
+.footnotes {
+  margin-top: var(--space-6);
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--gray-200);
+}
+
+.footnote {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-2);
+  font-size: 0.8125rem;
+  color: var(--gray-600);
+  padding: var(--space-2) 0;
+}
+
+.footnote-num {
+  font-weight: 600;
+  color: var(--gray-500);
+  flex-shrink: 0;
+  width: 24px;
+}
+
+.footnote-content {
+  line-height: 1.5;
+}
+
+.footnote-back {
+  font-size: 0.75rem;
+  color: var(--un-blue);
+  text-decoration: none;
+  flex-shrink: 0;
+  margin-right: var(--space-2);
+}
+
+.footnote-back:hover {
+  text-decoration: underline;
 }
 
 /* ==========================================================================

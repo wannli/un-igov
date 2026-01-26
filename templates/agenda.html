@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% from "macros.html" import breadcrumbs, page_header, empty_state %}
+{% set page_title = page_heading %}
+
+{% block content %}
+{{ breadcrumbs(breadcrumb_items) }}
+{{ page_header(page_heading, page_subtitle) }}
+
+{% if grouped_items %}
+  <div class="agenda-list">
+    {% for item in grouped_items %}
+      <div class="agenda-item">
+        <div class="agenda-item-header">
+          <span class="agenda-item-number">Item {{ item.item_number }}</span>
+          <span class="agenda-item-title">{{ item.title }}</span>
+        </div>
+        {% if item.headings %}
+          <div class="agenda-subitems">
+            {% for subitem in item.headings %}
+              <div class="agenda-subitem">
+                <span class="agenda-subitem-text">{{ subitem }}</span>
+              </div>
+            {% endfor %}
+          </div>
+        {% endif %}
+      </div>
+    {% endfor %}
+  </div>
+{% else %}
+  {{ empty_state(empty_message) }}
+{% endif %}
+{% endblock %}
