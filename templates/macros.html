@@ -241,12 +241,12 @@
 {% macro next_meeting_preview(meeting, base_path, site) %}
 {% if meeting %}
 <div class="next-meeting-card">
-  <div class="flex items-center gap-2 mb-3">
+  <div class="meeting-preview-header">
     {{ icon('calendar', 'lg') }}
     <span class="badge badge-primary">Next Meeting</span>
   </div>
-  <h3 class="text-xl mb-2">{{ meeting.MT_name }}</h3>
-  <p class="text-lg mb-3">{{ meeting.MT_dateTimeScheduleStart | datetime_format("%A, %d %B %Y at %H:%M") }}</p>
+  <h3 class="meeting-preview-title">{{ meeting.MT_name }}</h3>
+  <p class="meeting-preview-date">{{ meeting.MT_dateTimeScheduleStart | datetime_format("%A, %d %B %Y at %H:%M") }}</p>
   <a href="{{ site.base_url }}{{ base_path }}/{{ meeting | meeting_url }}" class="view-all-link">
     View details
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -254,5 +254,40 @@
     </svg>
   </a>
 </div>
+{% endif %}
+{% endmacro %}
+
+{# --------------------------------------------------------------------------
+   Meeting Preview Card (for upcoming meetings on home)
+   Usage: {{ meeting_preview_card(meeting, base_path, site, true) }}
+   -------------------------------------------------------------------------- #}
+{% macro meeting_preview_card(meeting, base_path, site, is_today=false) %}
+{% if meeting %}
+{% set meeting_href = site.base_url ~ base_path ~ "/meetings/" ~ (meeting | meeting_url) %}
+{% if is_today %}
+<a href="{{ meeting_href }}" class="next-meeting-card meeting-preview-card meeting-preview-card--today">
+  <div class="meeting-preview-header">
+    {{ icon('calendar', 'lg') }}
+    <span class="badge badge-primary">Today</span>
+  </div>
+  <h3 class="meeting-preview-title">{{ meeting.MT_name or "Meeting" }}</h3>
+  <p class="meeting-preview-date">{{ meeting.MT_dateTimeScheduleStart | datetime_format("%A, %d %B %Y at %H:%M") }}</p>
+  {% if meeting.MT_body %}
+  <p class="meeting-preview-meta">{{ meeting.MT_body }}</p>
+  {% endif %}
+  <span class="meeting-preview-link">View details</span>
+</a>
+{% else %}
+<a href="{{ meeting_href }}" class="card meeting-preview-card card-link">
+  <div class="card-body">
+    <h3 class="card-title">{{ meeting.MT_name or "Meeting" }}</h3>
+    <p class="meeting-preview-date">{{ meeting.MT_dateTimeScheduleStart | datetime_format("%A, %d %B %Y at %H:%M") }}</p>
+    {% if meeting.MT_body %}
+    <p class="card-description">{{ meeting.MT_body }}</p>
+    {% endif %}
+    <span class="meeting-preview-link">View details</span>
+  </div>
+</a>
+{% endif %}
 {% endif %}
 {% endmacro %}

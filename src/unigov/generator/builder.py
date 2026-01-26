@@ -977,6 +977,13 @@ def get_next_meeting(data_dir: Path) -> dict | None:
     return None
 
 
+def get_upcoming_meetings(data_dir: Path, limit: int = 6) -> list[dict]:
+    meetings = load_json(data_dir / "meetings.json") or []
+    today = datetime.now().strftime("%Y-%m-%d")
+    upcoming = [m for m in meetings if m.get("MT_dateTimeScheduleStart", "")[:10] >= today]
+    return sorted(upcoming, key=lambda m: m.get("MT_dateTimeScheduleStart", ""))[:limit]
+
+
 def build_home(ctx: BuildContext, session_number: str) -> None:
     template = ctx.templates.get_template("index.html")
     data_dir = ctx.config.site.data_dir / "ga" / "plenary" / session_number
@@ -985,9 +992,10 @@ def build_home(ctx: BuildContext, session_number: str) -> None:
     output = template.render(
         site=ctx.config.site,
         ga_session_path=ga_session_path,
-        recent_meetings=get_recent_meetings(data_dir),
+        upcoming_meetings=get_upcoming_meetings(data_dir),
         recent_decisions=get_recent_decisions(data_dir),
         next_meeting=get_next_meeting(data_dir),
+        today=datetime.now().strftime("%Y-%m-%d"),
         last_build_timestamp=int(datetime.now().timestamp()),
     )
 

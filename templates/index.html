@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% from "macros.html" import page_header, section_header, session_card, nav_card, preview_item, view_all_link, empty_state, next_meeting_preview %}
+{% from "macros.html" import page_header, section_header, nav_card, view_all_link, empty_state, meeting_preview_card %}
 {% set page_title = "Home" %}
 
 {% block content %}
@@ -8,36 +8,25 @@
   "Access official documents, meetings, and decisions from United Nations intergovernmental bodies."
 ) }}
 
-<div class="mt-10">
+<div class="section-block">
   {{ section_header("Recent Activity") }}
-  <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-    <div>
-      {{ next_meeting_preview(next_meeting, ga_session_path, site) }}
+  {% if upcoming_meetings %}
+    <div class="recent-activity-grid">
+      {% for meeting in upcoming_meetings %}
+        {{ meeting_preview_card(meeting, ga_session_path, site, meeting.MT_dateTimeScheduleStart[:10] == today) }}
+      {% endfor %}
     </div>
-    <div class="md:col-span-2">
-      <h3 class="text-xl mb-3">Latest Meetings</h3>
-      {% if recent_meetings %}
-        <div class="preview-list">
-          {% for meeting in recent_meetings %}
-            {{ preview_item(
-              site.base_url ~ ga_session_path ~ "/meetings/" ~ (meeting | meeting_url),
-              meeting.MT_name or "Meeting",
-              meeting.MT_dateTimeScheduleStart | datetime_format("%b %d, %Y"),
-              meeting.MT_body
-            ) }}
-          {% endfor %}
-        </div>
-        {{ view_all_link(site.base_url ~ ga_session_path ~ "/meetings/index.html", "View all meetings") }}
-      {% else %}
-        {{ empty_state("No recent meetings available yet.") }}
-      {% endif %}
+    <div class="recent-activity-footer">
+      {{ view_all_link(site.base_url ~ ga_session_path ~ "/meetings/index.html", "View all meetings") }}
     </div>
-  </div>
+  {% else %}
+    {{ empty_state("No upcoming meetings available yet.") }}
+  {% endif %}
 </div>
 
-<div class="mt-10">
+<div class="section-block">
   {{ section_header("Quick Access") }}
-  <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+  <div class="quick-access-grid">
     {{ nav_card(site.base_url ~ "ga/plenary/80/index.html", "calendar", "General Assembly", none, "Plenary and committees") }}
     {{ nav_card(site.base_url ~ "ecosoc/plenary/2026/index.html", "un-emblem", "ECOSOC", none, "Plenary and subsidiary bodies") }}
     {{ nav_card(site.base_url ~ "conferences/ffd4/2025/index.html", "document", "Conferences", none, "Major UN conferences") }}
