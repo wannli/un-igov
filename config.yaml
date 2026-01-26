@@ -1,6 +1,6 @@
 site:
   title: "iGov: portal to the work of intergovernmental bodies"
-  base_url: "/"
+  base_url: "/un-igov/"
   output_dir: "output"
   data_dir: "data"
 
