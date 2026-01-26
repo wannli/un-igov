@@ -1,0 +1,129 @@
+{% extends "base.html" %}
+{% from "macros.html" import breadcrumbs, page_header, empty_state %}
+{% set page_title = page_heading %}
+
+{% block content %}
+{{ breadcrumbs(breadcrumb_items) }}
+{{ page_header(page_heading, page_subtitle) }}
+
+{% if items %}
+  <div class="table-container">
+    <table>
+      <thead>
+        <tr>
+          {% if table_type == 'agenda' %}
+            <th class="w-120">Item</th>
+            <th>Title</th>
+            <th class="w-180">Committee</th>
+          {% elif table_type == 'documents' %}
+            <th class="w-160">Symbol</th>
+            <th>Title</th>
+            <th class="w-140">Type</th>
+            <th class="w-140">Date</th>
+          {% elif table_type == 'decisions' %}
+            <th class="w-140">Decision</th>
+            <th>Title</th>
+            <th class="w-120">Agenda</th>
+            <th class="w-160">Meeting</th>
+          {% elif table_type == 'proposals' %}
+            <th class="w-160">Document</th>
+            <th>Title</th>
+            <th class="w-120">Agenda</th>
+            <th class="w-160">Body</th>
+          {% endif %}
+        </tr>
+      </thead>
+      <tbody>
+        {% if table_type == 'agenda' %}
+          {% for item in items %}
+            <tr>
+              <td><span class="font-semibold">Item {{ item.AG_Item }}</span></td>
+              <td>
+                <div class="font-medium">{{ item.AG_Title }}</div>
+                {% if item.AG_Heading %}
+                  <div class="text-sm text-muted mt-1">{{ item.AG_Heading }}</div>
+                {% endif %}
+              </td>
+              <td>
+                {% if item.AG_Body %}
+                  <span class="badge badge-outline">{{ item.AG_Body }}</span>
+                {% endif %}
+              </td>
+            </tr>
+          {% endfor %}
+        {% elif table_type == 'documents' %}
+          {% for doc in items %}
+            <tr>
+              <td><span class="font-semibold">{{ doc.symbol }}</span></td>
+              <td>
+                <div class="font-medium">{{ doc.title or "Untitled document" }}</div>
+                {% if doc.agenda_title %}
+                  <div class="text-sm text-muted mt-1">Agenda {{ doc.agenda_item }} — {{ doc.agenda_title }}</div>
+                {% endif %}
+              </td>
+              <td>
+                {% if doc.doc_type %}
+                  <span class="badge badge-outline">{{ doc.doc_type }}</span>
+                {% endif %}
+              </td>
+              <td>{% if doc.date %}{{ doc.date[:10] }}{% endif %}</td>
+            </tr>
+          {% endfor %}
+        {% elif table_type == 'decisions' %}
+          {% for decision in items %}
+            <tr>
+              <td>
+                <span class="font-semibold">{{ decision.ED_DecisionNumber }}</span>
+                {% if decision.ED_Type %}
+                  <div class="text-xs text-muted mt-1">{{ decision.ED_Type }}</div>
+                {% endif %}
+              </td>
+              <td>
+                <div class="font-medium">{{ decision.ED_Title }}</div>
+              </td>
+              <td>
+                {% if decision.ED_AgendaItem %}Item {{ decision.ED_AgendaItem }}{% endif %}
+              </td>
+              <td>
+                {% if decision.ED_Meeting and decision.ED_Meeting[0] %}
+                  {% if decision.ED_Meeting[0].ED_Date %}{{ decision.ED_Meeting[0].ED_Date[:10] }}{% endif %}
+                  {% if decision.ED_Meeting[0].ED_Number %}
+                    <div class="text-xs text-muted mt-1">Meeting {{ decision.ED_Meeting[0].ED_Number }}</div>
+                  {% endif %}
+                {% endif %}
+              </td>
+            </tr>
+          {% endfor %}
+        {% elif table_type == 'proposals' %}
+          {% for proposal in items %}
+            <tr>
+              <td>
+                {% if proposal.PR_Stage and proposal.PR_Stage[0].DocSymbol %}
+                  <span class="font-semibold">{{ proposal.PR_Stage[0].DocSymbol }}</span>
+                  <div class="text-xs text-muted mt-1">{{ proposal.PR_Stage[0].StageName }}</div>
+                {% endif %}
+              </td>
+              <td>
+                <div class="font-medium">{{ proposal.PR_Title }}</div>
+                {% if proposal.PR_MainSponsors %}
+                  <div class="text-sm text-muted mt-1">Sponsor: {{ proposal.PR_MainSponsors }}</div>
+                {% endif %}
+              </td>
+              <td>
+                {% if proposal.PR_AgendaItem %}Item {{ proposal.PR_AgendaItem }}{% endif %}
+              </td>
+              <td>
+                {% if proposal.PR_BodyOriginated %}
+                  <span class="badge badge-outline">{{ proposal.PR_BodyOriginated }}</span>
+                {% endif %}
+              </td>
+            </tr>
+          {% endfor %}
+        {% endif %}
+      </tbody>
+    </table>
+  </div>
+{% else %}
+  {{ empty_state(empty_message) }}
+{% endif %}
+{% endblock %}

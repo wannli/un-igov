@@ -1,115 +1,106 @@
 {% extends "base.html" %}
+{% from "macros.html" import breadcrumbs, page_header, badge %}
 {% set page_title = meeting.MT_name or "Meeting" %}
-{% block content %}
-<div class="sdg-banner">
-  <div class="sdg-color sdg-1"></div>
-  <div class="sdg-color sdg-2"></div>
-  <div class="sdg-color sdg-3"></div>
-  <div class="sdg-color sdg-4"></div>
-  <div class="sdg-color sdg-5"></div>
-  <div class="sdg-color sdg-6"></div>
-  <div class="sdg-color sdg-7"></div>
-  <div class="sdg-color sdg-8"></div>
-  <div class="sdg-color sdg-9"></div>
-  <div class="sdg-color sdg-10"></div>
-  <div class="sdg-color sdg-11"></div>
-  <div class="sdg-color sdg-12"></div>
-  <div class="sdg-color sdg-13"></div>
-  <div class="sdg-color sdg-14"></div>
-  <div class="sdg-color sdg-15"></div>
-  <div class="sdg-color sdg-16"></div>
-  <div class="sdg-color sdg-17"></div>
-</div>
 
-<div class="breadcrumbs">
-  <a href="{{ site.base_url }}index.html">Home</a>
-  <span>/</span>
-  <a href="{{ site.base_url }}ga/plenary/{{ session }}/meetings/index.html">Meetings</a>
-  <span>/</span>
-  <span>{{ meeting.MT_name or "Meeting" }}</span>
-</div>
+{% block content %}
+{{ breadcrumbs([
+  {'label': 'Home', 'url': site.base_url ~ 'index.html'},
+  {'label': 'Meetings', 'url': site.base_url ~ 'ga/plenary/' ~ session ~ '/meetings/index.html'},
+  {'label': meeting.MT_name or 'Meeting'}
+]) }}
 
 <div class="page-header">
   <h1>{{ meeting.MT_name or "Meeting" }}</h1>
   {% if meeting.MT_type %}
-    <span class="badge badge-primary">{{ meeting.MT_type }}</span>
+    <div class="mt-2">{{ badge(meeting.MT_type, 'primary') }}</div>
   {% endif %}
 </div>
 
-<div class="meta-card">
-  <div class="meta-grid">
-    <div class="meta-item">
-      <span class="meta-label">Date</span>
-      <span class="meta-value">{{ meeting.MT_dateTimeScheduleStart | datetime_format("%A, %d %B %Y") }}</span>
+<div class="meeting-layout">
+  <aside class="meeting-sidebar">
+    <div class="meta-card">
+      <h3>Meeting Details</h3>
+      <div class="meta-grid">
+        <div class="meta-item">
+          <span class="meta-label">Date</span>
+          <span class="meta-value">{{ meeting.MT_dateTimeScheduleStart | datetime_format("%A, %d %B %Y") }}</span>
+        </div>
+        <div class="meta-item">
+          <span class="meta-label">Time</span>
+          <span class="meta-value">{{ meeting.MT_dateTimeScheduleStart[11:16] }} - {{ meeting.MT_dateTimeScheduleEnd[11:16] }}</span>
+        </div>
+        {% if meeting.MT_room %}
+        <div class="meta-item">
+          <span class="meta-label">Location</span>
+          <span class="meta-value">{{ meeting.MT_room }}</span>
+        </div>
+        {% endif %}
+        {% if meeting.MT_session %}
+        <div class="meta-item">
+          <span class="meta-label">Session</span>
+          <span class="meta-value">{{ meeting.MT_session }}</span>
+        </div>
+        {% endif %}
+      </div>
     </div>
-    <div class="meta-item">
-      <span class="meta-label">Time</span>
-      <span class="meta-value">{{ meeting.MT_dateTimeScheduleStart[11:16] }} - {{ meeting.MT_dateTimeScheduleEnd[11:16] }}</span>
-    </div>
-    {% if meeting.MT_room %}
-    <div class="meta-item">
-      <span class="meta-label">Location</span>
-      <span class="meta-value">{{ meeting.MT_room }}</span>
-    </div>
-    {% endif %}
-    {% if meeting.MT_session %}
-    <div class="meta-item">
-      <span class="meta-label">Session</span>
-      <span class="meta-value">{{ meeting.MT_session }}</span>
-    </div>
-    {% endif %}
-  </div>
-</div>
 
-{% if meeting.MT_commentary %}
-<div class="mt-8">
-  <h2>Overview</h2>
-  <div class="card mt-4">
-    <div class="card-body">
-      {{ meeting.MT_commentary | safe }}
+    <div class="mt-6">
+      <a href="https://igov.un.org/ga/plenary/{{ session }}/meeting/{{ meeting_id }}" target="_blank" rel="noopener" class="nav-card justify-center items-center">
+        <div class="nav-card-icon">
+          <svg class="icon icon-md"><use href="#icon-external"/></svg>
+        </div>
+        <div class="nav-card-content">
+          <h3 class="nav-card-title">View on igov.un.org</h3>
+          <p class="nav-card-description">Open the official meeting record</p>
+        </div>
+      </a>
     </div>
-  </div>
-</div>
-{% endif %}
+  </aside>
 
-{% if meeting.MT_segment or rendered_procedure_steps %}
-<div class="proceedings-section">
-  <h2>Proceedings</h2>
-  {% for segment in meeting.MT_segment | default([]) %}
-    {% set segment_id = loop.index0 + 1 %}
-    {% set segment_steps = steps_by_segment[segment_id] | selectattr("text") | list %}
-    {% if segment_steps or segment.MTS_segmentTitle or segment.MTS_segmentInfo %}
-      <div class="segment-title">{{ segment.MTS_segmentTitle or segment.MTS_segmentInfo or 'Agenda Item' }}</div>
+  <main>
+    {% if meeting.MT_commentary %}
+    <section class="mb-8">
+      <h2 class="text-xl mb-3">Overview</h2>
       <div class="card">
         <div class="card-body">
-          {% for step in segment_steps %}
-          <div class="step-item">
-            <span class="step-badge">{{ step.type_label }}</span>
-            <div class="step-content">
-              {{ step.text | safe }}
-              {% if step.speakers %}
-                <span class="text-gray-500">
-                  {% for speaker in step.speakers %}{{ speaker.name }}{% if not loop.last %}, {% endif %}{% endfor %}.
-                </span>
-              {% endif %}
-            </div>
-          </div>
-          {% endfor %}
+          {{ meeting.MT_commentary | safe }}
         </div>
       </div>
+    </section>
     {% endif %}
-  {% endfor %}
-</div>
-{% endif %}
 
-<div class="mt-8 text-center">
-  <a href="https://igov.un.org/ga/plenary/{{ session }}/meeting/{{ meeting_id }}" target="_blank" rel="noopener" class="btn btn-outline">
-    View on igov.un.org
-    <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-      <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
-      <polyline points="15 3 21 3 21 9"/>
-      <line x1="10" y1="14" x2="21" y2="3"/>
-    </svg>
-  </a>
+    {% if meeting.MT_segment or rendered_procedure_steps %}
+    <section>
+      <h2 class="text-xl mb-3">Proceedings</h2>
+      <div class="proceedings-list">
+        {% for segment in meeting.MT_segment | default([]) %}
+          {% set segment_id = loop.index0 + 1 %}
+          {% set segment_steps = steps_by_segment[segment_id] | selectattr("text") | list %}
+          {% if segment_steps or segment.MTS_segmentTitle or segment.MTS_segmentInfo %}
+            <details class="proceedings-segment" open>
+              <summary class="proceedings-segment-title">
+                {{ segment.MTS_segmentTitle or segment.MTS_segmentInfo or 'Agenda Item' }}
+              </summary>
+              <div class="proceedings-segment-content">
+                {% for step in segment_steps %}
+                <div class="proceedings-step">
+                  <div class="proceedings-step-text">
+                    {{ step.text | safe }}
+                  </div>
+                  {% if step.speakers %}
+                  <div class="proceedings-step-speakers">
+                    {% for speaker in step.speakers %}{{ speaker.name }}{% if not loop.last %}, {% endif %}{% endfor %}
+                  </div>
+                  {% endif %}
+                </div>
+                {% endfor %}
+              </div>
+            </details>
+          {% endif %}
+        {% endfor %}
+      </div>
+    </section>
+    {% endif %}
+  </main>
 </div>
 {% endblock %}

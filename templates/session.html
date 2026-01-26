@@ -1,0 +1,73 @@
+{% extends "base.html" %}
+{% from "macros.html" import breadcrumbs, page_header, section_header, nav_grid, preview_item, view_all_link, empty_state %}
+{% set page_title = (body_name ~ " — " ~ session ~ " Session") if session else body_name %}
+
+{% block content %}
+{% if breadcrumb_items %}
+  {{ breadcrumbs(breadcrumb_items) }}
+{% else %}
+  {{ breadcrumbs([
+    {'label': 'Home', 'url': site.base_url ~ 'index.html'},
+    {'label': body_name if body_name else body}
+  ]) }}
+{% endif %}
+
+{{ page_header(
+  (body_name ~ ' — ' ~ session ~ ' Session') if session else body_name,
+  body_about
+) }}
+
+{% if tabs %}
+  <div class="tab-bar">
+    {% for tab in tabs %}
+      <a href="{{ tab.url }}" class="tab-link{% if tab.active %} active{% endif %}">{{ tab.label }}</a>
+    {% endfor %}
+  </div>
+{% endif %}
+
+{{ section_header("Quick Access") }}
+{{ nav_grid(stats) }}
+
+<div class="mt-10">
+  {{ section_header("Recent Activity") }}
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+    <div>
+      <h3 class="text-xl mb-3">Latest Meetings</h3>
+      {% if recent_meetings %}
+        <div class="preview-list">
+          {% for meeting in recent_meetings %}
+            {{ preview_item(
+              site.base_url ~ base_path ~ "/meetings/" ~ (meeting | meeting_url),
+              meeting.MT_name or "Meeting",
+              meeting.MT_dateTimeScheduleStart | datetime_format("%b %d, %Y"),
+              meeting.MT_commentary | striptags | truncate(70)
+            ) }}
+          {% endfor %}
+        </div>
+        {{ view_all_link(site.base_url ~ base_path ~ "/meetings/index.html", "View all meetings") }}
+      {% else %}
+        {{ empty_state("No recent meetings available yet.") }}
+      {% endif %}
+    </div>
+
+    <div>
+      <h3 class="text-xl mb-3">Latest Decisions</h3>
+      {% if recent_decisions %}
+        <div class="preview-list">
+          {% for decision in recent_decisions %}
+            {{ preview_item(
+              site.base_url ~ base_path ~ "/decisions/index.html",
+              decision.ED_Title or "Decision",
+              decision.ED_Meeting[0].ED_Date | datetime_format("%b %d, %Y") if decision.ED_Meeting and decision.ED_Meeting[0].ED_Date else None,
+              decision.ED_DecisionNumber
+            ) }}
+          {% endfor %}
+        </div>
+        {{ view_all_link(site.base_url ~ base_path ~ "/decisions/index.html", "View all decisions") }}
+      {% else %}
+        {{ empty_state("No recent decisions available yet.") }}
+      {% endif %}
+    </div>
+  </div>
+</div>
+{% endblock %}

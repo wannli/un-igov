@@ -1,0 +1,235 @@
+{# ==========================================================================
+   UN iGov Template Macros
+   Reusable Jinja2 components for consistent UI
+   ========================================================================== #}
+
+{# --------------------------------------------------------------------------
+   Icon Macro
+   Usage: {{ icon('calendar', 'lg') }}
+   -------------------------------------------------------------------------- #}
+{% macro icon(name, size='md') %}
+<svg class="icon icon-{{ size }}"><use href="#icon-{{ name }}"/></svg>
+{% endmacro %}
+
+{# --------------------------------------------------------------------------
+   Breadcrumbs
+   Usage: {{ breadcrumbs([{'label': 'Home', 'url': '/'}, {'label': 'Current'}]) }}
+   -------------------------------------------------------------------------- #}
+{% macro breadcrumbs(items) %}
+<nav class="breadcrumbs" aria-label="Breadcrumb">
+  {% for item in items %}
+    {% if loop.last %}
+      <span aria-current="page">{{ item.label }}</span>
+    {% else %}
+      <a href="{{ item.url }}">{{ item.label }}</a>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <polyline points="9 18 15 12 9 6"/>
+      </svg>
+    {% endif %}
+  {% endfor %}
+</nav>
+{% endmacro %}
+
+{# --------------------------------------------------------------------------
+   Page Header
+   Usage: {{ page_header('Title', 'Optional subtitle') }}
+   -------------------------------------------------------------------------- #}
+{% macro page_header(title, subtitle=None) %}
+<header class="page-header">
+  <h1>{{ title }}</h1>
+  {% if subtitle %}
+  <p class="lead">{{ subtitle }}</p>
+  {% endif %}
+</header>
+{% endmacro %}
+
+{# --------------------------------------------------------------------------
+   Section Header (with blue underline)
+   Usage: {{ section_header('Section Title', 'Optional description') }}
+   -------------------------------------------------------------------------- #}
+{% macro section_header(title, description=None) %}
+<div class="section-header">
+  <h2>{{ title }}</h2>
+  {% if description %}
+  <p>{{ description }}</p>
+  {% endif %}
+</div>
+{% endmacro %}
+
+{# --------------------------------------------------------------------------
+   Navigation Card
+   Usage: {{ nav_card('/url', 'calendar', 'Meetings', 42, 'Official records') }}
+   -------------------------------------------------------------------------- #}
+{% macro nav_card(href, icon_name, title, count=None, description=None) %}
+<a href="{{ href }}" class="nav-card">
+  <div class="nav-card-icon">
+    {{ icon(icon_name, 'lg') }}
+  </div>
+  <div class="nav-card-content">
+    <h3 class="nav-card-title">{{ title }}</h3>
+    {% if description %}
+    <p class="nav-card-description">{{ description }}</p>
+    {% endif %}
+  </div>
+  {% if count is not none %}
+  <span class="nav-card-count">{{ count }}</span>
+  {% endif %}
+</a>
+{% endmacro %}
+
+{# --------------------------------------------------------------------------
+   Stat Card
+   Usage: {{ stat_card('/url', 'Meetings', 42) }}
+   -------------------------------------------------------------------------- #}
+{% macro stat_card(href, label, value) %}
+<a href="{{ href }}" class="stat-card">
+  <span class="stat-card-label">{{ label }}</span>
+  <span class="stat-card-value">{{ value if value else '—' }}</span>
+</a>
+{% endmacro %}
+
+{# --------------------------------------------------------------------------
+   Badge
+   Usage: {{ badge('Active', 'primary') }}
+   -------------------------------------------------------------------------- #}
+{% macro badge(text, variant='secondary') %}
+<span class="badge badge-{{ variant }}">{{ text }}</span>
+{% endmacro %}
+
+{# --------------------------------------------------------------------------
+   Empty State
+   Usage: {{ empty_state('No meetings found') }}
+   -------------------------------------------------------------------------- #}
+{% macro empty_state(message) %}
+<div class="empty-state">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+    <path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+  </svg>
+  <p>{{ message }}</p>
+</div>
+{% endmacro %}
+
+{# --------------------------------------------------------------------------
+   Preview Item (for recent items lists)
+   Usage: {{ preview_item('/url', 'Item title', 'Jan 15, 2026', 'Optional meta') }}
+   -------------------------------------------------------------------------- #}
+{% macro preview_item(href, title, date=None, meta=None) %}
+<div class="preview-item">
+  <div>
+    <p class="preview-item-title">
+      <a href="{{ href }}">{{ title }}</a>
+    </p>
+    {% if meta %}
+    <p class="preview-item-meta">{{ meta }}</p>
+    {% endif %}
+  </div>
+  {% if date %}
+  <span class="preview-item-date">{{ date }}</span>
+  {% endif %}
+</div>
+{% endmacro %}
+
+{# --------------------------------------------------------------------------
+   View All Link
+   Usage: {{ view_all_link('/meetings/', 'View all meetings') }}
+   -------------------------------------------------------------------------- #}
+{% macro view_all_link(href, text) %}
+<a href="{{ href }}" class="view-all-link">
+  {{ text }}
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+    <polyline points="9 18 15 12 9 6"/>
+  </svg>
+</a>
+{% endmacro %}
+
+{# --------------------------------------------------------------------------
+   Timeline Item (for meetings list)
+   Usage: {{ timeline_item('/meeting/1', '15', 'Jan', 'Plenary Meeting', '10:00', 'Description') }}
+   -------------------------------------------------------------------------- #}
+{% macro timeline_item(href, day, month, title, time=None, description=None) %}
+<a href="{{ href }}" class="timeline-item">
+  <div class="timeline-date">
+    <span class="timeline-day">{{ day }}</span>
+    <span class="timeline-month">{{ month }}</span>
+  </div>
+  <div class="timeline-content">
+    <h3 class="timeline-title">{{ title }}</h3>
+    {% if description %}
+    <p class="timeline-description">{{ description | truncate(80) }}</p>
+    {% endif %}
+  </div>
+  {% if time %}
+  <span class="timeline-time">{{ time }}</span>
+  {% endif %}
+</a>
+{% endmacro %}
+
+{# --------------------------------------------------------------------------
+   Table Header Cell
+   Usage: {{ th('Column Name', 'w-200') }}
+   -------------------------------------------------------------------------- #}
+{% macro th(label, width_class=None) %}
+<th{% if width_class %} class="{{ width_class }}"{% endif %}>{{ label }}</th>
+{% endmacro %}
+
+{# --------------------------------------------------------------------------
+   Stats Grid (for session landing pages)
+   Usage: {{ stats_grid(stats, base_url) }}
+   -------------------------------------------------------------------------- #}
+{% macro stats_grid(stats, base_url='') %}
+<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+  {{ stat_card(base_url ~ 'meetings/index.html', 'Meetings', stats.meetings) }}
+  {{ stat_card(base_url ~ 'agenda/index.html', 'Agenda', stats.agenda) }}
+  {{ stat_card(base_url ~ 'documents/index.html', 'Documents', stats.documents) }}
+  {{ stat_card(base_url ~ 'decisions/index.html', 'Decisions', stats.decisions) }}
+  {{ stat_card(base_url ~ 'proposals/index.html', 'Proposals', stats.proposals) }}
+</div>
+{% endmacro %}
+
+{# --------------------------------------------------------------------------
+   Navigation Grid (for session landing pages)
+   Usage: {{ nav_grid(stats, base_url) }}
+   -------------------------------------------------------------------------- #}
+{% macro nav_grid(stats, base_url='') %}
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+  {{ nav_card(base_url ~ 'meetings/index.html', 'calendar', 'Meetings', stats.meetings, 'Official records') }}
+  {{ nav_card(base_url ~ 'agenda/index.html', 'list', 'Agenda', stats.agenda, 'Session agenda') }}
+  {{ nav_card(base_url ~ 'documents/index.html', 'document', 'Documents', stats.documents, 'Reports & papers') }}
+  {{ nav_card(base_url ~ 'decisions/index.html', 'check', 'Decisions', stats.decisions, 'Adopted texts') }}
+  {{ nav_card(base_url ~ 'proposals/index.html', 'edit', 'Proposals', stats.proposals, 'Draft resolutions') }}
+</div>
+{% endmacro %}
+
+{# --------------------------------------------------------------------------
+   Session Card (for homepage)
+   Usage: {{ session_card('/ga/plenary/80/', 'General Assembly', '80th Session', true) }}
+   -------------------------------------------------------------------------- #}
+{% macro session_card(href, title, session_label, is_active=false) %}
+<a href="{{ href }}" class="nav-card">
+  <div class="nav-card-icon">
+    {{ icon('calendar', 'lg') }}
+  </div>
+  <div class="nav-card-content">
+    <h3 class="nav-card-title">{{ title }}</h3>
+    <p class="nav-card-description">
+      {% if is_active %}
+      {{ badge('Active', 'primary') }}
+      {% endif %}
+      {{ session_label }}
+    </p>
+  </div>
+</a>
+{% endmacro %}
+
+{# --------------------------------------------------------------------------
+   Committee Link (compact version for mega menu or lists)
+   Usage: {{ committee_link('/ga/c1/80/', 'First Committee', 'Disarmament') }}
+   -------------------------------------------------------------------------- #}
+{% macro committee_link(href, name, short_desc=None) %}
+<a href="{{ href }}" class="mega-menu-link">
+  <span>{{ name }}</span>
+  {% if short_desc %}
+  <span class="text-muted text-sm"> — {{ short_desc }}</span>
+  {% endif %}
+</a>
+{% endmacro %}
