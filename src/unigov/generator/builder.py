@@ -59,18 +59,38 @@ def process_footnotes(text: str) -> tuple[str, list[str]]:
     import re
     if not text:
         return "", []
-    
+
     footnotes: list[str] = []
-    
-    def replace_footnote(match):
-        footnote_content = match.group(1)
+    result = text
+
+    while True:
+        match = re.search(r"\((?:[Ff]ootnote)\s*:\s*", result)
+        if not match:
+            break
+
+        start = match.start()
+        open_paren = match.end() - 1
+        depth = 1
+        i = open_paren + 1
+
+        while depth > 0 and i < len(result):
+            if result[i] == '(':
+                depth += 1
+            elif result[i] == ')':
+                depth -= 1
+            i += 1
+
+        if depth > 0:
+            break
+
+        footnote_content = result[open_paren + 1:i - 1].strip()
         footnote_num = len(footnotes) + 1
         footnotes.append(footnote_content)
-        return f'<sup><a href="#fn{footnote_num}" id="fnref{footnote_num}">{footnote_num}</a></sup>'
-    
-    processed = re.sub(r"\(?[Ff]ootnote:\s*(.+?)\)?\s*", replace_footnote, text)
-    
-    return processed, footnotes
+
+        replacement = f'<sup><a href="#fn{footnote_num}" id="fnref{footnote_num}">{footnote_num}</a></sup>'
+        result = result[:start] + replacement + result[i:]
+
+    return result, footnotes
 
 
 def get_footnotes(text: str) -> list[str]:
@@ -78,10 +98,166 @@ def get_footnotes(text: str) -> list[str]:
     import re
     if not text:
         return []
+
     footnotes: list[str] = []
-    for match in re.finditer(r"\(?[Ff]ootnote:\s*(.+?)\)?", text):
-        footnotes.append(match.group(1).strip())
+    result = text
+
+    while True:
+        match = re.search(r"\((?:[Ff]ootnote)\s*:\s*", result)
+        if not match:
+            break
+
+        start = match.start()
+        open_paren = match.end() - 1
+        depth = 1
+        i = open_paren + 1
+
+        while depth > 0 and i < len(result):
+            if result[i] == '(':
+                depth += 1
+            elif result[i] == ')':
+                depth -= 1
+            i += 1
+
+        if depth > 0:
+            break
+
+        footnote_content = result[open_paren + 1:i - 1].strip()
+        footnotes.append(footnote_content)
+        result = result[i:]
+
     return footnotes
+
+
+def get_base_url(config: Config) -> str:
+    """Get the base URL with trailing slash."""
+    base_url = config.site.base_url or ""
+    if not base_url.endswith("/"):
+        base_url = base_url + "/"
+    return base_url
+
+
+def make_breadcrumb(label: str, url: str) -> dict[str, str]:
+    """Create a single breadcrumb item."""
+    return {"label": label, "url": url}
+
+
+def home_breadcrumb(config: Config) -> dict[str, str]:
+    """Create the home breadcrumb item."""
+    return make_breadcrumb("Home", get_base_url(config))
+
+
+def ga_plenary_breadcrumb(session: str, config: Config) -> dict[str, str]:
+    """Create General Assembly plenary breadcrumb."""
+    base = get_base_url(config)
+    return make_breadcrumb("General Assembly", f"{base}ga/plenary/{session}/index.html")
+
+
+def ga_committee_breadcrumb(committee: str, session: str, config: Config) -> dict[str, str]:
+    """Create GA committee breadcrumb."""
+    base = get_base_url(config)
+    committee_names = {
+        "c1": "First Committee",
+        "c2": "Second Committee",
+        "c3": "Third Committee",
+        "c4": "Fourth Committee",
+        "c5": "Fifth Committee",
+    }
+    name = committee_names.get(committee, committee.upper())
+    return make_breadcrumb(name, f"{base}ga/{committee}/{session}/index.html")
+
+
+def ecosoc_plenary_breadcrumb(session: str, config: Config) -> dict[str, str]:
+    """Create ECOSOC plenary breadcrumb."""
+    base = get_base_url(config)
+    return make_breadcrumb("ECOSOC", f"{base}ecosoc/plenary/{session}/index.html")
+
+
+def ecosoc_body_breadcrumb(body_code: str, session: str, config: Config) -> dict[str, str]:
+    """Create ECOSOC body breadcrumb."""
+    base = get_base_url(config)
+    body_names = {
+        "hlpf": "High-level Political Forum",
+        "csw": "Commission on the Status of Women",
+        "ggim": "Committee of Experts on GGIM",
+        "unff": "UN Forum on Forests",
+        "ungegn": "Group of Experts on Geographical Names",
+    }
+    name = body_names.get(body_code, body_code.upper())
+    return make_breadcrumb(name, f"{base}ecosoc/{body_code}/{session}/index.html")
+
+
+def conference_breadcrumb(code: str, session: str, config: Config) -> dict[str, str]:
+    """Create conference breadcrumb."""
+    base = get_base_url(config)
+    conference_names = {
+        "ffd4": "Fourth International Conference on Financing for Development",
+        "ffd4pc": "FFD4 PrepCom",
+    }
+    name = conference_names.get(code, code.upper())
+    return make_breadcrumb(name, f"{base}conferences/{code}/{session}/index.html")
+
+
+def session_breadcrumb(label: str, url: str) -> dict[str, str]:
+    """Create a session breadcrumb item."""
+    return make_breadcrumb(label, url)
+
+
+def page_breadcrumb(label: str) -> dict[str, str]:
+    """Create a page breadcrumb item (current page, no URL)."""
+    return {"label": label}
+
+
+def build_ga_breadcrumbs(session: str, page: str | None, config: Config) -> list[dict[str, str]]:
+    """Build breadcrumbs for GA plenary pages."""
+    base = get_base_url(config)
+    breadcrumbs = [
+        home_breadcrumb(config),
+        ga_plenary_breadcrumb(session, config),
+        session_breadcrumb(f"{session} Session", f"{base}ga/plenary/{session}/index.html"),
+    ]
+    if page:
+        breadcrumbs.append(page_breadcrumb(page))
+    return breadcrumbs
+
+
+def build_ga_committee_breadcrumbs(committee: str, session: str, page: str | None, config: Config) -> list[dict[str, str]]:
+    """Build breadcrumbs for GA committee pages."""
+    base = get_base_url(config)
+    breadcrumbs = [
+        home_breadcrumb(config),
+        ga_plenary_breadcrumb(session, config),
+        ga_committee_breadcrumb(committee, session, config),
+    ]
+    if page:
+        breadcrumbs.append(page_breadcrumb(page))
+    return breadcrumbs
+
+
+def build_ecosoc_breadcrumbs(session: str, body_code: str | None, page: str | None, config: Config) -> list[dict[str, str]]:
+    """Build breadcrumbs for ECOSOC pages."""
+    base = get_base_url(config)
+    breadcrumbs = [
+        home_breadcrumb(config),
+        ecosoc_plenary_breadcrumb(session, config),
+    ]
+    if body_code:
+        breadcrumbs.append(ecosoc_body_breadcrumb(body_code, session, config))
+    if page:
+        breadcrumbs.append(page_breadcrumb(page))
+    return breadcrumbs
+
+
+def build_conference_breadcrumbs(code: str, session: str, page: str | None, config: Config) -> list[dict[str, str]]:
+    """Build breadcrumbs for conference pages."""
+    base = get_base_url(config)
+    breadcrumbs = [
+        home_breadcrumb(config),
+        conference_breadcrumb(code, session, config),
+    ]
+    if page:
+        breadcrumbs.append(page_breadcrumb(page))
+    return breadcrumbs
 
 
 def meeting_url(meeting: dict) -> str:
@@ -114,29 +290,112 @@ def get_stats(data_dir: Path) -> dict[str, int]:
 
 
 def group_agenda_items(agenda: list[dict]) -> list[dict]:
-    """Group agenda items by item number and collect headings as subitems."""
-    grouped = {}
+    """Group agenda items by section (AG_Heading) and nest sub-items.
+
+    Structure:
+    - Sections (A, B, C...) group multiple items
+    - Items like '16(a)', '72(b)' are sub-items under parent item
+    - Some items have no section (standalone procedural items)
+    """
+    # Separate items by section and identify sub-items
+    sections: dict[str, list[dict]] = {}
+    standalone_items: list[dict] = []
+
     for item in agenda:
-        item_num = item.get("AG_Item", "")
+        item_num = item.get("AG_Item", "").strip()
         title = item.get("AG_Title", "")
         heading = item.get("AG_Heading", "")
 
-        if item_num not in grouped:
-            grouped[item_num] = {
-                "item_number": item_num,
-                "title": title,
-                "headings": set(),
-            }
-        if heading:
-            grouped[item_num]["headings"].add(heading)
+        item_data = {
+            "item_number": item_num,
+            "title": title,
+            "subitems": [],
+        }
 
-    result = []
-    for item_num, data in sorted(grouped.items(), key=lambda x: float(x[0]) if x[0].replace(".", "", 1).isdigit() else float("inf")):
+        if heading:
+            # Group by section heading
+            if heading not in sections:
+                sections[heading] = []
+            sections[heading].append(item_data)
+        else:
+            # Standalone item (no section)
+            standalone_items.append(item_data)
+
+    # Identify sub-items and nest them under parents
+    def process_items(items: list[dict]) -> list[dict]:
+        result: list[dict] = []
+        item_map: dict[str, dict] = {}
+
+        # First pass: create map of all items
+        for item in items:
+            item_map[item["item_number"]] = item
+            result.append(item)
+
+        # Second pass: find sub-items and link to parents
+        subitems_to_move: list[tuple[str, dict]] = []
+        for item_num, item in item_map.items():
+            # Check if this is a sub-item (contains parentheses)
+            if "(" in item_num and ")" in item_num:
+                # Find parent item (part before parentheses)
+                parent_num = item_num.split("(")[0].strip()
+                if parent_num in item_map:
+                    subitems_to_move.append((item_num, item_map[parent_num]))
+
+        # Move sub-items to their parents
+        for subitem_num, parent in subitems_to_move:
+            parent["subitems"].append(item_map[subitem_num])
+            if parent in result:
+                result.remove(item_map[subitem_num])
+
+        # Sort items within group
+        def sort_key(item: dict) -> tuple[float, str]:
+            num = item["item_number"]
+            # Extract numeric part for sorting
+            numeric_part = ""
+            for c in num:
+                if c.isdigit():
+                    numeric_part += c
+                else:
+                    break
+            try:
+                return (float(numeric_part) if numeric_part else float("inf"), num)
+            except ValueError:
+                return (float("inf"), num)
+
+        return sorted(result, key=sort_key)
+
+    # Process all groups
+    result: list[dict] = []
+
+    # Add sections in order (A, B, C...)
+    section_order = ["A", "B", "C", "D", "E", "F", "G", "H", "I"]
+    for section_letter in section_order:
+        for heading in sections.keys():
+            if heading.startswith(section_letter + "."):
+                result.append({
+                    "is_section": True,
+                    "section_name": heading,
+                    "agenda_items": process_items(sections[heading]),
+                })
+                break
+
+    # Add any remaining sections not in order
+    for heading in sorted(sections.keys()):
+        if not any(g.get("section_name") == heading for g in result):
+            result.append({
+                "is_section": True,
+                "section_name": heading,
+                "agenda_items": process_items(sections[heading]),
+            })
+
+    # Add standalone items (no section)
+    if standalone_items:
         result.append({
-            "item_number": data["item_number"],
-            "title": data["title"],
-            "headings": sorted(data["headings"]),
+            "is_section": False,
+            "section_name": None,
+            "agenda_items": process_items(standalone_items),
         })
+
     return result
 
 

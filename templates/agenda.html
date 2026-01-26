@@ -8,21 +8,29 @@
 
 {% if grouped_items %}
   <div class="agenda-list">
-    {% for item in grouped_items %}
-      <div class="agenda-item">
-        <div class="agenda-item-header">
-          <span class="agenda-item-number">Item {{ item.item_number }}</span>
-          <span class="agenda-item-title">{{ item.title }}</span>
-        </div>
-        {% if item.headings %}
-          <div class="agenda-subitems">
-            {% for subitem in item.headings %}
-              <div class="agenda-subitem">
-                <span class="agenda-subitem-text">{{ subitem }}</span>
-              </div>
-            {% endfor %}
-          </div>
+    {% for group in grouped_items %}
+      <div class="agenda-group">
+        {% if group.is_section %}
+          <h3 class="agenda-section-header">{{ group.section_name }}</h3>
         {% endif %}
+        {% for item in group.agenda_items %}
+          <div class="agenda-item">
+            <div class="agenda-item-header">
+              <span class="agenda-item-number">{{ item.item_number }}</span>
+              <span class="agenda-item-title">{{ item.title }}</span>
+            </div>
+            {% if item.subitems %}
+              <div class="agenda-subitems">
+                {% for subitem in item.subitems %}
+                  <div class="agenda-subitem">
+                    <span class="agenda-subitem-number">{{ subitem.item_number }}</span>
+                    <span class="agenda-subitem-text">{{ subitem.title }}</span>
+                  </div>
+                {% endfor %}
+              </div>
+            {% endif %}
+          </div>
+        {% endfor %}
       </div>
     {% endfor %}
   </div>
