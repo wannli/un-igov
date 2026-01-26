@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import os
 from dataclasses import dataclass
 from pathlib import Path
 
@@ -45,10 +46,12 @@ def load_config(path: Path) -> Config:
         for key, value in ga["sessions"].items()
     }
 
+    base_url = os.environ.get("BASE_URL") or site["base_url"]
+
     return Config(
         site=SiteConfig(
             title=site["title"],
-            base_url=site["base_url"],
+            base_url=base_url,
             output_dir=base_dir / site["output_dir"],
             data_dir=base_dir / site["data_dir"],
         ),
