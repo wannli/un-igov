@@ -7,7 +7,6 @@ on:
       - 'src/**'
       - 'templates/**'
       - 'static/**'
-      - 'config.yaml'
   workflow_dispatch:
   schedule:
     - cron: "0 6 * * *"
