@@ -172,24 +172,6 @@
         });
       }
     })();
-
-    // Live reload for development
-    (function() {
-      var lastBuild = {{ last_build_timestamp | default(0) }};
-      var pollInterval = 2000;
-      function checkUpdate() {
-        fetch('{{ site.base_url }}__build__')
-          .then(function(r) { return r.json(); })
-          .then(function(data) {
-            if (data.timestamp > lastBuild) {
-              lastBuild = data.timestamp;
-              location.reload();
-            }
-          })
-          .catch(function() {});
-      }
-      setInterval(checkUpdate, pollInterval);
-    })();
   </script>
 </body>
 </html>
