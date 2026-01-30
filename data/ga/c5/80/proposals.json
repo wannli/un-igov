@@ -22523,10 +22523,13 @@
           "ImplicationsAttachments": [],
           "PSPublic": "Yes",
           "Voting": "Yes",
+          "VoteY": 123,
+          "VoteN": 7,
+          "VoteAbstain": 41,
           "Outcome": "ADOPTED",
           "OralChanges": [],
           "Comments": "",
-          "_id": "6931d0871741983388977391",
+          "_id": "697b869e40f27566f7c081bf",
           "VotesAdd": []
         }
       ],
@@ -24541,10 +24544,13 @@
           "ImplicationsAttachments": [],
           "PSPublic": "Yes",
           "Voting": "Yes",
+          "VoteY": 151,
+          "VoteN": 11,
+          "VoteAbstain": 11,
           "Outcome": "ADOPTED",
           "OralChanges": [],
           "Comments": "",
-          "_id": "6931d087174198338897738d",
+          "_id": "697b869e85cf904d5ffe0223",
           "VotesAdd": []
         }
       ],
@@ -27258,8 +27264,10 @@
           "Body": "GA",
           "Session": "EIGHTIETH",
           "AgendaItem": "14",
-          "DocSymbol": "",
-          "Implications": [],
+          "DocSymbol": "A/80/L.43",
+          "Implications": [
+            "PBI - Pending"
+          ],
           "ImplicationsAttachments": [],
           "PointOfContact": "Zulfiqar Ali Malik (zulfiqar_ali782@yahoo.com)",
           "OralChanges": [],
