@@ -401,7 +401,7 @@
           "StageD": "2025-11-11T10:00:00.000Z",
           "Body": "Third Committee",
           "Session": "EIGHTIETH",
-          "DocSymbol": "A/80/545 DR 8",
+          "DocSymbol": "",
           "DocAmended": "No",
           "MeetingNo": "42",
           "Implications": [],
@@ -413,9 +413,9 @@
           "VoteAbstain": 0,
           "Outcome": "ADOPTED",
           "OralChanges": [],
-          "VotesAdd": [],
           "Comments": "",
-          "_id": "691bb29e1741983388970959"
+          "_id": "697d0cf640f27566f7c08292",
+          "VotesAdd": []
         },
         {
           "Status": "",
@@ -751,7 +751,7 @@
           "StageD": "2025-11-11T10:00:00.000Z",
           "Body": "Third Committee",
           "Session": "EIGHTIETH",
-          "DocSymbol": "A/80/545 DR 6",
+          "DocSymbol": "",
           "DocAmended": "No",
           "MeetingNo": "42",
           "Implications": [],
@@ -763,9 +763,9 @@
           "VoteAbstain": 0,
           "Outcome": "ADOPTED",
           "OralChanges": [],
-          "VotesAdd": [],
           "Comments": "",
-          "_id": "691bb29ef2b769ce78838f19"
+          "_id": "697d0cf640f27566f7c0828a",
+          "VotesAdd": []
         },
         {
           "Status": "",
@@ -2987,7 +2987,7 @@
           "StageD": "2025-11-11T10:00:00.000Z",
           "Body": "Third Committee",
           "Session": "EIGHTIETH",
-          "DocSymbol": "A/80/545 DR 5",
+          "DocSymbol": "",
           "DocAmended": "No",
           "MeetingNo": "42",
           "Implications": [],
@@ -2996,9 +2996,9 @@
           "Voting": "No",
           "Outcome": "ADOPTED",
           "OralChanges": [],
-          "VotesAdd": [],
           "Comments": "",
-          "_id": "691bb29e1741983388970951"
+          "_id": "697d0cf585cf904d5ffe02a0",
+          "VotesAdd": []
         },
         {
           "Status": "",
@@ -3232,7 +3232,7 @@
           "StageD": "2025-11-11T10:00:00.000Z",
           "Body": "Third Committee",
           "Session": "EIGHTIETH",
-          "DocSymbol": "A/80/545 DR 7",
+          "DocSymbol": "",
           "DocAmended": "No",
           "MeetingNo": "42",
           "Implications": [],
@@ -3244,9 +3244,9 @@
           "VoteAbstain": 2,
           "Outcome": "ADOPTED",
           "OralChanges": [],
-          "VotesAdd": [],
           "Comments": "",
-          "_id": "691bb29e1741983388970955"
+          "_id": "697d0cf640f27566f7c0828e",
+          "VotesAdd": []
         },
         {
           "Status": "",
@@ -3365,7 +3365,7 @@
           "StageD": "2025-11-11T10:00:00.000Z",
           "Body": "Third Committee",
           "Session": "EIGHTIETH",
-          "DocSymbol": "A/80/545 DR 1",
+          "DocSymbol": "",
           "DocAmended": "No",
           "MeetingNo": "42",
           "Implications": [],
@@ -3377,9 +3377,9 @@
           "VoteAbstain": 1,
           "Outcome": "ADOPTED",
           "OralChanges": [],
-          "VotesAdd": [],
           "Comments": "",
-          "_id": "691bb29ef2b769ce78838f15"
+          "_id": "697d0cf585cf904d5ffe0298",
+          "VotesAdd": []
         },
         {
           "Status": "",
@@ -3468,7 +3468,7 @@
           "StageD": "2025-11-11T10:00:00.000Z",
           "Body": "Third Committee",
           "Session": "EIGHTIETH",
-          "DocSymbol": "A/80/545 DR 2",
+          "DocSymbol": "",
           "DocAmended": "No",
           "MeetingNo": "42",
           "Implications": [],
@@ -3480,9 +3480,9 @@
           "VoteAbstain": 1,
           "Outcome": "ADOPTED",
           "OralChanges": [],
-          "VotesAdd": [],
           "Comments": "",
-          "_id": "691bb29e174198338897094d"
+          "_id": "697d0cf585cf904d5ffe029c",
+          "VotesAdd": []
         },
         {
           "StageName": "Revision",
