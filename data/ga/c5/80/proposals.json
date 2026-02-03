@@ -19108,7 +19108,7 @@
       "PR_Session": "EIGHTIETH",
       "PR_AgendaItem": "18(i)",
       "PR_Source": "",
-      "PR_Title": "18(i) - Combating sand and dust storms",
+      "PR_Title": "Combating sand and dust storms",
       "PR_MainSponsors": "IRAQ (on behalf of Group of 77 and China)",
       "PR_Sponsors": [],
       "PR_Stage": [
@@ -19181,8 +19181,8 @@
           "Implications": [],
           "ImplicationsAttachments": [],
           "OralChanges": [],
-          "_id": "693b37d75d5f485cc3eb7827",
-          "VotesAdd": []
+          "VotesAdd": [],
+          "_id": "693b37d75d5f485cc3eb7827"
         },
         {
           "Status": "",
@@ -19203,9 +19203,9 @@
           "VoteAbstain": 2,
           "Outcome": "ADOPTED",
           "OralChanges": [],
+          "VotesAdd": [],
           "Comments": "",
-          "_id": "694c275c44f96a0a259e24e9",
-          "VotesAdd": []
+          "_id": "694c275c44f96a0a259e24e9"
         }
       ],
       "PR_Status": ""
