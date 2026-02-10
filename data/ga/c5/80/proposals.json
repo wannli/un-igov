@@ -27355,8 +27355,10 @@
           "Body": "GA",
           "Session": "EIGHTIETH",
           "AgendaItem": "13",
-          "DocSymbol": "",
-          "Implications": [],
+          "DocSymbol": "A/80/L.44",
+          "Implications": [
+            "PBI - Pending"
+          ],
           "ImplicationsAttachments": [],
           "PointOfContact": "Bruno Palazon Imparato (bruno.imparato@itamaraty.gov.br)",
           "OralChanges": [],
