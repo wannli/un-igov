@@ -27373,6 +27373,40 @@
         }
       ],
       "PR_Status": ""
+    },
+    {
+      "_id": "698ba89140f27566f7c087ce",
+      "PR_BodyOriginated": "GA",
+      "PR_Session": "EIGHTIETH",
+      "PR_AgendaItem": "14",
+      "PR_Source": "",
+      "PR_Title": "International Decade of Strengthening of Peace for Future Generations",
+      "PR_MainSponsors": "TAJIKISTAN, BAHRAIN, SINGAPORE",
+      "PR_Sponsors": [],
+      "PR_Stage": [
+        {
+          "StageName": "Sponsorship",
+          "StageNameSort": "Sponsorship",
+          "StageD": "2026-02-10T21:52:17.478Z",
+          "Body": "GA",
+          "Session": "EIGHTIETH",
+          "AgendaItem": "14",
+          "DocSymbol": "",
+          "Implications": [],
+          "ImplicationsAttachments": [],
+          "PointOfContact": "Firuz Kosimov (qosimof@gmail.com)",
+          "OralChanges": [],
+          "D2": "",
+          "HAT": "",
+          "SubmittedBy": "",
+          "SubmittedD": null,
+          "IssuanceStatus": "",
+          "Comments": "",
+          "_id": "698ba89140f27566f7c087cf",
+          "VotesAdd": []
+        }
+      ],
+      "PR_Status": ""
     }
   ]
 }
