@@ -27357,19 +27357,19 @@
           "AgendaItem": "13",
           "DocSymbol": "A/80/L.44",
           "Implications": [
-            "PBI - Pending"
+            "PBI - No"
           ],
           "ImplicationsAttachments": [],
           "PointOfContact": "Bruno Palazon Imparato (bruno.imparato@itamaraty.gov.br)",
           "OralChanges": [],
+          "VotesAdd": [],
           "D2": "",
           "HAT": "",
           "SubmittedBy": "",
           "SubmittedD": null,
           "IssuanceStatus": "",
           "Comments": "",
-          "_id": "698673cc85cf904d5ffe0706",
-          "VotesAdd": []
+          "_id": "698673cc85cf904d5ffe0706"
         }
       ],
       "PR_Status": ""
