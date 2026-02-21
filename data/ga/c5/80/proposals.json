@@ -27407,6 +27407,40 @@
         }
       ],
       "PR_Status": ""
+    },
+    {
+      "_id": "6998ca68f6df27e042e123a5",
+      "PR_BodyOriginated": "GA",
+      "PR_Session": "EIGHTIETH",
+      "PR_AgendaItem": "119",
+      "PR_Source": "",
+      "PR_Title": "RESOLUTION ON \"DECLARATION OF THE TRAFFICKING OF ENSLAVED AFRICANS AND RACIALISED CHATTEL ENSLAVEMENT OF AFRICAN PEOPLE AS THE GRAVEST CRIME AGAINST HUMANITY\".",
+      "PR_MainSponsors": "GHANA",
+      "PR_Sponsors": [],
+      "PR_Stage": [
+        {
+          "StageName": "Sponsorship",
+          "StageNameSort": "Sponsorship",
+          "StageD": "2026-02-20T20:56:08.602Z",
+          "Body": "GA",
+          "Session": "EIGHTIETH",
+          "AgendaItem": "119",
+          "DocSymbol": "",
+          "Implications": [],
+          "ImplicationsAttachments": [],
+          "PointOfContact": "Emmanuella Karikari Agyeman (emmanuella.agyeman@mfa.gov.gh)",
+          "OralChanges": [],
+          "D2": "",
+          "HAT": "",
+          "SubmittedBy": "",
+          "SubmittedD": null,
+          "IssuanceStatus": "",
+          "Comments": "",
+          "_id": "6998ca68f6df27e042e123a6",
+          "VotesAdd": []
+        }
+      ],
+      "PR_Status": ""
     }
   ]
 }
