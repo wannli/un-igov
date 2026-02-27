@@ -27198,7 +27198,7 @@
       "PR_Session": "EIGHTIETH",
       "PR_AgendaItem": "127",
       "PR_Source": "",
-      "PR_Title": "Draft Resolution on International Wellness Day",
+      "PR_Title": "International Wellness Day",
       "PR_MainSponsors": "NEPAL",
       "PR_Sponsors": [],
       "PR_Stage": [
@@ -27230,8 +27230,10 @@
           "Body": "GA",
           "Session": "EIGHTIETH",
           "AgendaItem": "127",
-          "DocSymbol": "",
-          "Implications": [],
+          "DocSymbol": "A/80/L.45",
+          "Implications": [
+            "PBI - Pending"
+          ],
           "ImplicationsAttachments": [],
           "PointOfContact": "Gyan Bahadur Magar (gyan.magarpmn2025@gmail.com)",
           "OralChanges": [],
