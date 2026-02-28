@@ -27232,19 +27232,19 @@
           "AgendaItem": "127",
           "DocSymbol": "A/80/L.45",
           "Implications": [
-            "PBI - Pending"
+            "PBI - No"
           ],
           "ImplicationsAttachments": [],
           "PointOfContact": "Gyan Bahadur Magar (gyan.magarpmn2025@gmail.com)",
           "OralChanges": [],
+          "VotesAdd": [],
           "D2": "",
           "HAT": "",
           "SubmittedBy": "",
           "SubmittedD": null,
           "IssuanceStatus": "",
           "Comments": "",
-          "_id": "699f75827c51899fa6ad16d3",
-          "VotesAdd": []
+          "_id": "699f75827c51899fa6ad16d3"
         }
       ],
       "PR_Status": ""
